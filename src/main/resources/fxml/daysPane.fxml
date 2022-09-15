@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="280.0" prefWidth="110.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DaysPaneController">
+   <children>
+      <Button id="day-button" fx:id="mondayButtonController" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" text="Monday" textAlignment="CENTER" VBox.vgrow="ALWAYS" />
+      <Button id="day-button" fx:id="tuesdayButtonController" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" text="Tuesday" VBox.vgrow="ALWAYS" />
+      <Button id="day-button" fx:id="wednesdayButtonController" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" text="Wednesday" VBox.vgrow="ALWAYS" />
+      <Button id="day-button" fx:id="thursdayButtonController" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" text="Thursday" VBox.vgrow="ALWAYS" />
+      <Button id="day-button" fx:id="fridayButtonController" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" text="Friday" VBox.vgrow="ALWAYS" />
+      <Button id="day-button" fx:id="saturdayButtonController" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" text="Saturday" VBox.vgrow="ALWAYS" />
+      <Button id="day-button" fx:id="sundayButtonController" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="40.0" prefWidth="80.0" text="Sunday" VBox.vgrow="ALWAYS">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </Button>
+   </children>
+</VBox>
