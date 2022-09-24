@@ -1,5 +1,5 @@
-Nazwa produktu;producent;kcal;bia≥ka;weglowodany;tluszcze
-Bia≥ko wpi;Extensor;370;9;0.2;0.2
+Nazwa produktu;producent;kcal;bia≈Çka;weglowodany;tluszcze
+Bia≈Çko wpi;Extensor;370;9;0.2;0.2
 Pomidorowa;DOMOWE;29;0.8;0.3;0.5
 Spaggeti Carbonara;DOMOWE;260;10.6;21.0;14.4
 Spaggeti Bolognese;DOMOWE;150;7.6;16;7.3

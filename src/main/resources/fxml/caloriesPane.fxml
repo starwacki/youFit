@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="caloriesPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CaloriesPaneController">
+<AnchorPane fx:id="caloriesPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="880.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CaloriesPaneController">
    <children>
-      <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">
          <children>
             <ProgressBar id="protein-progress-bar" fx:id="proteinsProgressBarController" prefHeight="20.0" prefWidth="130.0" progress="0.59" styleClass="warning-bar">
                <HBox.margin>
@@ -33,7 +33,7 @@
             </ProgressBar>
          </children>
       </HBox>
-      <HBox id="calories-bar-hbox" prefHeight="40.0" prefWidth="744.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="0.0">
+      <HBox id="calories-bar-hbox" prefHeight="40.0" prefWidth="744.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="15.0">
          <children>
             <Label fx:id="proteinsStringLabelController" prefHeight="20.0" prefWidth="57.0" text="Proteins:">
                <opaqueInsets>

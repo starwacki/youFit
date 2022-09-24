@@ -1,32 +1,32 @@
-Nazwa produktu;kcal;bia≥ka;t≥uszcze;wÍglowodany
+Nazwa produktu;kcal;bia≈Çka;t≈Çuszcze;wƒôglowodany
 Agrest;41;0.8;0.2;11.8
 Amarantus. nasiona;400;14.5;6.5;66.2
 Ananas;54;0.4;0.2;13.6
 Ananas w syropie;84;0.4;0.1;21
-Anyø;337;17.6;16;50
+Any≈º;337;17.6;16;50
 Arbuz;36;0.6;0.1;8.4
 Avocado;160;2;15.3;7.4
-Bak≥aøan;21;1.1;0.1;6.3
+Bak≈Ça≈ºan;21;1.1;0.1;6.3
 Baleron;244;15.1;20.2;0.9
 Banan;95;1;0.3;23.5
 Banany suszone;360;3.8;1.1;88.8
 Bazylia suszona;251;14.3;4;61
-Bazylia úwieøa;23;3.2;0.64;2.7
-Bia≥a rzodkiew;14;1;0;3
-Bia≥ko jajka kurzego;49;10.9;0.2;0.7
-BÛb;66;7.1;0.4;14
-BoÊwina;17;2.1;0.5;5.5
-Boczek wÍdzony;477;13;47;0
+Bazylia ≈õwie≈ºa;23;3.2;0.64;2.7
+Bia≈Ça rzodkiew;14;1;0;3
+Bia≈Çko jajka kurzego;49;10.9;0.2;0.7
+B√≥b;66;7.1;0.4;14
+Boƒáwina;17;2.1;0.5;5.5
+Boczek wƒôdzony;477;13;47;0
 Botwinka;17;2.1;0.5;5.5
-Broku≥y;27;3;0.4;5.2
+Broku≈Çy;27;3;0.4;5.2
 Brukselka;37;4.7;0.5;8.7
 Brzoskwinia;46;1;0.2;11.9
 Brzoskwinia w syropie;73;0.4;0.1;18.2
-Bu≥ka owsiana;304;9.3;4.5;58.4
-Bu≥ka pszenna zwyk≥a;273;8.1;1.5;57.7
-Bu≥ka sojowa;315;10.1;4;61.1
-Bu≥ka tarta;347;9.7;1.9;77.6
-Bu≥ka wroc≥awskia;294;8;4.4;56.6
+Bu≈Çka owsiana;304;9.3;4.5;58.4
+Bu≈Çka pszenna zwyk≈Ça;273;8.1;1.5;57.7
+Bu≈Çka sojowa;315;10.1;4;61.1
+Bu≈Çka tarta;347;9.7;1.9;77.6
+Bu≈Çka wroc≈Çawskia;294;8;4.4;56.6
 Burak;38;1.8;0.1;9.5
 Cebula;30;1.4;0.4;6.9
 Cebula czerwona;30;1.4;0.4;6.9
@@ -35,47 +35,47 @@ Cebulka dymka;30;1.4;0.4;6.9
 Chili;40;0.4;0.1;1.8
 Chleb chrupki;353;8.7;2.4;78.9
 Chleb pszenny;257;8.5;1.4;54.3
-Chleb zwyk≥y;248;6.1;1.3;56.3
-Chleb øytni pe≥noziarnisty;225;6.8;1.8;53.8
-Chleb øytni razowy;213;5.9;1.7;51.2
+Chleb zwyk≈Çy;248;6.1;1.3;56.3
+Chleb ≈ºytni pe≈Çnoziarnisty;225;6.8;1.8;53.8
+Chleb ≈ºytni razowy;213;5.9;1.7;51.2
 Chrzan;67;4.5;0.6;18.1
 Ciecierzyca konserwowa;127;6;3;18
 Cieciorka;364;19.3;6;60.6
-CielÍcina ≥opatka;106;19.9;2.8;0
-CielÍcina sznyclÛwka;105;20.5;2.4;0
-CielÍcina udziec;108;19.9;3.1;0
+Cielƒôcina ≈Çopatka;106;19.9;2.8;0
+Cielƒôcina sznycl√≥wka;105;20.5;2.4;0
+Cielƒôcina udziec;108;19.9;3.1;0
 Cukier;405;0;0;99.8
-Cukier brπzowy;380;0.12;0;98
+Cukier brƒÖzowy;380;0.12;0;98
 Cukier puder;387;0;0;100
 Cukinia;15;1.2;0.1;3.2
 Curry;325;13;14;58
-∆wik≥a;40;1.6;0.1;10.2
+ƒÜwik≈Ça;40;1.6;0.1;10.2
 Cykoria;21;1.7;0.2;4.1
 Cynamon;247;4;1.2;81
 Cytryna;36;0.8;0.3;9.5
 Czekolada gorzka;554;6.7;34.3;56.6
-Czereúnie;61;1;0.3;14.6
+Czere≈õnie;61;1;0.3;14.6
 Czerwona fasola konserwowa ;87;8.1;0.6;12.3
 Czosnek;146;6.4;0.5;32.6
 Czosnek granulowany;331;17;0.73;73
 Daktyle suszone;277;2;0.4;74
-Dorsz filety bez skÛry;70;16.5;0.3;0
+Dorsz filety bez sk√≥ry;70;16.5;0.3;0
 Dynia;28;1.3;0.3;7.7
-Døem jagodowy niskos≥odzony;153;0.3;0.2;38.2
-Døem úliwkowy niskos≥odzony;153;0.3;0.1;37.9
-Døem truskawkowy niskos≥odzony;153;0.3;0.2;37.8
-Døem wiúniowy niskos≥odzony;154;0.4;0.2;37.5
+D≈ºem jagodowy niskos≈Çodzony;153;0.3;0.2;38.2
+D≈ºem ≈õliwkowy niskos≈Çodzony;153;0.3;0.1;37.9
+D≈ºem truskawkowy niskos≈Çodzony;153;0.3;0.2;37.8
+D≈ºem wi≈õniowy niskos≈Çodzony;154;0.4;0.2;37.5
 Ekstrakt z wanilii;288;0.03;0;14
 Estragon;295;23;7.2;50
-Fasola bia≥a suche nasiona;288;21.4;1.6;61.6
-Fasola ciÍta. konserwowa. bez zalewy;16;1.5;0.2;4.5
+Fasola bia≈Ça suche nasiona;288;21.4;1.6;61.6
+Fasola ciƒôta. konserwowa. bez zalewy;16;1.5;0.2;4.5
 Fasola szparagowa;27;2.4;0.2;7.6
-Fasolka szparagowa. mroøonka;24;2.2;0.2;6.8
+Fasolka szparagowa. mro≈ºonka;24;2.2;0.2;6.8
 Figi suszone;290;3.6;1.2;78
 Filet z makreli w sosie pomidorowym;150;13.1;9;4
-Flπdra úwieøa;83;16.5;1.8;0
-Ga≥ka muszkato≥owa;475;6.7;32;50
-Goüdzik;323;6;20;61
+FlƒÖdra ≈õwie≈ºa;83;16.5;1.8;0
+Ga≈Çka muszkato≈Çowa;475;6.7;32;50
+Go≈∫dzik;323;6;20;61
 Grahamka;252;9;1.7;56.1
 Granat;83;1.7;1.2;18.7
 Grejpfrut;36;0.6;0.2;9.8
@@ -87,15 +87,15 @@ Groszek zielony;75;6.7;0.4;17
 Groszek zielony konserwowy;63;4.9;0.2;15.8
 Gruszka;54;0.6;0.2;14.4
 Grzyby suszone;284;9.3;0.7;73
-Halibut úwieøy;98;20.1;1.9;0
+Halibut ≈õwie≈ºy;98;20.1;1.9;0
 Herbata bez cukru;0;0.1;0;0
 Imbir;347;9.1;6;71
-Jab≥ka suszone;238;2.1;2.1;62.3
-Jab≥ko;46;0.4;0.4;12.1
+Jab≈Çka suszone;238;2.1;2.1;62.3
+Jab≈Çko;46;0.4;0.4;12.1
 Jagody;45;0.8;0.6;12.2
 Jajko kurze;139;12.5;9.7;0.6
-Jajko przepiÛrcze;158;13;11;0.4
-Jarmuø;29;3.3;0.7;6.1
+Jajko przepi√≥rcze;158;13;11;0.4
+Jarmu≈º;29;3.3;0.7;6.1
 Jogurt naturalny 2%;60;4.3;2;6.2
 Kabanos;326;27.4;24.3;0
 Kabanos z kurczaka;247;22.8;17.4;0.1
@@ -104,59 +104,59 @@ Kakao w proszku 16%;448;18.2;21.7;50.6
 Kalafior;22;2.4;0.2;5
 Kalarepa;29;2.2;0.3;6.5
 Kapary;23;2.4;0.9;4.9
-Kapusta bia≥a;29;1.7;0.2;7.4
+Kapusta bia≈Ça;29;1.7;0.2;7.4
 Kapusta czerwona;27;1.9;0.2;6.7
 Kapusta kwaszona;12;1.1;0.2;3.4
-Kapusta pekiÒska;12;1.2;0.2;3.2
-Kapusta w≥oska;38;3.3;0.4;7.8
+Kapusta peki≈Ñska;12;1.2;0.2;3.2
+Kapusta w≈Çoska;38;3.3;0.4;7.8
 Kardamon;311;11;6.7;68
-Karp úwieøy;110;18;4.2;0
+Karp ≈õwie≈ºy;110;18;4.2;0
 Kasza gryczana;336;12.6;3.1;69.3
 Kasza jaglana;346;10.5;2.9;71.6
-Kasza jÍczmienna pÍczak;334;8.4;2;74.9
-Kasza jÍczmienna per≥owa;327;6.9;2.2;75
+Kasza jƒôczmienna pƒôczak;334;8.4;2;74.9
+Kasza jƒôczmienna per≈Çowa;327;6.9;2.2;75
 Kasza kukurydziana;337;8;1.7;72
 Kasza manna;348;8.7;1.3;76.7
-Kaszanka jÍczmienna;195;8.5;12.6;13
+Kaszanka jƒôczmienna;195;8.5;12.6;13
 Kawa bez cukru;2;0.2;0;0.3
 Keczup;93;1.8;1;22.2
 Kefir 2%;51;3.4;2;4.7
 Kefir 2% z wapniem;51;3.4;2;4.7
-Kie≥basa delikatesowa z kurczaka;109;19.6;3.3;0.1
-Kie≥basa domowa;320;14.7;29.2;0.5
-Kie≥basa ja≥owcowa z kurczaka;236;19;17.9;0.1
-Kie≥basa kanapkowa z kurczaka;179;11.8;13.5;3
-Kie≥basa lubuska;249;17.5;18;4.8
-Kie≥basa parÛwkowa;323;11;31.5;0
-Kie≥basa podlaska z kurczaka;232;20.7;16.7;0.1
-Kie≥basa podsuszana z kurczaka;162;21.7;8.4;0
-Kie≥basa podwawelska;247;17.3;19.6;0.9
-Kie≥basa rzeszowska;203;20.9;13.4;0
-Kie≥basa úlπska;210;18.4;15.3;0
-Kie≥basa sucha krakowska;323;25.6;24.8;0
-Kie≥basa sucha myúliwska;291;27.8;20.1;0
-Kie≥basa szynkowa z kurczaka;110;16.2;5;0
-Kie≥basa toruÒska;263;20.9;20.1;0
-Kie≥basa zwyczajna;209;17.6;15.6;0
-Kie≥basa øywiecka;315;20.3;26.3;0
-Kie≥baski bawarskie;308;15.5;27.7;0.1
-Kie≥ki bambusa;20;1.1;0.6;2
-Kie≥ki broku≥a;57;5;0;6.8
-Kie≥ki buraka;37;1.6;0.2;9.6
-Kie≥ki fasoli mung;29;3;0.4;6.2
-Kie≥ki lucerny;23;4;0.7;2.1
-Kie≥ki rzodkiewki;43;3.8;2.5;3.6
-Kie≥ki s≥onecznika;31;3.4;0.7;4
-Kie≥ki soczewicy;119;9;0.6;22.1
-Kie≥ki soi;141;13.1;6.7;9.6
+Kie≈Çbasa delikatesowa z kurczaka;109;19.6;3.3;0.1
+Kie≈Çbasa domowa;320;14.7;29.2;0.5
+Kie≈Çbasa ja≈Çowcowa z kurczaka;236;19;17.9;0.1
+Kie≈Çbasa kanapkowa z kurczaka;179;11.8;13.5;3
+Kie≈Çbasa lubuska;249;17.5;18;4.8
+Kie≈Çbasa par√≥wkowa;323;11;31.5;0
+Kie≈Çbasa podlaska z kurczaka;232;20.7;16.7;0.1
+Kie≈Çbasa podsuszana z kurczaka;162;21.7;8.4;0
+Kie≈Çbasa podwawelska;247;17.3;19.6;0.9
+Kie≈Çbasa rzeszowska;203;20.9;13.4;0
+Kie≈Çbasa ≈õlƒÖska;210;18.4;15.3;0
+Kie≈Çbasa sucha krakowska;323;25.6;24.8;0
+Kie≈Çbasa sucha my≈õliwska;291;27.8;20.1;0
+Kie≈Çbasa szynkowa z kurczaka;110;16.2;5;0
+Kie≈Çbasa toru≈Ñska;263;20.9;20.1;0
+Kie≈Çbasa zwyczajna;209;17.6;15.6;0
+Kie≈Çbasa ≈ºywiecka;315;20.3;26.3;0
+Kie≈Çbaski bawarskie;308;15.5;27.7;0.1
+Kie≈Çki bambusa;20;1.1;0.6;2
+Kie≈Çki broku≈Ça;57;5;0;6.8
+Kie≈Çki buraka;37;1.6;0.2;9.6
+Kie≈Çki fasoli mung;29;3;0.4;6.2
+Kie≈Çki lucerny;23;4;0.7;2.1
+Kie≈Çki rzodkiewki;43;3.8;2.5;3.6
+Kie≈Çki s≈Çonecznika;31;3.4;0.7;4
+Kie≈Çki soczewicy;119;9;0.6;22.1
+Kie≈Çki soi;141;13.1;6.7;9.6
 Kiwi;56;0.9;0.5;13.9
 Kminek;333;20;15;50
 Kolendra;279;22;4.8;52
-Komosa ryøowa - quinoa;334;14.8;5;58.5
-Komosa ryøowa - Quinoa;334;15;5;58
+Komosa ry≈ºowa - quinoa;334;14.8;5;58.5
+Komosa ry≈ºowa - Quinoa;334;15;5;58
 Koncentrat pomidorowy 30%;92;5.6;1.5;16.7
 Koperek;26;2.8;0.4;6.1
-Kostka roso≥owa RosÛ≥ z kury z pietruszkπ i lubczykiem ;300;10;20;10
+Kostka roso≈Çowa Ros√≥≈Ç z kury z pietruszkƒÖ i lubczykiem ;300;10;20;10
 Krewetka tygrysia;92;22;0;1
 Kukurydza kolba;110;3.7;1.5;23.4
 Kukurydza konserwowa;102;2.9;1.2;23.6
@@ -166,86 +166,86 @@ Kurkuma;354;7.8;9.9;65
 Len mielony;253;40;9;3
 Len w nasionach;500;24.5;31;35
 Limonka;30;0.7;0.2;10.5
-Liúcie miÍty;77;3.8;0.94;15
-LiúÊ laurowy;313;7.6;8.4;75
-£osoú smaøony;380;21.2;31.4;4
-£osoú úwieøy;201;19.9;13.6;0
-£osoú wÍdzony;162;21.5;8.4;0
+Li≈õcie miƒôty;77;3.8;0.94;15
+Li≈õƒá laurowy;313;7.6;8.4;75
+≈Åoso≈õ sma≈ºony;380;21.2;31.4;4
+≈Åoso≈õ ≈õwie≈ºy;201;19.9;13.6;0
+≈Åoso≈õ wƒôdzony;162;21.5;8.4;0
 Magii;17;2.7;0;1.5
 Majeranek;271;13;7;61
 Majonez;714;1.3;79;2.6
 Mak;478;20.1;42.9;24.7
-Mπka kukurydziana;337;5.9;3;78
-Mπka pszenna typ 1850;309;11.9;2.3;70
-Mπka pszenna typ 500;343;10.1;1.2;74
-Mπka pszenna typ 550;344;10.5;1.6;73
-Mπka pszenna typ 750;341;11.6;1.8;71.3
+MƒÖka kukurydziana;337;5.9;3;78
+MƒÖka pszenna typ 1850;309;11.9;2.3;70
+MƒÖka pszenna typ 500;343;10.1;1.2;74
+MƒÖka pszenna typ 550;344;10.5;1.6;73
+MƒÖka pszenna typ 750;341;11.6;1.8;71.3
 Makaron bezjajeczny;364;11;1.6;77.6
 Makaron czterojajeczny;391;13.2;3.4;78.3
 Makaron dwujajeczny;373;12;2.6;76.8
-Makaron farfalline pe≥noziarnisty z 5 zbÛø;351;14.4;2.5;63.8
-Makaron penne pe≥noziarnisty;345;15.2;1.3;68
+Makaron farfalline pe≈Çnoziarnisty z 5 zb√≥≈º;351;14.4;2.5;63.8
+Makaron penne pe≈Çnoziarnisty;345;15.2;1.3;68
 Makaron rurki (z pszenicy Durum);350;12;1.5;72.1
-Makaron ryøowy;356;6.8;0.7;83
+Makaron ry≈ºowy;356;6.8;0.7;83
 Makaron spaghetti razowy;354;13;2.5;66.5
-Mπka ryøowa;348;7.2;0.7;79.2
-Mπka øytnia typ 1400;310;7.1;2.2;75.3
-Mπka øytnia typ 2000;301;8.1;2.2;74
-Mπka øytnia typ 580;330;5.1;1.5;78.5
-Mπka øytnia typ 720;327;5.9;1.7;77.4
-Makrela úwieøa;181;18.7;11.9;0
-Makrela wÍdzona;221;20.7;15.5;0
+MƒÖka ry≈ºowa;348;7.2;0.7;79.2
+MƒÖka ≈ºytnia typ 1400;310;7.1;2.2;75.3
+MƒÖka ≈ºytnia typ 2000;301;8.1;2.2;74
+MƒÖka ≈ºytnia typ 580;330;5.1;1.5;78.5
+MƒÖka ≈ºytnia typ 720;327;5.9;1.7;77.4
+Makrela ≈õwie≈ºa;181;18.7;11.9;0
+Makrela wƒôdzona;221;20.7;15.5;0
 Maliny;29;1.3;0.3;12
 Mandarynki;42;0.6;0.2;11.2
 Mango;67;0.5;0.3;17
 Marchewka;27;1;0.2;8.7
-Marchewka z groszkiem. mroøonka;39;2.6;0.3;10.4
+Marchewka z groszkiem. mro≈ºonka;39;2.6;0.3;10.4
 Marchewki mini;41;1;0;9
-Maúlanka 0.5 %;37;3.4;0.5;4.7
-Mas≥o ekstra;735;0.7;82.5;0.7
-Mas≥o klarowane;883;0;99;0
-Mas≥o orzechowe;634;26.6;53;8.5
-Mas≥o úmietankowe;659;1.1;73.5;1.1
+Ma≈õlanka 0.5 %;37;3.4;0.5;4.7
+Mas≈Ço ekstra;735;0.7;82.5;0.7
+Mas≈Ço klarowane;883;0;99;0
+Mas≈Ço orzechowe;634;26.6;53;8.5
+Mas≈Ço ≈õmietankowe;659;1.1;73.5;1.1
 Melon;36;0.9;0.3;8.4
-Mieszanka mπk gryczanej. ryøowej lub owsianej;351;11.7;2.7;70.7
-Mieszanka warzywna z kurczakiem. ryøem i grzybami chiÒskimi. mroøonka;87;4.3;2.4;13.3
-Mieszanka ziÛ≥;1;0;0.1;0
-MiÍta pieprzowa;77;3.8;0.94;15
-Migda≥y;572;20;52;20.5
+Mieszanka mƒÖk gryczanej. ry≈ºowej lub owsianej;351;11.7;2.7;70.7
+Mieszanka warzywna z kurczakiem. ry≈ºem i grzybami chi≈Ñskimi. mro≈ºonka;87;4.3;2.4;13.3
+Mieszanka zi√≥≈Ç;1;0;0.1;0
+Miƒôta pieprzowa;77;3.8;0.94;15
+Migda≈Çy;572;20;52;20.5
 Miks ulubionych warzwy;38;1.9;0.3;8.8
-Mintaj úwieøy;73;16.6;0.6;0
-MiÛd pszczeli;324;0.3;0;79.5
+Mintaj ≈õwie≈ºy;73;16.6;0.6;0
+Mi√≥d pszczeli;324;0.3;0;79.5
 Mleko kokosowe w puszce;203;2.1;18;8.1
 Mleko kozie 2%;68;3.2;4.1;4.5
 Mleko owcze;107;6;7;5.1
 Mleko sojowe;41;6;1.4;4.3
-Mleko spoøywcze 2.0%;51;3.4;2;4.9
-Mleko w proszku pe≥ne;479;27;24;38.7
-Mleko zagÍszczone nies≥odzone;131;6.6;7.5;9.4
-Mleko zagÍszczone s≥odzone;326;7.5;8;55.3
-M≥ody jÍczmieÒ proszek;320;52;2;21
+Mleko spo≈ºywcze 2.0%;51;3.4;2;4.9
+Mleko w proszku pe≈Çne;479;27;24;38.7
+Mleko zagƒôszczone nies≈Çodzone;131;6.6;7.5;9.4
+Mleko zagƒôszczone s≈Çodzone;326;7.5;8;55.3
+M≈Çody jƒôczmie≈Ñ proszek;320;52;2;21
 Morele;47;0.9;0.2;11.9
 Morele suszone;284;5.4;1.2;72.2
-Morszczuk úwieøy;89;17.2;2.2;0
-Mus jab≥kowy;124;2.2;0.2;28.7
+Morszczuk ≈õwie≈ºy;89;17.2;2.2;0
+Mus jab≈Çkowy;124;2.2;0.2;28.7
 Musli z orzechami i rodzynkami;375;11.5;12.7;62.9
 Musli z suszonymi owocami;325;8.4;3.4;72.2
 Musztarda;162;5.7;6.4;22
-NapÛj kokosowy w kartonie;30;0.1;2;3.5
+Nap√≥j kokosowy w kartonie;30;0.1;2;3.5
 Nasiona Chia;490;16;31;44
 Natka pietruszki;41;4.4;0.4;9
 Nektarynka;48;0.9;0.2;11.8
 Ocet balsamiczny;116;0;0;0.7
-Ocet jab≥kowy;24;0;0;6
+Ocet jab≈Çkowy;24;0;0;6
 Ocet winny;20;0;0;5
-OgÛrek;13;0.7;0.1;2.9
-OgÛrek kiszony;11;1;0.1;1.9
-OgÛrek konserwowy;23;0.4;0.1;4.9
-OgÛrek kwaszony;11;1;0.1;1.9
-OgÛrki konserwowe;24;0.3;0.1;5.6
+Og√≥rek;13;0.7;0.1;2.9
+Og√≥rek kiszony;11;1;0.1;1.9
+Og√≥rek konserwowy;23;0.4;0.1;4.9
+Og√≥rek kwaszony;11;1;0.1;1.9
+Og√≥rki konserwowe;24;0.3;0.1;5.6
 Olej kokosowy;900;0;100;0
 Olej rzepakowy;884;0;100;0
-Olej s≥onecznikowy;884;0;100;0
+Olej s≈Çonecznikowy;884;0;100;0
 Oliwa z oliwek;882;0;99.6;0.2
 Oliwki czarne;125;1.4;12.7;4.1
 Oliwki zielone marynowane;125;1.4;12.7;4.1
@@ -255,10 +255,10 @@ Orzechy brazylijskie;656;14;66;4
 Orzechy laskowe;640;14.4;63;14.9
 Orzechy piniowe;673;16.7;68.4;13
 Orzechy pistacjowe;589;20.5;48.5;25
-Orzechy w≥oskie;645;16;60.3;18
+Orzechy w≈Çoskie;645;16;60.3;18
 Orzechy ziemne;603;26;50;14
 Ostra papryka;0.4;0.02;0;0.09
-OtrÍby pszenne;185;16;4.6;61.9
+Otrƒôby pszenne;185;16;4.6;61.9
 Paluszek krabowy;113;6.5;2.2;16.8
 Papaja;41;0.6;0.1;11.1
 Papryka czerwona;28;1.3;0.5;6.6
@@ -270,200 +270,200 @@ Pasztet pieczony;390;17;31.2;13.5
 Pasztet podlaski z kurczaka;228;6.7;21.1;3.6
 Pasztet z kurczaka;214;14.4;14.3;7.5
 Pestki dyni;556;24.5;45.8;18
-Pestki s≥onecznika;561;24.4;43.7;24.6
+Pestki s≈Çonecznika;561;24.4;43.7;24.6
 Pesto;340;3.7;34.6;6.3
 Pieczarki;17;2.7;0.4;2.6
 Pieczarki marynowane konserwowe;19;2.3;0.4;4.3
-PieczeÒ wo≥owa;117;20.9;3.6;0
-Pieczona polÍdwica wo≥owa;168;19.7;9.9;0
+Piecze≈Ñ wo≈Çowa;117;20.9;3.6;0
+Pieczona polƒôdwica wo≈Çowa;168;19.7;9.9;0
 Pieczywo tostowe;305;8.1;4.7;58.8
 Pieczywo tostowe grahamowe;273;7.5;4.2;53.8
 Pieczywo Wasa;370;10;3;70
-Pieprz bia≥y;296;10;2.1;69
+Pieprz bia≈Çy;296;10;2.1;69
 Pieprz czarny;318;11;3.3;65
 Pieprz czerwony;318;12;17;57
-Pierú indyka bez skÛry;84;19.2;0.7;0
-Pierú indyka ze skÛrπ;100;18.7;2.7;0
-Pierú kurczaka bez skÛry;99;21.5;1.3;0
+Pier≈õ indyka bez sk√≥ry;84;19.2;0.7;0
+Pier≈õ indyka ze sk√≥rƒÖ;100;18.7;2.7;0
+Pier≈õ kurczaka bez sk√≥ry;99;21.5;1.3;0
 Pietruszka;38;2.6;0.5;10.5
 Pikle konserwowe;62;1.3;0.2;15.5
-P≥atki jaglane;361;10;4;69
-P≥atki jÍczmienne;355;9.8;3.6;79.4
-P≥atki kukurydziane;363;6.9;2.5;83.6
-P≥atki migda≥owe;581;22;51;10
-P≥atki owsiane;366;11.9;7.2;69.3
-P≥atki pszenne;351;9;3;81
-P≥atki ryøowe;344;6.7;0.7;78.9
-P≥atki øytnie;343;6.4;3.2;82.6
-Podudzie indyka bez skÛry;100;16.6;3.7;0
-PolÍdwica ≥ososiowa;106;20;2;2
-PolÍdwica luksusowa;177;19.5;10;2.4
-PolÍdwica sopocka;165;19.9;9.1;0.9
-PolÍdwica wo≥owa;113;20.1;3.5;0
-PolÍdwica z indyka;105;15.8;4.6;0.1
-PolÍdwica z piersi kurczaka;93;20.4;1.2;0
-PomaraÒcza;44;0.9;0.2;11.3
+P≈Çatki jaglane;361;10;4;69
+P≈Çatki jƒôczmienne;355;9.8;3.6;79.4
+P≈Çatki kukurydziane;363;6.9;2.5;83.6
+P≈Çatki migda≈Çowe;581;22;51;10
+P≈Çatki owsiane;366;11.9;7.2;69.3
+P≈Çatki pszenne;351;9;3;81
+P≈Çatki ry≈ºowe;344;6.7;0.7;78.9
+P≈Çatki ≈ºytnie;343;6.4;3.2;82.6
+Podudzie indyka bez sk√≥ry;100;16.6;3.7;0
+Polƒôdwica ≈Çososiowa;106;20;2;2
+Polƒôdwica luksusowa;177;19.5;10;2.4
+Polƒôdwica sopocka;165;19.9;9.1;0.9
+Polƒôdwica wo≈Çowa;113;20.1;3.5;0
+Polƒôdwica z indyka;105;15.8;4.6;0.1
+Polƒôdwica z piersi kurczaka;93;20.4;1.2;0
+Pomara≈Ñcza;44;0.9;0.2;11.3
 Pomidor;15;0.9;0.2;3.6
 Pomidory koktajlowe;15;0.9;0.2;3.6
 Pomidory z puszki;23;1.3;0.2;4
 Por;24;2.2;0.3;5.7
-Porzeczki bia≥e;33;1;0.2;13.1
+Porzeczki bia≈Çe;33;1;0.2;13.1
 Porzeczki czarne;35;1.3;0.2;14.9
 Porzeczki czerwone;31;1.1;0.2;13.8
-Powid≥a úliwkowe;214;1;0.2;53
+Powid≈Ça ≈õliwkowe;214;1;0.2;53
 Poziomki;33;0.8;0.5;8.3
 Proszek do pieczenia;97;0.1;0.4;47
 Przecier pomidorowy;25;1.2;0.1;4.5
 Przyprawa do drobiu;307;9.6;7.5;66
 Przyprawa do ryb;307;9.6;7.5;66
 "Przyprawa ""Jarzynka""";90;1.9;0.4;23.3
-Pstrπg strumieniowy úwieøy;97;19.2;2.1;0
-Pstrπg tÍczowy úwieøy;160;18.6;9.6;0
-Pstrπg wÍdzony;117;19.4;4.4;0.2
+PstrƒÖg strumieniowy ≈õwie≈ºy;97;19.2;2.1;0
+PstrƒÖg tƒôczowy ≈õwie≈ºy;160;18.6;9.6;0
+PstrƒÖg wƒôdzony;117;19.4;4.4;0.2
 Pumpernikiel;240;5.9;2;58.2
 Rabarbar;9;0.5;0.1;4.6
 Rodzynki suszone;277;2.3;0.5;71.2
-Rostbef wo≥owy;152;21.5;7.3;0
+Rostbef wo≈Çowy;152;21.5;7.3;0
 Rozmaryn;331;4.9;15;64
 Rukola;25;2.6;0.7;3.7
-Ryø bia≥y;344;6.7;0.7;78.9
-Ryø brπzowy;322;7.1;1.9;76.8
+Ry≈º bia≈Çy;344;6.7;0.7;78.9
+Ry≈º brƒÖzowy;322;7.1;1.9;76.8
 Rzepa;26;1.1;0.3;8.2
-Rzeøucha;32;2.6;0.7;5.5
+Rze≈ºucha;32;2.6;0.7;5.5
 Rzodkiewka;14;1;0.2;4.4
 Salami;540;21.9;50.6;0.9
 Salami popularne;568;21.6;53.7;1.4
 Salami z pieprzem;405;17;37;1
-Sa≥ata;14;1.4;0.2;2.9
-Sa≥ata lodowa;14;0.9;0.1;3
-Sa≥ata rzymska;17;1.2;0;3
-Sandacz úwieøy;84;19.2;0.7;0
+Sa≈Çata;14;1.4;0.2;2.9
+Sa≈Çata lodowa;14;0.9;0.1;3
+Sa≈Çata rzymska;17;1.2;0;3
+Sandacz ≈õwie≈ºy;84;19.2;0.7;0
 Sardynki w oleju;221;24.1;13.9;0
 Sardynki w pomidorach;162;17;9.9;1.4
 Schab pieczony;291;30.4;18.7;0.7
 Seler konserwowy;17;0.7;0.1;5.4
 Seler korzeniowy;21;1.6;0.3;7.7
 Seler naciowy;13;1;0.2;3.6
-Ser Brie pe≥not≥usty;329;19.8;28;0.2
-Ser Camembert pe≥not≥usty;291;21.4;23;0.2
-Ser Cheddar pe≥not≥usty;391;27.1;31.7;0.1
-Ser Edamski pe≥not≥usty;313;26.1;23.4;0.1
+Ser Brie pe≈Çnot≈Çusty;329;19.8;28;0.2
+Ser Camembert pe≈Çnot≈Çusty;291;21.4;23;0.2
+Ser Cheddar pe≈Çnot≈Çusty;391;27.1;31.7;0.1
+Ser Edamski pe≈Çnot≈Çusty;313;26.1;23.4;0.1
 Serek homogenizowany;161;12.7;11;3
 Serek homogenizowany waniliowy;159;16.8;4.2;13.3
 Serek twarogowy ziarnisty;101;12.3;4.3;3.3
 "Serek typu ""Fromage"" naturalny";379;10.2;37.1;2.4
-Ser Ementaler pe≥not≥usty;380;28.8;29.7;0.1
-Ser Gouda pe≥not≥usty;316;27.9;22.9;0.1
+Ser Ementaler pe≈Çnot≈Çusty;380;28.8;29.7;0.1
+Ser Gouda pe≈Çnot≈Çusty;316;27.9;22.9;0.1
 Ser kozi;388;21.4;33.9;0
-Ser kozi. twaroøek;168;8.7;14;4
+Ser kozi. twaro≈ºek;168;8.7;14;4
 Ser Mascarpone;394;3.5;40;5.1
 Ser mozzarella;254;24;16;3
 Ser mozzarella light;157;19;8.5;1
 Ser Parmezan;452;41.5;32;0.1
 Ser Radamer;339;26.2;26;0.1
-Ser Rokpol pe≥not≥usty;363;22.6;30.6;0.1
-Ser Salami pe≥not≥usty;351;25.2;28.1;0.1
+Ser Rokpol pe≈Çnot≈Çusty;363;22.6;30.6;0.1
+Ser Salami pe≈Çnot≈Çusty;351;25.2;28.1;0.1
 Ser topiony;298;13.5;27;1.2
-Ser TrapistÛw pe≥not≥usty;367;23.5;30.7;0.1
-Ser TrapistÛw t≥usty;351;28;26.8;0.1
+Ser Trapist√≥w pe≈Çnot≈Çusty;367;23.5;30.7;0.1
+Ser Trapist√≥w t≈Çusty;351;28;26.8;0.1
 Ser twarogowy chudy;99;19.8;0.5;3.5
-Ser twarogowy pÛ≥t≥usty;133;18.7;4.7;3.7
-Ser twarogowy t≥usty;175;17.7;10.1;3.5
-Ser Tyløycki pe≥not≥usty;353;26.1;27.9;0.1
+Ser twarogowy p√≥≈Çt≈Çusty;133;18.7;4.7;3.7
+Ser twarogowy t≈Çusty;175;17.7;10.1;3.5
+Ser Tyl≈ºycki pe≈Çnot≈Çusty;353;26.1;27.9;0.1
 "Ser typu ""Feta""";215;17;16;1
 Sezam;632;23.2;59.9;10
 Siemie lniane;534;18;42;29
-SkÛrka cytrynowa;120;1.6;0.2;25
+Sk√≥rka cytrynowa;120;1.6;0.2;25
 Skrobia kukurydziana;353;0.2;0;88.5
 Skrobia ziemniaczana;343;0.6;0.1;83.9
-åledü solony;217;19.8;15.4;0
-åledü w oleju;301;16.4;26.5;0
-åliwka;45;0.6;0.2;11.7
-åliwki suszone;267;3.5;1.2;68.9
-S≥odki ziemniak (batat);86;1.6;0.1;20
-åmietana. 12% t≥uszczu;133;2.7;12;3.9
-åmietana. 18% t≥uszczu;184;2.5;18;3.6
-åmietanka kremowa 30%;287;2.2;30;3.1
+≈öled≈∫ solony;217;19.8;15.4;0
+≈öled≈∫ w oleju;301;16.4;26.5;0
+≈öliwka;45;0.6;0.2;11.7
+≈öliwki suszone;267;3.5;1.2;68.9
+S≈Çodki ziemniak (batat);86;1.6;0.1;20
+≈ömietana. 12% t≈Çuszczu;133;2.7;12;3.9
+≈ömietana. 18% t≈Çuszczu;184;2.5;18;3.6
+≈ömietanka kremowa 30%;287;2.2;30;3.1
 Soczewica czerwona suche nasiona;327;25.4;3;57.5
 Soja suche nasiona;382;34.3;19.6;32.7
 Sok ananasowy;48;0.3;0.1;11.4
-Sok brzoskwiniowo pomaraÒczowy;32;0.7;0.1;7.4
+Sok brzoskwiniowo pomara≈Ñczowy;32;0.7;0.1;7.4
 Sok buraczany;34;0.8;0.2;7.6
 Sok cytrynowy;30;0.4;0.3;6.4
 Sok egzotyczny;57;0.8;0.3;12.7
 Sok grejpfrutowy;40;0.5;0.1;9.2
-Sok jab≥kowy;42;0.1;0.1;10
+Sok jab≈Çkowy;42;0.1;0.1;10
 Sok marchwiowo brzoskwiniowy;44;0.5;0.1;11.3
-Sok marchwiowo jab≥kowo bananowy;39;0.3;0.1;10.2
-Sok marchwiowo jab≥kowo úliwkowy;39;0.4;0.2;10.2
-Sok marchwiowo jab≥kowy;44;0.5;0.2;12.1
-Sok marchwiowo pomaraÒczowy;40;0.6;0.1;10.8
+Sok marchwiowo jab≈Çkowo bananowy;39;0.3;0.1;10.2
+Sok marchwiowo jab≈Çkowo ≈õliwkowy;39;0.4;0.2;10.2
+Sok marchwiowo jab≈Çkowy;44;0.5;0.2;12.1
+Sok marchwiowo pomara≈Ñczowy;40;0.6;0.1;10.8
 Sok marchwiowy;43;0.4;0.1;11.3
-Sok pomaraÒczowo grejpfrutowy;43;0.6;0.1;9.8
-Sok pomaraÒczowy;43;0.6;0.1;9.9
+Sok pomara≈Ñczowo grejpfrutowy;43;0.6;0.1;9.8
+Sok pomara≈Ñczowy;43;0.6;0.1;9.9
 Sok pomidorowy;14;0.8;0.2;3.3
 Sok wieloowocowy;45;0.2;0.1;10.9
 Sok wielowarzywny;25;1;0.3;5.7
-SÛl;0;0;0;0
-Sola úwieøa;83;17.5;1.4;0
-SÛl czosnkowa;9;4.3;1.2;1.9
+S√≥l;0;0;0;0
+Sola ≈õwie≈ºa;83;17.5;1.4;0
+S√≥l czosnkowa;9;4.3;1.2;1.9
 Sos sojowy;0;0.6;0;0.3
-Starta skÛrka z pomaraÒczy;120;1.6;0.2;25
+Starta sk√≥rka z pomara≈Ñczy;120;1.6;0.2;25
 Suszone pomidory;215;5;14;23
 Syrop klonowy;265;0.1;0.1;63
 Szafran;310;11;5.9;65
-Sza≥wia;315;11;13;61
+Sza≈Çwia;315;11;13;61
 Szczaw;21;1.1;0.8;4.9
-Szczupak úwieøy;82;18.4;0.8;0
+Szczupak ≈õwie≈ºy;82;18.4;0.8;0
 Szczypiorek;29;4.1;0.8;3.9
 Szparagi;18;1.9;0.2;3.7
 Szpinak;16;2.6;0.4;3
-Szpinak. mroøonka;15;2.3;0.4;2.7
-Szponder wo≥owy;217;19.3;15.7;0
-Szprotka wÍdzona;243;19.3;18.3;0
+Szpinak. mro≈ºonka;15;2.3;0.4;2.7
+Szponder wo≈Çowy;217;19.3;15.7;0
+Szprotka wƒôdzona;243;19.3;18.3;0
 Szynka delikatesowa z kurczaka;123;18.2;5.6;0
 Szynka kanapkowa;102;14.2;4.4;1.4
-Szynka parmeÒska;135;26;3;1
+Szynka parme≈Ñska;135;26;3;1
 Szynka wiejska;253;17.1;20.3;0.9
 Szynka wieprzowa gotowana;233;16.4;18.3;1
-Szynka wo≥owa gotowana;107;20.9;2;1.1
+Szynka wo≈Çowa gotowana;107;20.9;2;1.1
 Szynka z indyka;84;17.1;1.6;0.1
 Szynka z piersi kurczaka;98;21.2;1.2;0.2
-Szynka z udüca kurczaka;117;17.2;5.3;0
-SzynkÛwka wieprzowa;191;13.6;14.7;1.4
-SzynkÛwka wo≥owa;85;16.2;1.5;1.4
+Szynka z ud≈∫ca kurczaka;117;17.2;5.3;0
+Szynk√≥wka wieprzowa;191;13.6;14.7;1.4
+Szynk√≥wka wo≈Çowa;85;16.2;1.5;1.4
 Tofu;112;12;6;3
 Truskawki;28;0.7;0.4;7.2
-TuÒczyk w oleju;190;27.1;9;0
-TuÒczyk w sosie w≥asnym;96;21;1.2;0
+Tu≈Ñczyk w oleju;190;27.1;9;0
+Tu≈Ñczyk w sosie w≈Çasnym;96;21;1.2;0
 Tymianek;276;9.1;7.4;64
-Udko kurczaka bez skÛry;125;17.8;6;0
-Udko kurczaka ze skÛrπ;158;16.8;10.2;0
-Udziec indyka bez skÛry;104;19.4;2.8;0
-Udziec indyka ze skÛrπ;131;18.4;6.4;0
-Wafle ryøowe;390;8;3;81
-WπtrÛbka kurczaka;136;19.1;6.3;0.6
-WÍdzona pierú z kurczaka;107;23;0.5;0
-WÍdzonka wo≥owa gotowana;102;17.8;3.1;0.5
-Wieprzowina karkÛwka;267;16.1;22.8;0
-Wieprzowina ≥opatka;257;16;21.7;0
+Udko kurczaka bez sk√≥ry;125;17.8;6;0
+Udko kurczaka ze sk√≥rƒÖ;158;16.8;10.2;0
+Udziec indyka bez sk√≥ry;104;19.4;2.8;0
+Udziec indyka ze sk√≥rƒÖ;131;18.4;6.4;0
+Wafle ry≈ºowe;390;8;3;81
+WƒÖtr√≥bka kurczaka;136;19.1;6.3;0.6
+Wƒôdzona pier≈õ z kurczaka;107;23;0.5;0
+Wƒôdzonka wo≈Çowa gotowana;102;17.8;3.1;0.5
+Wieprzowina kark√≥wka;267;16.1;22.8;0
+Wieprzowina ≈Çopatka;257;16;21.7;0
 Wieprzowina schab surowy;174;21;10;0
-Wieprzowina øeberka;321;15.2;29.3;0
-Wino bia≥e pÛ≥wytrawne;81;0;0;3.7
-Wino bia≥e s≥odkie;95;0.2;0;5.9
-Wino bia≥e wytrawne;66;0.1;0;0.6
+Wieprzowina ≈ºeberka;321;15.2;29.3;0
+Wino bia≈Çe p√≥≈Çwytrawne;81;0;0;3.7
+Wino bia≈Çe s≈Çodkie;95;0.2;0;5.9
+Wino bia≈Çe wytrawne;66;0.1;0;0.6
 Wino czerwone;68;0.1;0;0.2
 Winogrona;69;0.5;0.2;17.6
-WiÛrki kokosowe;606;5.6;63.2;27
-Wiúnie;47;0.9;0.4;10.9
-W≥oszczyzna krojona w paski;25;1.4;0.3;7.9
+Wi√≥rki kokosowe;606;5.6;63.2;27
+Wi≈õnie;47;0.9;0.4;10.9
+W≈Çoszczyzna krojona w paski;25;1.4;0.3;7.9
 Woda;0;0;0;0
 Zarodki pszenne;323;27.5;9.4;45.5
-Øelatyna;343;84.2;0.1;0
+≈ªelatyna;343;84.2;0.1;0
 Ziele angielskie;263;6.1;8.7;72
 Ziemniaki;77;1.9;0.1;18.3
-Ziemniaki m≥ode;69;1.8;0.1;16.3
-Zio≥a prowansalskie;1;0;0.1;0
-ØÛ≥tko jajka kurzego;314;15.5;28.2;0.3
-Øurawina niskos≥odzona do miÍs;161;0.2;0.7;38.8
-Øurawina suszona;320;0.1;1.4;82.4
+Ziemniaki m≈Çode;69;1.8;0.1;16.3
+Zio≈Ça prowansalskie;1;0;0.1;0
+≈ª√≥≈Çtko jajka kurzego;314;15.5;28.2;0.3
+≈ªurawina niskos≈Çodzona do miƒôs;161;0.2;0.7;38.8
+≈ªurawina suszona;320;0.1;1.4;82.4

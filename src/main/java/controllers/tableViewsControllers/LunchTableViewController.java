@@ -34,16 +34,13 @@ public class LunchTableViewController {
     @FXML
     private Label fatLunchLabelController;
     @FXML
-    private Label kcaLunchLabelController;
+    private Label kcalLunchLabelController;
     @FXML
     private Label proteinsLunchLabelController;
     @FXML
     private Button lunchEditButtonController;
-    private static final String EDIT_BUTTON_JPG_FILE_PATH = "/img/edit-button.jpg";
-
     public void initialize(){
         setColumnsSettings();
-        setImage();
         editButtonListener();
     }
     public void addProductsToActualTableView(List<Product> productList) {
@@ -60,7 +57,7 @@ public class LunchTableViewController {
         proteinsLunchLabelController.setText(Double.toString((int) CaloriesCalculator.getProteinsFromMeal(daysMeals.getDaysListMap().get(days).get(0).getLunch())));
         carbsLunchLabelController.setText(Double.toString((int) CaloriesCalculator.getCarbohydratesFromMeal(daysMeals.getDaysListMap().get(days).get(0).getLunch())));
         fatLunchLabelController.setText(Double.toString((int) CaloriesCalculator.getFatFromMeal(daysMeals.getDaysListMap().get(days).get(0).getLunch())));
-        kcaLunchLabelController.setText(Double.toString((int) CaloriesCalculator.getCaloriesFromMeal(daysMeals.getDaysListMap().get(days).get(0).getLunch())));
+        kcalLunchLabelController.setText(Double.toString((int) CaloriesCalculator.getCaloriesFromMeal(daysMeals.getDaysListMap().get(days).get(0).getLunch())));
     }
     public Button getLunchEditButtonController() {
         return lunchEditButtonController;
@@ -104,10 +101,6 @@ public class LunchTableViewController {
         fatTableColumnController.setCellValueFactory(new PropertyValueFactory<>("fat"));
         proteinsTableColumnController.setCellValueFactory(new PropertyValueFactory<>("proteins"));
         carbsTableColumnController.setCellValueFactory(new PropertyValueFactory<>("carbohydrates"));
-    }
-    private void setImage() {
-        ImageView imageView = new ImageView(getClass().getResource(EDIT_BUTTON_JPG_FILE_PATH).toExternalForm());
-        lunchEditButtonController.setGraphic(imageView);
     }
     private void editButtonListener() {
         setOpacityLower();

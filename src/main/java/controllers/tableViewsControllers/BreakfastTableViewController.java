@@ -39,11 +39,10 @@ public class BreakfastTableViewController {
     private Label proteinsBreakfastLabelController;
     @FXML
     private Button breakfastEditButtonController;
-    private static final String EDIT_BUTTON_FILE_PATH = "/img/edit-button.jpg";
+
 
     public void initialize() {
         setColumnsSettings();
-        setImage();
         editButtonListener();
     }
     public void addProductsToActualTableView(List<Product> productList) {
@@ -104,10 +103,6 @@ public class BreakfastTableViewController {
         fatTableColumnController.setCellValueFactory(new PropertyValueFactory<>("fat"));
         proteinsTableColumnController.setCellValueFactory(new PropertyValueFactory<>("proteins"));
         carbsTableColumnController.setCellValueFactory(new PropertyValueFactory<>("carbohydrates"));
-    }
-    private void setImage() {
-        ImageView imageView = new ImageView(getClass().getResource(EDIT_BUTTON_FILE_PATH).toExternalForm());
-        breakfastEditButtonController.setGraphic(imageView);
     }
     private void editButtonListener() {
         setOpacityLower();

@@ -1,25 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="lunchTableView" prefHeight="137.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.tableViewsControllers.LunchTableViewController">
    <children>
-      <Label id="proteins-label" fx:id="proteinsLunchLabelController" alignment="CENTER" layoutX="270.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="17.0" prefWidth="70.0" text="0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="392.0" />
-      <Label id="carbs-label" fx:id="carbsLunchLabelController" alignment="CENTER" layoutX="280.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="17.0" prefWidth="70.0" text="0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="462.0" />
-      <Label id="fat-label" fx:id="fatLunchLabelController" alignment="CENTER" layoutX="280.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="17.0" prefWidth="70.0" text="0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="532.0" />
-      <Label id="kcal-label" fx:id="kcaLunchLabelController" alignment="CENTER" layoutX="280.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="17.0" prefWidth="80.0" text="0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="602.0" />
       <VBox prefHeight="20.0" prefWidth="630.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <HBox prefHeight="28.0" prefWidth="750.0">
                <children>
-                  <Label id="meal-label" fx:id="nameLabelController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="100" text="LUNCH -" HBox.hgrow="ALWAYS" />
-                  <Button id="edit-button" fx:id="lunchEditButtonController" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="23.0" prefWidth="95.0" textAlignment="CENTER" />
+                  <Label id="meal-label" fx:id="nameLabelController" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="28.0" prefWidth="100" style="-fx-text-fill: white;" text="LUNCH" HBox.hgrow="ALWAYS" />
+                  <ImageView id="table-view-label" fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/hide-table.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" prefHeight="28.0" prefWidth="66.0" style="-fx-text-fill: white; -fx-font-weight: bold;" text="13:00">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Button id="table-view-label" fx:id="lunchEditButtonController" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="23.0" prefWidth="40.0" style="-fx-background-color: #303030;" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../img/add-buttontest.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Label id="proteins-label" fx:id="proteinsLunchLabelController" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="17.0" prefWidth="50.0" text="0">
+                     <HBox.margin>
+                        <Insets left="150.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label prefHeight="17.0" prefWidth="15.0" style="-fx-text-fill: blue;" text="p" />
+                  <Label id="carbs-label" fx:id="carbsLunchLabelController" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="17.0" prefWidth="50.0" text="0">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label prefHeight="17.0" prefWidth="15.0" style="-fx-text-fill: green;" text="c" />
+                  <Label id="fat-label" fx:id="fatLunchLabelController" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="17.0" prefWidth="50.0" text="0">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label prefHeight="17.0" prefWidth="15.0" style="-fx-text-fill: chocolate;" text="f" />
+                  <Label id="kcal-label" fx:id="kcalLunchLabelController" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.6" prefHeight="17.0" prefWidth="50.0" text="0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label prefHeight="17.0" prefWidth="31.0" style="-fx-text-fill: black;" text="kcal" />
                </children>
             </HBox>
          </children>

@@ -256,7 +256,7 @@ public class MainEditPaneController {
         micronutrientsLabels.forEach(label -> label.setTextFill(Color.RED));
     }
     private void setCaloriesPaneBasic(List<Label> micronutrientsLabels) {
-        micronutrientsLabels.forEach(label -> label.setTextFill(Color.BLACK));
+        micronutrientsLabels.forEach(label -> label.setTextFill(Color.WHITE));
     }
     public void addAllProductToAllTableViews(DaysMeals products) {
         addAllProductToTableView(products.getMondayMeals(),Days.MONDAY);

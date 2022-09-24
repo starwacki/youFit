@@ -6,6 +6,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -15,7 +17,7 @@
    <children>
       <VBox layoutX="201.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="466.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="-19.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label alignment="CENTER" opacity="0.78" prefHeight="17.0" prefWidth="200.0" text="select products to add:">
+            <Label alignment="CENTER" opacity="0.78" prefHeight="17.0" prefWidth="200.0" style="-fx-text-fill: Gray Dolphin;" text="select products to add:">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin>
@@ -34,10 +36,29 @@
             <HBox prefHeight="31.0" prefWidth="200.0">
                <children>
                   <TextField fx:id="searchTextFieldController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="178.0" />
-                  <Button fx:id="searchButtonController" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="search" />
-                  <Button fx:id="changeListViewButtonController" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="123.0" text="personal products">
+                  <Label prefHeight="25.0" prefWidth="84.0" style="-fx-text-fill: white;" text="Search" wrapText="true">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../img/search-free-icon-font.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                      <HBox.margin>
-                        <Insets left="45.0" />
+                        <Insets left="8.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ImageView fitHeight="27.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="5.0" right="10.0" />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@../../img/strawberry-free-icon-font.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="changeListViewButtonController" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="132.0" style="-fx-background-color: linear-gradient(to right,#797979,  #4C4646); -fx-text-fill: white; -fx-font-weight: bold;" text="personal products">
+                     <HBox.margin>
+                        <Insets />
                      </HBox.margin>
                      <font>
                         <Font size="10.0" />
@@ -48,7 +69,7 @@
             <ListView fx:id="productsBaseListView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="155.0" prefWidth="445.0" />
             <HBox prefHeight="20.0" prefWidth="200.0">
                <children>
-                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="80.0" text="Weight:">
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="80.0" style="-fx-text-fill: white;" text="Weight:">
                      <HBox.margin>
                         <Insets top="9.0" />
                      </HBox.margin>
@@ -58,19 +79,26 @@
                         <Insets top="9.0" />
                      </HBox.margin>
                   </TextField>
+                  <Button id="edit-pane-button" fx:id="addProductToListViewButtonController" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="40.0" style="-fx-background-color: #303030;" wrapText="true">
+                     <HBox.margin>
+                        <Insets top="9.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../../img/edit-button.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                </children>
             </HBox>
             <HBox prefHeight="20.0" prefWidth="200.0" />
-            <Button fx:id="addProductToListViewButtonController" contentDisplay="CENTER" graphicTextGap="0.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="26.0" prefWidth="110.0">
-               <VBox.margin>
-                  <Insets left="40.0" />
-               </VBox.margin>
-            </Button>
          </children>
       </VBox>
       <VBox prefHeight="300.0" prefWidth="195.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label alignment="CENTER" opacity="0.78" prefHeight="17.0" prefWidth="200.0" text="percentage of macronutrients:">
+            <Label alignment="CENTER" opacity="0.78" prefHeight="17.0" prefWidth="200.0" style="-fx-text-fill: Gray Dolphin;" text="percentage of macronutrients:">
                <font>
                   <Font size="10.0" />
                </font>

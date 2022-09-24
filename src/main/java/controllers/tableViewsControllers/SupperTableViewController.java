@@ -34,16 +34,13 @@ public class SupperTableViewController {
     @FXML
     private Label fatSupperLabelController;
     @FXML
-    private Label kcaSupperLabelController;
+    private Label kcalSupperLabelController;
     @FXML
     private Label proteinsSupperLabelController;
     @FXML
     private Button supperEditButtonController;
-    private static final String EDIT_BUTTON_FILE_PATH = "/img/edit-button.jpg";
-
     public void initialize() {
         setColumnsSettings();
-        setImage();
         editButtonListener();
     }
     public void addProductsToActualTableView(List<Product> productList) {
@@ -60,7 +57,7 @@ public class SupperTableViewController {
         proteinsSupperLabelController.setText(Double.toString((int) CaloriesCalculator.getProteinsFromMeal(daysMeals.getDaysListMap().get(days).get(0).getSupper())));
         carbsSupperLabelController.setText(Double.toString((int) CaloriesCalculator.getCarbohydratesFromMeal(daysMeals.getDaysListMap().get(days).get(0).getSupper())));
         fatSupperLabelController.setText(Double.toString((int) CaloriesCalculator.getFatFromMeal(daysMeals.getDaysListMap().get(days).get(0).getSupper())));
-        kcaSupperLabelController.setText(Double.toString((int) CaloriesCalculator.getCaloriesFromMeal(daysMeals.getDaysListMap().get(days).get(0).getSupper())));
+        kcalSupperLabelController.setText(Double.toString((int) CaloriesCalculator.getCaloriesFromMeal(daysMeals.getDaysListMap().get(days).get(0).getSupper())));
     }
     public Button getSupperEditButtonController() {
         return supperEditButtonController;
@@ -104,10 +101,6 @@ public class SupperTableViewController {
         fatTableColumnController.setCellValueFactory(new PropertyValueFactory<>("fat"));
         proteinsTableColumnController.setCellValueFactory(new PropertyValueFactory<>("proteins"));
         carbsTableColumnController.setCellValueFactory(new PropertyValueFactory<>("carbohydrates"));
-    }
-    private void setImage() {
-        ImageView imageView = new ImageView(getClass().getResource(EDIT_BUTTON_FILE_PATH).toExternalForm());
-        supperEditButtonController.setGraphic(imageView);
     }
     private void editButtonListener() {
         setOpacityLower();

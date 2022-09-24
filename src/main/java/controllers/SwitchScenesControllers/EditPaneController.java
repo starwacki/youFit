@@ -38,10 +38,8 @@ public class EditPaneController {
     private List<String> listview;
     private static final String CHANGE_TO_YOUR_PRODUCTS_BASE_BUTTON_TEXT = "personal products";
     private static final String CHANGE_TO_MAIN_PRODUCT_BASE_BUTTON_TEXT = "product base";
-    private static final String ADD_BUTTON_FILE_PATH = "/img/add-button.jpg";
 
     public void initialize() {
-        setAllImages();
         listview = ProductBaseReader.readProductBase();
         addProductToListView(listview);
         setTextFieldOnlyNumeric(weightTextFieldController);
@@ -76,13 +74,6 @@ public class EditPaneController {
         return changeListViewButtonController;
     }
 
-    private void setAllImages() {
-        setImage(addProductToListViewButtonController);
-    }
-    private void setImage(Button button) {
-        ImageView imageView = new ImageView(getClass().getResource(ADD_BUTTON_FILE_PATH).toExternalForm());
-        button.setGraphic(imageView);
-    }
     private void setTextFieldOnlyNumeric(TextField textField) {
         textField.textProperty().addListener((observableValue, oldValue, newValue) -> {
             if (textField.getText()!=null && newValue.length()>0) {

@@ -1,41 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="900.0" stylesheets="@../../css/mainview.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainEditPaneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" stylesheets="@../../css/mainview.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainEditPaneController">
     <children>
-        <Separator layoutX="10.0" layoutY="10.0" prefHeight="41.0" prefWidth="221.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-        <MenuBar fx:id="MenuBarController" layoutY="7.0" maxHeight="30.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="30.0" prefWidth="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <menus>
-                <Menu mnemonicParsing="false" text="File">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="Close" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="Delete" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
-                    </items>
-                </Menu>
-            </menus>
-        </MenuBar>
-        <fx:include fx:id="daysPane" source="../daysPane.fxml" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="40.0" />
-        <fx:include fx:id="caloriesPane" source="../caloriesPane.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="0.0" />
-        <VBox fx:id="mainPaneViewVboxController" layoutX="137.0" layoutY="39.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="682.0" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="135.0" AnchorPane.topAnchor="40.0">
+        <Separator layoutX="10.0" layoutY="10.0" prefHeight="18.0" prefWidth="1100.0" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+        <fx:include fx:id="daysPane" source="../daysPane.fxml" AnchorPane.bottomAnchor="639.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+        <fx:include fx:id="caloriesPane" source="../caloriesPane.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="645.0" />
+        <VBox fx:id="mainPaneViewVboxController" layoutX="137.0" layoutY="39.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="750.0" AnchorPane.bottomAnchor="63.0" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="110.0">
          <children>
             <fx:include fx:id="brunchTableView" source="../mealsTableViews/brunchTableView.fxml" />
             <fx:include fx:id="editPane" source="../switchesFXMLS/editPane.fxml" />
          </children>
         </VBox>
+      <Separator layoutX="234.0" layoutY="79.0" orientation="VERTICAL" prefHeight="584.0" prefWidth="17.0" style="-fx-border-width: 1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="214.0" AnchorPane.topAnchor="60.0" />
+      <Separator layoutX="239.0" layoutY="79.0" prefHeight="5.0" prefWidth="880.0" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="59.0" />
+      <fx:include source="../settingsPane.fxml" AnchorPane.bottomAnchor="-0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="880.0" AnchorPane.topAnchor="0.0" />
     </children>
 </AnchorPane>

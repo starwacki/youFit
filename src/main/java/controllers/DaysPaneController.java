@@ -1,6 +1,8 @@
 package controllers;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
+
 public class DaysPaneController {
     @FXML
     private Button fridayButtonController;
