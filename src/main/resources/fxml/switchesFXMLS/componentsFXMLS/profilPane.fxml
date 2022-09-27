@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="profilPaneAnchorPaneController" prefHeight="550.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SettingsPanesControllers.ProfilePaneController">
+   <children>
+      <ImageView fitHeight="280.0" fitWidth="282.0" layoutX="14.0" layoutY="34.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../img/setting-img/user.png" />
+         </image></ImageView>
+      <Button fx:id="changeProfilePhotoButtonController" layoutX="78.0" layoutY="355.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="154.0" text="Change profil photo" />
+      <Label layoutX="387.0" layoutY="314.0" prefHeight="17.0" prefWidth="86.0" style="-fx-text-fill: white;" text="New password:" />
+      <Button fx:id="changePasswordButtonController" layoutX="434.0" layoutY="355.0" mnemonicParsing="false" text="Change password" />
+      <Label alignment="CENTER" layoutX="392.0" layoutY="234.0" prefHeight="17.0" prefWidth="162.0" style="-fx-text-fill: white;" text="Change password">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Label layoutX="412.0" layoutY="34.0" prefHeight="17.0" prefWidth="62.0" style="-fx-text-fill: white;" text="Username:" />
+      <Label layoutX="504.0" layoutY="34.0" prefHeight="17.0" prefWidth="62.0" style="-fx-text-fill: white;" text="Username:" />
+      <Label layoutX="412.0" layoutY="60.0" prefHeight="17.0" prefWidth="62.0" style="-fx-text-fill: white;" text="Email:" />
+      <Label layoutX="412.0" layoutY="85.0" prefHeight="17.0" prefWidth="77.0" style="-fx-text-fill: white;" text="Date of birth:" />
+      <Label layoutX="510.0" layoutY="60.0" prefHeight="17.0" prefWidth="62.0" style="-fx-text-fill: white;" text="Email:" />
+      <Label layoutX="503.0" layoutY="85.0" prefHeight="17.0" prefWidth="77.0" style="-fx-text-fill: white;" text="Date of birth:" />
+      <Label layoutX="387.0" layoutY="275.0" prefHeight="17.0" prefWidth="77.0" style="-fx-text-fill: white;" text="Old password:" />
+      <PasswordField fx:id="oldPasswordPasswordFieldController" layoutX="482.0" layoutY="271.0" prefHeight="25.0" prefWidth="98.0" />
+      <PasswordField fx:id="newPasswordPasswordFieldController" layoutX="482.0" layoutY="310.0" prefHeight="25.0" prefWidth="98.0" />
+   </children>
+</AnchorPane>

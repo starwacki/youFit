@@ -9,13 +9,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="61.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DaysPaneController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="61.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainPaneComponentsControllers.DaysPaneController">
    <children>
       <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="61.0" prefWidth="880.0" style="-fx-background-color: black;">
          <children>
             <ImageView id="days-pane-icon" fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/next-week2.0.png" />
+                  <Image url="@../../img/next-week2.0.png" />
                </image>
                <HBox.margin>
                   <Insets left="40.0" top="15.0" />
@@ -79,7 +79,7 @@
                </graphic></Button>
             <ImageView id="days-pane-icon" fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/next-week.png" />
+                  <Image url="@../../img/next-week.png" />
                </image>
                <HBox.margin>
                   <Insets top="15.0" />
@@ -90,7 +90,7 @@
                   <Insets left="10.0" top="5.0" />
                </HBox.margin>
                <image>
-                  <Image url="@../img/calendar.png" />
+                  <Image url="@../../img/calendar.png" />
                </image>
             </ImageView>
          </children>

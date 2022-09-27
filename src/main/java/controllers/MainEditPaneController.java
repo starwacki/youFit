@@ -1,4 +1,7 @@
 package controllers;
+import controllers.MainPaneComponentsControllers.CaloriesPaneController;
+import controllers.MainPaneComponentsControllers.DaysPaneController;
+import controllers.MainPaneComponentsControllers.SettingsPaneController;
 import controllers.SwitchScenesControllers.EditPaneController;
 import controllers.tableViewsControllers.BreakfastTableViewController;
 import controllers.tableViewsControllers.BrunchTableViewController;
@@ -43,6 +46,8 @@ public class MainEditPaneController {
     @FXML
     private SupperTableViewController supperTableViewController;
     @FXML
+    private SettingsPaneController settingsPaneController;
+    @FXML
     private VBox mainPaneViewVboxController;
     @FXML
     private EditPaneController editPaneController;
@@ -51,7 +56,7 @@ public class MainEditPaneController {
     private static final String BRUNCH_TABLE_VIEW_ID = "brunchTableView";
     private static final String LUNCH_TABLE_VIEW_ID = "lunchTableView";
     private static final String SUPPER_TABLE_VIEW_ID = "supperTableView";
-    private static final String DELETE_BUTTON_JPG_FILE_PATH = "/img/delete-product-from-table.jpg";
+    private static final String DELETE_BUTTON_JPG_FILE_PATH = "/img/deleteButton.png";
     private static final String DELETE_BUTTON_CSS_STYLE_SHEET_ID = "delete-button";
     private static final String LAST_CLICKED_DAY_COLOR_STYLE = "-fx-border-color: red";
     private static final String BASIC_PROTEINS_PROGRESS_BAR_COLOR = "-fx-accent: blue;";
@@ -458,9 +463,11 @@ public class MainEditPaneController {
         btn.setPrefSize(40,20);
         btn.setMaxSize(40,20);
         btn.setId(DELETE_BUTTON_CSS_STYLE_SHEET_ID);
-        btn.setGraphicTextGap(0);
+        ImageView delete = new ImageView(getClass().getResource(DELETE_BUTTON_JPG_FILE_PATH).toExternalForm());
+        delete.setPreserveRatio(true);
+        btn.setGraphic(delete);
         btn.setContentDisplay(ContentDisplay.CENTER);
-        btn.setGraphic(new ImageView(getClass().getResource(DELETE_BUTTON_JPG_FILE_PATH).toExternalForm()));
+
     }
     }
 

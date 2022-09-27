@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="bodyMeasurementsAnchorPaneController" prefHeight="560.0" prefWidth="860.0" stylesheets="@../../../css/mainview.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SettingsPanesControllers.BodyMeasurementsPaneController">
+   <children>
+      <LineChart fx:id="lineChartController" layoutY="9.0" prefHeight="349.0" prefWidth="419.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="37.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis prefHeight="261.0" prefWidth="29.0" side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <TableView fx:id="bodyMeasurementsTableViewController" layoutX="521.0" layoutY="37.0" prefHeight="327.0" prefWidth="319.0" AnchorPane.topAnchor="37.0">
+        <columns>
+            <TableColumn fx:id="dateBodyMeasurementsTableViewTableColumnController" prefWidth="50.0" text="Date" />
+            <TableColumn fx:id="hipTableColumnController" prefWidth="40.0" text="Hip" />
+            <TableColumn fx:id="chestTableColumnController" prefWidth="40.0" text="Chest" />
+            <TableColumn fx:id="thighTableColumnController" prefWidth="40.0" text="Thigh" />
+            <TableColumn fx:id="bicepsTableColumnController" prefWidth="45.0" text="Biceps" />
+            <TableColumn fx:id="tricepsTableColumnController" prefWidth="45.0" text="Triceps" />
+            <TableColumn fx:id="waistTableColumnController" prefWidth="40.0" text="Waist" />
+            <TableColumn fx:id="deleteBodyMeasurementsTableViewTableColumnController" prefWidth="20.0" text="X" />
+        </columns>
+      </TableView>
+      <Label layoutX="628.0" layoutY="20.0" prefHeight="17.0" prefWidth="201.0" style="-fx-text-fill: white;" text="Body measurements (in cm)" />
+      <TableView fx:id="linearChartTableViewController" layoutX="24.0" layoutY="390.0" prefHeight="181.0" prefWidth="170.0" AnchorPane.leftAnchor="50.0">
+        <columns>
+          <TableColumn fx:id="dateLinearChartTableViewTableColumnController" prefWidth="75.0" text="Date" />
+          <TableColumn fx:id="weightTableColumnController" prefWidth="75.0" text="Weight" />
+            <TableColumn fx:id="deleteLinearChartTableViewTableColumnController" minWidth="20.0" prefWidth="20.0" text="X" />
+        </columns>
+      </TableView>
+      <Label layoutX="521.0" layoutY="370.0" prefHeight="25.0" prefWidth="50.0" style="-fx-text-fill: white;" text="Hip" AnchorPane.leftAnchor="525.0" AnchorPane.topAnchor="375.0" />
+      <TextField fx:id="hipTextFieldController" layoutX="571.0" layoutY="383.0" prefHeight="25.0" prefWidth="81.0" AnchorPane.leftAnchor="575.0" AnchorPane.topAnchor="375.0" />
+      <Label layoutX="681.0" layoutY="378.0" prefHeight="25.0" prefWidth="50.0" style="-fx-text-fill: white;" text="Chest" AnchorPane.leftAnchor="700.0" AnchorPane.topAnchor="375.0" />
+      <TextField fx:id="chestTextFieldController" layoutX="750.0" layoutY="378.0" prefHeight="25.0" prefWidth="81.0" AnchorPane.leftAnchor="750.0" AnchorPane.topAnchor="378.0" />
+      <Label layoutX="521.0" layoutY="400.0" prefHeight="25.0" prefWidth="50.0" style="-fx-text-fill: white;" text="Thigh" AnchorPane.leftAnchor="525.0" AnchorPane.topAnchor="410.0" />
+      <TextField fx:id="thighTextFieldController" layoutX="575.0" layoutY="410.0" prefHeight="25.0" prefWidth="81.0" AnchorPane.topAnchor="410.0" />
+      <Label layoutX="700.0" layoutY="410.0" prefHeight="25.0" prefWidth="50.0" style="-fx-text-fill: white;" text="Biceps" AnchorPane.topAnchor="410.0" />
+      <TextField fx:id="bicepsTextFieldController" layoutX="750.0" layoutY="410.0" prefHeight="25.0" prefWidth="81.0" />
+      <Label layoutX="525.0" layoutY="435.0" prefHeight="25.0" prefWidth="50.0" style="-fx-text-fill: white;" text="Triceps" AnchorPane.topAnchor="445.0" />
+      <TextField fx:id="tricepsTextFieldController" layoutX="575.0" layoutY="445.0" prefHeight="25.0" prefWidth="81.0" AnchorPane.leftAnchor="575.0" AnchorPane.topAnchor="445.0" />
+      <Label layoutX="700.0" layoutY="445.0" prefHeight="25.0" prefWidth="50.0" style="-fx-text-fill: white;" text="Waist" />
+      <TextField fx:id="waistTextFieldController" layoutX="750.0" layoutY="445.0" prefHeight="25.0" prefWidth="81.0" />
+      <Label alignment="CENTER" layoutX="626.0" layoutY="470.0" prefHeight="25.0" prefWidth="109.0" style="-fx-text-fill: white;" text="Date" />
+      <Button fx:id="addBodyMeasurementsButtonController" layoutX="622.0" layoutY="532.0" mnemonicParsing="false" style="-fx-background-color: linear-gradient(to right,#797979,  #4C4646);" text="Add measurements" />
+      <Label alignment="CENTER" layoutX="247.0" layoutY="470.0" prefHeight="25.0" prefWidth="109.0" text="Date" />
+      <Label layoutX="233.0" layoutY="445.0" prefHeight="25.0" prefWidth="50.0" style="-fx-text-fill: white;" text="Weight:" />
+      <TextField fx:id="weightTextFieldController" layoutX="287.0" layoutY="445.0" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: linear-gradient(to right,#708A90,  #B7B9B9);" />
+      <Button fx:id="addWeightLinearChartButtonController" layoutX="262.0" layoutY="532.0" mnemonicParsing="false" style="-fx-background-color: linear-gradient(to right,#797979,  #4C4646);" text="Add Weight" />
+      <DatePicker layoutX="233.0" layoutY="495.0" prefHeight="25.0" prefWidth="170.0" />
+      <DatePicker layoutX="596.0" layoutY="495.0" prefHeight="25.0" prefWidth="170.0" />
+   </children>
+</AnchorPane>

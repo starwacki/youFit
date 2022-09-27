@@ -1,4 +1,7 @@
 package controllers;
+import controllers.MainPaneComponentsControllers.CaloriesPaneController;
+import controllers.MainPaneComponentsControllers.DaysPaneController;
+import controllers.MainPaneComponentsControllers.SettingsPaneController;
 import controllers.tableViewsControllers.BreakfastTableViewController;
 import controllers.tableViewsControllers.BrunchTableViewController;
 import controllers.tableViewsControllers.LunchTableViewController;
@@ -31,7 +34,10 @@ public class MainPaneController {
     @FXML
     private SupperTableViewController supperTableViewController;
     @FXML
+    private SettingsPaneController settingsPaneController;
+    @FXML
     private VBox mainPaneViewVboxController;
+
     @FXML
     private MainEditPaneController breakfastMainEditPaneController;
     private static final int LIST_OF_ALL_MEALS_INDEX = 0;
@@ -42,7 +48,7 @@ public class MainPaneController {
     private static final String BASIC_PROTEINS_PROGRESS_BAR_COLOR = "-fx-accent: blue;";
     private static final String BASIC_CARBOHYDRATES_PROGRESS_BAR_COLOR = "-fx-accent: green;";
     private static final String BASIC_FAT_PROGRESS_BAR_COLOR = "-fx-accent: chocolate;";
-    private static final String BASIC_CALORIES_PROGRESS_BAR_COLOR = "-fx-accent: black;";
+    private static final String BASIC_CALORIES_PROGRESS_BAR_COLOR = "-fx-accent: #9933ff;";
     private static final String WARNING_PROGRESS_BAR_COLOR = "-fx-accent: red;";
     private static final String BREAKFAST_NAME = "BREAKFAST";
     private static final String BRUNCH_NAME = "BRUNCH";

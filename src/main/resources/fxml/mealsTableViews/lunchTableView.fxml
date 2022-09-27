@@ -64,7 +64,7 @@
                         <Insets left="10.0" />
                      </HBox.margin>
                   </Label>
-                  <Label prefHeight="17.0" prefWidth="31.0" style="-fx-text-fill: black;" text="kcal" />
+                  <Label prefHeight="17.0" prefWidth="31.0" style="-fx-text-fill: #9933ff;" text="kcal" />
                </children>
             </HBox>
          </children>

@@ -2,7 +2,7 @@ MAINDAY###BREAKFAST#BRUNCH#SUPPER#LUNCH -> BREAKFAST#PRODUCTS#BRUNCH#PRODUCTS...
 MONDAY###BREAKFAST#;#BRUNCH#;#Lunch#;#Supper#FILET@LIDL@200@30@30@30@200;Amarantus. nasiona@brak@220.0@7.0@36.0@3.0@55.0;Ananas w syropie@brak@46.0@0.0@11.0@0.0@55.0
 TUESDAY###BREAKFAST#;#BRUNCH#;#Lunch#;#Supper#;
 WEDNESDAY###BREAKFAST#;#BRUNCH#;#Lunch#;#Supper#;
-THURSDAY###BREAKFAST#Ananas@brak@29.0@0.0@7.0@0.0@55.0;Ananas@brak@29999.0@222.0@7555.0@111.0@55555.0#BRUNCH#Amarantus. nasiona@brak@220.0@7.0@36.0@3.0@55.0;Bakłażan@brak@11.0@0.0@3.0@0.0@55.0;Banan@brak@52.0@0.0@12.0@0.0@55.0;Białko jajka kurzego@brak@26.0@5.0@0.0@0.0@55.0#Lunch#;#Supper#;
+THURSDAY###BREAKFAST#;#BRUNCH#Amarantus. nasiona@brak@220.0@7.0@36.0@3.0@55.0;Bakłażan@brak@11.0@0.0@3.0@0.0@55.0;Banan@brak@52.0@0.0@12.0@0.0@55.0;Białko jajka kurzego@brak@26.0@5.0@0.0@0.0@55.0#Lunch#;#Supper#;
 FRIDAY###BREAKFAST#;#BRUNCH#;#Lunch#Amarantus. nasiona@brak@220.0@7.0@36.0@3.0@55.0#Supper#;
 SATURDAY###BREAKFAST#;#BRUNCH#;#Lunch#;#Supper#Amarantus. nasiona@brak@220.0@7.0@36.0@3.0@55.0;Amarantus. nasiona@brak@220.0@7.0@36.0@3.0@55.0;Arbuz@brak@19.0@0.0@4.0@0.0@55.0;Spaggeti Bolognese@DOMOWE@82.0@4.0@8.0@4.0@55.0;Pomidorowa@DOMOWE@15.0@0.0@0.0@0.0@55.0;Pomidorowa@DOMOWE@15.0@0.0@0.0@0.0@55.0;Pomidorowa@DOMOWE@15.0@0.0@0.0@0.0@55.0;Spaggeti Bolognese@DOMOWE@82.0@4.0@8.0@4.0@55.0
 SUNDAY###BREAKFAST#Anyż@brak@185.0@9.0@27.0@8.0@55.0;Ananas@brak@29.0@0.0@7.0@0.0@55.0;Bób@brak@36.0@3.0@7.0@0.0@55.0#BRUNCH#;#Lunch#;#Supper#;

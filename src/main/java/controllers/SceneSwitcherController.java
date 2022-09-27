@@ -12,6 +12,14 @@ public class SceneSwitcherController {
     private static final String LUNCH_EDIT_PANE_FILE_PATH = "/fxml/mainEditPanes/lunchMainEditPane.fxml";
 
     private static final String SUPPER_EDIT_PANE_FILE_PATH = "/fxml/mainEditPanes/supperMainEditPane.fxml";
+    private static final String CALORIC_DEMAND_MAIN_PANE = "/fxml/switchesFXMLS/caloricDemandMainPane.fxml";
+    private static final String BODY_MEASUREMENTS_MAIN_PANE = "/fxml/switchesFXMLS/bodyMeasurementsMainPain.fxml";
+    private static final String PROFILE_MAIN_PANE = "/fxml/switchesFXMLS/profileMainPane.fxml";
+    private static final String SETTINGS_MAIN_PANE = "/fxml/switchesFXMLS/settingsMainPane.fxml";
+    private static final String WEEK_SUMMARY_MAIN_PANE = "/fxml/switchesFXMLS/weekSummaryMainPane.fxml";
+
+
+
     public void switchToMainPane(Stage stage)  {
         Parent root;
         try {
@@ -34,6 +42,21 @@ public class SceneSwitcherController {
     }
     public void switchToSupperEditPane(Stage stage) {
       switchScene(stage,SUPPER_EDIT_PANE_FILE_PATH);
+    }
+    public void switchToCaloricDemandMainPane(Stage stage) {
+        switchScene(stage,CALORIC_DEMAND_MAIN_PANE);
+    }
+    public void switchToBodyMeasurementsMainPane(Stage stage) {
+        switchScene(stage,BODY_MEASUREMENTS_MAIN_PANE);
+    }
+    public void switchToProfileMainPain(Stage stage) {
+        switchScene(stage,PROFILE_MAIN_PANE);
+    }
+    public void switchToSettingsMainPain(Stage stage) {
+        switchScene(stage,SETTINGS_MAIN_PANE);
+    }
+    public void switchToWeekSummaryMainPane(Stage stage) {
+        switchScene(stage,WEEK_SUMMARY_MAIN_PANE);
     }
     private void switchScene(Stage stage,String filePath) {
         Parent root;

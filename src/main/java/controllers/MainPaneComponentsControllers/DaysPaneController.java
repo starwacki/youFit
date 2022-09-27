@@ -1,4 +1,4 @@
-package controllers;
+package controllers.MainPaneComponentsControllers;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;

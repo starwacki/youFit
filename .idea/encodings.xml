@@ -7,13 +7,17 @@
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/add-buttontest.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/calendar.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/delete.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/deleteButton.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/edit-button.png" charset="windows-1250" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/img/hide-table.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/edit.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/germany.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/hide-table.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/icon.jpg" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/meals.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/next-week.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/next-week2.0.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/poland.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/search-free-icon-font.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/setting-img/body-measurements.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/setting-img/body-measurments.png" charset="windows-1250" />
@@ -27,6 +31,7 @@
     <file url="file://$PROJECT_DIR$/src/main/resources/img/settings.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/show-table.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/strawberry-free-icon-font.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/united-kingdom.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/youFit!!.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/youFit!.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/productBase.txt" charset="UTF-8" />
