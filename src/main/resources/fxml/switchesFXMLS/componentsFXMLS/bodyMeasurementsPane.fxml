@@ -6,60 +6,124 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="bodyMeasurementsAnchorPaneController" prefHeight="560.0" prefWidth="860.0" stylesheets="@../../../css/mainview.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SettingsPanesControllers.BodyMeasurementsPaneController">
+<AnchorPane fx:id="bodyMeasurementsAnchorPaneController" prefHeight="584.0" prefWidth="860.0" stylesheets="@../../../css/mainview.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SettingsPanesControllers.BodyMeasurementsPaneController">
    <children>
-      <LineChart fx:id="lineChartController" layoutY="9.0" prefHeight="349.0" prefWidth="419.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="37.0">
+      <LineChart id="lineChart" fx:id="lineChartController" layoutX="11.0" layoutY="8.0" prefHeight="352.0" prefWidth="419.0" AnchorPane.leftAnchor="11.0" AnchorPane.topAnchor="8.0">
         <xAxis>
-          <CategoryAxis side="BOTTOM" />
+          <CategoryAxis label="Month" side="BOTTOM" style="-fx-tick-label-fill: white;" />
         </xAxis>
         <yAxis>
-          <NumberAxis prefHeight="261.0" prefWidth="29.0" side="LEFT" />
+          <NumberAxis label="Weight" prefHeight="289.0" prefWidth="43.0" style="-fx-tick-label-fill: white;" tickLabelFill="WHITE" />
         </yAxis>
       </LineChart>
-      <TableView fx:id="bodyMeasurementsTableViewController" layoutX="521.0" layoutY="37.0" prefHeight="327.0" prefWidth="319.0" AnchorPane.topAnchor="37.0">
+      <TableView id="table-view-measurements" fx:id="bodyMeasurementsTableViewController" layoutX="480.0" layoutY="23.0" prefHeight="285.0" prefWidth="365.0" AnchorPane.topAnchor="23.0">
         <columns>
-            <TableColumn fx:id="dateBodyMeasurementsTableViewTableColumnController" prefWidth="50.0" text="Date" />
-            <TableColumn fx:id="hipTableColumnController" prefWidth="40.0" text="Hip" />
-            <TableColumn fx:id="chestTableColumnController" prefWidth="40.0" text="Chest" />
-            <TableColumn fx:id="thighTableColumnController" prefWidth="40.0" text="Thigh" />
-            <TableColumn fx:id="bicepsTableColumnController" prefWidth="45.0" text="Biceps" />
-            <TableColumn fx:id="tricepsTableColumnController" prefWidth="45.0" text="Triceps" />
-            <TableColumn fx:id="waistTableColumnController" prefWidth="40.0" text="Waist" />
-            <TableColumn fx:id="deleteBodyMeasurementsTableViewTableColumnController" prefWidth="20.0" text="X" />
+            <TableColumn fx:id="dateBodyMeasurementsTableViewTableColumnController" minWidth="5.0" prefWidth="65.0" text="Date" />
+            <TableColumn fx:id="hipTableColumnController" prefWidth="48.0" text="Hip" />
+            <TableColumn fx:id="chestTableColumnController" prefWidth="42.0" text="Chest" />
+            <TableColumn fx:id="thighTableColumnController" prefWidth="42.0" text="Thigh" />
+            <TableColumn fx:id="bicepsTableColumnController" prefWidth="42.0" text="Biceps" />
+            <TableColumn fx:id="tricepsTableColumnController" prefWidth="47.0" text="Triceps" />
+            <TableColumn fx:id="waistTableColumnController" prefWidth="50.0" text="Waist" />
+            <TableColumn fx:id="deleteBodyMeasurementsTableViewTableColumnController" prefWidth="28.0" text="X" />
         </columns>
       </TableView>
-      <Label layoutX="628.0" layoutY="20.0" prefHeight="17.0" prefWidth="201.0" style="-fx-text-fill: white;" text="Body measurements (in cm)" />
-      <TableView fx:id="linearChartTableViewController" layoutX="24.0" layoutY="390.0" prefHeight="181.0" prefWidth="170.0" AnchorPane.leftAnchor="50.0">
+      <Label layoutX="585.0" layoutY="-2.0" prefHeight="25.0" prefWidth="201.0" style="-fx-text-fill: white;" text="Body measurements (in cm)" AnchorPane.topAnchor="0.0">
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/body-measurements-icons/tape-measure.png" />
+               </image>
+            </ImageView>
+         </graphic></Label>
+      <TableView id="table-view-measurements" fx:id="linearChartTableViewController" layoutX="24.0" layoutY="390.0" prefHeight="181.0" prefWidth="170.0" AnchorPane.leftAnchor="50.0">
         <columns>
           <TableColumn fx:id="dateLinearChartTableViewTableColumnController" prefWidth="75.0" text="Date" />
-          <TableColumn fx:id="weightTableColumnController" prefWidth="75.0" text="Weight" />
-            <TableColumn fx:id="deleteLinearChartTableViewTableColumnController" minWidth="20.0" prefWidth="20.0" text="X" />
+          <TableColumn fx:id="weightTableColumnController" prefWidth="66.0" text="Weight" />
+            <TableColumn fx:id="deleteLinearChartTableViewTableColumnController" minWidth="9.0" prefWidth="29.0" text="X" />
         </columns>
       </TableView>
-      <Label layoutX="521.0" layoutY="370.0" prefHeight="25.0" prefWidth="50.0" style="-fx-text-fill: white;" text="Hip" AnchorPane.leftAnchor="525.0" AnchorPane.topAnchor="375.0" />
-      <TextField fx:id="hipTextFieldController" layoutX="571.0" layoutY="383.0" prefHeight="25.0" prefWidth="81.0" AnchorPane.leftAnchor="575.0" AnchorPane.topAnchor="375.0" />
-      <Label layoutX="681.0" layoutY="378.0" prefHeight="25.0" prefWidth="50.0" style="-fx-text-fill: white;" text="Chest" AnchorPane.leftAnchor="700.0" AnchorPane.topAnchor="375.0" />
-      <TextField fx:id="chestTextFieldController" layoutX="750.0" layoutY="378.0" prefHeight="25.0" prefWidth="81.0" AnchorPane.leftAnchor="750.0" AnchorPane.topAnchor="378.0" />
-      <Label layoutX="521.0" layoutY="400.0" prefHeight="25.0" prefWidth="50.0" style="-fx-text-fill: white;" text="Thigh" AnchorPane.leftAnchor="525.0" AnchorPane.topAnchor="410.0" />
-      <TextField fx:id="thighTextFieldController" layoutX="575.0" layoutY="410.0" prefHeight="25.0" prefWidth="81.0" AnchorPane.topAnchor="410.0" />
-      <Label layoutX="700.0" layoutY="410.0" prefHeight="25.0" prefWidth="50.0" style="-fx-text-fill: white;" text="Biceps" AnchorPane.topAnchor="410.0" />
-      <TextField fx:id="bicepsTextFieldController" layoutX="750.0" layoutY="410.0" prefHeight="25.0" prefWidth="81.0" />
-      <Label layoutX="525.0" layoutY="435.0" prefHeight="25.0" prefWidth="50.0" style="-fx-text-fill: white;" text="Triceps" AnchorPane.topAnchor="445.0" />
-      <TextField fx:id="tricepsTextFieldController" layoutX="575.0" layoutY="445.0" prefHeight="25.0" prefWidth="81.0" AnchorPane.leftAnchor="575.0" AnchorPane.topAnchor="445.0" />
-      <Label layoutX="700.0" layoutY="445.0" prefHeight="25.0" prefWidth="50.0" style="-fx-text-fill: white;" text="Waist" />
-      <TextField fx:id="waistTextFieldController" layoutX="750.0" layoutY="445.0" prefHeight="25.0" prefWidth="81.0" />
-      <Label alignment="CENTER" layoutX="626.0" layoutY="470.0" prefHeight="25.0" prefWidth="109.0" style="-fx-text-fill: white;" text="Date" />
-      <Button fx:id="addBodyMeasurementsButtonController" layoutX="622.0" layoutY="532.0" mnemonicParsing="false" style="-fx-background-color: linear-gradient(to right,#797979,  #4C4646);" text="Add measurements" />
-      <Label alignment="CENTER" layoutX="247.0" layoutY="470.0" prefHeight="25.0" prefWidth="109.0" text="Date" />
-      <Label layoutX="233.0" layoutY="445.0" prefHeight="25.0" prefWidth="50.0" style="-fx-text-fill: white;" text="Weight:" />
-      <TextField fx:id="weightTextFieldController" layoutX="287.0" layoutY="445.0" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: linear-gradient(to right,#708A90,  #B7B9B9);" />
-      <Button fx:id="addWeightLinearChartButtonController" layoutX="262.0" layoutY="532.0" mnemonicParsing="false" style="-fx-background-color: linear-gradient(to right,#797979,  #4C4646);" text="Add Weight" />
-      <DatePicker layoutX="233.0" layoutY="495.0" prefHeight="25.0" prefWidth="170.0" />
-      <DatePicker layoutX="596.0" layoutY="495.0" prefHeight="25.0" prefWidth="170.0" />
+      <Label layoutX="517.0" layoutY="326.0" prefHeight="25.0" prefWidth="50.0" style="-fx-text-fill: white;" text="Hip" AnchorPane.leftAnchor="517.0" AnchorPane.topAnchor="326.0" />
+      <TextField fx:id="hipTextFieldController" layoutX="567.0" layoutY="326.0" prefHeight="25.0" prefWidth="81.0" AnchorPane.leftAnchor="567.0" AnchorPane.topAnchor="326.0" />
+      <Label layoutX="700.0" layoutY="326.0" prefHeight="25.0" prefWidth="50.0" style="-fx-text-fill: white;" text="Chest" AnchorPane.leftAnchor="700.0" AnchorPane.topAnchor="326.0" />
+      <TextField fx:id="chestTextFieldController" layoutX="746.0" layoutY="326.0" prefHeight="25.0" prefWidth="81.0" AnchorPane.leftAnchor="746.0" AnchorPane.topAnchor="326.0" />
+      <Label layoutX="517.0" layoutY="379.0" prefHeight="25.0" prefWidth="50.0" style="-fx-text-fill: white;" text="Thigh" AnchorPane.leftAnchor="517.0" AnchorPane.topAnchor="379.0" />
+      <TextField fx:id="thighTextFieldController" layoutX="567.0" layoutY="379.0" prefHeight="25.0" prefWidth="81.0" AnchorPane.topAnchor="379.0" />
+      <Label layoutX="700.0" layoutY="380.0" prefHeight="25.0" prefWidth="50.0" style="-fx-text-fill: white;" text="Biceps" AnchorPane.topAnchor="380.0" />
+      <TextField fx:id="bicepsTextFieldController" layoutX="746.0" layoutY="375.0" prefHeight="25.0" prefWidth="81.0" />
+      <Label layoutX="517.0" layoutY="426.0" prefHeight="25.0" prefWidth="50.0" style="-fx-text-fill: white;" text="Triceps" AnchorPane.leftAnchor="517.0" AnchorPane.topAnchor="426.0" />
+      <TextField fx:id="tricepsTextFieldController" layoutX="567.0" layoutY="426.0" prefHeight="25.0" prefWidth="81.0" AnchorPane.leftAnchor="567.0" AnchorPane.topAnchor="426.0" />
+      <Label layoutX="700.0" layoutY="426.0" prefHeight="25.0" prefWidth="50.0" style="-fx-text-fill: white;" text="Waist" />
+      <TextField fx:id="waistTextFieldController" layoutX="746.0" layoutY="426.0" prefHeight="25.0" prefWidth="81.0" />
+      <Button fx:id="addBodyMeasurementsButtonController" layoutX="592.0" layoutY="534.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="94.0" style="-fx-background-color: linear-gradient(to right,#797979,  #4C4646); -fx-text-fill: white; -fx-font-weight: bold;" text="Add" />
+      <Label alignment="CENTER" layoutX="82.0" layoutY="363.0" prefHeight="25.0" prefWidth="131.0" style="-fx-text-fill: white;" text="Weight measurements" />
+      <Label layoutX="236.0" layoutY="430.0" prefHeight="25.0" prefWidth="50.0" style="-fx-text-fill: white;" text="Weight:" />
+      <TextField fx:id="weightTextFieldController" layoutX="291.0" layoutY="430.0" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: linear-gradient(to right,#708A90,  #B7B9B9);" />
+      <Button fx:id="addWeightLinearChartButtonController" layoutX="275.0" layoutY="534.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: linear-gradient(to right,#797979,  #4C4646); -fx-text-fill: white; -fx-font-weight: bold;" text="Add " />
+      <DatePicker id="table-view-measurements" layoutX="236.0" layoutY="503.0" prefHeight="25.0" prefWidth="170.0" />
+      <DatePicker layoutX="560.0" layoutY="503.0" prefHeight="25.0" prefWidth="170.0" />
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="479.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/body-measurements-icons/hip.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="666.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/body-measurements-icons/chest.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="479.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/body-measurements-icons/thigh.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="479.0" layoutY="426.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/body-measurements-icons/triceps.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="666.0" layoutY="372.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/body-measurements-icons/biceps.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="666.0" layoutY="426.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/body-measurements-icons/waist.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="444.0" orientation="VERTICAL" prefHeight="571.0" prefWidth="0.0" />
+      <ImageView fitHeight="32.0" fitWidth="50.0" layoutX="629.0" layoutY="467.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/calendar.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="32.0" fitWidth="50.0" layoutX="294.0" layoutY="467.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/calendar.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="160.0" prefHeight="25.0" prefWidth="201.0" style="-fx-text-fill: white;" text="Weight control" AnchorPane.topAnchor="0.0">
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/body-measurements-icons/chart.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <ImageView fitHeight="32.0" fitWidth="44.0" layoutX="50.0" layoutY="363.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="359.0">
+         <image>
+            <Image url="@../../../img/body-measurements-icons/weight-loss.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

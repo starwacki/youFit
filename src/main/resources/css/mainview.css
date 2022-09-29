@@ -1,3 +1,7 @@
+
+.button {
+-fx-background-color:  linear-gradient(to right,#797979,  #4C4646);
+}
 .text-field {
 -fx-background-color:  linear-gradient(to right,#708A90,  #B7B9B9);
 }
@@ -25,11 +29,10 @@
 }
 #table-view .column-header, .table-view .filler {
  -fx-background-color:  #484848;
-
 }
+
 #table-view .column-header-background .nested-column-header .table-column {
  -fx-background-color:  #484848;
-
 }
 
 .text-area .scroll-pane .viewport .content {
@@ -56,6 +59,7 @@
 .label .text {
 -fx-font-family: "Comic Sans MS", "Comic Sans";
 -fx-text-fill: white;
+-fx-font-weight: bold;
 }
 .root  {
 -fx-background-color: #303030;
@@ -90,29 +94,29 @@
 }
 .table-view *.scroll-bar:horizontal *.increment-button,
 .table-view *.scroll-bar:horizontal *.decrement-button {
-    -fx-background-color: #303030;
-    -fx-background-radius: 0;
-    -fx-background-insets: 0;
-    -fx-padding: 0;
+-fx-background-color: #303030;
+-fx-background-radius: 0;
+-fx-background-insets: 0;
+-fx-padding: 0;
 }
 
 .table-view *.scroll-bar:horizontal *.increment-arrow,
 .table-view *.scroll-bar:horizontal *.decrement-arrow {
-    -fx-background-color: null;
-    -fx-background-radius: 0;
-    -fx-background-insets: 0;
-    -fx-padding: 0;
-    -fx-shape: null;
+-fx-background-color: null;
+-fx-background-radius: 0;
+-fx-background-insets: 0;
+-fx-padding: 0;
+-fx-shape: null;
 }
 .scroll-bar:vertical .thumb {
-    -fx-background-color: #303030;
-    -fx-background-insets: 2, 0, 0;
-    -fx-background-radius: 0em;
-    -fx-font-size: 2px;
+-fx-background-color: #303030;
+-fx-background-insets: 2, 0, 0;
+-fx-background-radius: 0em;
+-fx-font-size: 2px;
 }
 
 .scroll-bar, .scroll-bar:pressed, .scroll-bar:focused {
-    -fx-font-size: 7.5;
+-fx-font-size: 7.5;
 }
 #delete-button {
 -fx-background-color: #484848;
@@ -146,7 +150,34 @@
 .list-view  {
 -fx-background-color:  linear-gradient(to right,#404040,  #101010);
 }
+#table-view-measurements {
+-fx-text-fill: white;
+-fx-alignment: CENTER;
+-fx-font-style: italic;
+-fx-font-weight: bold;
+-fx-font-size: 11;
+-fx-background-color: #484848;
+-fx-text-fill: #E5E4E2;
+}
+#table-view-measurements .column-header, .table-view .filler {
+ -fx-background-color:  linear-gradient(to bottom, #B6B6B4,  #484848)
+}
 
-
+#table-view-measurements .column-header-background .nested-column-header .table-column {
+ -fx-background-color:  linear-gradient(to bottom, #B6B6B4,  #484848)
+}
+#table-view-measurements .table-column  .label {
+-fx-font-size: 12;
+-fx-opacity: 0.7;
+-fx-background-color: linear-gradient(to bottom,#B6B6B4,  #484848);
+-fx-text-fill: white;
+}
+.chart .chart-content .chart-plot-background {
+-fx-background-color: #484848;
+}
+.button: hover {
+-fx-opacity: 0.6;
+-fx-border-color: #B6B6B4;
+}
 
 

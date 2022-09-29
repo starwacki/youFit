@@ -5,6 +5,8 @@
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -18,35 +20,40 @@
           <NumberAxis side="LEFT" />
         </yAxis>
       </BarChart>
-      <Label layoutX="23.0" layoutY="382.0" prefHeight="34.0" prefWidth="100.0" style="-fx-text-fill: white;" text="Week proteins:" />
-      <ProgressBar fx:id="proteinsWeekSummaryProgressBarController" layoutX="292.0" layoutY="391.0" prefHeight="18.0" prefWidth="100.0" progress="0.0" />
-      <Label layoutX="23.0" layoutY="416.0" prefHeight="34.0" prefWidth="122.0" style="-fx-text-fill: white;" text="Week carbohydrates:" />
-      <Label layoutX="23.0" layoutY="450.0" prefHeight="34.0" prefWidth="122.0" style="-fx-text-fill: white;" text="Week fat:" />
-      <Label layoutX="23.0" layoutY="484.0" prefHeight="34.0" prefWidth="122.0" style="-fx-text-fill: white;" text="Week calories:" />
-      <Label fx:id="eatenProteinsWeekSummaryLabelController" layoutX="175.0" layoutY="391.0" prefHeight="17.0" prefWidth="47.0" style="-fx-text-fill: white;" text="1000000" />
+      <Label layoutX="12.0" layoutY="382.0" prefHeight="34.0" prefWidth="116.0" style="-fx-text-fill: white;" text="Week proteins:" />
+      <ProgressBar fx:id="proteinsWeekSummaryProgressBarController" layoutX="304.0" layoutY="390.0" prefHeight="18.0" prefWidth="100.0" progress="0.0" />
+      <Label layoutX="12.0" layoutY="417.0" prefHeight="34.0" prefWidth="135.0" style="-fx-text-fill: white;" text="Week carbohydrates:" />
+      <Label layoutX="9.0" layoutY="450.0" prefHeight="34.0" prefWidth="122.0" style="-fx-text-fill: white;" text="Week fat:" />
+      <Label layoutX="9.0" layoutY="485.0" prefHeight="34.0" prefWidth="122.0" style="-fx-text-fill: white;" text="Week calories:" />
+      <Label fx:id="eatenProteinsWeekSummaryLabelController" layoutX="149.0" layoutY="391.0" prefHeight="17.0" prefWidth="61.0" style="-fx-text-fill: white;" text="1000000" />
       <Label layoutX="222.0" layoutY="391.0" prefHeight="17.0" prefWidth="17.0" style="-fx-text-fill: white;" text="/" />
       <Label fx:id="neededProteinsWeekSummaryLabelController" layoutX="231.0" layoutY="391.0" prefHeight="17.0" prefWidth="61.0" style="-fx-text-fill: white;" text="1000000" />
-      <Label fx:id="eatenCarbohydratesWeekSummaryLabelController" layoutX="175.0" layoutY="425.0" prefHeight="17.0" prefWidth="47.0" style="-fx-text-fill: white;" text="1000000" />
+      <Label fx:id="eatenCarbohydratesWeekSummaryLabelController" layoutX="149.0" layoutY="425.0" prefHeight="17.0" prefWidth="61.0" style="-fx-text-fill: white;" text="1000000" />
       <Label layoutX="222.0" layoutY="425.0" prefHeight="17.0" prefWidth="17.0" style="-fx-text-fill: white;" text="/" />
       <Label fx:id="neededCarbohydratesWeekSummaryLabelController" layoutX="231.0" layoutY="425.0" prefHeight="17.0" prefWidth="61.0" style="-fx-text-fill: white;" text="1000000" />
-      <ProgressBar fx:id="carbohydratesWeekSummaryProgressBarController" layoutX="292.0" layoutY="424.0" prefHeight="18.0" prefWidth="100.0" progress="0.0" />
-      <Label fx:id="eatenFatWeekSummaryLabelController" layoutX="175.0" layoutY="459.0" prefHeight="17.0" prefWidth="47.0" style="-fx-text-fill: white;" text="1000000" />
+      <ProgressBar fx:id="carbohydratesWeekSummaryProgressBarController" layoutX="304.0" layoutY="420.0" prefHeight="18.0" prefWidth="100.0" progress="0.0" />
+      <Label fx:id="eatenFatWeekSummaryLabelController" layoutX="149.0" layoutY="459.0" prefHeight="17.0" prefWidth="61.0" style="-fx-text-fill: white;" text="1000000" />
       <Label layoutX="222.0" layoutY="459.0" prefHeight="17.0" prefWidth="17.0" style="-fx-text-fill: white;" text="/" />
       <Label fx:id="neededFatWeekSummaryLabelController" layoutX="231.0" layoutY="459.0" prefHeight="17.0" prefWidth="61.0" style="-fx-text-fill: white;" text="1000000" />
-      <ProgressBar fx:id="fatWeekSummaryProgressBarController" layoutX="292.0" layoutY="458.0" prefHeight="18.0" prefWidth="100.0" progress="0.0" />
-      <Label fx:id="eatenCaloriesWeekSummaryLabelController" layoutX="175.0" layoutY="493.0" prefHeight="17.0" prefWidth="47.0" style="-fx-text-fill: white;" text="1000000" />
+      <ProgressBar fx:id="fatWeekSummaryProgressBarController" layoutX="304.0" layoutY="458.0" prefHeight="18.0" prefWidth="100.0" progress="0.0" />
+      <Label fx:id="eatenCaloriesWeekSummaryLabelController" layoutX="149.0" layoutY="493.0" prefHeight="17.0" prefWidth="61.0" style="-fx-text-fill: white;" text="1000000" />
       <Label layoutX="223.0" layoutY="493.0" prefHeight="17.0" prefWidth="17.0" style="-fx-text-fill: white;" text="/" />
       <Label fx:id="neededCaloriesWeekSummaryLabelController" layoutX="231.0" layoutY="493.0" prefHeight="17.0" prefWidth="61.0" style="-fx-text-fill: white;" text="1000000" />
-      <ProgressBar fx:id="caloriesWeekSummaryProgressBarController" layoutX="292.0" layoutY="493.0" prefHeight="18.0" prefWidth="100.0" progress="0.0" />
-      <Label layoutX="435.0" layoutY="391.0" prefHeight="49.0" prefWidth="225.0" style="-fx-text-fill: white;" text="Days without Exceeded Calories:">
+      <ProgressBar fx:id="caloriesWeekSummaryProgressBarController" layoutX="304.0" layoutY="493.0" prefHeight="18.0" prefWidth="100.0" progress="0.0" />
+      <Label layoutX="506.0" layoutY="375.0" prefHeight="49.0" prefWidth="353.0" style="-fx-text-fill: white; -fx-font-size: 18px;" text="Days without Exceeded Calories:">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="daysWithoutExceededCaloriesLabelController" alignment="CENTER" layoutX="660.0" layoutY="392.0" prefHeight="49.0" prefWidth="40.0" style="-fx-text-fill: white;" text="0">
+      <Label fx:id="daysWithoutExceededCaloriesLabelController" alignment="CENTER" layoutX="601.0" layoutY="421.0" prefHeight="92.0" prefWidth="72.0" style="-fx-text-fill: white; -fx-font-size: 58px;" text="0">
          <font>
-            <Font size="15.0" />
+            <Font size="62.0" />
          </font>
       </Label>
+      <ImageView fitHeight="106.0" fitWidth="122.0" layoutX="404.0" layoutY="405.0" pickOnBounds="true" AnchorPane.topAnchor="405.0">
+         <image>
+            <Image url="@../../../img/badge.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

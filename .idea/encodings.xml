@@ -6,18 +6,47 @@
     <file url="file://$PROJECT_DIR$/src/main/java/io/ProductBaseReader.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/add-buttontest.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/badge.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/body-measurements-icons/biceps.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/body-measurements-icons/chart.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/body-measurements-icons/chart.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/body-measurements-icons/chest.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/body-measurements-icons/hip.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/body-measurements-icons/line-chart.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/body-measurements-icons/tape-measure.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/body-measurements-icons/thigh.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/body-measurements-icons/triceps.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/body-measurements-icons/waist.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/body-measurements-icons/weight-loss.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/calendar.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/caloric-demand-icons/age.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/caloric-demand-icons/calories-calculator.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/caloric-demand-icons/calories-calculator.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/caloric-demand-icons/carbohydrates.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/caloric-demand-icons/diet.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/caloric-demand-icons/femenine.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/caloric-demand-icons/gender.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/caloric-demand-icons/height.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/caloric-demand-icons/mars.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/caloric-demand-icons/proteins.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/caloric-demand-icons/run.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/caloric-demand-icons/target.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/caloric-demand-icons/trans-fat.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/caloric-demand-icons/weight.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/delete.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/deleteButton.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/edit-button.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/edit.png" charset="windows-1250" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/img/germany.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/hide-table.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/icon.jpg" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/lock.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/meals.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/next-week.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/next-week2.0.png" charset="windows-1250" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/img/poland.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/profile-icons/arroba.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/profile-icons/date-of-birth.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/profile-icons/dog-tag.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/profilphoto.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/search-free-icon-font.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/setting-img/body-measurements.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/setting-img/body-measurments.png" charset="windows-1250" />
@@ -28,10 +57,19 @@
     <file url="file://$PROJECT_DIR$/src/main/resources/img/setting-img/next-week2.0.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/setting-img/user.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/setting-img/weekly-summary.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/settings-settings-icons/alarm-clock.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/settings-settings-icons/clock.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/settings-settings-icons/dinner.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/settings-settings-icons/food.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/settings-settings-icons/germany.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/settings-settings-icons/language1.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/settings-settings-icons/language1.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/settings-settings-icons/poland.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/settings-settings-icons/poland.png" charset="windows-1250" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/img/settings-settings-icons/united-kingdom.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/settings.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/show-table.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/strawberry-free-icon-font.png" charset="windows-1250" />
-    <file url="file://$PROJECT_DIR$/src/main/resources/img/united-kingdom.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/youFit!!.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/img/youFit!.png" charset="windows-1250" />
     <file url="file://$PROJECT_DIR$/src/main/resources/productBase.txt" charset="UTF-8" />

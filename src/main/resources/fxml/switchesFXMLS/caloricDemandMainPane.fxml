@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" stylesheets="@../../css/mainview.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SettingsPanesControllers.MainPaneSettingsController">
@@ -10,6 +12,11 @@
       <AnchorPane prefHeight="61.0" prefWidth="481.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label alignment="CENTER" style="-fx-font-size: 32px; -fx-font-weight: bold;" text="Change caloric demand" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <ImageView fitHeight="40.0" fitWidth="210.0" layoutX="220.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/setting-img/edit-caloric-demand.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <fx:include fx:id="settingsPane" source="../mainPaneComponentsFXMLS/settingsPane.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
@@ -17,5 +24,7 @@
       <Separator layoutX="229.0" layoutY="69.0" prefHeight="5.0" prefWidth="880.0" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="59.0" />
       <Separator layoutX="224.0" layoutY="69.0" orientation="VERTICAL" prefHeight="584.0" prefWidth="17.0" style="-fx-border-width: 1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="214.0" AnchorPane.topAnchor="60.0" />
       <fx:include fx:id="caloricDemandPane" source="componentsFXMLS/caloricDemandPane.fxml" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="120.0" />
+      <Separator layoutX="756.0" layoutY="404.0" prefHeight="5.0" prefWidth="344.0" />
+      <Separator layoutX="756.0" layoutY="408.0" orientation="VERTICAL" prefHeight="238.0" prefWidth="6.0" />
    </children>
 </AnchorPane>
