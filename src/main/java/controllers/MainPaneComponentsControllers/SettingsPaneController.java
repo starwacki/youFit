@@ -6,6 +6,9 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import model.language.Language;
+import model.language.ProfileLanguage;
+import model.language.SettingsLanguage;
 
 public class SettingsPaneController {
 
@@ -30,8 +33,18 @@ public class SettingsPaneController {
     @FXML
     private Label weekSummaryLabelController;
     public void initialize() {
-       setMainPaneByClickedSetting();
+        setLanguage(new Language().getSettingsLanguage());
+        setMainPaneByClickedSetting();
 
+    }
+
+    public void setLanguage(SettingsLanguage language) {
+        profileLabelController.setText(language.getProfileLabelController());
+        mealsLabelController.setText(language.getMealsLabelController());
+        weekSummaryLabelController.setText(language.getWeekSummaryLabelController());
+        bodyMeasurementsLabelController.setText(language.getBodyMeasurementsLabelController());
+        changeCaloriesDemandLabelController.setText(language.getChangeCaloriesDemandLabelController());
+        settingsLabelController.setText(language.getSettingsLabelController());
     }
     private void setMainPaneByClickedSetting() {
         SceneSwitcherController sceneSwitcherController = new SceneSwitcherController();

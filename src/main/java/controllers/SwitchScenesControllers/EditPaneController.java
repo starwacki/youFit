@@ -1,4 +1,5 @@
 package controllers.SwitchScenesControllers;
+import controllers.MainEditPaneController;
 import io.ProductBaseReader;
 import io.YourProductBaseIO;
 import javafx.fxml.FXML;
@@ -8,6 +9,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import model.language.EditPaneLanguage;
+import model.language.Language;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -35,16 +39,58 @@ public class EditPaneController {
     private TextField searchTextFieldController;
     @FXML
     private Button changeListViewButtonController;
+    @FXML
+    private Button addNewProductToYourBase;
+    @FXML
+    private Label percentageOfMacronutrientsLabelController;
+    @FXML
+    private Label selectProductToAddInfoLabelController;
+    @FXML
+    private Label searchLabelController;
+    @FXML
+    private Label weightInfoLabelController;
+    @FXML
+    private Label addNewProductToYourBaseInfoLabelController;
+    @FXML
+    private Label productNameInfoLabelController;
+    @FXML
+    private Label producerInfoLabelController;
+    @FXML
+    private Label proteinsPer100gInfoLabelController;
+    @FXML
+    private Label caloriesPer100gInfoLabelController;
+    @FXML
+    private Label carbsPer100gInfoLabelController;
+    @FXML
+    private Label fatPer100gInfoLabelController;
     private List<String> listview;
-    private static final String CHANGE_TO_YOUR_PRODUCTS_BASE_BUTTON_TEXT = "personal products";
-    private static final String CHANGE_TO_MAIN_PRODUCT_BASE_BUTTON_TEXT = "product base";
+
 
     public void initialize() {
+        setLanguage(new Language().getEditPaneLanguage());
         listview = ProductBaseReader.readProductBase();
         addProductToListView(listview);
         setTextFieldOnlyNumeric(weightTextFieldController);
         changeListView();
         searchProduct();
+    }
+    private void setLanguage(EditPaneLanguage language) {
+        percentageOfMacronutrientsLabelController.setText(language.getPercentageOfMacronutrientsLabelController());
+        proteinsPieCharLabelController.setText(language.getProteinsPieCharLabelController());
+        carbohydratesPieCharLabelController.setText(language.getCarbohydratesPieCharLabelController());
+        fatPieCharLabelController.setText(language.getFatPieCharLabelController());
+        selectProductToAddInfoLabelController.setText(language.getSelectProductToAddInfoLabelController());
+        searchLabelController.setText(language.getSearchLabelController());
+        changeListViewButtonController.setText(language.getChangeListViewButtonController());
+        weightInfoLabelController.setText(language.getWeightInfoLabelController());
+        addNewProductToYourBaseInfoLabelController.setText(language.getAddNewProductToYourBaseInfoLabelController());
+        productNameInfoLabelController.setText(language.getProductNameInfoLabelController());
+        producerInfoLabelController.setText(language.getProducerInfoLabelController());
+        caloriesPer100gInfoLabelController.setText(language.getCaloriesPer100gInfoLabelController());
+        proteinsPer100gInfoLabelController.setText(language.getProteinsPer100gInfoLabelController());
+        carbsPer100gInfoLabelController.setText(language.getCarbsPer100gInfoLabelController());
+        fatPer100gInfoLabelController.setText(language.getFatPer100gInfoLabelController());
+        addNewProductToYourBase.setText(language.getAddNewProductToYourBase());
     }
     public PieChart getPieChartController() {
         return pieChartController;
@@ -97,8 +143,8 @@ public class EditPaneController {
        productsBaseListView.getItems().addAll(list);
    }
    private void searchProduct() {
-        if (changeListViewButtonController.getText().equals(CHANGE_TO_YOUR_PRODUCTS_BASE_BUTTON_TEXT)) searchProductInList();
-        else if (changeListViewButtonController.getText().equals(CHANGE_TO_MAIN_PRODUCT_BASE_BUTTON_TEXT)) searchProductInList();
+        if (MainEditPaneController.isMainBase()) searchProductInList();
+        else  searchProductInList();
    }
    private void searchProductInList() {
        searchTextFieldController.addEventHandler(KeyEvent.ANY, keyEvent -> {
@@ -109,15 +155,13 @@ public class EditPaneController {
        );}
     private void changeListView() {
         changeListViewButtonController.addEventFilter(MouseEvent.MOUSE_CLICKED,mouseEvent -> {
-            if (changeListViewButtonController.getText().equals(CHANGE_TO_YOUR_PRODUCTS_BASE_BUTTON_TEXT))
-                setListView(YourProductBaseIO.readProductBase(),CHANGE_TO_MAIN_PRODUCT_BASE_BUTTON_TEXT);
-            else if (changeListViewButtonController.getText().equals(CHANGE_TO_MAIN_PRODUCT_BASE_BUTTON_TEXT))
-                setListView(ProductBaseReader.readProductBase(),CHANGE_TO_YOUR_PRODUCTS_BASE_BUTTON_TEXT);
+            if (MainEditPaneController.isMainBase()) setListView(YourProductBaseIO.readProductBase(),false);
+            else setListView(ProductBaseReader.readProductBase(),true);
         });
     }
-    private void setListView(List<String> listView, String buttonText) {
+    private void setListView(List<String> listView, boolean isMainBase) {
         this.listview = listView;
         addProductToListView(listview);
-        changeListViewButtonController.setText(buttonText);
+        MainEditPaneController.setMainBase(isMainBase);
     }
 }

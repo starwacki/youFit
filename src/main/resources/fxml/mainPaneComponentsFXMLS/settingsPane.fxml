@@ -39,7 +39,7 @@
             </ImageView>
          </graphic>
       </Label>
-      <Label id="settings-label" fx:id="weekSummaryLabelController" alignment="CENTER" layoutX="-1.0" layoutY="376.0" prefHeight="41.0" prefWidth="280.0" style="-fx-background-color: linear-gradient(to right,#404040,  #101010); -fx-text-fill: white;" text="Week summary" AnchorPane.leftAnchor="-0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="395.0">
+      <Label id="settings-label" fx:id="weekSummaryLabelController" alignment="CENTER" layoutX="-1.0" layoutY="376.0" prefHeight="41.0" prefWidth="280.0" style="-fx-background-color: linear-gradient(to right,#404040,  #101010); -fx-text-fill: white;" text="Week Summary" AnchorPane.leftAnchor="-0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="395.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -51,7 +51,7 @@
             </ImageView>
          </graphic>
       </Label>
-      <Label id="settings-label" fx:id="bodyMeasurementsLabelController" alignment="CENTER" layoutY="335.0" prefHeight="41.0" prefWidth="220.0" style="-fx-background-color: linear-gradient(to right,#404040,  #101010); -fx-text-fill: white;" text="Body measurements" AnchorPane.topAnchor="460.0">
+      <Label id="settings-label" fx:id="bodyMeasurementsLabelController" alignment="CENTER" layoutY="335.0" prefHeight="41.0" prefWidth="220.0" style="-fx-background-color: linear-gradient(to right,#404040,  #101010); -fx-text-fill: white;" text="Body Measurements" AnchorPane.topAnchor="460.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -63,7 +63,7 @@
             </ImageView>
          </graphic>
       </Label>
-      <Label id="settings-label" fx:id="changeCaloriesDemandLabelController" alignment="CENTER" layoutX="-13.0" layoutY="444.0" prefHeight="41.0" prefWidth="280.0" style="-fx-background-color: linear-gradient(to right,#404040,  #101010); -fx-text-fill: white;" text="Change calories demand" AnchorPane.leftAnchor="-0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="525.0">
+      <Label id="settings-label" fx:id="changeCaloriesDemandLabelController" alignment="CENTER" layoutX="-13.0" layoutY="444.0" prefHeight="41.0" prefWidth="280.0" style="-fx-background-color: linear-gradient(to right,#404040,  #101010); -fx-text-fill: white;" text="Calories Demand" AnchorPane.leftAnchor="-0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="525.0">
          <font>
             <Font size="14.0" />
          </font>

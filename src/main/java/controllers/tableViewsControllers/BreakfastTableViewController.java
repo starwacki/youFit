@@ -7,6 +7,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import model.calories.CaloriesCalculator;
 import model.Days;
+import model.language.BreakfastTableViewLanguage;
+import model.language.Language;
 import model.product.DaysMeals;
 import model.product.Product;
 import java.util.List;
@@ -39,11 +41,23 @@ public class BreakfastTableViewController {
     private Label proteinsBreakfastLabelController;
     @FXML
     private Button breakfastEditButtonController;
+    @FXML
+    private Label proteinsInfoLabelController;
+    @FXML
+    private Label carbohydratesInfoLabelController;
+    @FXML
+    private Label fatInfoLabelController;
+    @FXML
+    private Label caloriesInfoLabelController;
+    @FXML
+    private Label nameLabelController;
 
 
     public void initialize() {
         setColumnsSettings();
         editButtonListener();
+        setLanguage(new Language().getBreakfastTableViewLanguage());
+
     }
     public void addProductsToActualTableView(List<Product> productList) {
         int i = 0;
@@ -81,6 +95,13 @@ public class BreakfastTableViewController {
     public double getBreakfastFatPercentInMeal() {
         return getLabelValue(fatBreakfastLabelController) * CaloriesCalculator.ONE_GRAM_OF_FAT_CALORIES
                 / getApproximateCaloriesFromLabels() * 100;
+    }
+    private void setLanguage(BreakfastTableViewLanguage language){
+        nameLabelController.setText(language.getMealName());
+        proteinsInfoLabelController.setText(language.getProteinsInfoLabelController());
+        carbohydratesInfoLabelController.setText(language.getCarbohydratesInfoLabelController());
+        fatInfoLabelController.setText(language.getFatInfoLabelController());
+        caloriesInfoLabelController.setText(language.getCaloriesInfoLabelController());
     }
     private void setColumnsSettings() {
         setCellValueFactory();

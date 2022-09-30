@@ -9,7 +9,7 @@
         <Separator layoutY="633.0" prefHeight="18.0" prefWidth="1100.0" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
         <fx:include fx:id="daysPane" source="mainPaneComponentsFXMLS/daysPane.fxml" AnchorPane.bottomAnchor="639.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
         <fx:include fx:id="caloriesPane" source="mainPaneComponentsFXMLS/caloriesPane.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="645.0" />
-        <VBox fx:id="mainPaneViewVboxController" layoutX="529.0" layoutY="92.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="750.0" AnchorPane.bottomAnchor="71.0" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="92.0">
+        <VBox fx:id="mainPaneViewVboxController" layoutX="529.0" layoutY="92.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="537.0" prefWidth="752.0" AnchorPane.bottomAnchor="71.0" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="92.0">
             <children>
                 <fx:include fx:id="breakfastTableView" source="mealsTableViews/breakfastTableView.fxml" />
                 <fx:include fx:id="brunchTableView" source="mealsTableViews/brunchTableView.fxml" />

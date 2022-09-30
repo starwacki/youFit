@@ -66,15 +66,15 @@
 }
 
 #proteins-label  {
--fx-text-fill: blue;
+-fx-text-fill: #04BDDE;
 -fx-font-weight: bold;
 }
 #carbs-label {
--fx-text-fill: green;
+-fx-text-fill: #32F902;
 -fx-font-weight: bold;
 }
 #fat-label {
--fx-text-fill: #D2691E;
+-fx-text-fill: chocolate;
 -fx-font-weight: bold;
 }
 #kcal-label {

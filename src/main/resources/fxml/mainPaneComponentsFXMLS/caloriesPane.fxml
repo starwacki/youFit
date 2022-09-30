@@ -11,31 +11,31 @@
    <children>
       <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">
          <children>
-            <ProgressBar id="protein-progress-bar" fx:id="proteinsProgressBarController" prefHeight="20.0" prefWidth="130.0" progress="0.59" styleClass="warning-bar">
+            <ProgressBar id="protein-progress-bar" fx:id="proteinsProgressBarController" prefHeight="20.0" prefWidth="150.0" progress="0.59" styleClass="warning-bar">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
             </ProgressBar>
-            <ProgressBar id="carbohydrates-progress-bar" fx:id="carbohydratesProgressBarController" prefHeight="20.0" prefWidth="130.0" progress="0.49" styleClass="warning-bar">
+            <ProgressBar id="carbohydrates-progress-bar" fx:id="carbohydratesProgressBarController" prefHeight="20.0" prefWidth="150.0" progress="0.49" styleClass="warning-bar">
                <HBox.margin>
-                  <Insets left="55.0" />
+                  <Insets left="40.0" />
                </HBox.margin>
             </ProgressBar>
-            <ProgressBar id="fat-progress-bar" fx:id="fatProgressBar" prefHeight="20.0" prefWidth="130.0" progress="0.35" styleClass="warning-bar">
+            <ProgressBar id="fat-progress-bar" fx:id="fatProgressBar" prefHeight="20.0" prefWidth="150.0" progress="0.35" styleClass="warning-bar">
                <HBox.margin>
-                  <Insets left="51.0" />
+                  <Insets left="40.0" />
                </HBox.margin>
             </ProgressBar>
-            <ProgressBar id="calories-progress-bar" fx:id="caloriesProgressBarController" prefHeight="20.0" prefWidth="130.0" progress="0.36">
+            <ProgressBar id="calories-progress-bar" fx:id="caloriesProgressBarController" prefHeight="20.0" prefWidth="150.0" progress="0.36">
                <HBox.margin>
-                  <Insets left="55.0" />
+                  <Insets left="40.0" />
                </HBox.margin>
             </ProgressBar>
          </children>
       </HBox>
       <HBox id="calories-bar-hbox" prefHeight="40.0" prefWidth="744.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="15.0">
          <children>
-            <Label fx:id="proteinsStringLabelController" prefHeight="20.0" prefWidth="57.0" text="Proteins:">
+            <Label fx:id="proteinsStringLabelController" prefHeight="20.0" prefWidth="78.0" text="Proteins:">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -59,7 +59,7 @@
                   <Insets left="2.0" />
                </HBox.margin>
             </Label>
-            <Label fx:id="neededProteinsLabelController" prefHeight="40.0" prefWidth="37.0" text="250">
+            <Label fx:id="neededProteinsLabelController" prefHeight="20.0" prefWidth="42.0" text="250">
                <font>
                   <Font size="13.0" />
                </font>
@@ -67,7 +67,7 @@
                   <Insets />
                </opaqueInsets>
             </Label>
-            <Label fx:id="carbohydratesStringLabelController" prefHeight="20.0" prefWidth="62.0" text="Carbs">
+            <Label fx:id="carbohydratesStringLabelController" prefHeight="20.0" prefWidth="87.0" text="Carbs">
                <font>
                   <Font size="13.0" />
                </font>
@@ -75,7 +75,7 @@
                   <Insets />
                </opaqueInsets>
                <HBox.margin>
-                  <Insets left="40.0" />
+                  <Insets left="20.0" />
                </HBox.margin>
             </Label>
             <Label fx:id="eatenCarbohydratesLabelController" alignment="CENTER" prefHeight="40.0" prefWidth="37.0" text="37">
@@ -86,7 +86,7 @@
                   <Insets />
                </opaqueInsets>
                <HBox.margin>
-                  <Insets left="2.0" />
+                  <Insets />
                </HBox.margin>
             </Label>
             <Label fx:id="carbohydratesSlashLabelController" alignment="CENTER" prefHeight="40.0" prefWidth="10.0" text="/">
@@ -105,7 +105,7 @@
                   <Insets />
                </opaqueInsets>
             </Label>
-            <Label fx:id="fatStringLabelController" prefHeight="20.0" prefWidth="55.0" text="Fat:">
+            <Label fx:id="fatStringLabelController" prefHeight="20.0" prefWidth="77.0" text="Fat:">
                <font>
                   <Font size="13.0" />
                </font>
@@ -113,7 +113,7 @@
                   <Insets />
                </opaqueInsets>
                <HBox.margin>
-                  <Insets left="40.0" />
+                  <Insets left="20.0" />
                </HBox.margin>
             </Label>
             <Label fx:id="eatenFatLabelController" alignment="CENTER" prefHeight="40.0" prefWidth="37.0" text="150">
@@ -140,12 +140,12 @@
                   <Insets />
                </opaqueInsets>
             </Label>
-            <Label fx:id="caloriesStringLabelController" prefHeight="20.0" prefWidth="54.0" text="Calories:">
+            <Label fx:id="caloriesStringLabelController" prefHeight="20.0" prefWidth="77.0" text="Calories:">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <HBox.margin>
-                  <Insets left="40.0" />
+                  <Insets left="25.0" />
                </HBox.margin>
             </Label>
             <Label fx:id="eatenCaloriesLabelController" alignment="CENTER" prefHeight="40.0" prefWidth="37.0" text="9000">

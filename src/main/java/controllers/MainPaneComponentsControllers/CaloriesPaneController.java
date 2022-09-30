@@ -2,6 +2,9 @@ package controllers.MainPaneComponentsControllers;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import model.language.CaloriesPaneLanguage;
+import model.language.Language;
+
 import java.util.List;
 public class CaloriesPaneController {
     @FXML
@@ -44,6 +47,16 @@ public class CaloriesPaneController {
     private Label caloriesStringLabelController;
     @FXML
     private Label caloriesSlashLabelController;
+
+    public void initialize() {
+        setLanguage(new Language().getCaloriesPaneLanguage());
+    }
+    private void setLanguage(CaloriesPaneLanguage language) {
+        proteinsStringLabelController.setText(language.getProteinsStringLabelController());
+        carbohydratesStringLabelController.setText(language.getCarbohydratesStringLabelController());
+        fatStringLabelController.setText(language.getFatStringLabelController());
+        caloriesStringLabelController.setText(language.getCaloriesStringLabelController());
+    }
     public Label getEatenCaloriesLabelController() {
         return eatenCaloriesLabelController;
     }

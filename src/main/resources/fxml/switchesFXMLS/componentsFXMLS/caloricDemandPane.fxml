@@ -11,20 +11,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="caloricDemandAnchorPane" prefHeight="500.0" prefWidth="800.0" stylesheets="@../../../css/mainview.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SettingsPanesControllers.CaloricDemandPaneController">
+<AnchorPane fx:id="caloricDemandAnchorPane" prefHeight="566.0" prefWidth="800.0" stylesheets="@../../../css/mainview.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SettingsPanesControllers.CaloricDemandPaneController">
    <children>
-      <ImageView fitHeight="25.0" fitWidth="50.0" layoutX="14.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="17.0">
+      <ImageView fitHeight="25.0" fitWidth="50.0" layoutX="14.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="131.0">
          <image>
             <Image url="@../../../img/caloric-demand-icons/age.png" />
          </image>
       </ImageView>
-      <Label layoutX="50.0" layoutY="75.0" prefHeight="25.0" prefWidth="100.0" style="-fx-text-fill: white;" text="Age:" />
-      <Label alignment="CENTER" layoutX="514.0" layoutY="284.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="47.0" prefWidth="263.0" style="-fx-text-fill: white;" text="The caloric demand is calculated on the basis of by Harris-Benedict formula. " wrapText="true" AnchorPane.bottomAnchor="169.0" AnchorPane.leftAnchor="514.0" AnchorPane.topAnchor="284.0" />
-      <TextField fx:id="ageTextFieldController" layoutX="150.0" layoutY="75.0" prefHeight="25.0" prefWidth="75.0" AnchorPane.leftAnchor="150.0" />
-      <Label layoutX="50.0" layoutY="107.0" prefHeight="25.0" prefWidth="100.0" style="-fx-text-fill: white;" text="Gender:" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="110.0" />
-      <CheckBox fx:id="maleCheckBoxController" layoutX="150.0" layoutY="114.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="37.0" style="-fx-text-fill: white; -fx-background-color: linear-gradient(to right,#708A90,  #B7B9B9); -fx-font-weight: bold;" text="M" />
-      <CheckBox fx:id="femaleCheckBoxController" layoutX="187.0" layoutY="114.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="37.0" style="-fx-text-fill: white; -fx-background-color: linear-gradient(to right,#708A90,  #B7B9B9); -fx-font-weight: bold;" text="F" />
-      <Label layoutX="224.0" layoutY="75.0" opacity="0.59" prefHeight="25.0" prefWidth="83.0" style="-fx-text-fill: white;" text="age: 18-80" AnchorPane.leftAnchor="225.0">
+      <Label fx:id="ageLabelController" layoutX="50.0" layoutY="149.0" prefHeight="25.0" prefWidth="100.0" style="-fx-text-fill: white;" text="Age:" AnchorPane.topAnchor="131.0" />
+      <Label fx:id="harrisBenedictInfoLabelController" alignment="CENTER" layoutX="513.0" layoutY="330.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="87.0" prefWidth="263.0" style="-fx-text-fill: white;" text="The caloric demand is calculated on the basis of by Harris-Benedict formula. " wrapText="true" AnchorPane.leftAnchor="513.0" AnchorPane.topAnchor="330.0" />
+      <TextField fx:id="ageTextFieldController" layoutX="150.0" layoutY="75.0" prefHeight="25.0" prefWidth="75.0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="131.0" />
+      <Label fx:id="genderLabelController" layoutX="50.0" layoutY="179.0" prefHeight="25.0" prefWidth="100.0" style="-fx-text-fill: white;" text="Gender:" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="166.0" />
+      <CheckBox fx:id="maleCheckBoxController" layoutX="150.0" layoutY="168.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="37.0" style="-fx-text-fill: white; -fx-background-color: linear-gradient(to right,#708A90,  #B7B9B9); -fx-font-weight: bold;" text="M" AnchorPane.topAnchor="168.0" />
+      <CheckBox fx:id="femaleCheckBoxController" layoutX="187.0" layoutY="168.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="37.0" style="-fx-text-fill: white; -fx-background-color: linear-gradient(to right,#708A90,  #B7B9B9); -fx-font-weight: bold;" text="F" AnchorPane.topAnchor="168.0" />
+      <Label fx:id="ageInfoLabelController" layoutX="230.0" layoutY="124.0" opacity="0.59" prefHeight="40.0" prefWidth="139.0" style="-fx-text-fill: white;" text="recommended age for calculated: (18-80)" wrapText="true" AnchorPane.leftAnchor="230.0" AnchorPane.topAnchor="125.0">
          <padding>
             <Insets left="10.0" />
          </padding>
@@ -32,9 +32,9 @@
             <Font size="11.0" />
          </font>
       </Label>
-      <Label layoutX="57.0" layoutY="135.0" prefHeight="25.0" prefWidth="100.0" style="-fx-text-fill: white;" text="Height: " AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="145.0" />
-      <TextField fx:id="heightLabelController" layoutX="160.0" layoutY="85.0" prefHeight="25.0" prefWidth="75.0" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="145.0" />
-      <Label layoutX="231.0" layoutY="145.0" opacity="0.7" prefHeight="25.0" prefWidth="67.0" style="-fx-text-fill: white;" text="cm" AnchorPane.leftAnchor="225.0">
+      <Label fx:id="heightInfoLabelController" layoutX="50.0" layoutY="204.0" prefHeight="25.0" prefWidth="100.0" style="-fx-text-fill: white;" text="Height: " AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="201.0" />
+      <TextField fx:id="heightTextFieldController" layoutX="149.0" layoutY="204.0" prefHeight="25.0" prefWidth="75.0" AnchorPane.leftAnchor="149.0" AnchorPane.topAnchor="201.0" />
+      <Label layoutX="224.0" layoutY="204.0" opacity="0.7" prefHeight="25.0" prefWidth="67.0" style="-fx-text-fill: white;" text="cm" AnchorPane.leftAnchor="224.0" AnchorPane.topAnchor="201.0">
          <padding>
             <Insets left="10.0" />
          </padding>
@@ -42,9 +42,9 @@
             <Font size="11.0" />
          </font>
       </Label>
-      <Label layoutX="50.0" layoutY="177.0" prefHeight="25.0" prefWidth="100.0" style="-fx-text-fill: white;" text="Weight:" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="180.0" />
-      <TextField fx:id="weightLabelController" layoutX="150.0" layoutY="180.0" prefHeight="25.0" prefWidth="75.0" />
-      <Label layoutX="231.0" layoutY="180.0" opacity="0.7" prefHeight="25.0" prefWidth="67.0" style="-fx-text-fill: white;" text="kg" AnchorPane.leftAnchor="225.0">
+      <Label fx:id="weightInfoLabelController" layoutX="50.0" layoutY="177.0" prefHeight="25.0" prefWidth="100.0" style="-fx-text-fill: white;" text="Weight:" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="236.0" />
+      <TextField fx:id="weightTextFieldController" layoutX="149.0" layoutY="236.0" prefHeight="25.0" prefWidth="75.0" AnchorPane.topAnchor="236.0" />
+      <Label layoutX="224.0" layoutY="236.0" opacity="0.7" prefHeight="25.0" prefWidth="67.0" style="-fx-text-fill: white;" text="kg" AnchorPane.leftAnchor="224.0">
          <padding>
             <Insets left="10.0" />
          </padding>
@@ -52,11 +52,11 @@
             <Font size="11.0" />
          </font>
       </Label>
-      <Label layoutX="50.0" layoutY="212.0" prefHeight="25.0" prefWidth="100.0" style="-fx-text-fill: white;" text="Training target:" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="250.0" />
-      <ChoiceBox fx:id="trainingTargetChoiceBoxController" layoutX="272.0" layoutY="133.0" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(to right,#708A90,  #B7B9B9);" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="215.0" />
-      <Label layoutX="50.0" layoutY="238.0" prefHeight="25.0" prefWidth="100.0" style="-fx-text-fill: white;" text="Activity:" AnchorPane.topAnchor="215.0" />
-      <ChoiceBox fx:id="PropertiesChoiceBoxController" layoutX="150.0" layoutY="238.0" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(to right,#708A90,  #B7B9B9);" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="250.0" />
-      <Button fx:id="calculateCaloricDemandButtonController" layoutX="114.0" layoutY="289.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="124.0" style="-fx-text-fill: white; -fx-font-weight: bold;" text="Calculate:" AnchorPane.topAnchor="290.0">
+      <Label fx:id="trainingTargetLabelController" layoutX="50.0" layoutY="212.0" prefHeight="25.0" prefWidth="100.0" style="-fx-text-fill: white;" text="Training target:" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="306.0" />
+      <ChoiceBox fx:id="trainingTargetChoiceBoxController" layoutX="272.0" layoutY="133.0" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(to right,#708A90,  #B7B9B9);" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="271.0" />
+      <Label fx:id="activityLabelController" layoutX="50.0" layoutY="238.0" prefHeight="25.0" prefWidth="100.0" style="-fx-text-fill: white;" text="Activity:" AnchorPane.topAnchor="271.0" />
+      <ChoiceBox fx:id="PropertiesChoiceBoxController" layoutX="150.0" layoutY="238.0" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(to right,#708A90,  #B7B9B9);" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="306.0" />
+      <Button fx:id="calculateCaloricDemandButtonController" layoutX="114.0" layoutY="289.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="124.0" style="-fx-text-fill: white; -fx-font-weight: bold;" text="Calculate:" AnchorPane.topAnchor="356.0">
          <graphic>
             <ImageView fitHeight="26.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -64,17 +64,16 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Label layoutX="50.0" layoutY="340.0" prefHeight="17.0" prefWidth="414.0" style="-fx-text-fill: white;" text="Recomended calories for you:" wrapText="true" AnchorPane.topAnchor="345.0" />
-      <Label fx:id="calculateCaloricDemandInfoLabelController" layoutX="50.0" layoutY="360.0" prefHeight="18.0" prefWidth="414.0" style="-fx-text-fill: white;" text="2800kcal / 150g proteins / 100g carbohydrates / 90g fat" wrapText="true" AnchorPane.topAnchor="360.0" />
-      <Button fx:id="setCalculatedCaloricDemandController" layoutX="77.0" layoutY="394.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="34.0" prefWidth="220.0" style="-fx-text-fill: white; -fx-font-weight: bold;" text="Set calculated caloric demand" AnchorPane.topAnchor="394.0">
+      <Label fx:id="recommendedCaloriesLabelController" layoutX="50.0" layoutY="340.0" prefHeight="17.0" prefWidth="414.0" style="-fx-text-fill: white;" text="Recommended calories for you:" wrapText="true" AnchorPane.topAnchor="411.0" />
+      <Button fx:id="setCalculatedCaloricDemandController" layoutX="26.0" layoutY="444.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="34.0" prefWidth="273.0" style="-fx-text-fill: white; -fx-font-weight: bold;" text="Set calculated caloric demand" AnchorPane.topAnchor="500.0">
          <graphic>
-            <ImageView fitHeight="26.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../img/edit.png" />
                </image>
             </ImageView>
          </graphic></Button>
-      <Label layoutX="50.0" layoutY="15.0" prefHeight="35.0" prefWidth="273.0" style="-fx-font-weight: bold; -fx-text-fill: white;" text="Caloric demand calculator" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="15.0">
+      <Label fx:id="caloricDemandCalculatorLabelController" layoutX="50.0" layoutY="15.0" prefHeight="35.0" prefWidth="341.0" style="-fx-font-weight: bold; -fx-text-fill: white;" text="Caloric demand calculator" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="81.0">
          <graphic>
             <ImageView fitHeight="35.0" fitWidth="41.0" pickOnBounds="true">
                <image>
@@ -86,7 +85,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="471.0" layoutY="15.0" prefHeight="35.0" prefWidth="239.0" style="-fx-text-fill: white; -fx-font-weight: bold;" stylesheets="@../../../css/mainview.css" text="     Set caloric demand" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="15.0">
+      <Label fx:id="setCaloricDemandLabelController" layoutX="471.0" layoutY="15.0" prefHeight="35.0" prefWidth="289.0" style="-fx-text-fill: white; -fx-font-weight: bold;" stylesheets="@../../../css/mainview.css" text="     Set caloric demand" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="81.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -98,15 +97,15 @@
             </ImageView>
          </graphic>
       </Label>
-      <Label layoutX="515.0" layoutY="50.0" prefHeight="25.0" prefWidth="100.0" style="-fx-text-fill: white;" text="Proteins:" AnchorPane.leftAnchor="515.0" AnchorPane.topAnchor="75.0" />
-      <TextField fx:id="carbohydratesCaloricDemandTextFieldController" layoutX="614.0" layoutY="75.0" prefHeight="25.0" prefWidth="75.0" AnchorPane.leftAnchor="615.0" AnchorPane.topAnchor="110.0" />
-      <Label layoutX="525.0" layoutY="60.0" prefHeight="25.0" prefWidth="100.0" style="-fx-text-fill: white;" text="Carbohydrates:" AnchorPane.leftAnchor="515.0" AnchorPane.topAnchor="110.0" />
-      <TextField fx:id="proteinsCaloricDemandTextFieldController" layoutX="615.0" layoutY="119.0" prefHeight="25.0" prefWidth="75.0" AnchorPane.topAnchor="75.0" />
-      <Label layoutX="535.0" layoutY="70.0" prefHeight="25.0" prefWidth="100.0" style="-fx-text-fill: white;" text="Fat:" AnchorPane.leftAnchor="515.0" AnchorPane.topAnchor="150.0" />
-      <TextField fx:id="fatCaloricDemandTextFieldController" layoutX="614.0" layoutY="135.0" prefHeight="25.0" prefWidth="75.0" AnchorPane.leftAnchor="615.0" AnchorPane.topAnchor="150.0" />
-      <Label layoutX="515.0" layoutY="168.0" prefHeight="25.0" prefWidth="100.0" style="-fx-text-fill: white;" text="Calories:" AnchorPane.leftAnchor="515.0" AnchorPane.topAnchor="190.0" />
-      <TextField fx:id="caloriesCaloricDemandTextFieldController" layoutX="624.0" layoutY="145.0" prefHeight="25.0" prefWidth="75.0" AnchorPane.leftAnchor="615.0" AnchorPane.topAnchor="190.0" />
-      <Button fx:id="setCaloricDemandButtonController" layoutX="507.0" layoutY="233.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="34.0" prefWidth="159.0" style="-fx-text-fill: white; -fx-font-weight: bold;" text="Set caloric demand">
+      <Label fx:id="setCaloricDemandProteinsLabelController" layoutX="515.0" layoutY="50.0" prefHeight="25.0" prefWidth="100.0" style="-fx-text-fill: white;" text="Proteins:" AnchorPane.leftAnchor="515.0" AnchorPane.topAnchor="136.0" />
+      <TextField fx:id="carbohydratesCaloricDemandTextFieldController" layoutX="614.0" layoutY="75.0" prefHeight="25.0" prefWidth="75.0" AnchorPane.leftAnchor="615.0" AnchorPane.topAnchor="176.0" />
+      <Label fx:id="setCaloricDemandCarbohydratesLabelController" layoutX="525.0" layoutY="60.0" prefHeight="25.0" prefWidth="100.0" style="-fx-text-fill: white;" text="Carbohydrates:" AnchorPane.leftAnchor="515.0" AnchorPane.topAnchor="176.0" />
+      <TextField fx:id="proteinsCaloricDemandTextFieldController" layoutX="615.0" layoutY="119.0" prefHeight="25.0" prefWidth="75.0" AnchorPane.topAnchor="136.0" />
+      <Label fx:id="setCaloricDemandFatLabelController" layoutX="535.0" layoutY="70.0" prefHeight="25.0" prefWidth="100.0" style="-fx-text-fill: white;" text="Fat:" AnchorPane.leftAnchor="515.0" AnchorPane.topAnchor="216.0" />
+      <TextField fx:id="fatCaloricDemandTextFieldController" layoutX="614.0" layoutY="135.0" prefHeight="25.0" prefWidth="75.0" AnchorPane.leftAnchor="615.0" AnchorPane.topAnchor="216.0" />
+      <Label fx:id="setCaloricDemandCaloriesLabelController" layoutX="515.0" layoutY="168.0" prefHeight="25.0" prefWidth="100.0" style="-fx-text-fill: white;" text="Calories:" AnchorPane.leftAnchor="515.0" AnchorPane.topAnchor="256.0" />
+      <TextField fx:id="caloriesCaloricDemandTextFieldController" layoutX="624.0" layoutY="145.0" prefHeight="25.0" prefWidth="75.0" AnchorPane.leftAnchor="615.0" AnchorPane.topAnchor="256.0" />
+      <Button fx:id="setCaloricDemandButtonController" layoutX="482.0" layoutY="233.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="34.0" prefWidth="220.0" style="-fx-text-fill: white; -fx-font-weight: bold;" text="Set caloric demand" AnchorPane.topAnchor="299.0">
          <graphic>
             <ImageView fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -114,70 +113,90 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Label alignment="CENTER" layoutX="535.0" layoutY="349.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="263.0" style="-fx-text-fill: white;" text="Male: BMR = 66 + (13,7 × weight in kg) + (5 × height in cm) - (6,8 × age in years)" wrapText="true" AnchorPane.leftAnchor="535.0" AnchorPane.topAnchor="349.0">
+      <Label fx:id="maleHarrisBenedictFormulaLabelController" alignment="CENTER" layoutX="535.0" layoutY="349.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="40.0" prefWidth="263.0" style="-fx-text-fill: white;" text="Male: BMR = 66 + (13,7 × weight in kg) + (5 × height in cm) - (6,8 × age in years)" wrapText="true" AnchorPane.leftAnchor="535.0" AnchorPane.topAnchor="415.0">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
       </Label>
-      <Label alignment="CENTER" layoutX="535.0" layoutY="408.0" prefHeight="40.0" prefWidth="273.0" style="-fx-text-fill: white;" text=" Female: BMR = 655 + (9,6 × weight in kg) + (1,8 × height in cm) - (4,7 × age in years)" wrapText="true" AnchorPane.leftAnchor="530.0" AnchorPane.topAnchor="408.0">
+      <Label fx:id="femaleHarrisBenedictFormulaLabelController" alignment="CENTER" layoutX="535.0" layoutY="408.0" prefHeight="40.0" prefWidth="273.0" style="-fx-text-fill: white;" text=" Female: BMR = 655 + (9,6 × weight in kg) + (1,8 × height in cm) - (4,7 × age in years)" wrapText="true" AnchorPane.leftAnchor="530.0" AnchorPane.topAnchor="474.0">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
       </Label>
-      <ImageView fitHeight="25.0" fitWidth="50.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="17.0">
+      <ImageView fitHeight="25.0" fitWidth="50.0" layoutX="17.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="17.0" AnchorPane.topAnchor="166.0">
          <image>
             <Image url="@../../../img/caloric-demand-icons/gender.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="50.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="17.0">
+      <ImageView fitHeight="25.0" fitWidth="50.0" layoutX="17.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="17.0" AnchorPane.topAnchor="201.0">
          <image>
             <Image url="@../../../img/caloric-demand-icons/height.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="50.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="17.0">
+      <ImageView fitHeight="25.0" fitWidth="50.0" layoutX="17.0" layoutY="236.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="17.0" AnchorPane.topAnchor="236.0">
          <image>
             <Image url="@../../../img/caloric-demand-icons/weight.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="50.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="17.0">
+      <ImageView fitHeight="25.0" fitWidth="50.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="17.0" AnchorPane.topAnchor="271.0">
          <image>
             <Image url="@../../../img/caloric-demand-icons/activity.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="50.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="17.0">
+      <ImageView fitHeight="25.0" fitWidth="50.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="17.0" AnchorPane.topAnchor="306.0">
          <image>
             <Image url="@../../../img/caloric-demand-icons/target.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="50.0" layoutX="482.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="25.0" fitWidth="50.0" layoutX="482.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="139.0">
          <image>
             <Image url="@../../../img/caloric-demand-icons/proteins.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="50.0" layoutX="482.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="25.0" fitWidth="50.0" layoutX="482.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="179.0">
          <image>
             <Image url="@../../../img/caloric-demand-icons/carbohydrates.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="50.0" layoutX="482.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="25.0" fitWidth="50.0" layoutX="482.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="219.0">
          <image>
             <Image url="@../../../img/caloric-demand-icons/trans-fat.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="50.0" layoutX="482.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="25.0" fitWidth="50.0" layoutX="482.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="259.0">
          <image>
             <Image url="@../../../img/caloric-demand-icons/age.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="498.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="498.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="478.0">
          <image>
             <Image url="@../../../img/caloric-demand-icons/mars.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="497.0" layoutY="412.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="497.0" layoutY="412.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="415.0">
          <image>
             <Image url="@../../../img/caloric-demand-icons/femenine.png" />
          </image>
       </ImageView>
+      <Label fx:id="caloriesNumberLabelController" layoutX="50.0" layoutY="362.0" prefHeight="18.0" prefWidth="46.0" style="-fx-text-fill: #9933ff;;" text="9000" AnchorPane.topAnchor="461.0" />
+      <Label fx:id="caloriesLabelController" layoutX="88.0" layoutY="360.0" prefHeight="18.0" prefWidth="46.0" style="-fx-text-fill: #9933ff;;" text="calories" AnchorPane.topAnchor="461.0" />
+      <Label fx:id="proteinsNumberLabelController" layoutX="50.0" layoutY="377.0" prefHeight="18.0" prefWidth="32.0" style="-fx-text-fill: aqua;" text="150" AnchorPane.topAnchor="444.0" />
+      <Label fx:id="proteinsLabelController" layoutX="87.0" layoutY="377.0" prefHeight="18.0" prefWidth="75.0" style="-fx-text-fill: aqua;" text="g proteins" AnchorPane.topAnchor="444.0" />
+      <Label fx:id="carbohydratesNumberLabelController" layoutX="50.0" layoutY="395.0" prefHeight="18.0" prefWidth="32.0" style="-fx-text-fill: green;" text="150" AnchorPane.topAnchor="427.0" />
+      <Label fx:id="carbohydratesLabelController" layoutX="86.0" layoutY="395.0" prefHeight="18.0" prefWidth="100.0" style="-fx-text-fill: green;" text="g carbohydrates" AnchorPane.topAnchor="427.0" />
+      <Label fx:id="fatNumberLabelController" layoutX="50.0" layoutY="412.0" prefHeight="18.0" prefWidth="32.0" style="-fx-text-fill: chocolate;" text="150" AnchorPane.topAnchor="478.0" />
+      <Label fx:id="fatLabelController" layoutX="86.0" layoutY="412.0" prefHeight="18.0" prefWidth="91.0" style="-fx-text-fill: chocolate;" text="g fat" AnchorPane.topAnchor="478.0" />
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="61.0" prefWidth="481.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="caloricDemandPaneTitleLabelController" alignment="CENTER" style="-fx-font-size: 32px; -fx-font-weight: bold;" text="Change caloric demand" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <graphic>
+                  <ImageView fitHeight="34.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/setting-img/edit-caloric-demand.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Label>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

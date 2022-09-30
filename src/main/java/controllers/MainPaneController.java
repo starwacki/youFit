@@ -45,8 +45,8 @@ public class MainPaneController {
     private static final int EXCEEDED_MICRONUTRIENTS_WARNING_PROGRESS_BAR_VALUE = 1;
     private static final String LAST_CLICKED_DAY_COLOR_STYLE = "-fx-border-color: red";
     private static final String PREVIOUS_CLICKED_DAY_COLOR_STYLE = "-fx-border-color: white";
-    private static final String BASIC_PROTEINS_PROGRESS_BAR_COLOR = "-fx-accent: blue;";
-    private static final String BASIC_CARBOHYDRATES_PROGRESS_BAR_COLOR = "-fx-accent: green;";
+    private static final String BASIC_PROTEINS_PROGRESS_BAR_COLOR = "-fx-accent: #04BDDE";
+    private static final String BASIC_CARBOHYDRATES_PROGRESS_BAR_COLOR = "-fx-accent: #32F902";
     private static final String BASIC_FAT_PROGRESS_BAR_COLOR = "-fx-accent: chocolate;";
     private static final String BASIC_CALORIES_PROGRESS_BAR_COLOR = "-fx-accent: #9933ff;";
     private static final String WARNING_PROGRESS_BAR_COLOR = "-fx-accent: red;";

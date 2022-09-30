@@ -2,6 +2,9 @@ package controllers.MainPaneComponentsControllers;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
+import model.Days;
+import model.language.DaysPaneLanguage;
+import model.language.Language;
 
 public class DaysPaneController {
     @FXML
@@ -18,6 +21,18 @@ public class DaysPaneController {
     private Button tuesdayButtonController;
     @FXML
     private Button wednesdayButtonController;
+    public void initialize() {
+        setLanguage(new Language().getDaysPaneLanguage());
+    }
+    private void setLanguage(DaysPaneLanguage language) {
+        mondayButtonController.setText(language.getMondayButtonController());
+        tuesdayButtonController.setText(language.getTuesdayButtonController());
+        wednesdayButtonController.setText(language.getWednesdayButtonController());
+        thursdayButtonController.setText(language.getThursdayButtonController());
+        fridayButtonController.setText(language.getFridayButtonController());
+        saturdayButtonController.setText(language.getSaturdayButtonController());
+        sundayButtonController.setText(language.getSundayButtonController());
+    }
     public Button getFridayButtonController() {
         return fridayButtonController;
     }

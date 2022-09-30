@@ -11,94 +11,101 @@
 
 <AnchorPane fx:id="settingsSettingsAnchorPaneController" prefHeight="643.0" prefWidth="860.0" stylesheets="@../../../css/mainview.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SettingsPanesControllers.SettingsSettingsPaneController">
    <children>
-      <Label layoutX="14.0" layoutY="61.0" prefHeight="41.0" prefWidth="160.0" style="-fx-text-fill: white; -fx-font-size: 15px;" text="Select language:" AnchorPane.topAnchor="61.0">
+      <Label fx:id="selectLanguageLabelController" layoutX="14.0" layoutY="61.0" prefHeight="41.0" prefWidth="160.0" style="-fx-text-fill: white; -fx-font-size: 15px;" text="Select language:" AnchorPane.topAnchor="127.0">
          <font>
             <Font size="8.0" />
          </font>
       </Label>
-      <ImageView fx:id="polandLanguageImageView" fitHeight="41.0" fitWidth="40.0" layoutX="187.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="187.0">
+      <ImageView fx:id="polandLanguageImageView" fitHeight="41.0" fitWidth="40.0" layoutX="187.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="187.0" AnchorPane.topAnchor="128.0">
          <image>
             <Image url="@../../../img/settings-settings-icons/poland.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="englishLanguageImageView" fitHeight="47.0" fitWidth="49.0" layoutX="235.0" layoutY="57.0" pickOnBounds="true" AnchorPane.leftAnchor="235.0">
-         <image>
-            <Image url="@../../../img/settings-settings-icons/germany.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="germanyLanguageImageView" fitHeight="41.0" fitWidth="41.0" layoutX="290.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="290.0">
+      <ImageView fx:id="englishLanguageImageView" fitHeight="41.0" fitWidth="41.0" layoutX="242.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="242.0" AnchorPane.topAnchor="127.0">
          <image>
             <Image url="@../../../img/settings-settings-icons/united-kingdom.png" />
          </image>
       </ImageView>
-      <Label layoutX="358.0" layoutY="141.0" prefHeight="40.0" prefWidth="102.0" style="-fx-text-fill: white;" text="Meal III Name:" AnchorPane.leftAnchor="358.0" AnchorPane.topAnchor="141.0">
+      <Label fx:id="meal3NameLabelController" layoutX="358.0" layoutY="141.0" prefHeight="40.0" prefWidth="128.0" style="-fx-text-fill: white;" text="Meal III Name:" AnchorPane.leftAnchor="358.0" AnchorPane.topAnchor="207.0">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="meal1NameTextFieldController" layoutX="469.0" layoutY="68.0" prefHeight="25.0" prefWidth="128.0" AnchorPane.topAnchor="68.0" />
-      <Label layoutX="358.0" layoutY="101.0" prefHeight="40.0" prefWidth="102.0" style="-fx-text-fill: white;" text="Meal II Name:" AnchorPane.leftAnchor="358.0" AnchorPane.topAnchor="101.0">
+      <TextField fx:id="meal1NameTextFieldController" layoutX="485.0" layoutY="68.0" prefHeight="25.0" prefWidth="128.0" AnchorPane.topAnchor="135.0" />
+      <Label fx:id="meal2NameLabelController" layoutX="358.0" layoutY="101.0" prefHeight="40.0" prefWidth="128.0" style="-fx-text-fill: white;" text="Meal II Name:" AnchorPane.leftAnchor="358.0" AnchorPane.topAnchor="167.0">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="meal3NameTextFieldController" layoutX="469.0" layoutY="149.0" prefHeight="25.0" prefWidth="128.0" AnchorPane.topAnchor="149.0" />
-      <Label layoutX="358.0" layoutY="61.0" prefHeight="40.0" prefWidth="102.0" style="-fx-text-fill: white;" text="Meal I Name:" AnchorPane.leftAnchor="358.0" AnchorPane.topAnchor="61.0">
+      <TextField fx:id="meal3NameTextFieldController" layoutX="485.0" layoutY="149.0" prefHeight="25.0" prefWidth="128.0" AnchorPane.topAnchor="215.0" />
+      <Label fx:id="meal1NameLabelController" layoutX="358.0" layoutY="61.0" prefHeight="40.0" prefWidth="128.0" style="-fx-text-fill: white;" text="Meal I Name:" AnchorPane.leftAnchor="358.0" AnchorPane.topAnchor="127.0">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="meal2NameTextFieldController" layoutX="469.0" layoutY="109.0" prefHeight="25.0" prefWidth="128.0" AnchorPane.topAnchor="109.0" />
-      <Label layoutX="358.0" layoutY="181.0" prefHeight="40.0" prefWidth="102.0" style="-fx-text-fill: white;" text="Meal IV Name:" AnchorPane.topAnchor="181.0">
+      <TextField fx:id="meal2NameTextFieldController" layoutX="485.0" layoutY="109.0" prefHeight="25.0" prefWidth="128.0" AnchorPane.topAnchor="175.0" />
+      <Label fx:id="meal4NameLabelController" layoutX="358.0" layoutY="181.0" prefHeight="40.0" prefWidth="120.0" style="-fx-text-fill: white;" text="Meal IV Name:" AnchorPane.topAnchor="247.0">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="meal4NameTextFieldController" layoutX="469.0" layoutY="189.0" prefHeight="25.0" prefWidth="128.0" AnchorPane.topAnchor="189.0" />
-      <Button fx:id="changeMealNameButtonController" layoutX="409.0" layoutY="225.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" style="-fx-text-fill: white; -fx-font-weight: bold;" text="Change name" />
-      <Label layoutX="613.0" layoutY="61.0" prefHeight="40.0" prefWidth="82.0" style="-fx-text-fill: white;" text="Meal I Time:" AnchorPane.topAnchor="61.0">
+      <TextField fx:id="meal4NameTextFieldController" layoutX="485.0" layoutY="189.0" prefHeight="25.0" prefWidth="128.0" AnchorPane.topAnchor="255.0" />
+      <Button fx:id="changeMealNameButtonController" layoutX="409.0" layoutY="225.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" style="-fx-text-fill: white; -fx-font-weight: bold;" text="Change name" AnchorPane.topAnchor="291.0" />
+      <Label fx:id="meal1TimeLabelController" layoutX="619.0" layoutY="61.0" prefHeight="40.0" prefWidth="120.0" style="-fx-text-fill: white;" text="Meal I Time:" AnchorPane.topAnchor="127.0">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="meal1HoursChoiceBoxController" layoutX="715.0" layoutY="68.0" prefHeight="25.0" prefWidth="40.0" />
-      <ChoiceBox fx:id="meal1MinutesChoiceBoxController" layoutX="754.0" layoutY="68.0" prefHeight="25.0" prefWidth="40.0" />
-      <Label layoutX="608.0" layoutY="102.0" prefHeight="40.0" prefWidth="102.0" style="-fx-text-fill: white;" text="Meal II Time:">
+      <ChoiceBox fx:id="meal1HoursChoiceBoxController" layoutX="743.0" layoutY="68.0" prefHeight="25.0" prefWidth="40.0" AnchorPane.topAnchor="135.0" />
+      <ChoiceBox fx:id="meal1MinutesChoiceBoxController" layoutX="783.0" layoutY="68.0" prefHeight="25.0" prefWidth="40.0" AnchorPane.topAnchor="135.0" />
+      <Label fx:id="meal2TimeLabelController" layoutX="619.0" layoutY="101.0" prefHeight="40.0" prefWidth="120.0" style="-fx-text-fill: white;" text="Meal II Time:" AnchorPane.topAnchor="167.0">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="meal2HoursChoiceBoxController" layoutX="715.0" layoutY="109.0" prefHeight="25.0" prefWidth="40.0" />
-      <ChoiceBox fx:id="meal2MinutesChoiceBoxController" layoutX="754.0" layoutY="109.0" prefHeight="25.0" prefWidth="40.0" />
-      <Label layoutX="608.0" layoutY="141.0" prefHeight="40.0" prefWidth="92.0" style="-fx-text-fill: white;" text="Meal III Time:">
+      <ChoiceBox fx:id="meal2HoursChoiceBoxController" layoutX="743.0" layoutY="108.0" prefHeight="25.0" prefWidth="40.0" AnchorPane.topAnchor="175.0" />
+      <ChoiceBox fx:id="meal2MinutesChoiceBoxController" layoutX="783.0" layoutY="108.0" prefHeight="25.0" prefWidth="40.0" AnchorPane.topAnchor="175.0" />
+      <Label fx:id="meal3TimeLabelController" layoutX="619.0" layoutY="142.0" prefHeight="40.0" prefWidth="128.0" style="-fx-text-fill: white;" text="Meal III Time:" AnchorPane.topAnchor="207.0">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="meal3HoursChoiceBoxController" layoutX="715.0" layoutY="149.0" prefHeight="25.0" prefWidth="40.0" />
-      <ChoiceBox fx:id="meal3MinutesChoiceBoxController" layoutX="754.0" layoutY="149.0" prefHeight="25.0" prefWidth="40.0" />
-      <Label layoutX="608.0" layoutY="182.0" prefHeight="40.0" prefWidth="112.0" style="-fx-text-fill: white;" text="Meal IV Time:">
+      <ChoiceBox fx:id="meal3HoursChoiceBoxController" layoutX="743.0" layoutY="148.0" prefHeight="25.0" prefWidth="40.0" AnchorPane.topAnchor="215.0" />
+      <ChoiceBox fx:id="meal3MinutesChoiceBoxController" layoutX="783.0" layoutY="148.0" prefHeight="25.0" prefWidth="40.0" AnchorPane.topAnchor="215.0" />
+      <Label fx:id="meal4TimeLabelController" layoutX="619.0" layoutY="181.0" prefHeight="40.0" prefWidth="128.0" style="-fx-text-fill: white;" text="Meal IV Time:" AnchorPane.topAnchor="247.0">
          <font>
             <Font size="13.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="meal4HoursChoiceBoxController" layoutX="715.0" layoutY="188.0" prefHeight="25.0" prefWidth="40.0" />
-      <ChoiceBox fx:id="meal4MinutesChoiceBoxController" layoutX="754.0" layoutY="188.0" prefHeight="25.0" prefWidth="40.0" />
-      <Button fx:id="changeMealTimeButtonController" layoutX="650.0" layoutY="225.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" style="-fx-font-weight: bold; -fx-text-fill: white;" text="Change Time" />
-      <ImageView fitHeight="62.0" fitWidth="82.0" layoutX="32.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
+      <ChoiceBox fx:id="meal4HoursChoiceBoxController" layoutX="743.0" layoutY="188.0" prefHeight="25.0" prefWidth="40.0" AnchorPane.topAnchor="255.0" />
+      <ChoiceBox fx:id="meal4MinutesChoiceBoxController" layoutX="783.0" layoutY="188.0" prefHeight="25.0" prefWidth="40.0" AnchorPane.topAnchor="255.0" />
+      <Button fx:id="changeMealTimeButtonController" layoutX="663.0" layoutY="225.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" style="-fx-font-weight: bold; -fx-text-fill: white;" text="Change Time" AnchorPane.topAnchor="291.0" />
+      <ImageView fitHeight="62.0" fitWidth="82.0" layoutX="32.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="66.0">
          <image>
             <Image url="@../../../img/settings-settings-icons/language1.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="366.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="366.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="66.0">
          <image>
             <Image url="@../../../img/settings-settings-icons/food.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="613.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="613.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="66.0">
          <image>
             <Image url="@../../../img/settings-settings-icons/alarm-clock.png" />
          </image>
       </ImageView>
+      <AnchorPane layoutX="20.0" layoutY="20.0" prefHeight="61.0" prefWidth="481.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="settingsTitleLabelController" alignment="CENTER" style="-fx-font-size: 32px; -fx-font-weight: bold;" text="Settings" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <graphic>
+                  <ImageView fitHeight="55.0" fitWidth="210.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../img/settings.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Label>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

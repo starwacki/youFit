@@ -25,6 +25,7 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 import model.calories.CaloriesCalculator;
 import model.Days;
+import model.language.Language;
 import model.meals.Meals;
 import model.product.DaysMeals;
 import model.product.Product;
@@ -33,6 +34,7 @@ import java.util.Locale;
 
 public class MainEditPaneController {
     private static Days lastClickedDay = Days.MONDAY;
+    private static boolean mainBase = true;
     @FXML
     private CaloriesPaneController caloriesPaneController;
     @FXML
@@ -59,21 +61,19 @@ public class MainEditPaneController {
     private static final String DELETE_BUTTON_JPG_FILE_PATH = "/img/deleteButton.png";
     private static final String DELETE_BUTTON_CSS_STYLE_SHEET_ID = "delete-button";
     private static final String LAST_CLICKED_DAY_COLOR_STYLE = "-fx-border-color: red";
-    private static final String BASIC_PROTEINS_PROGRESS_BAR_COLOR = "-fx-accent: blue;";
-    private static final String BASIC_CARBOHYDRATES_PROGRESS_BAR_COLOR = "-fx-accent: green;";
-    private static final String BASIC_FAT_PROGRESS_BAR_COLOR = "-fx-accent: chocolate;";
-    private static final String BASIC_CALORIES_PROGRESS_BAR_COLOR = "-fx-accent: black;";
+    private static final String BASIC_PROTEINS_PROGRESS_BAR_COLOR = "-fx-accent: #04BDDE";
+    private static final String BASIC_CARBOHYDRATES_PROGRESS_BAR_COLOR = "-fx-accent: #32F902";
+    private static final String BASIC_FAT_PROGRESS_BAR_COLOR = "-fx-accent: chocolate";
+    private static final String BASIC_CALORIES_PROGRESS_BAR_COLOR = "-fx-accent: #9933ff";
     private static final String WARNING_PROGRESS_BAR_COLOR = "-fx-accent: red;";
     private static final String BREAKFAST_NAME = "BREAKFAST";
     private static final String BRUNCH_NAME = "BRUNCH";
     private static final String LUNCH_NAME = "LUNCH";
     private static final String SUPPER_NAME = "SUPPER";
     private static final String EMPTY_FIELD = "";
-    private static final String CHANGE_TO_YOUR_PRODUCTS_BASE_BUTTON_TEXT = "personal products";
-    private static final String CHANGE_TO_MAIN_PRODUCT_BASE_BUTTON_TEXT = "product base";
     private static final String EMPTY_PIE_CHART_COLOR = "-fx-pie-color: white";
-    private static final String PROTEINS_PIE_COLOR = "-fx-pie-color: blue";
-    private static final String CARBOHYDRATES_PIE_COLOR = "-fx-pie-color: green";
+    private static final String PROTEINS_PIE_COLOR = "-fx-pie-color: #04BDDE";
+    private static final String CARBOHYDRATES_PIE_COLOR = "-fx-pie-color: #32F902";
     private static final String FAT_PIE_COLOR = "-fx-pie-color: chocolate";
     private static final int EXCEEDED_MICRONUTRIENTS_WARNING_PROGRESS_BAR_VALUE = 1;
     private static final int EMPTY_PIE_CHART_DATA_INDEX = 0;
@@ -101,6 +101,15 @@ public class MainEditPaneController {
     public static Days getLastClickedDay() {
         return lastClickedDay;
     }
+
+    public static boolean isMainBase() {
+        return mainBase;
+    }
+
+    public static void setMainBase(boolean mainBase) {
+        MainEditPaneController.mainBase = mainBase;
+    }
+
     private void showMainViewFromClickedDay() {
         daysPaneController.getMondayButtonController().addEventFilter(MouseEvent.MOUSE_CLICKED,
                 mouseEvent -> showTableViewsByClickedDay(Days.MONDAY));
@@ -337,9 +346,9 @@ public class MainEditPaneController {
         editPaneController.getPieChartController().setData(pieChart);
     }
     private void setPieChartInfoLabels(double proteinsPercent, double carbohydratesPercent, double fatPercent) {
-        editPaneController.getProteinsPieCharLabelController().setText("Proteins:          " + formatFloat(proteinsPercent));
-        editPaneController.getCarbohydratesPieCharLabelController().setText("Carbohydrates:   " + formatFloat(carbohydratesPercent));
-        editPaneController.getFatPieCharLabelController().setText("Fat:               " + formatFloat(fatPercent));
+        editPaneController.getProteinsPieCharLabelController().setText(new Language().getEditPaneLanguage().getProteinsPieCharLabelController()+ "         " + formatFloat(proteinsPercent));
+        editPaneController.getCarbohydratesPieCharLabelController().setText(new Language().getEditPaneLanguage().getCarbohydratesPieCharLabelController() +" " + formatFloat(carbohydratesPercent));
+        editPaneController.getFatPieCharLabelController().setText(new Language().getEditPaneLanguage().getFatPieCharLabelController()  + "      " +formatFloat(fatPercent));
 
     }
     private String formatFloat(double micronutrientPercent) {
@@ -353,9 +362,9 @@ public class MainEditPaneController {
         pieChart.get(EMPTY_PIE_CHART_DATA_INDEX).getNode().setStyle(EMPTY_PIE_CHART_COLOR);
     }
     private void setEmptyPieChartInfoLabels() {
-        editPaneController.getProteinsPieCharLabelController().setText("Proteins:          " + 0 + "%");
-        editPaneController.getCarbohydratesPieCharLabelController().setText("Carbohydrates:   " + 0 + "%");
-        editPaneController.getFatPieCharLabelController().setText("Fat:               " + 0 + "%");
+        editPaneController.getProteinsPieCharLabelController().setText(new Language().getEditPaneLanguage().getProteinsPieCharLabelController()+ "        " + 0 + "%");
+        editPaneController.getCarbohydratesPieCharLabelController().setText(new Language().getEditPaneLanguage().getCarbohydratesPieCharLabelController() +" " + 0 + "%");
+        editPaneController.getFatPieCharLabelController().setText(new Language().getEditPaneLanguage().getFatPieCharLabelController()  + "      " + 0 + "%");
 
     }
     private boolean isChartEmpty(double proteinsPercent, double carbohydratesPercent, double fatPercent) {
@@ -386,13 +395,13 @@ public class MainEditPaneController {
     }
     private Product getChosenProductFromListView() {
         Product product;
-        if(editPaneController.getChangeListViewButtonController().getText().equals(CHANGE_TO_YOUR_PRODUCTS_BASE_BUTTON_TEXT)) {
+        if(isMainBase()) {
            product = ProductBaseReader.getProductFromBase(editPaneController.getProductsBaseListView().getSelectionModel().getSelectedIndex(),
                     Double.parseDouble(editPaneController.getWeightTextFieldController().getText()));
-        } else if (editPaneController.getChangeListViewButtonController().getText().equals(CHANGE_TO_MAIN_PRODUCT_BASE_BUTTON_TEXT)) {
+        } else   {
             product = YourProductBaseIO.getProductFromBase(editPaneController.getProductsBaseListView().getSelectionModel().getSelectedIndex(),
                     Double.parseDouble(editPaneController.getWeightTextFieldController().getText()));
-        } else throw new NullPointerException();
+        }
         return product;
     }
     private void safeTableViewState(Product product) {

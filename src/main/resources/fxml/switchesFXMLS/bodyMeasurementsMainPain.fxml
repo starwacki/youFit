@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" stylesheets="@../../css/mainview.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SettingsPanesControllers.MainPaneSettingsController">
@@ -12,17 +9,7 @@
       <AnchorPane layoutX="220.0" layoutY="659.0" prefHeight="55.0" prefWidth="880.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="220.0" />
       <Separator layoutX="212.0" layoutY="81.0" orientation="VERTICAL" prefHeight="584.0" prefWidth="17.0" style="-fx-border-width: 1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="214.0" AnchorPane.topAnchor="60.0" />
       <Separator layoutX="239.0" layoutY="79.0" prefHeight="5.0" prefWidth="880.0" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="59.0" />
-      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="61.0" prefWidth="481.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <Label alignment="CENTER" style="-fx-font-size: 32px; -fx-font-weight: bold;" text="Body Measurements" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <ImageView fitHeight="55.0" fitWidth="210.0" layoutX="216.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../img/setting-img/body-measurements.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
       <Separator layoutX="228.0" layoutY="653.0" prefHeight="18.0" prefWidth="880.0" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="220.0" />
-      <fx:include fx:id="bodyMeasurementsPane" source="componentsFXMLS/bodyMeasurementsPane.fxml" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="65.0" />
+      <fx:include fx:id="bodyMeasurementsPane" source="componentsFXMLS/bodyMeasurementsPane.fxml" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="0.0" />
    </children>
 </AnchorPane>
