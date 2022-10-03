@@ -11,6 +11,7 @@ import model.Days;
 import model.language.BreakfastTableViewLanguage;
 import model.language.BrunchTableViewLanguage;
 import model.language.Language;
+import model.language.TablesLabels;
 import model.product.DaysMeals;
 import model.product.Product;
 import java.util.List;
@@ -53,6 +54,8 @@ public class BrunchTableViewController {
     private Label caloriesInfoLabelController;
     @FXML
     private Label nameLabelController;
+    @FXML
+    private Label timeLabelController;
     public void initialize(){
         setColumnsSettings();
         editButtonListener();
@@ -97,11 +100,19 @@ public class BrunchTableViewController {
                 /getApproximateCaloriesFromLabels()*100;
     }
     private void setLanguage(BrunchTableViewLanguage language){
+        setLanguageLabels(language);
+        setUserLabels();
+    }
+    private void setLanguageLabels(BrunchTableViewLanguage language) {
         nameLabelController.setText(language.getMealName());
         proteinsInfoLabelController.setText(language.getProteinsInfoLabelController());
         carbohydratesInfoLabelController.setText(language.getCarbohydratesInfoLabelController());
         fatInfoLabelController.setText(language.getFatInfoLabelController());
         caloriesInfoLabelController.setText(language.getCaloriesInfoLabelController());
+    }
+    private void setUserLabels() {
+        if (TablesLabels.basicBrunchName !=null) nameLabelController.setText(TablesLabels.basicBrunchName);
+        if (TablesLabels.basicBrunchTime!=null) timeLabelController.setText(TablesLabels.basicBrunchTime);
     }
     private void setColumnsSettings() {
         setCellValueFactory();

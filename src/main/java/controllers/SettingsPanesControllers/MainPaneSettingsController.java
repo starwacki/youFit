@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 import model.language.Language;
 import model.language.LanguageCode;
+import model.language.TablesLabels;
 
 
 public class MainPaneSettingsController {
@@ -37,6 +38,7 @@ public class MainPaneSettingsController {
     }
     private void setPL() {
         Language.language = LanguageCode.PL;
+        resetUserLabels();
         settingsSettingsPaneController.getPolandLanguageImageView().setOpacity(0.5);
         settingsSettingsPaneController.getEnglishLanguageImageView().setOpacity(1);
         settingsSettingsPaneController.setLanguage(new Language().getSettingsSettingsLanguage());
@@ -44,10 +46,21 @@ public class MainPaneSettingsController {
     }
     private void setEN() {
         Language.language = LanguageCode.EN;
+        resetUserLabels();
         settingsSettingsPaneController.getEnglishLanguageImageView().setOpacity(0.5);
         settingsSettingsPaneController.getPolandLanguageImageView().setOpacity(1);
         settingsSettingsPaneController.setLanguage(new Language().getSettingsSettingsLanguage());
         settingsPaneController.setLanguage(new Language().getSettingsLanguage());
+    }
+    private void resetUserLabels() {
+        TablesLabels.basicBreakfastName = null;
+        TablesLabels.basicBrunchName= null;
+        TablesLabels.basicLunchName = null;
+        TablesLabels.basicSupperName = null;
+        TablesLabels.basicBreakfastTime = null;
+        TablesLabels.basicBrunchTime = null;
+        TablesLabels.basicLunchTime = null;
+        TablesLabels.basicSupperTime = null;
     }
 
     }

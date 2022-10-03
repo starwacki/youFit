@@ -8,9 +8,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import model.calories.CaloriesCalculator;
 import model.Days;
-import model.language.BreakfastTableViewLanguage;
-import model.language.Language;
-import model.language.SupperTableViewLanguage;
+import model.language.*;
 import model.product.DaysMeals;
 import model.product.Product;
 import java.util.List;
@@ -53,6 +51,8 @@ public class SupperTableViewController {
     private Label caloriesInfoLabelController;
     @FXML
     private Label nameLabelController;
+    @FXML
+    private Label timeLabelController;
     public void initialize() {
         setColumnsSettings();
         editButtonListener();
@@ -96,11 +96,19 @@ public class SupperTableViewController {
                 /getApproximateCaloriesFromLabels()*100;
     }
     private void setLanguage(SupperTableViewLanguage language){
+        setLanguageLabels(language);
+        setUserLabels();
+    }
+    private void setLanguageLabels(SupperTableViewLanguage language) {
         nameLabelController.setText(language.getMealName());
         proteinsInfoLabelController.setText(language.getProteinsInfoLabelController());
         carbohydratesInfoLabelController.setText(language.getCarbohydratesInfoLabelController());
         fatInfoLabelController.setText(language.getFatInfoLabelController());
         caloriesInfoLabelController.setText(language.getCaloriesInfoLabelController());
+    }
+    private void setUserLabels() {
+        if (TablesLabels.basicSupperName!=null) nameLabelController.setText(TablesLabels.basicSupperName);
+        if (TablesLabels.basicSupperTime!=null) timeLabelController.setText(TablesLabels.basicSupperTime);
     }
     private void setColumnsSettings() {
         setCellValueFactory();

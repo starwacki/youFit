@@ -7,12 +7,10 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
-
 public class MainApp extends Application {
 
     public static void main(String[] args) {
-        LanguageIO.setLanguageApp();
+        LanguageIO.initializeLanguage();
         launch(args);
     }
 

@@ -1,16 +1,23 @@
 package controllers.SettingsPanesControllers;
-
 import io.LanguageIO;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import model.language.Language;
 import model.language.LanguageCode;
 import model.language.SettingsSettingsLanguage;
+import model.language.TablesLabels;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SettingsSettingsPaneController {
 
@@ -23,9 +30,9 @@ public class SettingsSettingsPaneController {
     @FXML
     private ImageView englishLanguageImageView;
     @FXML
-    private ChoiceBox<?> meal1HoursChoiceBoxController;
+    private ChoiceBox<Integer> meal1HoursChoiceBoxController;
     @FXML
-    private ChoiceBox<?> meal1MinutesChoiceBoxController;
+    private ChoiceBox<Integer> meal1MinutesChoiceBoxController;
     @FXML
     private Label meal1NameLabelController;
     @FXML
@@ -33,9 +40,9 @@ public class SettingsSettingsPaneController {
     @FXML
     private Label meal1TimeLabelController;
     @FXML
-    private ChoiceBox<?> meal2HoursChoiceBoxController;
+    private ChoiceBox<Integer> meal2HoursChoiceBoxController;
     @FXML
-    private ChoiceBox<?> meal2MinutesChoiceBoxController;
+    private ChoiceBox<Integer> meal2MinutesChoiceBoxController;
     @FXML
     private Label meal2NameLabelController;
     @FXML
@@ -43,9 +50,9 @@ public class SettingsSettingsPaneController {
     @FXML
     private Label meal2TimeLabelController;
     @FXML
-    private ChoiceBox<?> meal3HoursChoiceBoxController;
+    private ChoiceBox<Integer> meal3HoursChoiceBoxController;
     @FXML
-    private ChoiceBox<?> meal3MinutesChoiceBoxController;
+    private ChoiceBox<Integer> meal3MinutesChoiceBoxController;
     @FXML
     private Label meal3NameLabelController;
     @FXML
@@ -53,9 +60,9 @@ public class SettingsSettingsPaneController {
     @FXML
     private Label meal3TimeLabelController;
     @FXML
-    private ChoiceBox<?> meal4HoursChoiceBoxController;
+    private ChoiceBox<Integer> meal4HoursChoiceBoxController;
     @FXML
-    private ChoiceBox<?> meal4MinutesChoiceBoxController;
+    private ChoiceBox<Integer> meal4MinutesChoiceBoxController;
     @FXML
     private Label meal4NameLabelController;
     @FXML
@@ -72,6 +79,9 @@ public class SettingsSettingsPaneController {
     public void initialize() {
         setLanguage(new Language().getSettingsSettingsLanguage());
         setActuallyLanguageOpacity();
+        initializeChoiceBox();
+        setUserLabels();
+        blockAllNameLabels();
     }
     public void setLanguage(SettingsSettingsLanguage language) {
         meal1NameLabelController.setText(language.getMeal1NameLabelController());
@@ -99,6 +109,88 @@ public class SettingsSettingsPaneController {
     private void setActuallyLanguageOpacity() {
         if (Language.language==LanguageCode.PL) polandLanguageImageView.setOpacity(0.5);
         else englishLanguageImageView.setOpacity(0.5);
+    }
+    private void initializeChoiceBox() {
+        addHoursToChoiceToChoiceBox();
+        addMinutesToChoiceToChoiceBox();
+    }
+    private void addHoursToChoiceToChoiceBox() {
+        meal1HoursChoiceBoxController.getItems().addAll(generateDailyHours());
+        meal2HoursChoiceBoxController.getItems().addAll(generateDailyHours());
+        meal3HoursChoiceBoxController.getItems().addAll(generateDailyHours());
+        meal4HoursChoiceBoxController.getItems().addAll(generateDailyHours());
+    }
+    private void addMinutesToChoiceToChoiceBox () {
+        meal1MinutesChoiceBoxController.getItems().addAll(generateHourMinutes());
+        meal2MinutesChoiceBoxController.getItems().addAll(generateHourMinutes());
+        meal3MinutesChoiceBoxController.getItems().addAll(generateHourMinutes());
+        meal4MinutesChoiceBoxController.getItems().addAll(generateHourMinutes());
+    }
+    private List<Integer> generateDailyHours() {
+        List<Integer> hours = new ArrayList<>();
+        for (int i = 0; i <24 ; i++) {
+            hours.add(i);
+        }
+        return hours;
+    }
+    private List<Integer> generateHourMinutes() {
+        List<Integer> minutes = new ArrayList<>();
+        for (int i = 0; i <60 ; i++) {
+            minutes.add(i);
+        }
+        return minutes;
+    }
+    private void setUserLabels() {
+        setMealsName();
+        setMealsTime();
+    }
+
+
+    private void setMealsName() {
+      changeMealNameButtonController.addEventFilter(MouseEvent.MOUSE_CLICKED,mouseEvent -> {
+         if (isTextFieldEmpty(meal1NameTextFieldController)) TablesLabels.basicBreakfastName = meal1NameTextFieldController.getText();
+         if (isTextFieldEmpty(meal2NameTextFieldController)) TablesLabels.basicBrunchName= meal2NameTextFieldController.getText();
+         if (isTextFieldEmpty(meal3NameTextFieldController)) TablesLabels.basicLunchName = meal3NameTextFieldController.getText();
+         if (isTextFieldEmpty(meal4NameTextFieldController)) TablesLabels.basicSupperName = meal4NameTextFieldController.getText();
+          });
+    }
+    private void setMealsTime() {
+        changeMealTimeButtonController.addEventFilter(MouseEvent.MOUSE_CLICKED,mouseEvent -> {
+            if (!isChoiceBoxEmpty(meal1HoursChoiceBoxController,meal1MinutesChoiceBoxController))
+                TablesLabels.basicBreakfastTime = getLabelTime(meal1HoursChoiceBoxController,meal1MinutesChoiceBoxController);
+            if (!isChoiceBoxEmpty(meal2HoursChoiceBoxController,meal2MinutesChoiceBoxController))
+                TablesLabels.basicBrunchTime = getLabelTime(meal2HoursChoiceBoxController,meal2MinutesChoiceBoxController);
+            if (!isChoiceBoxEmpty(meal3HoursChoiceBoxController,meal3MinutesChoiceBoxController))
+                TablesLabels.basicLunchTime = getLabelTime(meal3HoursChoiceBoxController,meal3MinutesChoiceBoxController);
+            if (!isChoiceBoxEmpty(meal4HoursChoiceBoxController,meal4MinutesChoiceBoxController))
+                TablesLabels.basicSupperTime = getLabelTime(meal4HoursChoiceBoxController,meal4MinutesChoiceBoxController);
+       });
+    }
+    private boolean isTextFieldEmpty(TextField textField) {
+       return textField.getText()==null || !textField.getText().equals("");
+    }
+    private boolean isChoiceBoxEmpty(ChoiceBox hoursChoiceBox,ChoiceBox minutesChoiceBox) {
+        return hoursChoiceBox.getSelectionModel().getSelectedItem() == null ||
+                minutesChoiceBox.getSelectionModel().getSelectedItem() ==null;
+    }
+    private String getLabelTime(ChoiceBox hoursChoiceBox,ChoiceBox minutesChoiceBox) {
+        if ((int) minutesChoiceBox.getSelectionModel().getSelectedItem()<10) {
+            return hoursChoiceBox.getSelectionModel().getSelectedItem() + ":" + "0" +
+                    minutesChoiceBox.getSelectionModel().getSelectedItem();
+        } else
+            return hoursChoiceBox.getSelectionModel().getSelectedItem() + ":" +
+                    minutesChoiceBox.getSelectionModel().getSelectedItem();
+    }
+    private void blockAllNameLabels() {
+        blockTooLongMealName(meal1NameTextFieldController);
+        blockTooLongMealName(meal2NameTextFieldController);
+        blockTooLongMealName(meal3NameTextFieldController);
+        blockTooLongMealName(meal4NameTextFieldController);
+    }
+    private void blockTooLongMealName(TextField textField) {
+        textField.textProperty().addListener((observableValue, oldValue, newValue) -> {
+            if (newValue.length()>12) textField.setText(oldValue);
+        });
     }
 }
 

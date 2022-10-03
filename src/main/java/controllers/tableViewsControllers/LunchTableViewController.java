@@ -8,9 +8,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import model.calories.CaloriesCalculator;
 import model.Days;
-import model.language.BreakfastTableViewLanguage;
-import model.language.Language;
-import model.language.LunchTableViewLanguage;
+import model.language.*;
 import model.product.DaysMeals;
 import model.product.Product;
 import java.util.List;
@@ -53,6 +51,8 @@ public class LunchTableViewController {
     private Label caloriesInfoLabelController;
     @FXML
     private Label nameLabelController;
+    @FXML
+    private Label timeLabelController;
     public void initialize(){
         setColumnsSettings();
         editButtonListener();
@@ -96,12 +96,21 @@ public class LunchTableViewController {
         return  getLabelValue(fatLunchLabelController)*CaloriesCalculator.ONE_GRAM_OF_FAT_CALORIES
                 /getApproximateCaloriesFromLabels()*100;
     }
+
     private void setLanguage(LunchTableViewLanguage language){
+        setLanguageLabels(language);
+        setUserLabels();
+    }
+    private void setLanguageLabels(LunchTableViewLanguage language) {
         nameLabelController.setText(language.getMealName());
         proteinsInfoLabelController.setText(language.getProteinsInfoLabelController());
         carbohydratesInfoLabelController.setText(language.getCarbohydratesInfoLabelController());
         fatInfoLabelController.setText(language.getFatInfoLabelController());
         caloriesInfoLabelController.setText(language.getCaloriesInfoLabelController());
+    }
+    private void setUserLabels() {
+        if (TablesLabels.basicLunchName!=null) nameLabelController.setText(TablesLabels.basicLunchName);
+        if (TablesLabels.basicLunchTime!=null) timeLabelController.setText(TablesLabels.basicLunchTime);
     }
     private void setColumnsSettings() {
         setCellValueFactory();

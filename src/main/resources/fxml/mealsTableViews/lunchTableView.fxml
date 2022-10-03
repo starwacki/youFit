@@ -24,7 +24,7 @@
                         <Image url="@../../img/hide-table.png" />
                      </image>
                   </ImageView>
-                  <Label alignment="CENTER" prefHeight="28.0" prefWidth="66.0" style="-fx-text-fill: white; -fx-font-weight: bold;" text="13:00">
+                  <Label fx:id="timeLabelController" alignment="CENTER" prefHeight="28.0" prefWidth="66.0" style="-fx-text-fill: white; -fx-font-weight: bold;" text="13:00">
                      <font>
                         <Font size="13.0" />
                      </font>
