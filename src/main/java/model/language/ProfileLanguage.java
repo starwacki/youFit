@@ -1,6 +1,11 @@
 package model.language;
 
-public class ProfileLanguage {
+import java.io.Serial;
+import java.io.Serializable;
+
+public class ProfileLanguage implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 6186444897947369444L;
     private  String changeProfilePhotoButtonController;
     private  String usernameInfoLabelController;
     private  String emailInfoLabelController;
@@ -73,4 +78,5 @@ public class ProfileLanguage {
     public String getProfileInfoTitleLabelController() {
         return profileInfoTitleLabelController;
     }
+
 }

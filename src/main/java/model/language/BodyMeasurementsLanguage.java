@@ -1,6 +1,12 @@
 package model.language;
 
-public class BodyMeasurementsLanguage {
+import java.io.Serial;
+import java.io.Serializable;
+
+public class BodyMeasurementsLanguage implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = -7272522852655435311L;
     private String weightControlInfoLabelController;
     private String weightMeasurementsInfoLabelController;
     private String dateLinearChartTableViewTableColumnController;

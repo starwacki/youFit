@@ -1,6 +1,11 @@
 package model.language;
 
-public class SupperTableViewLanguage extends TableViewLanguage{
+import java.io.Serial;
+import java.io.Serializable;
+
+public class SupperTableViewLanguage extends TableViewLanguage implements Serializable {
+    @Serial
+    private static final long serialVersionUID = -7795880625961660091L;
     private String mealName;
     SupperTableViewLanguage(LanguageCode languageCode) {
         super(languageCode);

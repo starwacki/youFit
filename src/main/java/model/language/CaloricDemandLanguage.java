@@ -1,6 +1,11 @@
 package model.language;
 
-public class CaloricDemandLanguage {
+import java.io.Serial;
+import java.io.Serializable;
+
+public class CaloricDemandLanguage implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 4369290407327575120L;
     private String caloricDemandCalculatorLabelController;
     private String ageLabelController;
     private String ageInfoLabelController;

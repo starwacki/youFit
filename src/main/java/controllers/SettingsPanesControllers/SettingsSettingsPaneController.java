@@ -1,13 +1,12 @@
 package controllers.SettingsPanesControllers;
 
-import controllers.MainPaneComponentsControllers.SettingsPaneController;
+import io.LanguageIO;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import model.language.Language;
 import model.language.LanguageCode;
@@ -72,6 +71,7 @@ public class SettingsSettingsPaneController {
 
     public void initialize() {
         setLanguage(new Language().getSettingsSettingsLanguage());
+        setActuallyLanguageOpacity();
     }
     public void setLanguage(SettingsSettingsLanguage language) {
         meal1NameLabelController.setText(language.getMeal1NameLabelController());
@@ -95,6 +95,10 @@ public class SettingsSettingsPaneController {
 
     public ImageView getPolandLanguageImageView() {
         return polandLanguageImageView;
+    }
+    private void setActuallyLanguageOpacity() {
+        if (Language.language==LanguageCode.PL) polandLanguageImageView.setOpacity(0.5);
+        else englishLanguageImageView.setOpacity(0.5);
     }
 }
 

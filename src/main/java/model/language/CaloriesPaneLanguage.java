@@ -1,6 +1,11 @@
 package model.language;
 
-public class CaloriesPaneLanguage {
+import java.io.Serial;
+import java.io.Serializable;
+
+public class CaloriesPaneLanguage implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 8367341454788214190L;
     private String proteinsStringLabelController;
     private String carbohydratesStringLabelController;
     private String fatStringLabelController;

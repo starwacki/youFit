@@ -3,6 +3,7 @@ package controllers.SettingsPanesControllers;
 import controllers.MainPaneComponentsControllers.CaloriesPaneController;
 import controllers.MainPaneComponentsControllers.DaysPaneController;
 import controllers.MainPaneComponentsControllers.SettingsPaneController;
+import io.LanguageIO;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 import model.language.Language;
@@ -31,8 +32,8 @@ public class MainPaneSettingsController {
         changeLanguage();
     }
     private void changeLanguage() {
-        settingsSettingsPaneController.getPolandLanguageImageView().addEventFilter(MouseEvent.MOUSE_CLICKED, mouseEvent -> setPL());
-        settingsSettingsPaneController.getEnglishLanguageImageView().addEventFilter(MouseEvent.MOUSE_CLICKED, mouseEvent -> setEN());
+        if (settingsSettingsPaneController!=null) settingsSettingsPaneController.getPolandLanguageImageView().addEventFilter(MouseEvent.MOUSE_CLICKED, mouseEvent -> setPL());
+        if (settingsSettingsPaneController!=null) settingsSettingsPaneController.getEnglishLanguageImageView().addEventFilter(MouseEvent.MOUSE_CLICKED, mouseEvent -> setEN());
     }
     private void setPL() {
         Language.language = LanguageCode.PL;

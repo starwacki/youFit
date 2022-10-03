@@ -1,5 +1,6 @@
 package controllers.SettingsPanesControllers;
 
+import io.LanguageIO;
 import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
 import javafx.scene.control.Button;

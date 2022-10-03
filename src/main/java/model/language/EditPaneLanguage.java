@@ -1,6 +1,11 @@
 package model.language;
 
-public class EditPaneLanguage {
+import java.io.Serial;
+import java.io.Serializable;
+
+public class EditPaneLanguage implements Serializable {
+    @Serial
+    private static final long serialVersionUID = -4280711665109333881L;
     private String percentageOfMacronutrientsLabelController;
     private String proteinsPieCharLabelController;
     private String carbohydratesPieCharLabelController;

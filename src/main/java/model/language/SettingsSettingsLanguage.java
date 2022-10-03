@@ -1,6 +1,11 @@
 package model.language;
 
-public class SettingsSettingsLanguage {
+import java.io.Serial;
+import java.io.Serializable;
+
+public class SettingsSettingsLanguage implements Serializable {
+    @Serial
+    private static final long serialVersionUID = -5290663866033232277L;
     private String meal1NameLabelController;
     private String meal2NameLabelController;
     private String meal3NameLabelController;
@@ -42,7 +47,7 @@ public class SettingsSettingsLanguage {
         meal2TimeLabelController = "Meal II Time:";
         meal3TimeLabelController = "Meal III Time:";
         meal4TimeLabelController = "Meal IV Time:";
-        selectLanguageLabelController = "Select language";
+        selectLanguageLabelController = "Select language" ;
         changeMealNameButtonController = "Change name";
         changeMealTimeButtonController = "Change time";
         settingsTitleLabelController = "Settings";

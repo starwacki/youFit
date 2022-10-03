@@ -1,6 +1,11 @@
 package model.language;
 
-public class WeekSummaryLanguage {
+import java.io.Serial;
+import java.io.Serializable;
+
+public class WeekSummaryLanguage implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 667964906142473152L;
     private String weekProteinsLabelController;
     private String weekCarbohydratesLabelController;
     private String weekFatLabelController;

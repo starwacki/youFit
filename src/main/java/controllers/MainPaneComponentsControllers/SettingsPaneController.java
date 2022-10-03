@@ -1,6 +1,7 @@
 package controllers.MainPaneComponentsControllers;
 
 import controllers.SceneSwitcherController;
+import io.LanguageIO;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;

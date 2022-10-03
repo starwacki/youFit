@@ -1,6 +1,11 @@
 package model.language;
 
-public class TableViewLanguage {
+import java.io.Serial;
+import java.io.Serializable;
+
+public class TableViewLanguage implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 8938990425890761685L;
     private String proteinsInfoLabelController;
     private String carbohydratesInfoLabelController;
     private String fatInfoLabelController;
@@ -10,6 +15,7 @@ public class TableViewLanguage {
         if (languageCode==LanguageCode.PL) createPolishTranslation();
         if (languageCode==LanguageCode.EN) createEnglishTranslation();
     }
+
     protected void createPolishTranslation() {
        proteinsInfoLabelController = "b";
        fatInfoLabelController = "t";

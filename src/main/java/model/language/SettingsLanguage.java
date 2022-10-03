@@ -1,6 +1,11 @@
 package model.language;
 
-public class SettingsLanguage {
+import java.io.Serial;
+import java.io.Serializable;
+
+public class SettingsLanguage implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 2021742115425847912L;
     private String profileLabelController;
     private String mealsLabelController;
     private String weekSummaryLabelController;

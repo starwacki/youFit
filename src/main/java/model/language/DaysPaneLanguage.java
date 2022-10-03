@@ -1,6 +1,11 @@
 package model.language;
 
-public class DaysPaneLanguage {
+import java.io.Serial;
+import java.io.Serializable;
+
+public class DaysPaneLanguage implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 5596007841419286214L;
     private String mondayButtonController;
     private String tuesdayButtonController;
     private String wednesdayButtonController;
