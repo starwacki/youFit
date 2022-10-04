@@ -1,19 +1,25 @@
 package model.calories;
 
-public class CaloricDemand {
-    private double weight; //in kg
-    private double height; // in cm
-    private int gender; //if 0 - male 1 - female (biologic gender)
-    private CaloricDemandPhysicalActivity physicalActivity;
-    private int age; // >0!!
-    private Purpose purpose; // LOSS WEIGHT TDEE - 400 KCAL, STAY AT WEIGHT = TDEE, PUN ON WEIGHT = TDEE + 400 KCAL
+import java.io.Serial;
+import java.io.Serializable;
+
+public class CaloricDemand implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 7826912357526727204L;
+    private static final double CARBOHYDRATES_PERCENT = 0.55;
+    transient private int weight; //in kg
+    transient private int height; // in cm
+    transient private int gender; //if 0 - male 1 - female (biologic gender)
+    transient private CaloricDemandPhysicalActivity physicalActivity;
+    transient private int age; // >0!!
+    transient private Purpose purpose; // LOSS WEIGHT TDEE - 400 KCAL, STAY AT WEIGHT = TDEE, PUN ON WEIGHT = TDEE + 400 KCAL
     private double totalDailyEnergyExpenditure; //TDEE
     private double proteinsInDiet;
     private double carbohydratesInDiet;
     private double fatInDiet;
-    private static final double CARBOHYDRATES_PERCENT = 0.55;
 
-    public CaloricDemand(double weight, double height, int gender,
+
+    public CaloricDemand(int weight, int height, int gender,
                          CaloricDemandPhysicalActivity physicalActivity, int age,Purpose purpose) {
         this.weight=weight;
         this.height=height;
@@ -118,14 +124,14 @@ public class CaloricDemand {
         fatInDiet = calorieNeeded() * fatPercent/CaloriesCalculator.ONE_GRAM_OF_FAT_CALORIES;
     }
     private void calculateMacronutrientsForAverageActivity() {
-        double proteinPercent = 0.2;
+        double proteinPercent = 0.19;
         double fatPercent = 1 - CARBOHYDRATES_PERCENT - proteinPercent;
         proteinsInDiet = calorieNeeded()*proteinPercent/CaloriesCalculator.ONE_GRAM_OF_PROTEIN_CALORIES;
         carbohydratesInDiet = calorieNeeded()*CARBOHYDRATES_PERCENT/CaloriesCalculator.ONE_GRAM_OF_CARBOHYDRATES_CALORIES;
         fatInDiet = calorieNeeded() * fatPercent/CaloriesCalculator.ONE_GRAM_OF_FAT_CALORIES;
     }
     private void calculateMacronutrientsForBigActivity() {
-        double proteinPercent = 0.23;
+        double proteinPercent = 0.21;
         double fatPercent = 1 - CARBOHYDRATES_PERCENT - proteinPercent;
         proteinsInDiet = calorieNeeded()*proteinPercent/CaloriesCalculator.ONE_GRAM_OF_PROTEIN_CALORIES;
         carbohydratesInDiet = calorieNeeded()*CARBOHYDRATES_PERCENT/CaloriesCalculator.ONE_GRAM_OF_CARBOHYDRATES_CALORIES;

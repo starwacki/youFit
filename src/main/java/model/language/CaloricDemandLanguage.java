@@ -33,6 +33,15 @@ public class CaloricDemandLanguage implements Serializable {
     private String maleHarrisBenedictFormulaLabelController;
     private String femaleHarrisBenedictFormulaLabelController;
     private String caloricDemandPaneTitleLabelController;
+    private String activityChoiceBoxCaloricDemandPhysicalActivityVeryLow;
+    private String activityChoiceBoxCaloricDemandPhysicalActivityLow;
+    private String activityChoiceBoxCaloricDemandPhysicalActivityAverage;
+    private String activityChoiceBoxCaloricDemandPhysicalActivityBig;
+    private String activityChoiceBoxCaloricDemandPhysicalActivityVeryBig;
+    private String trainingTargetChoiceBoxPurposeLossWeight;
+    private String trainingTargetChoiceBoxPurposeStayAtWeight;
+    private String trainingTargetChoiceBoxPurposePutOnWeight;
+
 
     CaloricDemandLanguage (LanguageCode languageCode) {
         if (languageCode==LanguageCode.PL) createPolishTranslation();
@@ -66,6 +75,14 @@ public class CaloricDemandLanguage implements Serializable {
         maleHarrisBenedictFormulaLabelController = "Mężczyźni: BMR = 66 + (13,7 × waga w kg) + (5 × wzrost w cm) - (6,8 × wiek w latach)";
         femaleHarrisBenedictFormulaLabelController = " Kobiety: BMR = 655 + (9,6 × waga w kg) + (1,8 × wzrost w cm) - (4,7 × wiek w latach)";
         caloricDemandPaneTitleLabelController = "Zapotrzebowanie kaloryczne";
+        activityChoiceBoxCaloricDemandPhysicalActivityVeryLow = "Bardzo niska - praca siedząca, 0 treningów";
+        activityChoiceBoxCaloricDemandPhysicalActivityLow = "Niska - praca siedząca, 1-2 treningi w tygodniu";
+        activityChoiceBoxCaloricDemandPhysicalActivityAverage = "Umiarkowana - praca fizyczna, 2-3 treningi w tygodniu";
+        activityChoiceBoxCaloricDemandPhysicalActivityBig = "Duża - ciężka praca fizyczna, 3-4 treningi w tygodniu";
+        activityChoiceBoxCaloricDemandPhysicalActivityVeryBig = "Bardzo duża - bardzo ciężka praca fizyczna, codzienne treningi";
+        trainingTargetChoiceBoxPurposeLossWeight = "Utrata masy ciała";
+        trainingTargetChoiceBoxPurposeStayAtWeight = "Utrzymanie masy ciała";
+        trainingTargetChoiceBoxPurposePutOnWeight = "Zbudowanie masy mięśniowej";
 
     }
     private void createEnglishTranslation() {
@@ -96,6 +113,14 @@ public class CaloricDemandLanguage implements Serializable {
         maleHarrisBenedictFormulaLabelController = "Male: BMR = 66 + (13,7 × weight in kg) + (5 × height in cm) - (6,8 × age in years)";
         femaleHarrisBenedictFormulaLabelController = " Female: BMR = 655 + (9,6 × weight in kg) + (1,8 × height in cm) - (4,7 × age in years)";
         caloricDemandPaneTitleLabelController = "Calories Demand";
+        activityChoiceBoxCaloricDemandPhysicalActivityVeryLow = "Very low - sedentary work, 0 training sessions";
+        activityChoiceBoxCaloricDemandPhysicalActivityLow = "Low - sedentary work, 1-2 training sessions";
+        activityChoiceBoxCaloricDemandPhysicalActivityAverage = "Average - physical work, 2-3 training sessions";
+        activityChoiceBoxCaloricDemandPhysicalActivityBig = "Big - hard physical work, 3-4 training sessions";
+        activityChoiceBoxCaloricDemandPhysicalActivityVeryBig = "Very Big - hard physical work, everyday training sessions";
+        trainingTargetChoiceBoxPurposeLossWeight = "Loss weight";
+        trainingTargetChoiceBoxPurposeStayAtWeight = "Stay at weight";
+        trainingTargetChoiceBoxPurposePutOnWeight = "Put on weight";
     }
 
     public String getCaloricDemandCalculatorLabelController() {
@@ -205,4 +230,37 @@ public class CaloricDemandLanguage implements Serializable {
     public String getCaloricDemandPaneTitleLabelController() {
         return caloricDemandPaneTitleLabelController;
     }
-}
+
+    public String getActivityChoiceBoxCaloricDemandPhysicalActivityVeryLow() {
+        return activityChoiceBoxCaloricDemandPhysicalActivityVeryLow;
+    }
+
+    public String getActivityChoiceBoxCaloricDemandPhysicalActivityLow() {
+        return activityChoiceBoxCaloricDemandPhysicalActivityLow;
+    }
+
+    public String getActivityChoiceBoxCaloricDemandPhysicalActivityAverage() {
+        return activityChoiceBoxCaloricDemandPhysicalActivityAverage;
+    }
+
+    public String getActivityChoiceBoxCaloricDemandPhysicalActivityBig() {
+        return activityChoiceBoxCaloricDemandPhysicalActivityBig;
+    }
+
+    public String getActivityChoiceBoxCaloricDemandPhysicalActivityVeryBig() {
+        return activityChoiceBoxCaloricDemandPhysicalActivityVeryBig;
+    }
+
+    public String getTrainingTargetChoiceBoxPurposeLossWeight() {
+        return trainingTargetChoiceBoxPurposeLossWeight;
+    }
+
+    public String getTrainingTargetChoiceBoxPurposeStayAtWeight() {
+        return trainingTargetChoiceBoxPurposeStayAtWeight;
+    }
+
+    public String getTrainingTargetChoiceBoxPurposePutOnWeight() {
+        return trainingTargetChoiceBoxPurposePutOnWeight;
+    }
+    }
+

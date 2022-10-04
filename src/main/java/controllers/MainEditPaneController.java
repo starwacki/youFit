@@ -7,10 +7,7 @@ import controllers.tableViewsControllers.BreakfastTableViewController;
 import controllers.tableViewsControllers.BrunchTableViewController;
 import controllers.tableViewsControllers.LunchTableViewController;
 import controllers.tableViewsControllers.SupperTableViewController;
-import io.ProductBaseReader;
-import io.ProductTableViewsReader;
-import io.ProductTableViewsWriter;
-import io.YourProductBaseIO;
+import io.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -23,6 +20,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import model.calories.CaloricDemand;
 import model.calories.CaloriesCalculator;
 import model.Days;
 import model.language.Language;
@@ -290,12 +288,16 @@ public class MainEditPaneController {
     }
 
     private void setStartCaloricDemand() {
-        caloriesPaneController.getNeededProteinsLabelController().setText("120");
-        caloriesPaneController.getNeededCarbohydratesLabelController().setText("300");
-        caloriesPaneController.getNeededFatLabelController().setText("60");
-        caloriesPaneController.getNeededCaloriesLabelController().setText("2220");
+        setCaloricDemand();
         setProgressBars();
         setCaloriesPaneElementsColors();
+    }
+    private void setCaloricDemand() {
+        CaloricDemand caloricDemand = CaloricDemandIO.getCaloricDemand();
+        caloriesPaneController.getNeededProteinsLabelController().setText(String.valueOf((int) caloricDemand.getProteinsInDiet()));
+        caloriesPaneController.getNeededCarbohydratesLabelController().setText(String.valueOf((int) caloricDemand.getCarbohydratesInDiet()));
+        caloriesPaneController.getNeededFatLabelController().setText(String.valueOf((int) caloricDemand.getFatInDiet()));
+        caloriesPaneController.getNeededCaloriesLabelController().setText(String.valueOf((int) caloricDemand.getTotalDailyEnergyExpenditure()));
     }
     private void setBreakfastPieChar() {
         setPieChart(breakfastTableViewController.getBreakfastProteinsPercentInMeal(),

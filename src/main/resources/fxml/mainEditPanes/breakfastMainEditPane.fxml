@@ -16,7 +16,7 @@
          </children>
         </VBox>
       <fx:include fx:id="settingsPane" source="../mainPaneComponentsFXMLS/settingsPane.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <Separator layoutX="224.0" layoutY="69.0" orientation="VERTICAL" prefHeight="584.0" prefWidth="17.0" style="-fx-border-width: 1;" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="214.0" AnchorPane.topAnchor="60.0" />
+      <Separator layoutX="224.0" layoutY="69.0" orientation="VERTICAL" prefHeight="584.0" prefWidth="17.0" style="-fx-border-width: 1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="214.0" AnchorPane.topAnchor="60.0" />
       <Separator layoutX="229.0" layoutY="69.0" prefHeight="5.0" prefWidth="880.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="59.0" />
     </children>
 </AnchorPane>

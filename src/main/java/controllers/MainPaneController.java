@@ -6,6 +6,7 @@ import controllers.tableViewsControllers.BreakfastTableViewController;
 import controllers.tableViewsControllers.BrunchTableViewController;
 import controllers.tableViewsControllers.LunchTableViewController;
 import controllers.tableViewsControllers.SupperTableViewController;
+import io.CaloricDemandIO;
 import io.ProductTableViewsReader;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -14,6 +15,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import model.calories.CaloricDemand;
 import model.calories.CaloriesCalculator;
 import model.Days;
 import model.meals.Meals;
@@ -209,14 +211,17 @@ public class MainPaneController {
         micronutrientsLabels.forEach(label -> label.setTextFill(Color.WHITE));
     }
 
-    //method to delete in future -> set start calories demand;
     private void setStartCaloricDemand() {
-        caloriesPaneController.getNeededProteinsLabelController().setText("120");
-        caloriesPaneController.getNeededCarbohydratesLabelController().setText("300");
-        caloriesPaneController.getNeededFatLabelController().setText("60");
-        caloriesPaneController.getNeededCaloriesLabelController().setText("2220");
+        setCalculatedCaloricDemand();
         setProgressBars();
         setCaloriesPaneElementsColors();
+    }
+    private void setCalculatedCaloricDemand() {
+        CaloricDemand caloricDemand = CaloricDemandIO.getCaloricDemand();
+        caloriesPaneController.getNeededProteinsLabelController().setText(String.valueOf((int) caloricDemand.getProteinsInDiet()));
+        caloriesPaneController.getNeededCarbohydratesLabelController().setText(String.valueOf((int) caloricDemand.getCarbohydratesInDiet()));
+        caloriesPaneController.getNeededFatLabelController().setText(String.valueOf((int) caloricDemand.getFatInDiet()));
+        caloriesPaneController.getNeededCaloriesLabelController().setText(String.valueOf((int) caloricDemand.getTotalDailyEnergyExpenditure()));
     }
     public void addAllProductToAllTableViews(DaysMeals products) {
         addAllProductToTableView(products.getMondayMeals(),Days.MONDAY);

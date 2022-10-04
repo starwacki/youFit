@@ -53,9 +53,9 @@
          </font>
       </Label>
       <Label fx:id="trainingTargetLabelController" layoutX="50.0" layoutY="212.0" prefHeight="25.0" prefWidth="100.0" style="-fx-text-fill: white;" text="Training target:" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="306.0" />
-      <ChoiceBox fx:id="trainingTargetChoiceBoxController" layoutX="272.0" layoutY="133.0" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(to right,#708A90,  #B7B9B9);" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="271.0" />
+      <ChoiceBox fx:id="activityChoiceBoxController" layoutX="272.0" layoutY="133.0" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(to right,#708A90,  #B7B9B9);" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="271.0" />
       <Label fx:id="activityLabelController" layoutX="50.0" layoutY="238.0" prefHeight="25.0" prefWidth="100.0" style="-fx-text-fill: white;" text="Activity:" AnchorPane.topAnchor="271.0" />
-      <ChoiceBox fx:id="PropertiesChoiceBoxController" layoutX="150.0" layoutY="238.0" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(to right,#708A90,  #B7B9B9);" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="306.0" />
+      <ChoiceBox fx:id="trainingTargetChoiceBoxController" layoutX="150.0" layoutY="238.0" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: linear-gradient(to right,#708A90,  #B7B9B9);" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="306.0" />
       <Button fx:id="calculateCaloricDemandButtonController" layoutX="114.0" layoutY="289.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="124.0" style="-fx-text-fill: white; -fx-font-weight: bold;" text="Calculate:" AnchorPane.topAnchor="356.0">
          <graphic>
             <ImageView fitHeight="26.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
@@ -178,14 +178,14 @@
             <Image url="@../../../img/caloric-demand-icons/femenine.png" />
          </image>
       </ImageView>
-      <Label fx:id="caloriesNumberLabelController" layoutX="50.0" layoutY="362.0" prefHeight="18.0" prefWidth="46.0" style="-fx-text-fill: #9933ff;;" text="9000" AnchorPane.topAnchor="461.0" />
-      <Label fx:id="caloriesLabelController" layoutX="88.0" layoutY="360.0" prefHeight="18.0" prefWidth="46.0" style="-fx-text-fill: #9933ff;;" text="calories" AnchorPane.topAnchor="461.0" />
-      <Label fx:id="proteinsNumberLabelController" layoutX="50.0" layoutY="377.0" prefHeight="18.0" prefWidth="32.0" style="-fx-text-fill: aqua;" text="150" AnchorPane.topAnchor="444.0" />
-      <Label fx:id="proteinsLabelController" layoutX="87.0" layoutY="377.0" prefHeight="18.0" prefWidth="75.0" style="-fx-text-fill: aqua;" text="g proteins" AnchorPane.topAnchor="444.0" />
-      <Label fx:id="carbohydratesNumberLabelController" layoutX="50.0" layoutY="395.0" prefHeight="18.0" prefWidth="32.0" style="-fx-text-fill: green;" text="150" AnchorPane.topAnchor="427.0" />
-      <Label fx:id="carbohydratesLabelController" layoutX="86.0" layoutY="395.0" prefHeight="18.0" prefWidth="100.0" style="-fx-text-fill: green;" text="g carbohydrates" AnchorPane.topAnchor="427.0" />
-      <Label fx:id="fatNumberLabelController" layoutX="50.0" layoutY="412.0" prefHeight="18.0" prefWidth="32.0" style="-fx-text-fill: chocolate;" text="150" AnchorPane.topAnchor="478.0" />
-      <Label fx:id="fatLabelController" layoutX="86.0" layoutY="412.0" prefHeight="18.0" prefWidth="91.0" style="-fx-text-fill: chocolate;" text="g fat" AnchorPane.topAnchor="478.0" />
+      <Label fx:id="caloriesNumberLabelController" layoutX="44.0" layoutY="479.0" opacity="0.0" prefHeight="18.0" prefWidth="67.0" style="-fx-text-fill: #9933ff;;" text="0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="479.0" />
+      <Label fx:id="caloriesLabelController" layoutX="81.0" layoutY="479.0" opacity="0.0" prefHeight="18.0" prefWidth="46.0" style="-fx-text-fill: #9933ff;;" text="calories" AnchorPane.leftAnchor="92.0" AnchorPane.topAnchor="479.0" />
+      <Label fx:id="proteinsNumberLabelController" layoutX="50.0" layoutY="426.0" opacity="0.0" prefHeight="18.0" prefWidth="46.0" style="-fx-text-fill: aqua;" text="0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="426.0" />
+      <Label fx:id="proteinsLabelController" layoutX="88.0" layoutY="427.0" opacity="0.0" prefHeight="18.0" prefWidth="75.0" style="-fx-text-fill: aqua;" text="g proteins" AnchorPane.leftAnchor="92.0" AnchorPane.topAnchor="427.0" />
+      <Label fx:id="carbohydratesNumberLabelController" layoutX="50.0" layoutY="444.0" opacity="0.0" prefHeight="18.0" prefWidth="54.0" style="-fx-text-fill: green;" text="0" AnchorPane.topAnchor="444.0" />
+      <Label fx:id="carbohydratesLabelController" layoutX="88.0" layoutY="444.0" opacity="0.0" prefHeight="18.0" prefWidth="100.0" style="-fx-text-fill: green;" text="g carbohydrates" AnchorPane.leftAnchor="92.0" AnchorPane.topAnchor="444.0" />
+      <Label fx:id="fatNumberLabelController" layoutX="50.0" layoutY="461.0" opacity="0.0" prefHeight="18.0" prefWidth="46.0" style="-fx-text-fill: chocolate;" text="0" AnchorPane.topAnchor="461.0" />
+      <Label fx:id="fatLabelController" layoutX="92.0" layoutY="461.0" opacity="0.0" prefHeight="18.0" prefWidth="91.0" style="-fx-text-fill: chocolate;" text="g fat" AnchorPane.topAnchor="461.0" />
       <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="61.0" prefWidth="481.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label fx:id="caloricDemandPaneTitleLabelController" alignment="CENTER" style="-fx-font-size: 32px; -fx-font-weight: bold;" text="Change caloric demand" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -198,5 +198,40 @@
                </graphic></Label>
          </children>
       </AnchorPane>
+      <ImageView fx:id="heightImageViewController" fitHeight="32.0" fitWidth="32.0" layoutX="251.0" layoutY="200.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/caloric-demand-icons/warning.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="ageImageViewController" fitHeight="32.0" fitWidth="32.0" layoutX="375.0" layoutY="128.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/caloric-demand-icons/warning.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="weightImageViewController" fitHeight="32.0" fitWidth="32.0" layoutX="251.0" layoutY="233.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/caloric-demand-icons/warning.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="setCaloricDemandWarningImageViewController1" fitHeight="32.0" fitWidth="32.0" layoutX="690.0" layoutY="133.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/caloric-demand-icons/warning.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="setCaloricDemandWarningImageViewController2" fitHeight="32.0" fitWidth="32.0" layoutX="690.0" layoutY="173.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/caloric-demand-icons/warning.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="setCaloricDemandWarningImageViewController3" fitHeight="32.0" fitWidth="32.0" layoutX="690.0" layoutY="210.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/caloric-demand-icons/warning.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="setCaloricDemandWarningImageViewController4" fitHeight="32.0" fitWidth="32.0" layoutX="690.0" layoutY="253.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/caloric-demand-icons/warning.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
