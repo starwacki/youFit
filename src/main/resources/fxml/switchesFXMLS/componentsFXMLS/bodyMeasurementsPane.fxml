@@ -16,7 +16,7 @@
 
 <AnchorPane fx:id="bodyMeasurementsAnchorPaneController" prefHeight="650.0" prefWidth="860.0" stylesheets="@../../../css/mainview.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SettingsPanesControllers.BodyMeasurementsPaneController">
    <children>
-      <LineChart id="lineChart" fx:id="lineChartController" layoutX="11.0" layoutY="8.0" prefHeight="352.0" prefWidth="419.0" AnchorPane.leftAnchor="11.0" AnchorPane.topAnchor="74.0">
+      <LineChart id="lineChart" fx:id="lineChartController" animated="false" layoutX="11.0" layoutY="8.0" legendVisible="false" prefHeight="352.0" prefWidth="419.0" style="-fx-legend-visible: false;" AnchorPane.leftAnchor="11.0" AnchorPane.topAnchor="74.0">
         <xAxis>
           <CategoryAxis label="Month" side="BOTTOM" style="-fx-tick-label-fill: white;" />
         </xAxis>
@@ -24,16 +24,15 @@
           <NumberAxis label="Weight" prefHeight="289.0" prefWidth="43.0" style="-fx-tick-label-fill: white;" tickLabelFill="WHITE" />
         </yAxis>
       </LineChart>
-      <TableView id="table-view-measurements" fx:id="bodyMeasurementsTableViewController" layoutX="480.0" layoutY="23.0" prefHeight="285.0" prefWidth="365.0" AnchorPane.topAnchor="89.0">
+      <TableView id="table-view-measurements" fx:id="bodyMeasurementsTableViewController" layoutX="480.0" layoutY="23.0" prefHeight="285.0" prefWidth="381.0" AnchorPane.topAnchor="89.0">
         <columns>
-            <TableColumn fx:id="dateBodyMeasurementsTableViewTableColumnController" minWidth="5.0" prefWidth="65.0" text="Date" />
-            <TableColumn fx:id="hipTableColumnController" prefWidth="48.0" text="Hip" />
-            <TableColumn fx:id="chestTableColumnController" prefWidth="42.0" text="Chest" />
-            <TableColumn fx:id="thighTableColumnController" prefWidth="42.0" text="Thigh" />
-            <TableColumn fx:id="bicepsTableColumnController" prefWidth="42.0" text="Biceps" />
-            <TableColumn fx:id="tricepsTableColumnController" prefWidth="47.0" text="Triceps" />
-            <TableColumn fx:id="waistTableColumnController" prefWidth="50.0" text="Waist" />
-            <TableColumn fx:id="deleteBodyMeasurementsTableViewTableColumnController" prefWidth="28.0" text="X" />
+            <TableColumn fx:id="dateBodyMeasurementsTableViewTableColumnController" minWidth="5.0" prefWidth="75.0" resizable="false" text="Date" />
+            <TableColumn fx:id="hipTableColumnController" prefWidth="44.0" resizable="false" text="Hip" />
+            <TableColumn fx:id="chestTableColumnController" prefWidth="45.0" resizable="false" text="Chest" />
+            <TableColumn fx:id="thighTableColumnController" prefWidth="41.0" resizable="false" text="Thigh" />
+            <TableColumn fx:id="bicepsTableColumnController" prefWidth="45.0" resizable="false" text="Biceps" />
+            <TableColumn fx:id="tricepsTableColumnController" prefWidth="53.0" resizable="false" text="Triceps" />
+            <TableColumn fx:id="waistTableColumnController" prefWidth="51.0" resizable="false" text="Waist" />
         </columns>
       </TableView>
       <Label fx:id="bodyMeasurementsInfoLabelController" layoutX="585.0" layoutY="-2.0" prefHeight="25.0" prefWidth="201.0" style="-fx-text-fill: white;" text="Body measurements (in cm)" AnchorPane.topAnchor="66.0">
@@ -44,11 +43,10 @@
                </image>
             </ImageView>
          </graphic></Label>
-      <TableView id="table-view-measurements" fx:id="linearChartTableViewController" layoutX="24.0" layoutY="390.0" prefHeight="181.0" prefWidth="170.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="455.0">
+      <TableView id="table-view-measurements" fx:id="linearChartTableViewController" layoutX="24.0" layoutY="390.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="181.0" prefWidth="170.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="455.0">
         <columns>
-          <TableColumn fx:id="dateLinearChartTableViewTableColumnController" prefWidth="75.0" text="Date" />
-          <TableColumn fx:id="weightTableColumnController" prefWidth="66.0" text="Weight" />
-            <TableColumn fx:id="deleteLinearChartTableViewTableColumnController" minWidth="9.0" prefWidth="29.0" text="X" />
+          <TableColumn fx:id="dateLinearChartTableViewTableColumnController" prefWidth="75.0" resizable="false" text="Date" />
+          <TableColumn fx:id="weightTableColumnController" prefWidth="63.0" resizable="false" text="Weight" />
         </columns>
       </TableView>
       <Label fx:id="hipLabelController" layoutX="517.0" layoutY="326.0" prefHeight="25.0" prefWidth="50.0" style="-fx-text-fill: white;" text="Hip" AnchorPane.leftAnchor="517.0" AnchorPane.topAnchor="388.0" />
@@ -68,8 +66,8 @@
       <Label fx:id="weightInfoLabelController" layoutX="236.0" layoutY="430.0" prefHeight="25.0" prefWidth="50.0" style="-fx-text-fill: white;" text="Weight:" AnchorPane.topAnchor="540.0" />
       <TextField fx:id="weightTextFieldController" layoutX="291.0" layoutY="430.0" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: linear-gradient(to right,#708A90,  #B7B9B9);" AnchorPane.topAnchor="540.0" />
       <Button fx:id="addWeightLinearChartButtonController" layoutX="275.0" layoutY="534.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: linear-gradient(to right,#797979,  #4C4646); -fx-text-fill: white; -fx-font-weight: bold;" text="Add " AnchorPane.topAnchor="600.0" />
-      <DatePicker id="table-view-measurements" layoutX="236.0" layoutY="503.0" prefHeight="25.0" prefWidth="170.0" AnchorPane.topAnchor="569.0" />
-      <DatePicker layoutX="560.0" layoutY="503.0" prefHeight="25.0" prefWidth="170.0" AnchorPane.topAnchor="569.0" />
+      <DatePicker id="table-view-measurements" fx:id="linearChartDatePickerController" layoutX="236.0" layoutY="503.0" prefHeight="25.0" prefWidth="170.0" AnchorPane.topAnchor="569.0" />
+      <DatePicker fx:id="bodyMeasurementsDatePickerController" layoutX="560.0" layoutY="503.0" prefHeight="25.0" prefWidth="170.0" AnchorPane.topAnchor="569.0" />
       <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="479.0" layoutY="322.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="388.0">
          <image>
             <Image url="@../../../img/body-measurements-icons/hip.png" />

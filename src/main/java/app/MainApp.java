@@ -1,4 +1,5 @@
 package app;
+import io.BodyMeasurementsIO;
 import io.LanguageIO;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -7,10 +8,18 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import model.bodyMeasurements.BodyMeasurement;
+import model.bodyMeasurements.BodyMeasurements;
+import model.bodyMeasurements.LinearChartMeasurement;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainApp extends Application {
 
     public static void main(String[] args) {
         LanguageIO.initializeLanguage();
+        BodyMeasurementsIO.initializeBodyMeasurementsBase();
         launch(args);
     }
 
@@ -32,5 +41,6 @@ public class MainApp extends Application {
     }
     public void stop() {
         LanguageIO.safeLanguageApp();
+        BodyMeasurementsIO.safeBodyMeasurementsBase();
     }
 }

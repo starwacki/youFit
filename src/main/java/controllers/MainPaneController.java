@@ -43,7 +43,7 @@ public class MainPaneController {
     @FXML
     private MainEditPaneController breakfastMainEditPaneController;
     private static final int LIST_OF_ALL_MEALS_INDEX = 0;
-    private static final int TABLE_WIDTH = 685;
+    private static final int TABLE_WIDTH = 680;
     private static final int EXCEEDED_MICRONUTRIENTS_WARNING_PROGRESS_BAR_VALUE = 1;
     private static final String LAST_CLICKED_DAY_COLOR_STYLE = "-fx-border-color: red";
     private static final String PREVIOUS_CLICKED_DAY_COLOR_STYLE = "-fx-border-color: white";

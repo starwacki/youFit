@@ -467,6 +467,7 @@ public class MainEditPaneController {
             }
         };
         colBtn.setCellFactory(cellFactory);
+        setAddedTableColumnSetting(colBtn);
         tableView.getColumns().add(colBtn);
     }
     private void setDeleteButton(Button btn) {
@@ -478,7 +479,10 @@ public class MainEditPaneController {
         delete.setPreserveRatio(true);
         btn.setGraphic(delete);
         btn.setContentDisplay(ContentDisplay.CENTER);
-
+    }
+    private void setAddedTableColumnSetting(TableColumn tableColumn) {
+        tableColumn.setReorderable(false);
+        tableColumn.setEditable(false);
     }
     }
 
