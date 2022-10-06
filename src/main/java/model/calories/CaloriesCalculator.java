@@ -1,6 +1,7 @@
 package model.calories;
 import model.product.Product;
 import model.meals.Meals;
+import model.weekSummary.WeekSummary;
 
 import java.util.List;
 
@@ -9,9 +10,8 @@ public class CaloriesCalculator {
     public static final double ONE_GRAM_OF_PROTEIN_CALORIES = 4;
     public static final double ONE_GRAM_OF_CARBOHYDRATES_CALORIES = 4;
     public static final double ONE_GRAM_OF_FAT_CALORIES = 9;
+    private static final int MEALS_INDEX = 0;
 
-
-    //methods return weight of  particular micronutrients
     public static double proteinsInProduct(Product product) {
         return product.getProteinsPer100Grams()* product.getWeight()/100;
     }
@@ -22,7 +22,6 @@ public class CaloriesCalculator {
         return product.getCarbohydratesPer100Grams()* product.getWeight()/100;
     }
 
-  //Methods return all micronutrients per meal
   public static double getProteinsFromMeal(List<Product> products) {
         double proteins = 0;
       for (Product p: products) {
@@ -47,16 +46,16 @@ public class CaloriesCalculator {
     //Methods return micronutrient of all day meals
     public static  double getProteinsFromDay(List<Meals> meals) {
 
-        return getProteinsFromMeal(meals.get(0).getBreakfast()) + getProteinsFromMeal(meals.get(0).getBrunch())
-                + getProteinsFromMeal(meals.get(0).getLunch()) + getProteinsFromMeal(meals.get(0).getSupper());
+        return getProteinsFromMeal(meals.get(MEALS_INDEX).getBreakfast()) + getProteinsFromMeal(meals.get(MEALS_INDEX).getBrunch())
+                + getProteinsFromMeal(meals.get(MEALS_INDEX).getLunch()) + getProteinsFromMeal(meals.get(MEALS_INDEX).getSupper());
     }
     public static  double getFatFromDay(List<Meals> meals) {
-        return    getFatFromMeal(meals.get(0).getBreakfast()) + getFatFromMeal(meals.get(0).getBrunch())
-                + getFatFromMeal(meals.get(0).getLunch()) + getFatFromMeal(meals.get(0).getSupper());
+        return    getFatFromMeal(meals.get(MEALS_INDEX).getBreakfast()) + getFatFromMeal(meals.get(MEALS_INDEX).getBrunch())
+                + getFatFromMeal(meals.get(MEALS_INDEX).getLunch()) + getFatFromMeal(meals.get(MEALS_INDEX).getSupper());
     }
     public static  double getCarbohydratesFromDay(List<Meals> meals) {
-        return    getCarbohydratesFromMeal(meals.get(0).getBreakfast()) + getCarbohydratesFromMeal(meals.get(0).getBrunch())
-                + getCarbohydratesFromMeal(meals.get(0).getLunch()) + getCarbohydratesFromMeal(meals.get(0).getSupper());
+        return    getCarbohydratesFromMeal(meals.get(MEALS_INDEX).getBreakfast()) + getCarbohydratesFromMeal(meals.get(MEALS_INDEX).getBrunch())
+                + getCarbohydratesFromMeal(meals.get(MEALS_INDEX).getLunch()) + getCarbohydratesFromMeal(meals.get(MEALS_INDEX).getSupper());
     }
 
     //Methods return calories from one product, one meal and day
@@ -72,8 +71,33 @@ public class CaloriesCalculator {
     }
     public static  double getCaloriesFromDay(List<Meals> meals) {
 
-     return     getCaloriesFromMeal(meals.get(0).getBreakfast()) + getCaloriesFromMeal(meals.get(0).getLunch())
-             +  getCaloriesFromMeal(meals.get(0).getSupper()) +  getCaloriesFromMeal(meals.get(0).getBrunch()) ;
+     return     getCaloriesFromMeal(meals.get(MEALS_INDEX).getBreakfast()) + getCaloriesFromMeal(meals.get(MEALS_INDEX).getLunch())
+             +  getCaloriesFromMeal(meals.get(MEALS_INDEX).getSupper()) +  getCaloriesFromMeal(meals.get(MEALS_INDEX).getBrunch()) ;
+    }
+
+    public static double getWeekProteins(WeekSummary weekSummary) {
+        return  getProteinsFromDay(weekSummary.getMondayProducts()) + getProteinsFromDay(weekSummary.getTuesdayProducts()) +
+                getProteinsFromDay(weekSummary.getWednesdayProducts()) + getProteinsFromDay(weekSummary.getThursdayProducts()) +
+                getProteinsFromDay(weekSummary.getFridayProducts()) + getProteinsFromDay(weekSummary.getSaturdayProducts()) +
+                getProteinsFromDay(weekSummary.getSundayProducts());
+    }
+    public static double getWeekCarbohydrates(WeekSummary weekSummary) {
+        return  getCarbohydratesFromDay(weekSummary.getMondayProducts()) + getCarbohydratesFromDay(weekSummary.getTuesdayProducts()) +
+                getCarbohydratesFromDay(weekSummary.getWednesdayProducts()) + getCarbohydratesFromDay(weekSummary.getThursdayProducts()) +
+                getCarbohydratesFromDay(weekSummary.getFridayProducts()) + getCarbohydratesFromDay(weekSummary.getSaturdayProducts()) +
+                getCarbohydratesFromDay(weekSummary.getSundayProducts());
+    }
+    public static double getWeekFat(WeekSummary weekSummary) {
+        return  getFatFromDay(weekSummary.getMondayProducts()) + getFatFromDay(weekSummary.getTuesdayProducts()) +
+                getFatFromDay(weekSummary.getWednesdayProducts()) + getFatFromDay(weekSummary.getThursdayProducts()) +
+                getFatFromDay(weekSummary.getFridayProducts()) + getFatFromDay(weekSummary.getSaturdayProducts()) +
+                getFatFromDay(weekSummary.getSundayProducts());
+    }
+    public static double getWeekCalories(WeekSummary weekSummary) {
+        return  getCaloriesFromDay(weekSummary.getMondayProducts()) + getCaloriesFromDay(weekSummary.getTuesdayProducts()) +
+                getCaloriesFromDay(weekSummary.getWednesdayProducts()) + getCaloriesFromDay(weekSummary.getThursdayProducts()) +
+                getCaloriesFromDay(weekSummary.getFridayProducts()) + getCaloriesFromDay(weekSummary.getSaturdayProducts()) +
+                getCaloriesFromDay(weekSummary.getSundayProducts());
     }
 
 

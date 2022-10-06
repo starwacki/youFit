@@ -185,3 +185,21 @@
 }
 
 
+.default-color0.chart-bar {
+-fx-bar-fill: #04BDDE;
+}
+.default-color1.chart-bar {
+-fx-bar-fill: #32F902;
+}
+.default-color2.chart-bar {
+-fx-bar-fill: chocolate;
+}
+.default-color3.chart-bar {
+-fx-bar-fill: #9933ff;
+}
+.bar-chart .chart-legend {
+-fx-background-color: #303030;
+}
+Label.chart-legend-item {
+-fx-text-fill: white;
+}
