@@ -1,9 +1,9 @@
 package model.weekSummary;
 
 import io.ProductTableViewsReader;
-import model.Days;
-import model.meals.Meals;
+import model.product.Meals;
 
+import java.time.DayOfWeek;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,16 +17,16 @@ private List<Meals> saturdayProducts;
 private List<Meals> sundayProducts;
 
     public WeekSummary() {
-       mondayProducts = addDayMeals(Days.MONDAY);
-       tuesdayProducts = addDayMeals(Days.TUESDAY);
-       wednesdayProducts = addDayMeals(Days.WEDNESDAY);
-       thursdayProducts = addDayMeals(Days.THURSDAY);
-       fridayProducts = addDayMeals(Days.FRIDAY);
-       saturdayProducts = addDayMeals(Days.SATURDAY);
-       sundayProducts = addDayMeals(Days.SUNDAY);
+       mondayProducts = addDayMeals(DayOfWeek.MONDAY);
+       tuesdayProducts = addDayMeals(DayOfWeek.TUESDAY);
+       wednesdayProducts = addDayMeals(DayOfWeek.WEDNESDAY);
+       thursdayProducts = addDayMeals(DayOfWeek.THURSDAY);
+       fridayProducts = addDayMeals(DayOfWeek.FRIDAY);
+       saturdayProducts = addDayMeals(DayOfWeek.SATURDAY);
+       sundayProducts = addDayMeals(DayOfWeek.SUNDAY);
 
     }
-    private List<Meals> addDayMeals( Days days) {
+    private List<Meals> addDayMeals(DayOfWeek days) {
         List<Meals> list = new ArrayList<>();
         Meals meals = new Meals(ProductTableViewsReader.getProductListFromMeal(days,"BREAKFAST"),
                                 ProductTableViewsReader.getProductListFromMeal(days,"BRUNCH"),

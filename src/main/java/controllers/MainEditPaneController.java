@@ -20,20 +20,19 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Callback;
+import model.DateController;
 import model.calories.CaloricDemand;
 import model.calories.CaloriesCalculator;
-import model.Days;
 import model.language.Language;
-import model.meals.Meals;
+import model.product.Meals;
 import model.product.DaysMeals;
 import model.product.Product;
 
-import java.util.Calendar;
+import java.time.DayOfWeek;
 import java.util.List;
 import java.util.Locale;
 
 public class MainEditPaneController {
-    private static Days lastClickedDay = Days.MONDAY;
     private static boolean mainBase = true;
     @FXML
     private CaloriesPaneController caloriesPaneController;
@@ -95,13 +94,9 @@ public class MainEditPaneController {
         setStartCaloricDemand();
         setLastClickedDayBackgroundColor();
     }
-    public static void setNumberOfLastClickedDay(Days day) {
-        lastClickedDay = day;
+    public static void setNumberOfLastClickedDay(DayOfWeek day) {
+        DateController.setLastClickedDay(day);
     }
-    public static Days getLastClickedDay() {
-        return lastClickedDay;
-    }
-
     public static boolean isMainBase() {
         return mainBase;
     }
@@ -112,23 +107,23 @@ public class MainEditPaneController {
 
     private void showMainViewFromClickedDay() {
         daysPaneController.getMondayButtonController().addEventFilter(MouseEvent.MOUSE_CLICKED,
-                mouseEvent -> showTableViewsByClickedDay(Days.MONDAY));
+                mouseEvent -> showTableViewsByClickedDay(DayOfWeek.MONDAY));
         daysPaneController.getTuesdayButtonController().addEventFilter(MouseEvent.MOUSE_CLICKED,
-                mouseEvent -> showTableViewsByClickedDay(Days.TUESDAY));
+                mouseEvent -> showTableViewsByClickedDay(DayOfWeek.TUESDAY));
         daysPaneController.getWednesdayButtonController().addEventFilter(MouseEvent.MOUSE_CLICKED,
-                mouseEvent -> showTableViewsByClickedDay(Days.WEDNESDAY));
+                mouseEvent -> showTableViewsByClickedDay(DayOfWeek.WEDNESDAY));
         daysPaneController.getThursdayButtonController().addEventFilter(MouseEvent.MOUSE_CLICKED,
-                mouseEvent -> showTableViewsByClickedDay(Days.THURSDAY));
+                mouseEvent -> showTableViewsByClickedDay(DayOfWeek.THURSDAY));
         daysPaneController.getFridayButtonController().addEventFilter(MouseEvent.MOUSE_CLICKED,
-                mouseEvent -> showTableViewsByClickedDay(Days.FRIDAY));
+                mouseEvent -> showTableViewsByClickedDay(DayOfWeek.FRIDAY));
         daysPaneController.getSaturdayButtonController().addEventFilter(MouseEvent.MOUSE_CLICKED,
-                mouseEvent -> showTableViewsByClickedDay(Days.SATURDAY));
+                mouseEvent -> showTableViewsByClickedDay(DayOfWeek.SATURDAY));
         daysPaneController.getSundayButtonController().addEventFilter(MouseEvent.MOUSE_CLICKED,
-                mouseEvent -> showTableViewsByClickedDay(Days.SUNDAY));
+                mouseEvent -> showTableViewsByClickedDay(DayOfWeek.SUNDAY));
     }
-    private void showTableViewsByClickedDay(Days days) {
+    private void showTableViewsByClickedDay(DayOfWeek days) {
         SceneSwitcherController sceneSwitcherController = new SceneSwitcherController();
-        lastClickedDay = days;
+        DateController.setLastClickedDay(days);
         sceneSwitcherController.switchToMainPane(thisStage());
     }
     private Stage thisStage() {
@@ -136,73 +131,73 @@ public class MainEditPaneController {
     }
     private void setEditPaneViewByMeal(DaysMeals daysMeals) {
         switch (getMealId()) {
-            case BREAKFAST_TABLE_VIEW_ID -> setBreakfastEditPane(daysMeals, lastClickedDay);
-            case BRUNCH_TABLE_VIEW_ID -> setBrunchEditPane(daysMeals, lastClickedDay);
-            case LUNCH_TABLE_VIEW_ID -> setLunchEditPane(daysMeals, lastClickedDay);
-            case SUPPER_TABLE_VIEW_ID -> setSupperEditPane(daysMeals, lastClickedDay);
+            case BREAKFAST_TABLE_VIEW_ID -> setBreakfastEditPane(daysMeals, DateController.getLastClickedDay());
+            case BRUNCH_TABLE_VIEW_ID -> setBrunchEditPane(daysMeals, DateController.getLastClickedDay());
+            case LUNCH_TABLE_VIEW_ID -> setLunchEditPane(daysMeals, DateController.getLastClickedDay());
+            case SUPPER_TABLE_VIEW_ID -> setSupperEditPane(daysMeals, DateController.getLastClickedDay());
         }
     }
     private String getMealId() {
         return mainPaneViewVboxController.getChildren().get(LIST_OF_ALL_MEALS_INDEX).getId();
     }
-    private void setBreakfastEditPane(DaysMeals daysMeals, Days days) {
+    private void setBreakfastEditPane(DaysMeals daysMeals, DayOfWeek days) {
         addProductsToBreakfastByDay(daysMeals, days);
         setBreakfastMicronutrientsTableViewLabels(daysMeals, days);
         setCaloriesPane(daysMeals, days);
         setBreakfastPieChar();
     }
-    private void setBrunchEditPane(DaysMeals daysMeals, Days days) {
+    private void setBrunchEditPane(DaysMeals daysMeals, DayOfWeek days) {
         addProductsToBrunchByDay(daysMeals, days);
         setBrunchMicronutrientsTableViewLabels(daysMeals, days);
         setCaloriesPane(daysMeals, days);
         setBrunchPieChar();
     }
-    private void setLunchEditPane(DaysMeals daysMeals, Days days) {
+    private void setLunchEditPane(DaysMeals daysMeals, DayOfWeek days) {
         addProductsToLunchByDay(daysMeals, days);
         setLunchMicronutrientsTableViewLabels(daysMeals, days);
         setCaloriesPane(daysMeals, days);
         setLunchPieChar();
     }
-    private void setSupperEditPane(DaysMeals daysMeals, Days days) {
+    private void setSupperEditPane(DaysMeals daysMeals, DayOfWeek days) {
         addProductsToSupperByDay(daysMeals, days);
         setSupperMicronutrientsTableViewLabels(daysMeals, days);
         setCaloriesPane(daysMeals, days);
         setSupperPieChar();
     }
-    private void addProductsToBreakfastByDay(DaysMeals daysMeals, Days days) {
+    private void addProductsToBreakfastByDay(DaysMeals daysMeals, DayOfWeek days) {
         breakfastTableViewController.removeAllTableViewProducts();
         breakfastTableViewController.addProductsToActualTableView(daysMeals.getDaysListMap().get(days).get(LIST_OF_ALL_MEALS_INDEX).getBreakfast());
     }
-    private void addProductsToBrunchByDay(DaysMeals daysMeals, Days days) {
+    private void addProductsToBrunchByDay(DaysMeals daysMeals, DayOfWeek days) {
         brunchTableViewController.removeAllTableViewProducts();
         brunchTableViewController.addProductsToActualTableView(daysMeals.getDaysListMap().get(days).get(LIST_OF_ALL_MEALS_INDEX).getBrunch());
     }
-    private void addProductsToLunchByDay(DaysMeals daysMeals, Days days) {
+    private void addProductsToLunchByDay(DaysMeals daysMeals, DayOfWeek days) {
         lunchTableViewController.removeAllTableViewProducts();
         lunchTableViewController.addProductsToActualTableView(daysMeals.getDaysListMap().get(days).get(LIST_OF_ALL_MEALS_INDEX).getLunch());
     }
-    private void addProductsToSupperByDay(DaysMeals daysMeals, Days days) {
+    private void addProductsToSupperByDay(DaysMeals daysMeals, DayOfWeek days) {
         supperTableViewController.removeAllTableViewProducts();
         supperTableViewController.addProductsToActualTableView(daysMeals.getDaysListMap().get(days).get(LIST_OF_ALL_MEALS_INDEX).getSupper());
     }
-    private void setBreakfastMicronutrientsTableViewLabels(DaysMeals daysMeals, Days days) {
+    private void setBreakfastMicronutrientsTableViewLabels(DaysMeals daysMeals, DayOfWeek days) {
         breakfastTableViewController.setThisMealMicronutrientsLabels(daysMeals, days);
     }
-    private void setBrunchMicronutrientsTableViewLabels(DaysMeals daysMeals, Days days) {
+    private void setBrunchMicronutrientsTableViewLabels(DaysMeals daysMeals, DayOfWeek days) {
         brunchTableViewController.setThisMealMicronutrientsLabels(daysMeals, days);
     }
-    private void setLunchMicronutrientsTableViewLabels(DaysMeals daysMeals, Days days) {
+    private void setLunchMicronutrientsTableViewLabels(DaysMeals daysMeals, DayOfWeek days) {
         lunchTableViewController.setThisMealMicronutrientsLabels(daysMeals, days);
     }
-    private void setSupperMicronutrientsTableViewLabels(DaysMeals daysMeals, Days days) {
+    private void setSupperMicronutrientsTableViewLabels(DaysMeals daysMeals, DayOfWeek days) {
         supperTableViewController.setThisMealMicronutrientsLabels(daysMeals, days);
     }
-    private void setCaloriesPane(DaysMeals daysMeals, Days days) {
+    private void setCaloriesPane(DaysMeals daysMeals, DayOfWeek days) {
         setEatenMicronutrients(daysMeals, days);
         setProgressBars();
         setCaloriesPaneElementsColors();
     }
-    private void setEatenMicronutrients(DaysMeals daysMeals, Days days) {
+    private void setEatenMicronutrients(DaysMeals daysMeals, DayOfWeek days) {
         caloriesPaneController.getEatenProteinsLabelController().setText(Integer.toString((int) CaloriesCalculator.getProteinsFromDay(daysMeals.getDaysListMap().get(days))));
         caloriesPaneController.getEatenCarbohydratesLabelController().setText((Integer.toString((int) CaloriesCalculator.getCarbohydratesFromDay(daysMeals.getDaysListMap().get(days)))));
         caloriesPaneController.getEatenFatLabelController().setText(Integer.toString((int) CaloriesCalculator.getFatFromDay(daysMeals.getDaysListMap().get(days))));
@@ -273,16 +268,16 @@ public class MainEditPaneController {
         micronutrientsLabels.forEach(label -> label.setTextFill(Color.WHITE));
     }
     public void addAllProductToAllTableViews(DaysMeals products) {
-        addAllProductToTableView(products.getMondayMeals(),Days.MONDAY);
-        addAllProductToTableView(products.getTuesdayMeals(),Days.TUESDAY);
-        addAllProductToTableView(products.getWednesdayMeals(),Days.WEDNESDAY);
-        addAllProductToTableView(products.getThursdayMeals(),Days.THURSDAY);
-        addAllProductToTableView(products.getFridayMeals(),Days.FRIDAY);
-        addAllProductToTableView(products.getSaturdayMeals(),Days.SATURDAY);
-        addAllProductToTableView(products.getSundayMeals(),Days.SUNDAY);
+        addAllProductToTableView(products.getMondayMeals(),DayOfWeek.MONDAY);
+        addAllProductToTableView(products.getTuesdayMeals(),DayOfWeek.TUESDAY);
+        addAllProductToTableView(products.getWednesdayMeals(),DayOfWeek.WEDNESDAY);
+        addAllProductToTableView(products.getThursdayMeals(),DayOfWeek.THURSDAY);
+        addAllProductToTableView(products.getFridayMeals(),DayOfWeek.FRIDAY);
+        addAllProductToTableView(products.getSaturdayMeals(),DayOfWeek.SATURDAY);
+        addAllProductToTableView(products.getSundayMeals(),DayOfWeek.SUNDAY);
 
     }
-    public void addAllProductToTableView(List<Meals> day, Days days) {
+    public void addAllProductToTableView(List<Meals> day, DayOfWeek days) {
         day.get(LIST_OF_ALL_MEALS_INDEX).getBreakfast().addAll(ProductTableViewsReader.getProductListFromMeal(days,BREAKFAST_NAME));
         day.get(LIST_OF_ALL_MEALS_INDEX).getBrunch().addAll(ProductTableViewsReader.getProductListFromMeal(days,BRUNCH_NAME));
         day.get(LIST_OF_ALL_MEALS_INDEX).getLunch().addAll(ProductTableViewsReader.getProductListFromMeal(days,LUNCH_NAME));
@@ -375,7 +370,7 @@ public class MainEditPaneController {
         return proteinsPercent>0 || carbohydratesPercent>0 || fatPercent>0;
     }
     private void setLastClickedDayBackgroundColor() {
-        switch (lastClickedDay) {
+        switch (DateController.getLastClickedDay()) {
             case MONDAY ->    daysPaneController.getMondayButtonController().setStyle(LAST_CLICKED_DAY_COLOR_STYLE);
             case TUESDAY ->   daysPaneController.getTuesdayButtonController().setStyle(LAST_CLICKED_DAY_COLOR_STYLE);
             case WEDNESDAY -> daysPaneController.getWednesdayButtonController().setStyle(LAST_CLICKED_DAY_COLOR_STYLE);
@@ -409,7 +404,7 @@ public class MainEditPaneController {
         return product;
     }
     private void safeTableViewState(Product product) {
-        ProductTableViewsWriter.addProductToTableBase(lastClickedDay,meal(),modifyProductToStringToSaveForm(product));
+        ProductTableViewsWriter.addProductToTableBase(DateController.getLastClickedDay(),meal(),modifyProductToStringToSaveForm(product));
     }
     private String modifyProductToStringToSaveForm(Product product){
         return  product.getNameOfProduct() + "@" + product.getProducer() + "@" + product.getKcal() + "@" +
@@ -449,7 +444,7 @@ public class MainEditPaneController {
                     {
                         setDeleteButton(btn);
                         btn.setOnAction((ActionEvent event) -> {
-                            ProductTableViewsWriter.removeProductFromTableBase(MainEditPaneController.getLastClickedDay(), mealName, getIndex());
+                            ProductTableViewsWriter.removeProductFromTableBase(DateController.getLastClickedDay(), mealName, getIndex());
                             DaysMeals daysMeals = new DaysMeals();
                             setAll(daysMeals);
                         });

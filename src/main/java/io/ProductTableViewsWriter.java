@@ -1,6 +1,6 @@
 package io;
-import model.Days;
 import java.io.*;
+import java.time.DayOfWeek;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -27,7 +27,7 @@ public class ProductTableViewsWriter {
     private static final int MEAL_NAME_LUNCH_INDEX = 4;
     private static final int MEAL_NAME_SUPPER_INDEX = 6;
     private static final File file = new File("src/main/resources/tableBase.txt");
-    public static void addProductToTableBase(Days days, String meal, String product) {
+    public static void addProductToTableBase(DayOfWeek days, String meal, String product) {
         List<String> fileText = new ArrayList<>(getFileText());
         changedChosenDay(meal,fileText,days,product);
         try(
@@ -39,7 +39,7 @@ public class ProductTableViewsWriter {
         }
     }
 
-    public static void removeProductFromTableBase(Days days, String mealName, int productIndex) {
+    public static void removeProductFromTableBase(DayOfWeek days, String mealName, int productIndex) {
         List<String> fileText = new ArrayList<>(getFileText());
         changedChosenDay(mealName,fileText,days,productIndex);
         try(
@@ -50,7 +50,7 @@ public class ProductTableViewsWriter {
             throw new RuntimeException(e);
         }
     }
-    private static void changedChosenDay(String mealName,List<String> fileText,Days days, String productInStringForm) {
+    private static void changedChosenDay(String mealName,List<String> fileText,DayOfWeek days, String productInStringForm) {
         String changedDay = modifyDay(mealName, getDayToString(fileText,days),productInStringForm);
         switch (days) {
             case MONDAY -> addProductToChosenDay(fileText,changedDay,MONDAY_INDEX);
@@ -73,7 +73,7 @@ public class ProductTableViewsWriter {
         }
         return fileText;
     }
-    private static String getDayToString(List<String> fileTtext, Days days) {
+    private static String getDayToString(List<String> fileTtext, DayOfWeek days) {
         String day = "";
         switch (days) {
             case MONDAY -> day = fileTtext.get(MONDAY_INDEX);
@@ -138,7 +138,7 @@ public class ProductTableViewsWriter {
 
         return returnChangedFullDayString(dayName,dayMeals);
     }
-    private static void changedChosenDay(String meal,List<String> fileText,Days days, int productIndex) {
+    private static void changedChosenDay(String meal,List<String> fileText,DayOfWeek days, int productIndex) {
         String changedDay = modifyDay(meal, getDayToString(fileText,days),productIndex);
         switch (days) {
             case MONDAY -> addProductToChosenDay(fileText,changedDay,MONDAY_INDEX);

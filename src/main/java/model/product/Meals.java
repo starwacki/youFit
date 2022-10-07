@@ -1,4 +1,4 @@
-package model.meals;
+package model.product;
 
 import model.product.Product;
 

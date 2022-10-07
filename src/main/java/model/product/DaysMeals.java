@@ -1,8 +1,6 @@
 package model.product;
 
-import model.Days;
-import model.meals.Meals;
-
+import java.time.DayOfWeek;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -15,14 +13,14 @@ public class DaysMeals {
     private final List<Meals> fridayMeals = new ArrayList<>();
     private final List<Meals> saturdayMeals = new ArrayList<>();
     private final List<Meals> sundayMeals = new ArrayList<>();
-    private final Map<Days, List<Meals>> daysListMap = Map.of(
-            Days.MONDAY, mondayMeals,
-            Days.TUESDAY, tuesdayMeals,
-            Days.WEDNESDAY, wednesdayMeals,
-            Days.THURSDAY, thursdayMeals,
-            Days.FRIDAY, fridayMeals,
-            Days.SATURDAY, saturdayMeals,
-            Days.SUNDAY, sundayMeals);
+    private final Map<DayOfWeek, List<Meals>> daysListMap = Map.of(
+            DayOfWeek.MONDAY, mondayMeals,
+            DayOfWeek.TUESDAY, tuesdayMeals,
+            DayOfWeek.WEDNESDAY, wednesdayMeals,
+            DayOfWeek.THURSDAY, thursdayMeals,
+            DayOfWeek.FRIDAY, fridayMeals,
+            DayOfWeek.SATURDAY, saturdayMeals,
+            DayOfWeek.SUNDAY, sundayMeals);
     public void createMealsFromAllDays() {
         createAndAddNewMeals(mondayMeals);
         createAndAddNewMeals(tuesdayMeals);
@@ -42,7 +40,7 @@ public class DaysMeals {
         Meals meals= new Meals(meal1,meal2,meal3,meal4);
         dayMeals.add(meals);
     }
-    public Map<Days, List<Meals>> getDaysListMap() {
+    public Map<DayOfWeek, List<Meals>> getDaysListMap() {
         return daysListMap;
     }
 

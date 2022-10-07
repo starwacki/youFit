@@ -1,6 +1,6 @@
 package model.calories;
 import model.product.Product;
-import model.meals.Meals;
+import model.product.Meals;
 import model.weekSummary.WeekSummary;
 
 import java.util.List;

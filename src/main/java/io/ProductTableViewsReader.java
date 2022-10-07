@@ -1,10 +1,10 @@
 package io;
-import model.Days;
 import model.product.Product;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.time.DayOfWeek;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,7 +48,7 @@ public class ProductTableViewsReader {
         }
     }
 
-    public static List<Product> getProductListFromMeal(Days days, String meal) {
+    public static List<Product> getProductListFromMeal(DayOfWeek days, String meal) {
         List<Product> list = new ArrayList<>();
         addProductsToList(list,days,meal);
         return list;
@@ -56,7 +56,7 @@ public class ProductTableViewsReader {
     }
 
     //Method return DAY: -> BREAKFAST#PRODUCTS#BRUNCH#PRODUCTS#LUNCH#PRODUCTS#SUPPER#PRODUCTS
-    private static String getDayProducts(Days days) {
+    private static String getDayProducts(DayOfWeek days) {
         String allDayMeals = "";
         switch (days) {
             case MONDAY -> allDayMeals = readProductBase(MONDAY_LINE).split(DAY_SEPARATOR)[DAY_INDEX];
@@ -71,7 +71,7 @@ public class ProductTableViewsReader {
     }
 
     //Method return String table of products from chosen day and meal, Monday,"BREAKFAST" - > [product1;product2;....;product]
-    private static String[] getMealProducts(Days days, String meal) {
+    private static String[] getMealProducts(DayOfWeek days, String meal) {
         String[] mealProducts = new String[0];
         switch (meal) {
             case "BREAKFAST" -> mealProducts = getDayProducts(days).split(MEAL_SEPARATOR)[BREAKFAST_PRODUCTS_INDEX].split(PRODUCT_SEPARATOR);
@@ -101,7 +101,7 @@ public class ProductTableViewsReader {
         return read;
     }
 
-    private static void addProductsToList(List<Product> list, Days days, String meal) {
+    private static void addProductsToList(List<Product> list, DayOfWeek days, String meal) {
         String[] products = getMealProducts(days, meal);
         if (products.length > 0) {
             for (String product : products) {

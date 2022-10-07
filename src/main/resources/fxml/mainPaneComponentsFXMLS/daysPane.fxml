@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -13,7 +14,7 @@
    <children>
       <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="61.0" prefWidth="880.0" style="-fx-background-color: black;">
          <children>
-            <ImageView id="days-pane-icon" fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="days-pane-icon" fx:id="previousWeekImageViewController" fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../img/next-week2.0.png" />
                </image>
@@ -23,7 +24,7 @@
             </ImageView>
             <Button id="day-button" fx:id="mondayButtonController" contentDisplay="BOTTOM" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="97.0" text="MON" wrapText="true">
                <graphic>
-                  <Label alignment="CENTER" contentDisplay="CENTER" opacity="0.79" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 8.5px;" text="03.10" wrapText="true">
+                  <Label fx:id="mondayLabelController" alignment="CENTER" contentDisplay="CENTER" opacity="0.79" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 8.5px;" text="03.10" wrapText="true">
                      <font>
                         <Font size="7.0" />
                      </font>
@@ -31,7 +32,7 @@
                </graphic></Button>
             <Button id="day-button" fx:id="tuesdayButtonController" contentDisplay="BOTTOM" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="97.0" text="TUE" wrapText="true">
                <graphic>
-                  <Label alignment="CENTER" contentDisplay="CENTER" opacity="0.79" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 8.5px;" text="04.10" wrapText="true">
+                  <Label fx:id="tuesdayLabelController" alignment="CENTER" contentDisplay="CENTER" opacity="0.79" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 8.5px;" text="04.10" wrapText="true">
                      <font>
                         <Font size="7.0" />
                      </font>
@@ -39,7 +40,7 @@
                </graphic></Button>
             <Button id="day-button" fx:id="wednesdayButtonController" contentDisplay="BOTTOM" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="97.0" text="WED">
                <graphic>
-                  <Label alignment="CENTER" contentDisplay="CENTER" opacity="0.79" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 8.5px;" text="05.10" wrapText="true">
+                  <Label fx:id="wednesdayLabelController" alignment="CENTER" contentDisplay="CENTER" opacity="0.79" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 8.5px;" text="05.10" wrapText="true">
                      <font>
                         <Font size="7.0" />
                      </font>
@@ -47,7 +48,7 @@
                </graphic></Button>
             <Button id="day-button" fx:id="thursdayButtonController" contentDisplay="BOTTOM" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="97.0" text="THU">
                <graphic>
-                  <Label alignment="CENTER" contentDisplay="CENTER" opacity="0.79" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 8.5px;" text="06.10" wrapText="true">
+                  <Label fx:id="thursdayLabelController" alignment="CENTER" contentDisplay="CENTER" opacity="0.79" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 8.5px;" text="06.10" wrapText="true">
                      <font>
                         <Font size="7.0" />
                      </font>
@@ -55,7 +56,7 @@
                </graphic></Button>
             <Button id="day-button" fx:id="fridayButtonController" contentDisplay="BOTTOM" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="97.0" text="FRI">
                <graphic>
-                  <Label alignment="CENTER" contentDisplay="CENTER" opacity="0.79" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 8.5px;" text="07.10" wrapText="true">
+                  <Label fx:id="fridayLabelController" alignment="CENTER" contentDisplay="CENTER" opacity="0.79" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 8.5px;" text="07.10" wrapText="true">
                      <font>
                         <Font size="7.0" />
                      </font>
@@ -63,7 +64,7 @@
                </graphic></Button>
             <Button id="day-button" fx:id="saturdayButtonController" contentDisplay="BOTTOM" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="97.0" text="SAT">
                <graphic>
-                  <Label alignment="CENTER" contentDisplay="CENTER" opacity="0.79" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 8.5px;" text="08.10" wrapText="true">
+                  <Label fx:id="saturdayLabelController" alignment="CENTER" contentDisplay="CENTER" opacity="0.79" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 8.5px;" text="08.10" wrapText="true">
                      <font>
                         <Font size="7.0" />
                      </font>
@@ -71,13 +72,13 @@
                </graphic></Button>
             <Button id="day-button" fx:id="sundayButtonController" contentDisplay="BOTTOM" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="97.0" text="SUN">
                <graphic>
-                  <Label alignment="CENTER" contentDisplay="CENTER" opacity="0.79" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 8.5px;" text="09.10" wrapText="true">
+                  <Label fx:id="sundayLabelController" alignment="CENTER" contentDisplay="CENTER" opacity="0.79" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 8.5px;" text="09.10" wrapText="true">
                      <font>
                         <Font size="7.0" />
                      </font>
                   </Label>
                </graphic></Button>
-            <ImageView id="days-pane-icon" fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView id="days-pane-icon" fx:id="nextWeekImageViewController" fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../img/next-week.png" />
                </image>
@@ -85,14 +86,11 @@
                   <Insets top="15.0" />
                </HBox.margin>
             </ImageView>
-            <ImageView id="days-pane-icon" fitHeight="63.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+            <DatePicker fx:id="daysPaneDatePickerController" prefHeight="25.0" prefWidth="84.0">
                <HBox.margin>
-                  <Insets left="10.0" top="5.0" />
+                  <Insets left="5.0" top="17.0" />
                </HBox.margin>
-               <image>
-                  <Image url="@../../img/calendar.png" />
-               </image>
-            </ImageView>
+            </DatePicker>
          </children>
       </HBox>
    </children>

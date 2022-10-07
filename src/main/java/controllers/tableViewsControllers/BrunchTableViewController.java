@@ -1,19 +1,17 @@
 package controllers.tableViewsControllers;
-import io.LanguageIO;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import model.calories.CaloriesCalculator;
-import model.Days;
-import model.language.BreakfastTableViewLanguage;
 import model.language.BrunchTableViewLanguage;
 import model.language.Language;
 import model.language.TablesLabels;
 import model.product.DaysMeals;
 import model.product.Product;
+
+import java.time.DayOfWeek;
 import java.util.List;
 public class BrunchTableViewController {
     @FXML
@@ -72,7 +70,7 @@ public class BrunchTableViewController {
     public void removeAllTableViewProducts() {
         brunchTableViewController.getItems().removeAll(brunchTableViewController.getItems());
     }
-    public void setThisMealMicronutrientsLabels(DaysMeals daysMeals, Days days) {
+    public void setThisMealMicronutrientsLabels(DaysMeals daysMeals, DayOfWeek days) {
         proteinsBrunchLabelController.setText(Double.toString((int)CaloriesCalculator.getProteinsFromMeal(daysMeals.getDaysListMap().get(days).get(0).getBrunch())));
         carbsBrunchLabelController.setText(Double.toString((int)CaloriesCalculator.getCarbohydratesFromMeal(daysMeals.getDaysListMap().get(days).get(0).getBrunch())));
         fatBrunchLabelController.setText(Double.toString((int)CaloriesCalculator.getFatFromMeal(daysMeals.getDaysListMap().get(days).get(0).getBrunch())));
