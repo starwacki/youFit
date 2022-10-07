@@ -19,7 +19,7 @@
             <HBox prefHeight="28.0" prefWidth="750.0">
                <children>
                   <Label id="meal-label" fx:id="nameLabelController" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="28.0" prefWidth="100" style="-fx-text-fill: white;" text="LUNCH" HBox.hgrow="ALWAYS" />
-                  <ImageView id="table-view-label" fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="table-view-label" fx:id="hideTableViewImageViewController" fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../img/hide-table.png" />
                      </image>

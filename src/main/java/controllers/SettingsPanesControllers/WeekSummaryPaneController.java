@@ -23,6 +23,16 @@ public class WeekSummaryPaneController {
     private static final String BASIC_FAT_PROGRESS_BAR_COLOR = "-fx-accent: chocolate";
     private static final String BASIC_CALORIES_PROGRESS_BAR_COLOR = "-fx-accent: #9933ff";
     private static final String WARNING_PROGRESS_BAR_COLOR = "-fx-accent: red;";
+    private static String mondaySeries;
+    private static String tuesdaySeries;
+    private static String wednesdaySeries;
+    private static String thursdaySeries;
+    private static String fridaySeries;
+    private static String saturdaySeries;
+    private static String sundaySeries;
+    private static String proteinsSeriesName;
+    private static String carbohydratesSeriesName;
+    private static String fatSeriesName;
 
     @FXML
     private ProgressBar caloriesWeekSummaryProgressBarController;
@@ -108,6 +118,17 @@ public class WeekSummaryPaneController {
         weekCaloriesLabelController.setText(language.getWeekCaloriesLabelController());
         daysWithoutExceededCaloriesInfoLabelController.setText(language.getDaysWithoutExceededCaloriesInfoLabelController());
         weekSummaryTitleLabelController.setText(language.getWeekSummaryTitleLabelController());
+        barChartController.setTitle(language.getBarChartTitle());
+        mondaySeries = language.getMondaySeries();
+        tuesdaySeries = language.getTuesdaySeries();
+        wednesdaySeries = language.getWednesdaySeries();
+        thursdaySeries = language.getThursdaySeries();
+        fridaySeries = language.getFridaySeries();
+        saturdaySeries = language.getSaturdaySeries();
+        sundaySeries = language.getSundaySeries();
+        proteinsSeriesName = language.getProteinsSeriesName();
+        carbohydratesSeriesName = language.getCarbohydratesSeriesName();
+        fatSeriesName = language.getFatSeriesName();
     }
 
     private void setWeekSummaryComponents(WeekSummary weekSummary, CaloricDemand caloricDemand) {
@@ -216,56 +237,42 @@ public class WeekSummaryPaneController {
     private void initializeBarChart(WeekSummary weekSummary) {
         barChartController.getData().addAll(createProteinsSeries(weekSummary),
                                                    createCarbohydratesSeries(weekSummary),
-                                                   createFatSeries(weekSummary),
-                                                   createCaloriesSeries(weekSummary));
+                                                   createFatSeries(weekSummary));
     }
     private XYChart.Series<String, Integer> createProteinsSeries(WeekSummary weekSummary) {
         XYChart.Series<String, Integer> series = new XYChart.Series<>();
-        series.getData().add(new XYChart.Data<>("Monday", (int) CaloriesCalculator.getProteinsFromDay(weekSummary.getMondayProducts())));
-        series.getData().add(new XYChart.Data<>("Tuesday", (int) CaloriesCalculator.getProteinsFromDay(weekSummary.getTuesdayProducts())));
-        series.getData().add(new XYChart.Data<>("Wednesday", (int) CaloriesCalculator.getProteinsFromDay(weekSummary.getWednesdayProducts())));
-        series.getData().add(new XYChart.Data<>("Thursday", (int) CaloriesCalculator.getProteinsFromDay(weekSummary.getThursdayProducts())));
-        series.getData().add(new XYChart.Data<>("Friday", (int) CaloriesCalculator.getProteinsFromDay(weekSummary.getFridayProducts())));
-        series.getData().add(new XYChart.Data<>("Saturday", (int) CaloriesCalculator.getProteinsFromDay(weekSummary.getSaturdayProducts())));
-        series.getData().add(new XYChart.Data<>("Sunday", (int) CaloriesCalculator.getProteinsFromDay(weekSummary.getSundayProducts())));
-        series.setName("Proteins");
+        series.getData().add(new XYChart.Data<>(mondaySeries, (int)(CaloriesCalculator.getProteinsFromDay(weekSummary.getMondayProducts())*CaloriesCalculator.ONE_GRAM_OF_PROTEIN_CALORIES)));
+        series.getData().add(new XYChart.Data<>(tuesdaySeries, (int) (CaloriesCalculator.getProteinsFromDay(weekSummary.getTuesdayProducts())*CaloriesCalculator.ONE_GRAM_OF_PROTEIN_CALORIES)));
+        series.getData().add(new XYChart.Data<>(wednesdaySeries, (int) (CaloriesCalculator.getProteinsFromDay(weekSummary.getWednesdayProducts())*CaloriesCalculator.ONE_GRAM_OF_PROTEIN_CALORIES)));
+        series.getData().add(new XYChart.Data<>(thursdaySeries, (int) (CaloriesCalculator.getProteinsFromDay(weekSummary.getThursdayProducts())*CaloriesCalculator.ONE_GRAM_OF_PROTEIN_CALORIES)));
+        series.getData().add(new XYChart.Data<>(fridaySeries, (int) (CaloriesCalculator.getProteinsFromDay(weekSummary.getFridayProducts())*CaloriesCalculator.ONE_GRAM_OF_PROTEIN_CALORIES)));
+        series.getData().add(new XYChart.Data<>(saturdaySeries, (int) (CaloriesCalculator.getProteinsFromDay(weekSummary.getSaturdayProducts())*CaloriesCalculator.ONE_GRAM_OF_PROTEIN_CALORIES)));
+        series.getData().add(new XYChart.Data<>(sundaySeries, (int) (CaloriesCalculator.getProteinsFromDay(weekSummary.getSundayProducts())*CaloriesCalculator.ONE_GRAM_OF_PROTEIN_CALORIES)));
+        series.setName(proteinsSeriesName);
         return series;
     }
     private XYChart.Series<String, Integer> createCarbohydratesSeries(WeekSummary weekSummary) {
         XYChart.Series<String, Integer> series = new XYChart.Series<>();
-        series.getData().add(new XYChart.Data<>("Monday", (int) CaloriesCalculator.getCarbohydratesFromDay(weekSummary.getMondayProducts())));
-        series.getData().add(new XYChart.Data<>("Tuesday", (int) CaloriesCalculator.getCarbohydratesFromDay(weekSummary.getTuesdayProducts())));
-        series.getData().add(new XYChart.Data<>("Wednesday", (int) CaloriesCalculator.getCarbohydratesFromDay(weekSummary.getWednesdayProducts())));
-        series.getData().add(new XYChart.Data<>("Thursday", (int) CaloriesCalculator.getCarbohydratesFromDay(weekSummary.getThursdayProducts())));
-        series.getData().add(new XYChart.Data<>("Friday", (int) CaloriesCalculator.getCarbohydratesFromDay(weekSummary.getFridayProducts())));
-        series.getData().add(new XYChart.Data<>("Saturday", (int) CaloriesCalculator.getCarbohydratesFromDay(weekSummary.getSaturdayProducts())));
-        series.getData().add(new XYChart.Data<>("Sunday", (int) CaloriesCalculator.getCarbohydratesFromDay(weekSummary.getSundayProducts())));
-        series.setName("Carbohydrates");
+        series.getData().add(new XYChart.Data<>(mondaySeries, (int) (CaloriesCalculator.getCarbohydratesFromDay(weekSummary.getMondayProducts())*CaloriesCalculator.ONE_GRAM_OF_CARBOHYDRATES_CALORIES)));
+        series.getData().add(new XYChart.Data<>(tuesdaySeries, (int) (CaloriesCalculator.getCarbohydratesFromDay(weekSummary.getTuesdayProducts())*CaloriesCalculator.ONE_GRAM_OF_CARBOHYDRATES_CALORIES)));
+        series.getData().add(new XYChart.Data<>(wednesdaySeries, (int) (CaloriesCalculator.getCarbohydratesFromDay(weekSummary.getWednesdayProducts())*CaloriesCalculator.ONE_GRAM_OF_CARBOHYDRATES_CALORIES)));
+        series.getData().add(new XYChart.Data<>(thursdaySeries, (int) (CaloriesCalculator.getCarbohydratesFromDay(weekSummary.getThursdayProducts())*CaloriesCalculator.ONE_GRAM_OF_CARBOHYDRATES_CALORIES)));
+        series.getData().add(new XYChart.Data<>(fridaySeries, (int) (CaloriesCalculator.getCarbohydratesFromDay(weekSummary.getFridayProducts())*CaloriesCalculator.ONE_GRAM_OF_CARBOHYDRATES_CALORIES)));
+        series.getData().add(new XYChart.Data<>(saturdaySeries, (int) (CaloriesCalculator.getCarbohydratesFromDay(weekSummary.getSaturdayProducts())*CaloriesCalculator.ONE_GRAM_OF_CARBOHYDRATES_CALORIES)));
+        series.getData().add(new XYChart.Data<>(sundaySeries, (int) (CaloriesCalculator.getCarbohydratesFromDay(weekSummary.getSundayProducts())*CaloriesCalculator.ONE_GRAM_OF_CARBOHYDRATES_CALORIES)));
+        series.setName(carbohydratesSeriesName);
         return series;
     }
     private XYChart.Series<String, Integer> createFatSeries(WeekSummary weekSummary) {
         XYChart.Series<String, Integer> series = new XYChart.Series<>();
-        series.getData().add(new XYChart.Data<>("Monday", (int) CaloriesCalculator.getFatFromDay(weekSummary.getMondayProducts())));
-        series.getData().add(new XYChart.Data<>("Tuesday", (int) CaloriesCalculator.getFatFromDay(weekSummary.getTuesdayProducts())));
-        series.getData().add(new XYChart.Data<>("Wednesday", (int) CaloriesCalculator.getFatFromDay(weekSummary.getWednesdayProducts())));
-        series.getData().add(new XYChart.Data<>("Thursday", (int) CaloriesCalculator.getFatFromDay(weekSummary.getThursdayProducts())));
-        series.getData().add(new XYChart.Data<>("Friday", (int) CaloriesCalculator.getFatFromDay(weekSummary.getFridayProducts())));
-        series.getData().add(new XYChart.Data<>("Saturday", (int) CaloriesCalculator.getFatFromDay(weekSummary.getSaturdayProducts())));
-        series.getData().add(new XYChart.Data<>("Sunday", (int) CaloriesCalculator.getFatFromDay(weekSummary.getSundayProducts())));
-        series.setName("Fat");
-        return series;
-    }
-
-    private XYChart.Series<String, Integer> createCaloriesSeries(WeekSummary weekSummary) {
-        XYChart.Series<String, Integer> series = new XYChart.Series<>();
-        series.getData().add(new XYChart.Data<>("Monday", (int) CaloriesCalculator.getCaloriesFromDay(weekSummary.getMondayProducts())));
-        series.getData().add(new XYChart.Data<>("Tuesday", (int) CaloriesCalculator.getCaloriesFromDay(weekSummary.getTuesdayProducts())));
-        series.getData().add(new XYChart.Data<>("Wednesday", (int) CaloriesCalculator.getCaloriesFromDay(weekSummary.getWednesdayProducts())));
-        series.getData().add(new XYChart.Data<>("Thursday", (int) CaloriesCalculator.getCaloriesFromDay(weekSummary.getThursdayProducts())));
-        series.getData().add(new XYChart.Data<>("Friday", (int) CaloriesCalculator.getCaloriesFromDay(weekSummary.getFridayProducts())));
-        series.getData().add(new XYChart.Data<>("Saturday", (int) CaloriesCalculator.getCaloriesFromDay(weekSummary.getSaturdayProducts())));
-        series.getData().add(new XYChart.Data<>("Sunday", (int) CaloriesCalculator.getCaloriesFromDay(weekSummary.getSundayProducts())));
-        series.setName("Calories");
+        series.getData().add(new XYChart.Data<>(mondaySeries, (int) (CaloriesCalculator.getFatFromDay(weekSummary.getMondayProducts())*CaloriesCalculator.ONE_GRAM_OF_FAT_CALORIES)));
+        series.getData().add(new XYChart.Data<>(tuesdaySeries, (int) (CaloriesCalculator.getFatFromDay(weekSummary.getTuesdayProducts())*CaloriesCalculator.ONE_GRAM_OF_FAT_CALORIES)));
+        series.getData().add(new XYChart.Data<>(wednesdaySeries, (int) (CaloriesCalculator.getFatFromDay(weekSummary.getWednesdayProducts())*CaloriesCalculator.ONE_GRAM_OF_FAT_CALORIES)));
+        series.getData().add(new XYChart.Data<>(thursdaySeries, (int) (CaloriesCalculator.getFatFromDay(weekSummary.getThursdayProducts())*CaloriesCalculator.ONE_GRAM_OF_FAT_CALORIES)));
+        series.getData().add(new XYChart.Data<>(fridaySeries, (int) (CaloriesCalculator.getFatFromDay(weekSummary.getFridayProducts())*CaloriesCalculator.ONE_GRAM_OF_FAT_CALORIES)));
+        series.getData().add(new XYChart.Data<>(saturdaySeries, (int) (CaloriesCalculator.getFatFromDay(weekSummary.getSaturdayProducts())*CaloriesCalculator.ONE_GRAM_OF_FAT_CALORIES)));
+        series.getData().add(new XYChart.Data<>(sundaySeries, (int) (CaloriesCalculator.getFatFromDay(weekSummary.getSundayProducts())*CaloriesCalculator.ONE_GRAM_OF_FAT_CALORIES)));
+        series.setName(fatSeriesName);
         return series;
     }
 

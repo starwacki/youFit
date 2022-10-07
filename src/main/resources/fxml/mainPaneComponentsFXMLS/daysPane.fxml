@@ -24,7 +24,7 @@
             </ImageView>
             <Button id="day-button" fx:id="mondayButtonController" contentDisplay="BOTTOM" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="97.0" text="MON" wrapText="true">
                <graphic>
-                  <Label fx:id="mondayLabelController" alignment="CENTER" contentDisplay="CENTER" opacity="0.79" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 8.5px;" text="03.10" wrapText="true">
+                  <Label fx:id="mondayLabelController" alignment="CENTER" contentDisplay="CENTER" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 11px; -fx-font-weight: bold;" text="03.10" wrapText="true">
                      <font>
                         <Font size="7.0" />
                      </font>
@@ -32,7 +32,7 @@
                </graphic></Button>
             <Button id="day-button" fx:id="tuesdayButtonController" contentDisplay="BOTTOM" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="97.0" text="TUE" wrapText="true">
                <graphic>
-                  <Label fx:id="tuesdayLabelController" alignment="CENTER" contentDisplay="CENTER" opacity="0.79" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 8.5px;" text="04.10" wrapText="true">
+                  <Label fx:id="tuesdayLabelController" alignment="CENTER" contentDisplay="CENTER" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 11px; -fx-font-weight: bold;" text="04.10" wrapText="true">
                      <font>
                         <Font size="7.0" />
                      </font>
@@ -40,7 +40,7 @@
                </graphic></Button>
             <Button id="day-button" fx:id="wednesdayButtonController" contentDisplay="BOTTOM" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="97.0" text="WED">
                <graphic>
-                  <Label fx:id="wednesdayLabelController" alignment="CENTER" contentDisplay="CENTER" opacity="0.79" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 8.5px;" text="05.10" wrapText="true">
+                  <Label fx:id="wednesdayLabelController" alignment="CENTER" contentDisplay="CENTER" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 11px; -fx-font-weight: bold;" text="05.10" wrapText="true">
                      <font>
                         <Font size="7.0" />
                      </font>
@@ -48,7 +48,7 @@
                </graphic></Button>
             <Button id="day-button" fx:id="thursdayButtonController" contentDisplay="BOTTOM" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="97.0" text="THU">
                <graphic>
-                  <Label fx:id="thursdayLabelController" alignment="CENTER" contentDisplay="CENTER" opacity="0.79" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 8.5px;" text="06.10" wrapText="true">
+                  <Label fx:id="thursdayLabelController" alignment="CENTER" contentDisplay="CENTER" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 11px; -fx-font-weight: bold;" text="06.10" wrapText="true">
                      <font>
                         <Font size="7.0" />
                      </font>
@@ -56,7 +56,7 @@
                </graphic></Button>
             <Button id="day-button" fx:id="fridayButtonController" contentDisplay="BOTTOM" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="97.0" text="FRI">
                <graphic>
-                  <Label fx:id="fridayLabelController" alignment="CENTER" contentDisplay="CENTER" opacity="0.79" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 8.5px;" text="07.10" wrapText="true">
+                  <Label fx:id="fridayLabelController" alignment="CENTER" contentDisplay="CENTER" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 11px; -fx-font-weight: bold;" text="07.10" wrapText="true">
                      <font>
                         <Font size="7.0" />
                      </font>
@@ -64,7 +64,7 @@
                </graphic></Button>
             <Button id="day-button" fx:id="saturdayButtonController" contentDisplay="BOTTOM" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="97.0" text="SAT">
                <graphic>
-                  <Label fx:id="saturdayLabelController" alignment="CENTER" contentDisplay="CENTER" opacity="0.79" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 8.5px;" text="08.10" wrapText="true">
+                  <Label fx:id="saturdayLabelController" alignment="CENTER" contentDisplay="CENTER" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 11px; -fx-font-weight: bold;" text="08.10" wrapText="true">
                      <font>
                         <Font size="7.0" />
                      </font>
@@ -72,7 +72,7 @@
                </graphic></Button>
             <Button id="day-button" fx:id="sundayButtonController" contentDisplay="BOTTOM" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="97.0" text="SUN">
                <graphic>
-                  <Label fx:id="sundayLabelController" alignment="CENTER" contentDisplay="CENTER" opacity="0.79" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 8.5px;" text="09.10" wrapText="true">
+                  <Label fx:id="sundayLabelController" alignment="CENTER" contentDisplay="CENTER" prefHeight="14.0" prefWidth="97.0" style="-fx-text-fill: #E0E0E0; -fx-font-size: 11px; -fx-font-weight: bold;" text="09.10" wrapText="true">
                      <font>
                         <Font size="7.0" />
                      </font>

@@ -2,6 +2,8 @@ package controllers.tableViewsControllers;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import model.calories.CaloriesCalculator;
@@ -12,6 +14,9 @@ import model.product.Product;
 import java.time.DayOfWeek;
 import java.util.List;
 public class LunchTableViewController {
+    private static boolean isTableHide = false;
+    private static final  String SHOW_TABLE_IMAGE_VIEW_PATH = "/img/show-table.png";
+    private static final  String HIDE_TABLE_IMAGE_VIEW_PATH = "/img/hide-table.png";
     @FXML
     private AnchorPane lunchTableView;
     @FXML
@@ -52,10 +57,14 @@ public class LunchTableViewController {
     private Label nameLabelController;
     @FXML
     private Label timeLabelController;
+    @FXML
+    private ImageView hideTableViewImageViewController;
     public void initialize(){
         setColumnsSettings();
         editButtonListener();
         setLanguage(new Language().getLunchTableViewLanguage());
+        changeTableViewOpacity();
+
 
     }
     public void addProductsToActualTableView(List<Product> productList) {
@@ -150,5 +159,25 @@ public class LunchTableViewController {
     }
     private double getLabelValue(Label label) {
         return  Double.parseDouble(label.getText());
+    }
+    private void changeTableViewOpacity() {
+        hideTableViewImageViewController.addEventFilter(MouseEvent.MOUSE_CLICKED,
+                mouseEvent -> {
+                    if (isTableHide==false)hideTable();
+                    else showTable();
+                }
+
+        );
+    }
+    private void hideTable() {
+        hideTableViewImageViewController.setImage(new Image(getClass().getResource(SHOW_TABLE_IMAGE_VIEW_PATH).toExternalForm()));
+        isTableHide = true;
+        lunchTableViewController.setVisible(false);
+    }
+
+    private void showTable() {
+        hideTableViewImageViewController.setImage(new Image(getClass().getResource(HIDE_TABLE_IMAGE_VIEW_PATH).toExternalForm()));
+        isTableHide = false;
+        lunchTableViewController.setVisible(true);
     }
 }

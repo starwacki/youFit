@@ -60,7 +60,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <BarChart fx:id="barChartController" layoutX="9.0" layoutY="61.0" legendSide="TOP" prefHeight="355.0" prefWidth="873.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <BarChart fx:id="barChartController" layoutX="9.0" layoutY="61.0" legendSide="LEFT" prefHeight="355.0" prefWidth="873.0" title="Calories of micronutrients" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <xAxis>
           <CategoryAxis side="BOTTOM" style="-fx-tick-label-fill: white;" />
         </xAxis>
