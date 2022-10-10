@@ -8,12 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import model.bodyMeasurements.BodyMeasurement;
-import model.bodyMeasurements.BodyMeasurements;
-import model.bodyMeasurements.LinearChartMeasurement;
-
-import java.util.ArrayList;
-import java.util.List;
+import model.language.Language;
 
 public class MainApp extends Application {
 
@@ -26,8 +21,7 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/mainPane.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/loginFXMLS/loginPane.fxml"));
         Scene scene = new Scene(root);
         stage.initStyle(StageStyle.UNIFIED);
         stage.setScene(scene);

@@ -12,6 +12,7 @@ public class SettingsLanguage implements Serializable {
     private String bodyMeasurementsLabelController;
     private String changeCaloriesDemandLabelController;
     private String settingsLabelController;
+    private String logoutLabelController;
 
     SettingsLanguage (LanguageCode languageCode) {
         if (languageCode==LanguageCode.PL) createPolishTranslation();
@@ -24,6 +25,7 @@ public class SettingsLanguage implements Serializable {
         bodyMeasurementsLabelController = "Pomiary Ciała";
         changeCaloriesDemandLabelController = "Zapotrzebowanie Kaloryczne";
         settingsLabelController = "Ustawienia";
+        logoutLabelController = "Wyloguj się";
 
     }
     private void createEnglishTranslation() {
@@ -33,6 +35,7 @@ public class SettingsLanguage implements Serializable {
         bodyMeasurementsLabelController = "Body measurements";
         changeCaloriesDemandLabelController = "Calories Demand";
         settingsLabelController = "Settings";
+        logoutLabelController = "Logout";
     }
 
     public String getProfileLabelController() {
@@ -57,5 +60,9 @@ public class SettingsLanguage implements Serializable {
 
     public String getSettingsLabelController() {
         return settingsLabelController;
+    }
+
+    public String getLogoutLabelController() {
+        return logoutLabelController;
     }
 }

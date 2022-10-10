@@ -20,6 +20,9 @@ public class Language implements Serializable {
     SupperTableViewLanguage supperTableViewLanguage;
     DaysPaneLanguage daysPaneLanguage;
     EditPaneLanguage editPaneLanguage;
+    LoginPaneLanguage loginPaneLanguage;
+    RegisterPaneLanguage registerPaneLanguage;
+    ForgetPasswordPaneLanguage forgetPasswordPaneLanguage;
 
 
 
@@ -83,6 +86,19 @@ public class Language implements Serializable {
     public EditPaneLanguage getEditPaneLanguage() {
         return editPaneLanguage;
     }
+
+    public LoginPaneLanguage getLoginPaneLanguage() {
+        return loginPaneLanguage;
+    }
+
+    public ForgetPasswordPaneLanguage getForgetPasswordPaneLanguage() {
+        return forgetPasswordPaneLanguage;
+    }
+
+    public RegisterPaneLanguage getRegisterPaneLanguage() {
+        return registerPaneLanguage;
+    }
+
     private void createPolishTranslate () {
         languageLanguage = language;
         settingsSettingsLanguage = new SettingsSettingsLanguage(LanguageCode.PL);
@@ -98,6 +114,9 @@ public class Language implements Serializable {
         supperTableViewLanguage = new SupperTableViewLanguage(LanguageCode.PL);
         daysPaneLanguage = new DaysPaneLanguage(LanguageCode.PL);
         editPaneLanguage = new EditPaneLanguage(LanguageCode.PL);
+        loginPaneLanguage = new LoginPaneLanguage(LanguageCode.PL);
+        registerPaneLanguage = new RegisterPaneLanguage(LanguageCode.PL);
+        forgetPasswordPaneLanguage = new ForgetPasswordPaneLanguage(LanguageCode.PL);
     }
     private void createEnglishTranslate() {
         languageLanguage  = language;
@@ -114,6 +133,11 @@ public class Language implements Serializable {
         supperTableViewLanguage = new SupperTableViewLanguage(LanguageCode.EN);
         daysPaneLanguage = new DaysPaneLanguage(LanguageCode.EN);
         editPaneLanguage = new EditPaneLanguage(LanguageCode.EN);
+        loginPaneLanguage = new LoginPaneLanguage(LanguageCode.EN);
+        registerPaneLanguage = new RegisterPaneLanguage(LanguageCode.EN);
+        forgetPasswordPaneLanguage = new ForgetPasswordPaneLanguage(LanguageCode.EN);
+
+
     }
 
 }

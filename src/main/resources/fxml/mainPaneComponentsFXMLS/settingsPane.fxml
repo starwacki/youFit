@@ -87,5 +87,17 @@
             </ImageView>
          </graphic>
       </Label>
+      <Label id="settings-label" fx:id="logoutLabelController" alignment="CENTER" layoutY="642.0" prefHeight="41.0" prefWidth="220.0" style="-fx-background-color: linear-gradient(to right,#404040,  #101010); -fx-text-fill: white;" text="Logout" AnchorPane.topAnchor="655.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../img/setting-img/logout.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
    </children>
 </AnchorPane>

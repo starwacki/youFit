@@ -1,14 +1,12 @@
 package controllers.MainPaneComponentsControllers;
 
 import controllers.SceneSwitcherController;
-import io.LanguageIO;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import model.language.Language;
-import model.language.ProfileLanguage;
 import model.language.SettingsLanguage;
 
 public class SettingsPaneController {
@@ -33,9 +31,13 @@ public class SettingsPaneController {
 
     @FXML
     private Label weekSummaryLabelController;
+
+    @FXML
+    private Label logoutLabelController;
     public void initialize() {
         setLanguage(new Language().getSettingsLanguage());
         setMainPaneByClickedSetting();
+        logout();
 
     }
 
@@ -46,6 +48,7 @@ public class SettingsPaneController {
         bodyMeasurementsLabelController.setText(language.getBodyMeasurementsLabelController());
         changeCaloriesDemandLabelController.setText(language.getChangeCaloriesDemandLabelController());
         settingsLabelController.setText(language.getSettingsLabelController());
+        logoutLabelController.setText(language.getLogoutLabelController());
     }
     private void setMainPaneByClickedSetting() {
         SceneSwitcherController sceneSwitcherController = new SceneSwitcherController();
@@ -56,6 +59,10 @@ public class SettingsPaneController {
         weekSummaryLabelController.addEventFilter(MouseEvent.MOUSE_CLICKED,mouseEvent -> sceneSwitcherController.switchToWeekSummaryMainPane(thisStage()));
         settingsLabelController.addEventFilter(MouseEvent.MOUSE_CLICKED,mouseEvent -> sceneSwitcherController.switchToSettingsMainPain(thisStage()));
 
+    }
+    private void logout() {
+        logoutLabelController.addEventFilter(MouseEvent.MOUSE_CLICKED,
+                mouseEvent -> new SceneSwitcherController().switchToLoginPane(thisStage()));
     }
     private Stage thisStage() {
         return  (Stage) changeCaloriesDemandLabelController.getScene().getWindow();
