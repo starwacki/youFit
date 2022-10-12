@@ -1,6 +1,7 @@
 package controllers.loginControllers;
 
 import controllers.SceneSwitcherController;
+import dao.QueryExecutor;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -16,6 +17,7 @@ import model.language.Language;
 import model.language.LanguageCode;
 import model.language.LoginPaneLanguage;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -97,8 +99,8 @@ public class LoginPaneController {
     }
     private  boolean correctUserLoginPassword(){
         if (usernameTextFieldController.getText()!=null && passwordTextFieldController.getText()!=null) {
-            if (map.get(usernameTextFieldController.getText())!=null)
-               if(map.get(usernameTextFieldController.getText()).equals(passwordTextFieldController.getText())) {
+            if (QueryExecutor.getUserPassword(usernameTextFieldController.getText()) !=null)
+               if(Arrays.hashCode(QueryExecutor.getUserPassword(usernameTextFieldController.getText())) == Arrays.hashCode(passwordTextFieldController.getText().toCharArray())) {
                    return true;
                } else  {
                    incorrectLoginOrPassword();

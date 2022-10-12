@@ -1,4 +1,6 @@
 package app;
+import dao.DataBaseConnector;
+import dao.QueryExecutor;
 import io.BodyMeasurementsIO;
 import io.LanguageIO;
 import javafx.application.Application;
@@ -8,11 +10,13 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import model.language.Language;
+
+import java.util.Arrays;
 
 public class MainApp extends Application {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
+        DataBaseConnector.connect();
         LanguageIO.initializeLanguage();
         BodyMeasurementsIO.initializeBodyMeasurementsBase();
         launch(args);
