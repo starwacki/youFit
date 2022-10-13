@@ -1,10 +1,11 @@
 package model.product;
 
+import dao.QueryExecutor;
 import model.product.Product;
 
 import java.util.List;
 
-public class Meals {
+public class Meals  {
     private List<Product> breakfast; //basic list
     private List<Product> brunch; //basic list
     private List<Product> lunch; //basic list

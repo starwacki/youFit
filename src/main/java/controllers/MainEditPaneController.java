@@ -7,6 +7,7 @@ import controllers.tableViewsControllers.BreakfastTableViewController;
 import controllers.tableViewsControllers.BrunchTableViewController;
 import controllers.tableViewsControllers.LunchTableViewController;
 import controllers.tableViewsControllers.SupperTableViewController;
+import dao.QueryExecutor;
 import io.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -27,6 +28,7 @@ import model.language.Language;
 import model.product.Meals;
 import model.product.DaysMeals;
 import model.product.Product;
+import model.product.ProductBase;
 
 import java.time.DayOfWeek;
 import java.util.List;
@@ -386,17 +388,28 @@ public class MainEditPaneController {
            if (!isTextFieldEmpty(editPaneController.getWeightTextFieldController())) {
                if (editPaneController.getProductsBaseListView().getSelectionModel().getSelectedItem()!=null) {
                    DaysMeals daysMeals = new DaysMeals();
+                //   QueryExecutor.addProductToBase();
                    safeTableViewState(getChosenProductFromListView());
                    setAll(daysMeals);
                }
            }
        });
     }
+    private int getMealIdValue() {
+        int idValue = -1;
+        switch (getMealId()) {
+            case BREAKFAST_TABLE_VIEW_ID -> idValue = 1;
+            case BRUNCH_TABLE_VIEW_ID -> idValue = 2;
+            case LUNCH_TABLE_VIEW_ID -> idValue = 3;
+            case SUPPER_TABLE_VIEW_ID -> idValue =4;
+        }
+        return idValue;
+    }
     private Product getChosenProductFromListView() {
         Product product;
         if(isMainBase()) {
-           product = ProductBaseReader.getProductFromBase(editPaneController.getProductsBaseListView().getSelectionModel().getSelectedIndex(),
-                    Double.parseDouble(editPaneController.getWeightTextFieldController().getText()));
+            product = ProductBase.productBase.get(editPaneController.getProductsBaseListView().getSelectionModel().getSelectedItem().getProductIndex());
+            product.setWeight(Double.parseDouble(editPaneController.getWeightTextFieldController().getText()));
         } else   {
             product = YourProductBaseIO.getProductFromBase(editPaneController.getProductsBaseListView().getSelectionModel().getSelectedIndex(),
                     Double.parseDouble(editPaneController.getWeightTextFieldController().getText()));

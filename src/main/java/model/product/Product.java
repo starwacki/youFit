@@ -73,20 +73,17 @@ public class Product {
         return weight;
     }
 
+    public void setWeight(double weight) {
+        this.weight = weight;
+        this.kcal = (int) CaloriesCalculator.caloriesInProduct(this);
+        this.proteins = (int) CaloriesCalculator.proteinsInProduct(this);
+        this.carbohydrates = (int) CaloriesCalculator.carbohydratesInProduct(this);
+        this.fat = (int) CaloriesCalculator.fatInProduct(this);
+    }
+
     @Override
     public String toString() {
-        return "Product{" +
-                "nameOfProduct='" + nameOfProduct + '\'' +
-                ", producer='" + producer + '\'' +
-                ", caloriesPer100Grams=" + caloriesPer100Grams +
-                ", proteinsPer100Grams=" + proteinsPer100Grams +
-                ", carbohydratesPer100Grams=" + carbohydratesPer100Grams +
-                ", fatPer100Grams=" + fatPer100Grams +
-                ", weight=" + weight +
-                ", kcal=" + kcal +
-                ", proteins=" + proteins +
-                ", carbohydrates=" + carbohydrates +
-                ", fat=" + fat +
-                '}';
+        return  nameOfProduct + ": " + caloriesPer100Grams + "kcal | " +
+                proteinsPer100Grams + "p | " + carbohydratesPer100Grams + "c | " + fatPer100Grams + "f";
     }
 }

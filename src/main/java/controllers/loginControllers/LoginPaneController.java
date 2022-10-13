@@ -16,6 +16,7 @@ import model.language.CaloriesPaneLanguage;
 import model.language.Language;
 import model.language.LanguageCode;
 import model.language.LoginPaneLanguage;
+import model.user.User;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -85,7 +86,10 @@ public class LoginPaneController {
     }
     private void signInByClickedButton() {
         signInButtonLabelController.addEventFilter(MouseEvent.MOUSE_CLICKED,mouseEvent -> {
-            if (correctUserLoginPassword()) new SceneSwitcherController().switchToMainPane(thisStage());
+            if (correctUserLoginPassword()) {
+                initializeUser();
+                new SceneSwitcherController().switchToMainPane(thisStage());
+            }
         }
         );
     }
@@ -93,7 +97,10 @@ public class LoginPaneController {
         passwordTextFieldController.addEventFilter(KeyEvent.KEY_PRESSED, keyEvent ->
         {
             if (keyEvent.getCode() == KeyCode.ENTER) {
-               if (correctUserLoginPassword()) new SceneSwitcherController().switchToMainPane(thisStage());
+               if (correctUserLoginPassword()) {
+                   initializeUser();
+                   new SceneSwitcherController().switchToMainPane(thisStage());
+               }
             }
         });
     }
@@ -142,6 +149,12 @@ public class LoginPaneController {
         Language.language = LanguageCode.EN;
         polishLanguageImageViewControllr.setOpacity(1);
         setLanguage(new Language().getLoginPaneLanguage());
+    }
+    private void initializeUser() {
+        User.setNickname(usernameTextFieldController.getText());
+        User.setUserID(QueryExecutor.getUserID(usernameTextFieldController.getText()));
+        User.setDateOfBirth(QueryExecutor.getUserDateOfBirth(usernameTextFieldController.getText()));
+        User.setEmail(QueryExecutor.getUserEmail(usernameTextFieldController.getText()));
     }
 
 
