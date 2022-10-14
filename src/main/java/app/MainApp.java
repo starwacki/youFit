@@ -11,9 +11,14 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import model.product.ProductBase;
 
+import java.util.Arrays;
+
 public class MainApp extends Application {
 
     public static void main(String[] args) {
+        char[] tab = {'f','d'};
+        char[] tab2 = {'F','D'};
+        System.out.println(Arrays.hashCode(tab)==Arrays.hashCode(tab2));
         ProductBase.initializeProductBase();
         LanguageIO.initializeLanguage();
         BodyMeasurementsIO.initializeBodyMeasurementsBase();

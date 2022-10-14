@@ -22,6 +22,7 @@ import model.product.Meals;
 import model.product.DaysMeals;
 
 import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.util.List;
 
 public class MainPaneController {
@@ -58,8 +59,10 @@ public class MainPaneController {
     private static final String BRUNCH_NAME = "BRUNCH";
     private static final String LUNCH_NAME = "LUNCH";
     private static final String SUPPER_NAME = "SUPPER";
+    private DateController dateController;
 
     public void initialize() {
+        this.dateController = new DateController();
         DaysMeals productsAdded = new DaysMeals();
         productsAdded.createMealsFromAllDays();
         addAllProductToAllTableViews(productsAdded);
@@ -67,11 +70,21 @@ public class MainPaneController {
         setStartCaloricDemand();
         showMainViewFromClickedDay(productsAdded);
         showEditTableViewPaneByClickedDay();
+        setProperTableViewWidth();
+        initializeDaysPane();
+    }
+    private void initializeDaysPane() {
+        setDates(dateController);
+        changeWeek();
+        setDateByDatePicker();
+    }
+    private void setProperTableViewWidth() {
         breakfastTableViewController.getBreakfastTableViewController().setPrefWidth(TABLE_WIDTH);
         brunchTableViewController.getBrunchTableViewController().setPrefWidth(TABLE_WIDTH);
         lunchTableViewController.getLunchTableViewController().setPrefWidth(TABLE_WIDTH);
         supperTableViewController.getSupperTableViewController().setPrefWidth(TABLE_WIDTH);
     }
+
     private void setStartView(DaysMeals daysMeals) {
         setTableViewsMealsPane(daysMeals, DateController.getLastClickedDay());
         setCaloriesPane(daysMeals, DateController.getLastClickedDay());
@@ -80,19 +93,44 @@ public class MainPaneController {
     }
     private void showMainViewFromClickedDay(DaysMeals daysMeals) {
         daysPaneController.getMondayButtonController().addEventFilter(MouseEvent.MOUSE_CLICKED,
-                mouseEvent ->  showAllPanesByClickedDay(daysMeals,DayOfWeek.MONDAY));
+                mouseEvent ->  {
+            setDateController(dateController.getMondayDate(),dateController.getMondayDate().getDayOfWeek());
+            showAllPanesByClickedDay(daysMeals,DayOfWeek.MONDAY);
+                });
         daysPaneController.getTuesdayButtonController().addEventFilter(MouseEvent.MOUSE_CLICKED,
-                mouseEvent -> showAllPanesByClickedDay(daysMeals,DayOfWeek.TUESDAY));
+                mouseEvent ->  {
+            setDateController(dateController.getTuesdayDate(),dateController.getTuesdayDate().getDayOfWeek());
+            showAllPanesByClickedDay(daysMeals,DayOfWeek.TUESDAY);
+                });
         daysPaneController.getWednesdayButtonController().addEventFilter(MouseEvent.MOUSE_CLICKED,
-                mouseEvent -> showAllPanesByClickedDay(daysMeals,DayOfWeek.WEDNESDAY));
+                mouseEvent ->  {
+            setDateController(dateController.getWednesdayDate(),dateController.getWednesdayDate().getDayOfWeek());
+            showAllPanesByClickedDay(daysMeals,DayOfWeek.WEDNESDAY);
+                });
         daysPaneController.getThursdayButtonController().addEventFilter(MouseEvent.MOUSE_CLICKED,
-                mouseEvent -> showAllPanesByClickedDay(daysMeals,DayOfWeek.THURSDAY));
+                mouseEvent ->  {
+            setDateController(dateController.getThursdayDate(),dateController.getThursdayDate().getDayOfWeek());
+            showAllPanesByClickedDay(daysMeals,DayOfWeek.THURSDAY);
+                });
         daysPaneController.getFridayButtonController().addEventFilter(MouseEvent.MOUSE_CLICKED,
-                mouseEvent -> showAllPanesByClickedDay(daysMeals,DayOfWeek.FRIDAY));
+                mouseEvent ->  {
+            setDateController(dateController.getFridayDate(),dateController.getFridayDate().getDayOfWeek());
+            showAllPanesByClickedDay(daysMeals,DayOfWeek.FRIDAY);
+                });
         daysPaneController.getSaturdayButtonController().addEventFilter(MouseEvent.MOUSE_CLICKED,
-                mouseEvent -> showAllPanesByClickedDay(daysMeals,DayOfWeek.SATURDAY));
+                mouseEvent ->  {
+            setDateController(dateController.getSaturdayDate(),dateController.getSaturdayDate().getDayOfWeek());
+            showAllPanesByClickedDay(daysMeals,DayOfWeek.SATURDAY);
+                });
         daysPaneController.getSundayButtonController().addEventFilter(MouseEvent.MOUSE_CLICKED,
-                mouseEvent -> showAllPanesByClickedDay(daysMeals,DayOfWeek.SUNDAY));
+                mouseEvent ->  {
+            setDateController(dateController.getSundayDate(),dateController.getSundayDate().getDayOfWeek());
+            showAllPanesByClickedDay(daysMeals,DayOfWeek.SUNDAY);
+                });
+    }
+    private void setDateController(LocalDate localDate, DayOfWeek day) {
+        DateController.setActualClickedDate(localDate);
+        DateController.setLastClickedDay(day);
     }
     private void showAllPanesByClickedDay(DaysMeals daysMeals,DayOfWeek days) {
         clearColumnsBeforeSetNewDay();
@@ -255,8 +293,17 @@ public class MainPaneController {
        return  (Stage) breakfastTableViewController.getBreakfastEditButtonController().getScene().getWindow();
     }
     private void setDaysPaneBackgroundColors(DayOfWeek days){
-        setLastClickedDayBorderColor(DateController.getLastClickedDay(),PREVIOUS_CLICKED_DAY_COLOR_STYLE);
+        clearAllDayBorders();
         setLastClickedDayBorderColor(days,LAST_CLICKED_DAY_COLOR_STYLE);
+    }
+    private void clearAllDayBorders() {
+        daysPaneController.getMondayButtonController().setStyle(PREVIOUS_CLICKED_DAY_COLOR_STYLE);
+        daysPaneController.getTuesdayButtonController().setStyle(PREVIOUS_CLICKED_DAY_COLOR_STYLE);
+        daysPaneController.getWednesdayButtonController().setStyle(PREVIOUS_CLICKED_DAY_COLOR_STYLE);
+        daysPaneController.getThursdayButtonController().setStyle(PREVIOUS_CLICKED_DAY_COLOR_STYLE);
+        daysPaneController.getFridayButtonController().setStyle(PREVIOUS_CLICKED_DAY_COLOR_STYLE);
+        daysPaneController.getSaturdayButtonController().setStyle(PREVIOUS_CLICKED_DAY_COLOR_STYLE);
+        daysPaneController.getSundayButtonController().setStyle(PREVIOUS_CLICKED_DAY_COLOR_STYLE);
     }
     private void setLastClickedDayBorderColor(DayOfWeek days, String style) {
         switch (days) {
@@ -268,6 +315,67 @@ public class MainPaneController {
             case SATURDAY -> daysPaneController.getSaturdayButtonController().setStyle(style);
             case SUNDAY -> daysPaneController.getSundayButtonController().setStyle(style);
         }
+    }
+    private void setDateByDatePicker() {
+        daysPaneController.getDaysPaneDatePickerController().valueProperty().addListener((observableValue, localDate, t1) -> {
+            DateController.setLastClickedDay(t1.getDayOfWeek());
+            DateController.setActualClickedDate(t1);
+            this.dateController = new DateController();
+            setDates(dateController);
+            setDaysPaneBackgroundColors(DateController.getLastClickedDay());
+        });
+    }
+    private void previousWeek() {
+        daysPaneController.getPreviousWeekImageViewController().addEventFilter(MouseEvent.MOUSE_CLICKED,mouseEvent -> {
+                    dateController.setMondayDate(dateController.getMondayDate().minusDays(7L));
+                    dateController.setTuesdayDate(dateController.getTuesdayDate().minusDays(7L));
+                    dateController.setWednesdayDate(dateController.getWednesdayDate().minusDays(7L));
+                    dateController.setThursdayDate(dateController.getThursdayDate().minusDays(7L));
+                    dateController.setFridayDate(dateController.getFridayDate().minusDays(7L));
+                    dateController.setSaturdayDate(dateController.getSaturdayDate().minusDays(7L));
+                    dateController.setSundayDate(dateController.getSundayDate().minusDays(7L));
+                    setDates(dateController);
+                    DateController.setActualClickedDate(DateController.getActualClickedDate().minusDays(7L));
+
+                }
+        );
+    }
+
+    private void nextWeek() {
+        daysPaneController.getNextWeekImageViewController().addEventFilter(MouseEvent.MOUSE_CLICKED,mouseEvent -> {
+                    dateController.setMondayDate(dateController.getMondayDate().plusDays(7L));
+                    dateController.setTuesdayDate(dateController.getTuesdayDate().plusDays(7L));
+                    dateController.setWednesdayDate(dateController.getWednesdayDate().plusDays(7L));
+                    dateController.setThursdayDate(dateController.getThursdayDate().plusDays(7L));
+                    dateController.setFridayDate(dateController.getFridayDate().plusDays(7L));
+                    dateController.setSaturdayDate(dateController.getSaturdayDate().plusDays(7L));
+                    dateController.setSundayDate(dateController.getSundayDate().plusDays(7L));
+                    setDates(dateController);
+                    DateController.setActualClickedDate(DateController.getActualClickedDate().plusDays(7L));
+
+                }
+        );
+    }
+    private void changeWeek() {
+        this.dateController = new DateController(DateController.getActualClickedDate());
+        previousWeek();
+        nextWeek();
+    }
+    private void setDates(DateController timeController){
+        setDateLabel(daysPaneController.getMondayLabelController(),timeController.getMondayDate());
+        setDateLabel(daysPaneController.getTuesdayLabelController(),timeController.getTuesdayDate());
+        setDateLabel(daysPaneController.getWednesdayLabelController(),timeController.getWednesdayDate());
+        setDateLabel(daysPaneController.getThursdayLabelController(),timeController.getThursdayDate());
+        setDateLabel(daysPaneController.getFridayLabelController(),timeController.getFridayDate());
+        setDateLabel(daysPaneController.getSaturdayLabelController(),timeController.getSaturdayDate());
+        setDateLabel(daysPaneController.getSundayLabelController(),timeController.getSundayDate());
+    }
+
+    private void setDateLabel(Label label,LocalDate localDate) {
+        label.setText(getDateString(localDate));
+    }
+    private String getDateString(LocalDate localDate) {
+        return localDate.getDayOfMonth() + "." + localDate.getMonthValue();
     }
 }
 

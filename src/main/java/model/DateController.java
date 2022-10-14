@@ -17,13 +17,13 @@ public class DateController {
 
 
     public DateController() {
-     if (lastClickedDay==DayOfWeek.MONDAY) createWeekForMondayNow(LocalDate.now());
-     if (lastClickedDay==DayOfWeek.TUESDAY) createWeekForTuesdayNow(LocalDate.now());
-     if (lastClickedDay==DayOfWeek.WEDNESDAY) createWeekForWednesdayNow(LocalDate.now());
-     if (lastClickedDay==DayOfWeek.THURSDAY) createWeekForThursdayNow(LocalDate.now());
-     if (lastClickedDay==DayOfWeek.FRIDAY) createWeekForFridayNow(LocalDate.now());
-     if (lastClickedDay==DayOfWeek.SATURDAY) createWeekForSaturdayNow(LocalDate.now());
-     if (lastClickedDay==DayOfWeek.SUNDAY) createWeekForSundayNow(LocalDate.now());
+     if (lastClickedDay==DayOfWeek.MONDAY) createWeekForMondayNow(actualClickedDate);
+     if (lastClickedDay==DayOfWeek.TUESDAY) createWeekForTuesdayNow(actualClickedDate);
+     if (lastClickedDay==DayOfWeek.WEDNESDAY) createWeekForWednesdayNow(actualClickedDate);
+     if (lastClickedDay==DayOfWeek.THURSDAY) createWeekForThursdayNow(actualClickedDate);
+     if (lastClickedDay==DayOfWeek.FRIDAY) createWeekForFridayNow(actualClickedDate);
+     if (lastClickedDay==DayOfWeek.SATURDAY) createWeekForSaturdayNow(actualClickedDate);
+     if (lastClickedDay==DayOfWeek.SUNDAY) createWeekForSundayNow(actualClickedDate);
 
     }
     public DateController(LocalDate localDate) {

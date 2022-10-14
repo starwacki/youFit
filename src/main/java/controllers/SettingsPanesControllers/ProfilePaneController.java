@@ -9,6 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import model.language.Language;
 import model.language.ProfileLanguage;
+import model.user.User;
 
 public class ProfilePaneController {
 
@@ -61,6 +62,7 @@ public class ProfilePaneController {
 
     public void initialize() {
         setLanguage(new Language().getProfileLanguage());
+        initializeUserLabels();
 
     }
     private void setLanguage(ProfileLanguage language) {
@@ -73,6 +75,11 @@ public class ProfilePaneController {
         newPasswordLabelController.setText(language.getNewPasswordLabelController());
         changePasswordButtonController.setText(language.getChangePasswordButtonController());
         profileInfoTitleLabelController.setText(language.getProfileInfoTitleLabelController());
+    }
+    private void initializeUserLabels() {
+        usernameLabelController.setText(User.getNickname());
+        emailLabelController.setText(User.getEmail());
+        dateOfBirthLabelController.setText(User.getDateOfBirth().toString());
     }
 
 }

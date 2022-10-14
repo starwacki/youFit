@@ -42,11 +42,11 @@
          </font>
       </Label>
       <Label fx:id="usernameInfoLabelController" layoutX="373.0" layoutY="34.0" prefHeight="18.0" prefWidth="142.0" style="-fx-text-fill: white;" text="Username:" wrapText="true" AnchorPane.bottomAnchor="498.0" />
-      <Label fx:id="usernameLabelController" layoutX="517.0" layoutY="34.0" prefHeight="17.0" prefWidth="62.0" style="-fx-text-fill: white;" text="Username:" AnchorPane.bottomAnchor="498.0" />
+      <Label fx:id="usernameLabelController" layoutX="517.0" layoutY="34.0" prefHeight="18.0" prefWidth="183.0" style="-fx-text-fill: white;" text="Username:" AnchorPane.bottomAnchor="498.0" />
       <Label fx:id="emailInfoLabelController" layoutX="373.0" layoutY="70.0" prefHeight="18.0" prefWidth="142.0" style="-fx-text-fill: white;" text="Email:" wrapText="true" AnchorPane.bottomAnchor="462.0" />
       <Label fx:id="dateOfBirthInfoLabelController" layoutX="373.0" layoutY="105.0" prefHeight="18.0" prefWidth="125.0" style="-fx-text-fill: white;" text="Date of birth:" wrapText="true" AnchorPane.bottomAnchor="427.0" />
-      <Label fx:id="emailLabelController" layoutX="517.0" layoutY="70.0" prefHeight="18.0" prefWidth="70.0" style="-fx-text-fill: white;" text="Email:" AnchorPane.bottomAnchor="462.0" />
-      <Label fx:id="dateOfBirthLabelController" layoutX="517.0" layoutY="105.0" prefHeight="18.0" prefWidth="100.0" style="-fx-text-fill: white;" text="Date of birth:" AnchorPane.bottomAnchor="427.0" />
+      <Label fx:id="emailLabelController" layoutX="517.0" layoutY="70.0" prefHeight="18.0" prefWidth="175.0" style="-fx-text-fill: white;" text="Email:" AnchorPane.bottomAnchor="462.0" />
+      <Label fx:id="dateOfBirthLabelController" layoutX="517.0" layoutY="105.0" prefHeight="18.0" prefWidth="183.0" style="-fx-text-fill: white;" text="Date of birth:" AnchorPane.bottomAnchor="427.0" />
       <Label fx:id="oldPasswordLabelController" layoutX="369.0" layoutY="275.0" prefHeight="18.0" prefWidth="98.0" style="-fx-text-fill: white;" text="Old password:" AnchorPane.bottomAnchor="257.0" />
       <PasswordField fx:id="oldPasswordPasswordFieldController" layoutX="480.0" layoutY="272.0" prefHeight="25.0" prefWidth="98.0" AnchorPane.bottomAnchor="253.0" />
       <PasswordField fx:id="newPasswordPasswordFieldController" layoutX="480.0" layoutY="311.0" prefHeight="25.0" prefWidth="98.0" AnchorPane.bottomAnchor="214.0" />
