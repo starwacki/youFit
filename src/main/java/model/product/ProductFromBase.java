@@ -1,7 +1,6 @@
 package model.product;
 
 public class ProductFromBase extends Product{
-
     private int productIndex;
 
     public ProductFromBase(String nameOfProduct, String producer, double caloriesPer100Grams, double proteinsPer100Grams, double carbohydratesPer100Grams, double fatPer100Grams, double weight,int productIndex) {
@@ -17,4 +16,5 @@ public class ProductFromBase extends Product{
     public String toString() {
        return super.toString();
     }
+
 }

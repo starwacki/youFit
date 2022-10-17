@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class EditPaneController {
+    private static final String EMPTY_FIELD = "";
 
     @FXML
     private AnchorPane editPaneController;
@@ -32,8 +33,6 @@ public class EditPaneController {
     private TextField weightTextFieldController;
     @FXML
     private ListView<ProductFromBase> productsBaseListView;
-    @FXML
-    private Button searchButtonController;
     @FXML
     private TextField searchTextFieldController;
     @FXML
@@ -91,15 +90,19 @@ public class EditPaneController {
         fatPer100gInfoLabelController.setText(language.getFatPer100gInfoLabelController());
         addNewProductToYourBase.setText(language.getAddNewProductToYourBase());
     }
+
     public PieChart getPieChartController() {
         return pieChartController;
     }
+
     public Label getProteinsPieCharLabelController() {
         return proteinsPieCharLabelController;
     }
+
     public Label getCarbohydratesPieCharLabelController() {
         return carbohydratesPieCharLabelController;
     }
+
     public Label getFatPieCharLabelController() {
         return fatPieCharLabelController;
     }
@@ -107,6 +110,7 @@ public class EditPaneController {
     public ListView<ProductFromBase> getProductsBaseListView() {
         return productsBaseListView;
     }
+
     public Button getAddProductToListViewButtonController() {
         return addProductToListViewButtonController;
     }
@@ -114,7 +118,6 @@ public class EditPaneController {
     public TextField getWeightTextFieldController() {
         return weightTextFieldController;
     }
-
 
     private void setTextFieldOnlyNumeric(TextField textField) {
         textField.textProperty().addListener((observableValue, oldValue, newValue) -> {
@@ -134,21 +137,25 @@ public class EditPaneController {
             }
         });
     }
+
    private void addProductToListView(List<ProductFromBase> list) {
        productsBaseListView.getItems().clear();
        productsBaseListView.getItems().addAll(list);
    }
+
    private void searchProduct() {
         if (MainEditPaneController.isMainBase()) searchProductInList();
         else  searchProductInList();
    }
+
    private void searchProductInList() {
        searchTextFieldController.addEventHandler(KeyEvent.ANY, keyEvent -> {
                    if (searchTextFieldController == null) addProductToListView(listview);
-                   else if (searchTextFieldController.getText().equals("")) addProductToListView(listview);
+                   else if (searchTextFieldController.getText().equals(EMPTY_FIELD)) addProductToListView(listview);
                    else addProductToListView(listview.stream().filter(s -> s.toString().toLowerCase().contains(searchTextFieldController.getText())).collect(Collectors.toList()));
                }
        );}
+
     private void changeListView() {
         changeListViewButtonController.addEventFilter(MouseEvent.MOUSE_CLICKED,mouseEvent -> {
             if (MainEditPaneController.isMainBase()) setListView(ProductBase.productBase,false);
@@ -156,9 +163,11 @@ public class EditPaneController {
 
         });
     }
+
     private void setListView(List<ProductFromBase> listView, boolean isMainBase) {
         this.listview = listView;
         addProductToListView(listview);
         MainEditPaneController.setMainBase(isMainBase);
     }
+
 }

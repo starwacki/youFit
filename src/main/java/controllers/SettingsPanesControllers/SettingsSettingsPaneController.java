@@ -1,8 +1,5 @@
 package controllers.SettingsPanesControllers;
-import io.LanguageIO;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.event.EventType;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -15,12 +12,14 @@ import model.language.Language;
 import model.language.LanguageCode;
 import model.language.SettingsSettingsLanguage;
 import model.language.TablesLabels;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class SettingsSettingsPaneController {
-
+    private static final double ACTUAL_CLICKED_COUNTRY_OPACITY = 0.5;
+    private static final int NOT_CLICKED_COUNTRY_OPACITY = 1;
+    private static final int MEAL_NAME_LENGTH_LIMIT = 12;
+    private static final String EMPTY_FIELD = "";
     @FXML
     private Label meal4TimeLabelController;
     @FXML
@@ -83,6 +82,7 @@ public class SettingsSettingsPaneController {
         setUserLabels();
         blockAllNameLabels();
     }
+
     public void setLanguage(SettingsSettingsLanguage language) {
         meal1NameLabelController.setText(language.getMeal1NameLabelController());
         meal2NameLabelController.setText(language.getMeal2NameLabelController());
@@ -98,7 +98,6 @@ public class SettingsSettingsPaneController {
         settingsTitleLabelController.setText(language.getSettingsTitleLabelController());
     }
 
-
     public ImageView getEnglishLanguageImageView() {
         return englishLanguageImageView;
     }
@@ -106,10 +105,12 @@ public class SettingsSettingsPaneController {
     public ImageView getPolandLanguageImageView() {
         return polandLanguageImageView;
     }
+
     private void setActuallyLanguageOpacity() {
-        if (Language.language==LanguageCode.PL) polandLanguageImageView.setOpacity(0.5);
-        else englishLanguageImageView.setOpacity(0.5);
+        if (Language.language==LanguageCode.PL) polandLanguageImageView.setOpacity(ACTUAL_CLICKED_COUNTRY_OPACITY);
+        else englishLanguageImageView.setOpacity(ACTUAL_CLICKED_COUNTRY_OPACITY);
     }
+
     private void initializeChoiceBox() {
         addHoursToChoiceToChoiceBox();
         addMinutesToChoiceToChoiceBox();
@@ -120,12 +121,14 @@ public class SettingsSettingsPaneController {
         meal3HoursChoiceBoxController.getItems().addAll(generateDailyHours());
         meal4HoursChoiceBoxController.getItems().addAll(generateDailyHours());
     }
+
     private void addMinutesToChoiceToChoiceBox () {
         meal1MinutesChoiceBoxController.getItems().addAll(generateHourMinutes());
         meal2MinutesChoiceBoxController.getItems().addAll(generateHourMinutes());
         meal3MinutesChoiceBoxController.getItems().addAll(generateHourMinutes());
         meal4MinutesChoiceBoxController.getItems().addAll(generateHourMinutes());
     }
+
     private List<Integer> generateDailyHours() {
         List<Integer> hours = new ArrayList<>();
         for (int i = 0; i <24 ; i++) {
@@ -133,6 +136,7 @@ public class SettingsSettingsPaneController {
         }
         return hours;
     }
+
     private List<Integer> generateHourMinutes() {
         List<Integer> minutes = new ArrayList<>();
         for (int i = 0; i <60 ; i++) {
@@ -140,11 +144,11 @@ public class SettingsSettingsPaneController {
         }
         return minutes;
     }
+
     private void setUserLabels() {
         setMealsName();
         setMealsTime();
     }
-
 
     private void setMealsName() {
       changeMealNameButtonController.addEventFilter(MouseEvent.MOUSE_CLICKED,mouseEvent -> {
@@ -154,6 +158,7 @@ public class SettingsSettingsPaneController {
          if (isTextFieldEmpty(meal4NameTextFieldController)) TablesLabels.basicSupperName = meal4NameTextFieldController.getText();
           });
     }
+
     private void setMealsTime() {
         changeMealTimeButtonController.addEventFilter(MouseEvent.MOUSE_CLICKED,mouseEvent -> {
             if (!isChoiceBoxEmpty(meal1HoursChoiceBoxController,meal1MinutesChoiceBoxController))
@@ -166,13 +171,16 @@ public class SettingsSettingsPaneController {
                 TablesLabels.basicSupperTime = getLabelTime(meal4HoursChoiceBoxController,meal4MinutesChoiceBoxController);
        });
     }
+
     private boolean isTextFieldEmpty(TextField textField) {
-       return textField.getText()==null || !textField.getText().equals("");
+       return textField.getText()==null || !textField.getText().equals(EMPTY_FIELD);
     }
+
     private boolean isChoiceBoxEmpty(ChoiceBox hoursChoiceBox,ChoiceBox minutesChoiceBox) {
         return hoursChoiceBox.getSelectionModel().getSelectedItem() == null ||
                 minutesChoiceBox.getSelectionModel().getSelectedItem() ==null;
     }
+
     private String getLabelTime(ChoiceBox hoursChoiceBox,ChoiceBox minutesChoiceBox) {
         if ((int) minutesChoiceBox.getSelectionModel().getSelectedItem()<10) {
             return hoursChoiceBox.getSelectionModel().getSelectedItem() + ":" + "0" +
@@ -181,15 +189,17 @@ public class SettingsSettingsPaneController {
             return hoursChoiceBox.getSelectionModel().getSelectedItem() + ":" +
                     minutesChoiceBox.getSelectionModel().getSelectedItem();
     }
+
     private void blockAllNameLabels() {
         blockTooLongMealName(meal1NameTextFieldController);
         blockTooLongMealName(meal2NameTextFieldController);
         blockTooLongMealName(meal3NameTextFieldController);
         blockTooLongMealName(meal4NameTextFieldController);
     }
+
     private void blockTooLongMealName(TextField textField) {
         textField.textProperty().addListener((observableValue, oldValue, newValue) -> {
-            if (newValue.length()>12) textField.setText(oldValue);
+            if (newValue.length()>MEAL_NAME_LENGTH_LIMIT) textField.setText(oldValue);
         });
     }
 }

@@ -3,7 +3,6 @@ package controllers.SettingsPanesControllers;
 import controllers.MainPaneComponentsControllers.CaloriesPaneController;
 import controllers.MainPaneComponentsControllers.DaysPaneController;
 import controllers.MainPaneComponentsControllers.SettingsPaneController;
-import io.LanguageIO;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 import model.language.Language;
@@ -12,6 +11,8 @@ import model.language.TablesLabels;
 
 
 public class MainPaneSettingsController {
+    private static final double ACTUAL_CLICKED_COUNTRY_OPACITY = 0.5;
+    private static final int NOT_CLICKED_COUNTRY_OPACITY = 1;
     @FXML
     private CaloriesPaneController caloriesPaneController;
     @FXML
@@ -39,16 +40,16 @@ public class MainPaneSettingsController {
     private void setPL() {
         Language.language = LanguageCode.PL;
         resetUserLabels();
-        settingsSettingsPaneController.getPolandLanguageImageView().setOpacity(0.5);
-        settingsSettingsPaneController.getEnglishLanguageImageView().setOpacity(1);
+        settingsSettingsPaneController.getPolandLanguageImageView().setOpacity(ACTUAL_CLICKED_COUNTRY_OPACITY);
+        settingsSettingsPaneController.getEnglishLanguageImageView().setOpacity(NOT_CLICKED_COUNTRY_OPACITY);
         settingsSettingsPaneController.setLanguage(new Language().getSettingsSettingsLanguage());
         settingsPaneController.setLanguage(new Language().getSettingsLanguage());
     }
     private void setEN() {
         Language.language = LanguageCode.EN;
         resetUserLabels();
-        settingsSettingsPaneController.getEnglishLanguageImageView().setOpacity(0.5);
-        settingsSettingsPaneController.getPolandLanguageImageView().setOpacity(1);
+        settingsSettingsPaneController.getEnglishLanguageImageView().setOpacity(ACTUAL_CLICKED_COUNTRY_OPACITY);
+        settingsSettingsPaneController.getPolandLanguageImageView().setOpacity(NOT_CLICKED_COUNTRY_OPACITY);
         settingsSettingsPaneController.setLanguage(new Language().getSettingsSettingsLanguage());
         settingsPaneController.setLanguage(new Language().getSettingsLanguage());
     }

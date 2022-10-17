@@ -2,12 +2,12 @@ package io;
 
 import model.language.Language;
 import model.language.TablesLabels;
-
 import java.io.*;
 
 public class LanguageIO {
     private final static String LANGUAGE_PATH ="language.obj";
     private final static String TABLE_LABELS = "table-labels.obj";
+
     public static void initializeLanguage() {
         setLanguageApp();
         setTableLabels();
@@ -23,17 +23,20 @@ public class LanguageIO {
         TablesLabels.basicLunchTime = tablesLabels.getLunchTime();
         TablesLabels.basicSupperTime = tablesLabels.getSupperTime();
     }
+
     private static void setLanguageApp() {
         Language.language = getLanguageVersion().getLanguageLanguage();
     }
+
     public static void safeLanguageApp() {
         safeLanguageVersion(new Language());
         safeTableLabels();
     }
+
     private static Language getLanguageVersion() {
         Language language;
         try(
-                var object = new ObjectInputStream(new FileInputStream("language.obj"))
+                var object = new ObjectInputStream(new FileInputStream(LANGUAGE_PATH))
         )
         {
             language = (Language) object.readObject();
@@ -70,6 +73,7 @@ public class LanguageIO {
         }
       return tablesLabels;
     }
+
     private static void safeTableLabels() {
         try(
                 var object = new ObjectOutputStream(new FileOutputStream(TABLE_LABELS))

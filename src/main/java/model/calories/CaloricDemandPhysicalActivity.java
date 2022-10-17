@@ -8,6 +8,6 @@ public enum CaloricDemandPhysicalActivity {
     VERY_BIG("Very Big - hard physical work, everyday training sessions");
 
     CaloricDemandPhysicalActivity(String description) {
-
     }
+
 }

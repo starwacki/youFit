@@ -4,12 +4,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import model.DateController;
 import model.language.DaysPaneLanguage;
 import model.language.Language;
-
-import java.time.LocalDate;
 
 public class DaysPaneController {
     @FXML
@@ -50,6 +46,7 @@ public class DaysPaneController {
     public void initialize() {
         setLanguage(new Language().getDaysPaneLanguage());
     }
+
     private void setLanguage(DaysPaneLanguage language) {
         mondayButtonController.setText(language.getMondayButtonController());
         tuesdayButtonController.setText(language.getTuesdayButtonController());
@@ -59,27 +56,35 @@ public class DaysPaneController {
         saturdayButtonController.setText(language.getSaturdayButtonController());
         sundayButtonController.setText(language.getSundayButtonController());
     }
+
     public Button getFridayButtonController() {
         return fridayButtonController;
     }
+
     public Button getMondayButtonController() {
         return mondayButtonController;
     }
+
     public Button getSaturdayButtonController() {
         return saturdayButtonController;
     }
+
     public Button getSundayButtonController() {
         return sundayButtonController;
     }
+
     public Button getThursdayButtonController() {
         return thursdayButtonController;
     }
+
     public Button getTuesdayButtonController() {
         return tuesdayButtonController;
     }
+
     public Button getWednesdayButtonController() {
         return wednesdayButtonController;
     }
+
     public ImageView getNextWeekImageViewController() {
         return nextWeekImageViewController;
     }

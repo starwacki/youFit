@@ -28,7 +28,7 @@
                   <Image url="@../../img/settings-settings-icons/united-kingdom.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="polishLanguageImageViewControllr" fitHeight="40.0" fitWidth="40.0" layoutX="295.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="polishLanguageImageViewController" fitHeight="40.0" fitWidth="40.0" layoutX="295.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../img/settings-settings-icons/poland.png" />
                </image>

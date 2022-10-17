@@ -1,5 +1,4 @@
 package controllers.loginControllers;
-
 import controllers.SceneSwitcherController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,22 +8,17 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import model.language.ForgetPasswordPaneLanguage;
 import model.language.Language;
-import model.language.LoginPaneLanguage;
 
 public class ForgetPasswordPaneController {
 
     @FXML
     private TextField emailTextFieldController;
-
     @FXML
     private Button recoverPasswordButtonController;
-
     @FXML
     private Label recoverPasswordLabelController;
-
     @FXML
     private Button signInButtonController;
-
     @FXML
     private TextField usernameTextFieldController;
 

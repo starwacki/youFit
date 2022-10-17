@@ -18,6 +18,7 @@ import model.language.Language;
 
 public class CaloricDemandPaneController {
     private static final String  EMPTY_FIELD = "";
+    private static final String  ZER0 = "0";
     private static final int  MINIMUM_AGE_VALUE = 18;
     private static final int  MAXIMUM_AGE_VALUE = 80;
     private static final int MINIMUM_HEIGHT_VALUE = 130;
@@ -38,131 +39,88 @@ public class CaloricDemandPaneController {
     private static final int OPACITY_INVISIBLE = 0;
     private static final int CALORIC_DEMAND_RANGE_OF_CORRECTNESS = 200;
 
-
-
     @FXML
     private ChoiceBox<String> trainingTargetChoiceBoxController;
-
     @FXML
     private Label activityLabelController;
-
     @FXML
     private Label ageInfoLabelController;
-
     @FXML
     private Label ageLabelController;
-
     @FXML
     private TextField ageTextFieldController;
-
     @FXML
     private Button calculateCaloricDemandButtonController;
-
     @FXML
     private AnchorPane caloricDemandAnchorPane;
-
     @FXML
     private Label caloricDemandCalculatorLabelController;
-
     @FXML
     private TextField caloriesCaloricDemandTextFieldController;
-
     @FXML
     private Label caloriesLabelController;
-
     @FXML
     private Label caloriesNumberLabelController;
-
     @FXML
     private TextField carbohydratesCaloricDemandTextFieldController;
-
     @FXML
     private Label carbohydratesLabelController;
-
     @FXML
     private Label carbohydratesNumberLabelController;
-
     @FXML
     private TextField fatCaloricDemandTextFieldController;
-
     @FXML
     private Label fatLabelController;
-
     @FXML
     private Label fatNumberLabelController;
-
     @FXML
     private CheckBox femaleCheckBoxController;
-
     @FXML
     private Label femaleHarrisBenedictFormulaLabelController;
-
     @FXML
     private Label genderLabelController;
-
     @FXML
     private Label harrisBenedictInfoLabelController;
-
     @FXML
     private Label heightInfoLabelController;
-
     @FXML
     private TextField heightTextFieldController;
-
     @FXML
     private CheckBox maleCheckBoxController;
-
     @FXML
     private Label maleHarrisBenedictFormulaLabelController;
-
     @FXML
     private TextField proteinsCaloricDemandTextFieldController;
-
     @FXML
     private Label proteinsLabelController;
-
     @FXML
     private Label proteinsNumberLabelController;
-
     @FXML
     private Label recommendedCaloriesLabelController;
-
     @FXML
     private Button setCalculatedCaloricDemandController;
-
     @FXML
     private Button setCaloricDemandButtonController;
-
     @FXML
     private Label setCaloricDemandCaloriesLabelController;
-
     @FXML
     private Label setCaloricDemandCarbohydratesLabelController;
-
     @FXML
     private Label setCaloricDemandFatLabelController;
-
     @FXML
     private Label setCaloricDemandLabelController;
-
     @FXML
     private Label setCaloricDemandProteinsLabelController;
-
     @FXML
     private ChoiceBox<String> activityChoiceBoxController;
-
     @FXML
     private Label trainingTargetLabelController;
-
     @FXML
     private Label weightInfoLabelController;
-
     @FXML
     private TextField weightTextFieldController;
-
     @FXML
     private Label caloricDemandPaneTitleLabelController;
-
     @FXML
     private ImageView ageImageViewController;
     @FXML
@@ -192,6 +150,10 @@ public class CaloricDemandPaneController {
         initializeTrainingTargetBox(language);
     }
     private void blockIncorrectTextFieldsValues() {
+        setAllValuesTextFieldsOnlyNumeric();
+        blockedGenderCheckBox();
+    }
+    private void setAllValuesTextFieldsOnlyNumeric() {
         setTextFieldOnlyNumeric(ageTextFieldController);
         setTextFieldOnlyNumeric(heightTextFieldController);
         setTextFieldOnlyNumeric(weightTextFieldController);
@@ -199,15 +161,13 @@ public class CaloricDemandPaneController {
         setTextFieldOnlyNumeric(carbohydratesCaloricDemandTextFieldController);
         setTextFieldOnlyNumeric(fatCaloricDemandTextFieldController);
         setTextFieldOnlyNumeric(caloriesCaloricDemandTextFieldController);
-        blockedGenderCheckBox();
     }
     private void setTextFieldOnlyNumeric(TextField textField) {
        textField.textProperty().addListener((observableValue, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) {
                 textField.setText(oldValue);
             }
-            if (newValue.equals("0")) textField.setText(oldValue);
-
+            if (newValue.equals(ZER0)) textField.setText(oldValue);
         });
     }
 
@@ -217,6 +177,7 @@ public class CaloricDemandPaneController {
         femaleCheckBoxController.addEventFilter(MouseEvent.MOUSE_CLICKED,mouseEvent ->
           maleCheckBoxController.setSelected(false));
     }
+
     private void setLabels(CaloricDemandLanguage language) {
         caloricDemandCalculatorLabelController.setText(language.getCaloricDemandCalculatorLabelController());
         ageLabelController.setText(language.getAgeLabelController());
@@ -246,6 +207,7 @@ public class CaloricDemandPaneController {
         femaleHarrisBenedictFormulaLabelController.setText(language.getFemaleHarrisBenedictFormulaLabelController());
         caloricDemandPaneTitleLabelController.setText(language.getCaloricDemandPaneTitleLabelController());
     }
+
     private void initializeActivityBox(CaloricDemandLanguage language) {
         activityChoiceBoxController.getItems().addAll(language.getActivityChoiceBoxCaloricDemandPhysicalActivityVeryLow(),
                                                       language.getActivityChoiceBoxCaloricDemandPhysicalActivityLow(),
@@ -253,21 +215,26 @@ public class CaloricDemandPaneController {
                                                       language.getActivityChoiceBoxCaloricDemandPhysicalActivityBig(),
                                                       language.getActivityChoiceBoxCaloricDemandPhysicalActivityVeryBig());
     }
+
     private void initializeTrainingTargetBox(CaloricDemandLanguage language) {
         trainingTargetChoiceBoxController.getItems().addAll(language.getTrainingTargetChoiceBoxPurposeLossWeight(),
                                                             language.getTrainingTargetChoiceBoxPurposeStayAtWeight(),
                                                             language.getTrainingTargetChoiceBoxPurposePutOnWeight());
     }
+
     private boolean isTextFieldEmpty(TextField textField) {
         if(textField == null) return true;
         else return textField.getText().equals(EMPTY_FIELD);
     }
+
     private boolean isChoicesBoxSelected() {
         return activityChoiceBoxController.getSelectionModel().getSelectedItem()!=null && trainingTargetChoiceBoxController.getSelectionModel().getSelectedItem()!=null;
     }
+
     private boolean isCheckBoxSelected() {
         return maleCheckBoxController.isSelected() || femaleCheckBoxController.isSelected();
     }
+
     private boolean areTextFieldsEmpty () {
         return isTextFieldEmpty(ageTextFieldController) || isTextFieldEmpty(heightTextFieldController) || isTextFieldEmpty(weightTextFieldController);
     }
@@ -275,15 +242,17 @@ public class CaloricDemandPaneController {
     private boolean areAllFieldsToCalculateCorrect() {
         return !areTextFieldsEmpty() && isCheckBoxSelected() && isChoicesBoxSelected();
     }
+
     private void calculateCaloriesDemand() {
         calculateCaloricDemandButtonController.addEventFilter(MouseEvent.MOUSE_CLICKED,mouseEvent ->
                 setCaloricDemandInfoLabels());
     }
+
     private void setCaloricDemandInfoLabels() {
         if (areAllFieldsToCalculateCorrect()) {
             if (areFieldsValuesCorrect()) calculateDemandInfoLabels();
-            else  setNotSuccessfulCalculateComponents();
-            }
+            else setNotSuccessfulCalculateComponents();
+         }
         }
 
     private void calculateDemandInfoLabels() {
@@ -291,22 +260,28 @@ public class CaloricDemandPaneController {
         setWarningImageView();
         setNumberLabels(caloricDemand);
     }
+
     private void setNotSuccessfulCalculateComponents() {
         setWarningImageView();
         setNumberLabelsInVisible();
     }
+
     private boolean isAgeValueCorrect() {
         return Integer.parseInt(ageTextFieldController.getText()) >= MINIMUM_AGE_VALUE && Integer.parseInt(ageTextFieldController.getText()) <= MAXIMUM_AGE_VALUE;
     }
+
     private boolean isHeightValueCorrect() {
         return Integer.parseInt(heightTextFieldController.getText()) > MINIMUM_HEIGHT_VALUE && Integer.parseInt(heightTextFieldController.getText()) < MAXIMUM_HEIGHT_VALUE;
     }
+
     private boolean isWeightValueCorrect() {
         return Integer.parseInt(weightTextFieldController.getText()) > MINIMUM_WEIGHT_VALUE && Integer.parseInt(weightTextFieldController.getText()) < MAXIMUM_WEIGHT_VALUE;
     }
+
     private boolean areFieldsValuesCorrect() {
         return isAgeValueCorrect() && isHeightValueCorrect() && isWeightValueCorrect();
     }
+
     private CaloricDemandPhysicalActivity caloricDemandPhysicalActivity() {
         CaloricDemandPhysicalActivity caloricDemandPhysicalActivity = null;
        switch (activityChoiceBoxController.getSelectionModel().getSelectedIndex()) {
@@ -318,6 +293,7 @@ public class CaloricDemandPaneController {
         }
         return caloricDemandPhysicalActivity;
     }
+
     private Purpose purpose() {
         Purpose purpose = null;
         switch (trainingTargetChoiceBoxController.getSelectionModel().getSelectedIndex()) {
@@ -327,10 +303,12 @@ public class CaloricDemandPaneController {
         }
         return purpose;
     }
+
     private int selectedGender() {
         if (maleCheckBoxController.isSelected()) return MALE_INDEX;
         else return FEMALE_INDEX;
     }
+
     private CaloricDemand getCaloricDemand() {
         return new CaloricDemand(Integer.parseInt(weightTextFieldController.getText()),
                 Integer.parseInt(heightTextFieldController.getText()),
@@ -339,16 +317,19 @@ public class CaloricDemandPaneController {
                 Integer.parseInt(ageTextFieldController.getText()),
                 purpose());
     }
+
     private void setNumberLabels(CaloricDemand caloricDemand){
         setNumberLabelsText(caloricDemand);
         setNumberLabelsVisible();
     }
+
     private void setNumberLabelsText(CaloricDemand caloricDemand) {
         proteinsNumberLabelController.setText(String.valueOf((int) caloricDemand.getProteinsInDiet()));
         carbohydratesNumberLabelController.setText(String.valueOf((int)caloricDemand.getCarbohydratesInDiet()));
         fatNumberLabelController.setText(String.valueOf((int)caloricDemand.getFatInDiet()));
         caloriesNumberLabelController.setText(String.valueOf((int)caloricDemand.calorieNeeded()));
     }
+
     private void setNumberLabelsVisible() {
         proteinsNumberLabelController.setOpacity(OPACITY_VISIBLE);
         carbohydratesNumberLabelController.setOpacity(OPACITY_VISIBLE);
@@ -359,6 +340,7 @@ public class CaloricDemandPaneController {
         fatLabelController.setOpacity(OPACITY_VISIBLE);
         caloriesLabelController.setOpacity(OPACITY_VISIBLE);
     }
+
     private void setNumberLabelsInVisible() {
         proteinsNumberLabelController.setOpacity(OPACITY_INVISIBLE);
         carbohydratesNumberLabelController.setOpacity(OPACITY_INVISIBLE);
@@ -369,6 +351,7 @@ public class CaloricDemandPaneController {
         fatLabelController.setOpacity(OPACITY_INVISIBLE);
         caloriesLabelController.setOpacity(OPACITY_INVISIBLE);
     }
+
     private void setWarningImageView() {
         if (!isAgeValueCorrect()) ageImageViewController.setOpacity(OPACITY_VISIBLE);
         else ageImageViewController.setOpacity(OPACITY_INVISIBLE);
@@ -379,18 +362,21 @@ public class CaloricDemandPaneController {
     }
 
     private boolean isMicronutrientsTextFieldsCalculated() {
-        return  !proteinsNumberLabelController.getText().equals("0") &&
-                !carbohydratesNumberLabelController.getText().equals("0") &&
-                !fatNumberLabelController.getText().equals("0") &&
-                !carbohydratesNumberLabelController.getText().equals("0");
+        return  !proteinsNumberLabelController.getText().equals(ZER0) &&
+                !carbohydratesNumberLabelController.getText().equals(ZER0) &&
+                !fatNumberLabelController.getText().equals(ZER0) &&
+                !carbohydratesNumberLabelController.getText().equals(ZER0);
     }
+
     private void setCalculatedCaloricDemand() {
         setCalculatedCaloricDemandController.addEventFilter(MouseEvent.MOUSE_CLICKED, mouseEvent -> {
             if (isMicronutrientsTextFieldsCalculated())  safeCaloricDemand(createCalculatedCaloricDemandToSafe()); });
     }
+
     private void safeCaloricDemand(CaloricDemand caloricDemand) {
         CaloricDemandIO.safeCaloricDemand(caloricDemand);
     }
+
     private CaloricDemand createCalculatedCaloricDemandToSafe() {
         CaloricDemand caloricDemand = new CaloricDemand();
         caloricDemand.setTotalDailyEnergyExpenditure(Integer.parseInt(caloriesNumberLabelController.getText()));
@@ -399,13 +385,16 @@ public class CaloricDemandPaneController {
         caloricDemand.setFatInDiet(Integer.parseInt(fatNumberLabelController.getText()));
         return caloricDemand;
     }
+
     private boolean areSetCaloricDemandTextFieldsEmpty() {
         return  isTextFieldEmpty(proteinsCaloricDemandTextFieldController) || isTextFieldEmpty(carbohydratesCaloricDemandTextFieldController)
                 || isTextFieldEmpty(fatCaloricDemandTextFieldController)  || isTextFieldEmpty(caloriesCaloricDemandTextFieldController);
     }
+
     private void setCaloricDemandByUser() {
         setCaloricDemandButtonController.addEventFilter(MouseEvent.MOUSE_CLICKED,mouseEvent ->setCaloricDemand());
     }
+
     private void setCaloricDemand() {
         if (!areSetCaloricDemandTextFieldsEmpty()) {
             if (areSetCaloricDemandTextFieldsValuesCorrect()) safeCaloricDemandFromUser();
@@ -420,27 +409,32 @@ public class CaloricDemandPaneController {
         return Integer.parseInt(caloriesCaloricDemandTextFieldController.getText()) + CALORIC_DEMAND_RANGE_OF_CORRECTNESS > allMicronutrientsCalories()
                 && Integer.parseInt(caloriesCaloricDemandTextFieldController.getText()) - CALORIC_DEMAND_RANGE_OF_CORRECTNESS < allMicronutrientsCalories();
     }
+
     private int allMicronutrientsCalories() {
         return (int)(CaloriesCalculator.ONE_GRAM_OF_PROTEIN_CALORIES*Integer.parseInt(proteinsCaloricDemandTextFieldController.getText()) +
                 CaloriesCalculator.ONE_GRAM_OF_CARBOHYDRATES_CALORIES*Integer.parseInt(carbohydratesCaloricDemandTextFieldController.getText()) +
                 CaloriesCalculator.ONE_GRAM_OF_FAT_CALORIES*Integer.parseInt(fatCaloricDemandTextFieldController.getText()));
     }
+
     private void setWarningCaloricDemandImagesVisible() {
         setCaloricDemandWarningImageViewController1.setOpacity(OPACITY_VISIBLE);
         setCaloricDemandWarningImageViewController2.setOpacity(OPACITY_VISIBLE);
         setCaloricDemandWarningImageViewController3.setOpacity(OPACITY_VISIBLE);
         setCaloricDemandWarningImageViewController4.setOpacity(OPACITY_VISIBLE);
     }
+
     private void setWarningCaloricDemandImagesInvisible() {
         setCaloricDemandWarningImageViewController1.setOpacity(OPACITY_INVISIBLE);
         setCaloricDemandWarningImageViewController2.setOpacity(OPACITY_INVISIBLE);
         setCaloricDemandWarningImageViewController3.setOpacity(OPACITY_INVISIBLE);
         setCaloricDemandWarningImageViewController4.setOpacity(OPACITY_INVISIBLE);
     }
+
     private void safeCaloricDemandFromUser() {
         setWarningCaloricDemandImagesInvisible();
         safeCaloricDemand(createUserCaloricDemand());
     }
+
     private CaloricDemand createUserCaloricDemand() {
         CaloricDemand caloricDemand = new CaloricDemand();
         caloricDemand.setProteinsInDiet(Integer.parseInt(proteinsCaloricDemandTextFieldController.getText()));

@@ -29,6 +29,10 @@ public class Product {
         this.fat = (int) CaloriesCalculator.fatInProduct(this);
     }
 
+    public String getNameOfProduct() {
+        return nameOfProduct;
+    }
+
     public double getKcal() {
         return kcal;
     }
@@ -43,10 +47,6 @@ public class Product {
 
     public double getFat() {
         return fat;
-    }
-
-    public String getNameOfProduct() {
-        return nameOfProduct;
     }
 
     public String getProducer() {

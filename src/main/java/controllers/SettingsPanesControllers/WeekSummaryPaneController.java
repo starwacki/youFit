@@ -3,12 +3,10 @@ package controllers.SettingsPanesControllers;
 import io.CaloricDemandIO;
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
-import javafx.scene.chart.StackedBarChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
 import model.calories.CaloricDemand;
 import model.calories.CaloriesCalculator;
 import model.language.Language;
@@ -36,67 +34,46 @@ public class WeekSummaryPaneController {
 
     @FXML
     private ProgressBar caloriesWeekSummaryProgressBarController;
-
     @FXML
     private ProgressBar carbohydratesWeekSummaryProgressBarController;
-
     @FXML
     private Label daysWithoutExceededCaloriesInfoLabelController;
-
     @FXML
     private Label daysWithoutExceededCaloriesLabelController;
-
     @FXML
     private Label eatenCaloriesWeekSummaryLabelController;
-
     @FXML
     private Label eatenCarbohydratesWeekSummaryLabelController;
-
     @FXML
     private Label eatenFatWeekSummaryLabelController;
-
     @FXML
     private Label eatenProteinsWeekSummaryLabelController;
-
     @FXML
     private ProgressBar fatWeekSummaryProgressBarController;
-
     @FXML
     private Label neededCaloriesWeekSummaryLabelController;
-
     @FXML
     private Label neededCarbohydratesWeekSummaryLabelController;
-
     @FXML
     private Label neededFatWeekSummaryLabelController;
-
     @FXML
     private Label neededProteinsWeekSummaryLabelController;
-
     @FXML
     private ProgressBar proteinsWeekSummaryProgressBarController;
-
     @FXML
     private Label weekCaloriesLabelController;
-
     @FXML
     private Label weekCarbohydratesLabelController;
-
     @FXML
     private Label weekFatLabelController;
-
     @FXML
     private Label weekProteinsLabelController;
-
     @FXML
     private AnchorPane weekSummaryAnchorPaneController;
-
     @FXML
     private BarChart<String, Integer> barChartController;
-
     @FXML
     private Label weekSummaryTitleLabelController;
-
     @FXML
     private Label proteinsSlashController;
     @FXML
@@ -239,6 +216,7 @@ public class WeekSummaryPaneController {
                                                    createCarbohydratesSeries(weekSummary),
                                                    createFatSeries(weekSummary));
     }
+
     private XYChart.Series<String, Integer> createProteinsSeries(WeekSummary weekSummary) {
         XYChart.Series<String, Integer> series = new XYChart.Series<>();
         series.getData().add(new XYChart.Data<>(mondaySeries, (int)(CaloriesCalculator.getProteinsFromDay(weekSummary.getMondayProducts())*CaloriesCalculator.ONE_GRAM_OF_PROTEIN_CALORIES)));
@@ -251,6 +229,7 @@ public class WeekSummaryPaneController {
         series.setName(proteinsSeriesName);
         return series;
     }
+
     private XYChart.Series<String, Integer> createCarbohydratesSeries(WeekSummary weekSummary) {
         XYChart.Series<String, Integer> series = new XYChart.Series<>();
         series.getData().add(new XYChart.Data<>(mondaySeries, (int) (CaloriesCalculator.getCarbohydratesFromDay(weekSummary.getMondayProducts())*CaloriesCalculator.ONE_GRAM_OF_CARBOHYDRATES_CALORIES)));
@@ -263,6 +242,7 @@ public class WeekSummaryPaneController {
         series.setName(carbohydratesSeriesName);
         return series;
     }
+
     private XYChart.Series<String, Integer> createFatSeries(WeekSummary weekSummary) {
         XYChart.Series<String, Integer> series = new XYChart.Series<>();
         series.getData().add(new XYChart.Data<>(mondaySeries, (int) (CaloriesCalculator.getFatFromDay(weekSummary.getMondayProducts())*CaloriesCalculator.ONE_GRAM_OF_FAT_CALORIES)));

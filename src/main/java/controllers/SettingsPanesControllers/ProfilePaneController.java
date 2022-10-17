@@ -1,6 +1,5 @@
 package controllers.SettingsPanesControllers;
 
-import io.LanguageIO;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -12,49 +11,34 @@ import model.language.ProfileLanguage;
 import model.user.User;
 
 public class ProfilePaneController {
-
     @FXML
     private Button changePasswordButtonController;
-
     @FXML
     private Label changePasswordLabelController;
-
     @FXML
     private Button changeProfilePhotoButtonController;
-
     @FXML
     private Label dateOfBirthInfoLabelController;
-
     @FXML
     private Label dateOfBirthLabelController;
-
     @FXML
     private Label emailInfoLabelController;
-
     @FXML
     private Label emailLabelController;
-
     @FXML
     private Label newPasswordLabelController;
-
     @FXML
     private PasswordField newPasswordPasswordFieldController;
-
     @FXML
     private Label oldPasswordLabelController;
-
     @FXML
     private PasswordField oldPasswordPasswordFieldController;
-
     @FXML
     private AnchorPane profilPaneAnchorPaneController;
-
     @FXML
     private ImageView userPhotoImageViewController;
-
     @FXML
     private Label usernameInfoLabelController;
-
     @FXML
     private Label usernameLabelController;
     @FXML
@@ -65,6 +49,7 @@ public class ProfilePaneController {
         initializeUserLabels();
 
     }
+
     private void setLanguage(ProfileLanguage language) {
         changeProfilePhotoButtonController.setText(language.getChangeProfilePhotoButtonController());
         usernameInfoLabelController.setText(language.getUsernameInfoLabelController());
@@ -76,6 +61,7 @@ public class ProfilePaneController {
         changePasswordButtonController.setText(language.getChangePasswordButtonController());
         profileInfoTitleLabelController.setText(language.getProfileInfoTitleLabelController());
     }
+
     private void initializeUserLabels() {
         usernameLabelController.setText(User.getNickname());
         emailLabelController.setText(User.getEmail());

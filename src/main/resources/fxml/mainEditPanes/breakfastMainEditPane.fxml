@@ -6,8 +6,8 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" stylesheets="@../../css/mainview.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainEditPaneController">
     <children>
+      <AnchorPane prefHeight="61.0" prefWidth="880.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="639.0" AnchorPane.leftAnchor="220.0" />
         <Separator layoutX="10.0" layoutY="10.0" prefHeight="18.0" prefWidth="1100.0" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-        <fx:include fx:id="daysPane" source="../mainPaneComponentsFXMLS/daysPane.fxml" AnchorPane.bottomAnchor="639.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
         <fx:include fx:id="caloriesPane" source="../mainPaneComponentsFXMLS/caloriesPane.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="645.0" />
         <VBox fx:id="mainPaneViewVboxController" layoutX="138.0" layoutY="61.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="750.0" AnchorPane.bottomAnchor="63.0" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="100.0">
          <children>

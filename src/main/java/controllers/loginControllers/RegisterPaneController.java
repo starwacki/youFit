@@ -11,6 +11,8 @@ import model.language.RegisterPaneLanguage;
 
 public class RegisterPaneController {
     private static final String EMPTY_FIELD = "";
+    private static final int SHOW_ERROR_OPACITY = 1;
+    private static final int HIDE_ERROR_OPACITY = 0;
     private static final int MINIMUM_USERNAME_LENGTH = 5;
     private static final int MAXIMUM_USERNAME_LENGTH = 20;
     private static final int MINIMUM_PASSWORD_LENGTH = 5;
@@ -21,28 +23,20 @@ public class RegisterPaneController {
     private static  String PASSWORD_ERROR = "PASSWORD ERROR";
     private static  String EMAIL_LOGIN_EXIST_ERROR = "EMAIL LOGIN EXIST ERROR";
     private static  String EMPTY_TEXT_FIELD_ERROR = "EMPTY TEXT FIELD ERROR";
-
     @FXML
     private PasswordField passwordTextFieldController;
-
     @FXML
     private Button haveAccountController;
-
     @FXML
     private Button registerButtonLabelController;
-
     @FXML
     private Label registerInLabelController;
-
     @FXML
     private TextField usernameTextFieldController;
-
     @FXML
     private TextField emailTextFieldController;
-
     @FXML
     private DatePicker dateOfBirthDatePickerController;
-
     @FXML
     private Label errorTextFieldController;
 
@@ -51,7 +45,6 @@ public class RegisterPaneController {
         changeToLoginScene();
         registerByClickedButton();
         blockAllIncorrectTextFieldValues();
-
     }
     private void setLanguage(RegisterPaneLanguage language) {
         passwordTextFieldController.setPromptText(language.getPasswordTextFieldController());
@@ -63,28 +56,36 @@ public class RegisterPaneController {
         EMAIL_LOGIN_EXIST_ERROR = language.getEmailLoginExistError();
         PASSWORD_ERROR = language.getPasswordError();
         EMPTY_TEXT_FIELD_ERROR = language.getEmptyTextFieldError();
-
     }
 
     private void changeToLoginScene() {
         haveAccountController.addEventFilter(MouseEvent.MOUSE_CLICKED, mouseEvent ->
                 new SceneSwitcherController().switchToLoginPane(thisStage()));
     }
+
     private Stage thisStage() {
         return (Stage) haveAccountController.getScene().getWindow();
     }
+
     private void blockIncorrectDatePickerValues(){
         dateOfBirthDatePickerController.setEditable(false);
     }
+
     private boolean isTextFieldEmpty(TextField textField) {
         if(textField == null) return true;
         else return textField.getText().equals(EMPTY_FIELD);
     }
+
     private void blockAllIncorrectTextFieldValues() {
-        blockIncorrectTextFieldValues(usernameTextFieldController);
-        blockIncorrectTextFieldValues(passwordTextFieldController);
+        blockIncorrectTextFields();
         blockIncorrectDatePickerValues();
     }
+
+    private void blockIncorrectTextFields() {
+        blockIncorrectTextFieldValues(usernameTextFieldController);
+        blockIncorrectTextFieldValues(passwordTextFieldController);
+    }
+
     private void blockIncorrectTextFieldValues(TextField textField) {
         textField.textProperty().addListener((observableValue, oldValue, newValue) -> {
             if (!newValue.matches("\\w*")) {
@@ -131,7 +132,7 @@ public class RegisterPaneController {
 
     }
     private void setErrorTextFieldController(String text) {
-        errorTextFieldController.setOpacity(1);
+        errorTextFieldController.setOpacity(SHOW_ERROR_OPACITY);
         errorTextFieldController.setText(text);
     }
     private void registerNewUser() {
@@ -139,12 +140,11 @@ public class RegisterPaneController {
                 emailTextFieldController.getText(), dateOfBirthDatePickerController.getValue());
     }
     private void clearFields() {
-        errorTextFieldController.setOpacity(0);
+        errorTextFieldController.setOpacity(HIDE_ERROR_OPACITY);
         usernameTextFieldController.clear();
         emailTextFieldController.clear();
         passwordTextFieldController.clear();
         dateOfBirthDatePickerController.getEditor().clear();
-
     }
 
 }

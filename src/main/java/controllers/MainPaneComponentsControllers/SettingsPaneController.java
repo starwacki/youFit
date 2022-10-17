@@ -13,32 +13,24 @@ public class SettingsPaneController {
 
     @FXML
     private Label bodyMeasurementsLabelController;
-
     @FXML
     private Label changeCaloriesDemandLabelController;
-
     @FXML
     private Label mealsLabelController;
-
     @FXML
     private Label profileLabelController;
-
     @FXML
     private Label settingsLabelController;
-
     @FXML
     private AnchorPane settingsPaneController;
-
     @FXML
     private Label weekSummaryLabelController;
-
     @FXML
     private Label logoutLabelController;
     public void initialize() {
         setLanguage(new Language().getSettingsLanguage());
         setMainPaneByClickedSetting();
         logout();
-
     }
 
     public void setLanguage(SettingsLanguage language) {
@@ -50,6 +42,7 @@ public class SettingsPaneController {
         settingsLabelController.setText(language.getSettingsLabelController());
         logoutLabelController.setText(language.getLogoutLabelController());
     }
+
     private void setMainPaneByClickedSetting() {
         SceneSwitcherController sceneSwitcherController = new SceneSwitcherController();
         profileLabelController.addEventFilter(MouseEvent.MOUSE_CLICKED,mouseEvent -> sceneSwitcherController.switchToProfileMainPain(thisStage()));
@@ -60,10 +53,12 @@ public class SettingsPaneController {
         settingsLabelController.addEventFilter(MouseEvent.MOUSE_CLICKED,mouseEvent -> sceneSwitcherController.switchToSettingsMainPain(thisStage()));
 
     }
+
     private void logout() {
         logoutLabelController.addEventFilter(MouseEvent.MOUSE_CLICKED,
                 mouseEvent -> new SceneSwitcherController().switchToLoginPane(thisStage()));
     }
+
     private Stage thisStage() {
         return  (Stage) changeCaloriesDemandLabelController.getScene().getWindow();
     }

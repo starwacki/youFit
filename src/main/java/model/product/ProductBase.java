@@ -1,7 +1,6 @@
 package model.product;
 
 import dao.QueryExecutor;
-
 import java.util.List;
 
 public class ProductBase {

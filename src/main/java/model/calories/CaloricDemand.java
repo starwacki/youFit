@@ -7,6 +7,11 @@ public class CaloricDemand implements Serializable {
     @Serial
     private static final long serialVersionUID = 7826912357526727204L;
     private static final double CARBOHYDRATES_PERCENT = 0.55;
+    private static final int NULL_VALUE = -1;
+    private static final int LOSS_WEIGHT_ADDITIONAL_CALORIES = -400;
+    private static final int PUT_ON_WEIGHT_ADDITIONAL_CALORIES = 400;
+    private static final int MALE_INDEX = 0;
+    private static final int FEMALE_INDEX = 1;
     transient private int weight; //in kg
     transient private int height; // in cm
     transient private int gender; //if 0 - male 1 - female (biologic gender)
@@ -40,12 +45,15 @@ public class CaloricDemand implements Serializable {
     public void setProteinsInDiet(double proteinsInDiet) {
         this.proteinsInDiet = proteinsInDiet;
     }
+
     public void setCarbohydratesInDiet(double carbohydratesInDiet) {
         this.carbohydratesInDiet = carbohydratesInDiet;
     }
+
     public void setFatInDiet(double fatInDiet) {
         this.fatInDiet = fatInDiet;
     }
+
     public double getTotalDailyEnergyExpenditure() {
         return totalDailyEnergyExpenditure;
     }
@@ -61,28 +69,32 @@ public class CaloricDemand implements Serializable {
     public double getFatInDiet() {
         return fatInDiet;
     }
+
     public double calorieNeeded() {
-        double calorieNeeded = -1;
+        double calorieNeeded = NULL_VALUE;
         switch (purpose) {
-            case LOSS_WEIGHT -> calorieNeeded = totalDailyEnergyExpenditure-400;
+            case LOSS_WEIGHT -> calorieNeeded = totalDailyEnergyExpenditure+LOSS_WEIGHT_ADDITIONAL_CALORIES;
             case STAY_AT_WEIGHT -> calorieNeeded = totalDailyEnergyExpenditure;
-            case PUT_ON_WEIGHT -> calorieNeeded = totalDailyEnergyExpenditure+400;
+            case PUT_ON_WEIGHT -> calorieNeeded = totalDailyEnergyExpenditure+PUT_ON_WEIGHT_ADDITIONAL_CALORIES;
         }
         return calorieNeeded;
     }
 
+
    /* Method return TDEE - total daily energy expenditure. TDEE is energy you need to stay at weight.
     * TDEE = BMR*PHYSICAL_ACTIVITY_RATIO */
+
     private double TDEE() {
-        double bmrCalculate = -1;
+        double bmrCalculate = NULL_VALUE;
         switch (gender) {
-            case 0 -> bmrCalculate = bmrForMale() * physicalActivityRatio();
-            case 1 -> bmrCalculate = bmrForFemale() * physicalActivityRatio();
+            case MALE_INDEX -> bmrCalculate = bmrForMale() * physicalActivityRatio();
+            case FEMALE_INDEX -> bmrCalculate = bmrForFemale() * physicalActivityRatio();
         }
         return bmrCalculate;
     }
+
     private double physicalActivityRatio() {
-        double ratio = -1;
+        double ratio = NULL_VALUE;
         switch (physicalActivity) {
             case VERY_LOW -> ratio= 1.2;
             case LOW -> ratio = 1.375;
@@ -96,9 +108,11 @@ public class CaloricDemand implements Serializable {
   /* Methods calculate BMR (basal metabolic rate) for given gender by Harris-Benedict formula.
   Male: BMR = 66 + (13,7 × weight in kg) + (5 × height in cm) - (6,8 × age in years)
   Female: BMR = 655 + (9,6 × weight in kg) + (1,8 × height in cm) - (4,7 × age in years) */
+
     private double bmrForMale() {
         return 66 + (13.7*weight)+(5*height)-(6.8*age);
     }
+
     private double bmrForFemale() {
         return 655 + (9.6*weight)+(1.8*height)-(4.7*age);
     }
@@ -109,6 +123,7 @@ public class CaloricDemand implements Serializable {
     20-35% of energy - > fats ( depending on the proteins)
     values are purely indicative - averaged for an ordinary person without disease or disorder!
     */
+
     private void setMacronutrients() {
         switch (physicalActivity) {
             case  VERY_LOW,LOW -> calculateMacronutrientsForLowActivity();
@@ -116,6 +131,7 @@ public class CaloricDemand implements Serializable {
             case BIG,VERY_BIG -> calculateMacronutrientsForBigActivity();
         }
     }
+
     private void calculateMacronutrientsForLowActivity() {
         double proteinPercent = 0.15;
         double fatPercent = 1 - CARBOHYDRATES_PERCENT - proteinPercent;
@@ -123,6 +139,7 @@ public class CaloricDemand implements Serializable {
         carbohydratesInDiet = calorieNeeded()*CARBOHYDRATES_PERCENT/CaloriesCalculator.ONE_GRAM_OF_CARBOHYDRATES_CALORIES;
         fatInDiet = calorieNeeded() * fatPercent/CaloriesCalculator.ONE_GRAM_OF_FAT_CALORIES;
     }
+
     private void calculateMacronutrientsForAverageActivity() {
         double proteinPercent = 0.19;
         double fatPercent = 1 - CARBOHYDRATES_PERCENT - proteinPercent;
@@ -130,6 +147,7 @@ public class CaloricDemand implements Serializable {
         carbohydratesInDiet = calorieNeeded()*CARBOHYDRATES_PERCENT/CaloriesCalculator.ONE_GRAM_OF_CARBOHYDRATES_CALORIES;
         fatInDiet = calorieNeeded() * fatPercent/CaloriesCalculator.ONE_GRAM_OF_FAT_CALORIES;
     }
+
     private void calculateMacronutrientsForBigActivity() {
         double proteinPercent = 0.21;
         double fatPercent = 1 - CARBOHYDRATES_PERCENT - proteinPercent;

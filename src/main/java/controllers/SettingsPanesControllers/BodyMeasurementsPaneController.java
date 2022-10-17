@@ -27,120 +27,89 @@ public class BodyMeasurementsPaneController {
     private static final int WEIGHT_CONTROL_SERIES_ID = 0;
     @FXML
     private Button addBodyMeasurementsButtonController;
-
     @FXML
     private Button addWeightLinearChartButtonController;
-
     @FXML
     private Label bicepsLabelController;
-
     @FXML
     private TableColumn<BodyMeasurement, String> bicepsTableColumnController;
-
     @FXML
     private TextField bicepsTextFieldController;
-
     @FXML
     private AnchorPane bodyMeasurementsAnchorPaneController;
-
     @FXML
     private Label bodyMeasurementsInfoLabelController;
-
     @FXML
     private TableView<BodyMeasurement> bodyMeasurementsTableViewController;
-
     @FXML
     private Label chestLabelController;
-
     @FXML
     private TableColumn<BodyMeasurement, String> chestTableColumnController;
-
     @FXML
     private TextField chestTextFieldController;
-
     @FXML
     private TableColumn<BodyMeasurement, LocalDate> dateBodyMeasurementsTableViewTableColumnController;
-
     @FXML
     private TableColumn<BodyMeasurement, LocalDate>  dateLinearChartTableViewTableColumnController;
-
     @FXML
     private Label hipLabelController;
-
     @FXML
     private TableColumn<BodyMeasurement, String> hipTableColumnController;
-
     @FXML
     private TextField hipTextFieldController;
-
     @FXML
     private LineChart<String, Integer> lineChartController;
-
     @FXML
     private TableView<LinearChartMeasurement> linearChartTableViewController;
-
     @FXML
     private Label thighLabelController;
-
     @FXML
     private TableColumn<BodyMeasurement, String> thighTableColumnController;
-
     @FXML
     private TextField thighTextFieldController;
-
     @FXML
     private Label tricepsLabelController;
-
     @FXML
     private TableColumn<BodyMeasurement, String> tricepsTableColumnController;
-
     @FXML
     private TextField tricepsTextFieldController;
-
     @FXML
     private Label waistLabelController;
-
     @FXML
     private TableColumn<BodyMeasurement, String> waistTableColumnController;
-
     @FXML
     private TextField waistTextFieldController;
-
     @FXML
     private Label weightControlInfoLabelController;
-
     @FXML
     private Label weightInfoLabelController;
-
     @FXML
     private Label weightMeasurementsInfoLabelController;
-
     @FXML
     private TableColumn<LinearChartMeasurement, String> weightTableColumnController;
-
     @FXML
     private TextField weightTextFieldController;
-
     @FXML
     private Label bodyMeasurementsTitleLabelController;
-
     @FXML
     private DatePicker linearChartDatePickerController;
-
     @FXML
     private DatePicker bodyMeasurementsDatePickerController;
 
     public void initialize() {
     setLanguage(new Language().getBodyMeasurementsLanguage());
     setColumnsSettings();
-    initializeLinearChartTableView();
-    initializeBodyMeasurementsTableView();
-    initializeLinearChart();
+    initializeComponents();
     blockIncorrectTextFieldsValues();
     addRecordToLinearChartTableView();
     addRecordToBodyMeasurementsTableView();
-    initializeTablesDeleteButtons();
 
+    }
+    private void initializeComponents() {
+        initializeLinearChartTableView();
+        initializeBodyMeasurementsTableView();
+        initializeLinearChart();
+        initializeTablesDeleteButtons();
     }
 
     private void setLanguage(BodyMeasurementsLanguage language) {
@@ -167,22 +136,27 @@ public class BodyMeasurementsPaneController {
         addBodyMeasurementsButtonController.setText(language.getAddBodyMeasurementsButtonController());
         bodyMeasurementsTitleLabelController.setText(language.getBodyMeasurementsTitleLabelController());
     }
+
     private void setColumnsSettings() {
         setCellValueFactory();
         setReorderable();
     }
+
     private void setReorderable() {
         setReorderableLinearChartTableView();
         setReorderableBodyMeasurementsTableView();
     }
+
     private void setCellValueFactory() {
         setCellValueFactoryLinearChartTableView();
         setCellValueFactoryBodyMeasurementsTableView();
     }
+
     private void setReorderableLinearChartTableView() {
         dateLinearChartTableViewTableColumnController.setReorderable(false);
         weightTableColumnController.setReorderable(false);
     }
+
     private void setReorderableBodyMeasurementsTableView() {
         dateBodyMeasurementsTableViewTableColumnController.setReorderable(false);
         hipTableColumnController.setReorderable(false);
@@ -192,6 +166,7 @@ public class BodyMeasurementsPaneController {
         tricepsTableColumnController.setReorderable(false);
         waistTableColumnController.setReorderable(false);
     }
+
     private void setCellValueFactoryLinearChartTableView() {
         dateLinearChartTableViewTableColumnController.setCellValueFactory(new PropertyValueFactory<>("date"));
         weightTableColumnController.setCellValueFactory(new PropertyValueFactory<>("weight"));
@@ -206,10 +181,12 @@ public class BodyMeasurementsPaneController {
         tricepsTableColumnController.setCellValueFactory(new PropertyValueFactory<>("triceps"));
         waistTableColumnController.setCellValueFactory(new PropertyValueFactory<>("waist"));
     }
+
     private void blockIncorrectTextFieldsValues() {
         blockNumberTextFieldsIncorrectValues();
         blockDatePickerIncorrectValues();
     }
+
     private void blockNumberTextFieldsIncorrectValues() {
         setTextFieldOnlyNumeric(weightTextFieldController);
         setTextFieldOnlyNumeric(hipTextFieldController);
@@ -219,10 +196,12 @@ public class BodyMeasurementsPaneController {
         setTextFieldOnlyNumeric(tricepsTextFieldController);
         setTextFieldOnlyNumeric(waistTextFieldController);
     }
+
     private void blockDatePickerIncorrectValues() {
         linearChartDatePickerController.setEditable(false);
         bodyMeasurementsDatePickerController.setEditable(false);
     }
+
     private void setTextFieldOnlyNumeric(TextField textField) {
         textField.textProperty().addListener((observableValue, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) {
@@ -232,6 +211,8 @@ public class BodyMeasurementsPaneController {
 
         });
     }
+
+
     private void addRecordToLinearChartTableView() {
         addWeightLinearChartButtonController.addEventFilter(MouseEvent.MOUSE_CLICKED, mouseEvent -> {
             if (!areAddRecordToLinearChartTableViewTextFieldsEmpty()) {
@@ -240,46 +221,57 @@ public class BodyMeasurementsPaneController {
             }
                 });
     }
+
     private void safeLinearChartTableViewRecord() {
         LinearChartMeasurement linearChartMeasurement = createLinearChartMeasurement();
         addRecordToSafeLinearChartTableView(linearChartMeasurement);
         addRecordToObservableLinearChartTableView(linearChartMeasurement);
     }
+
     private void addRecordToObservableLinearChartTableView(LinearChartMeasurement linearChartMeasurement) {
         linearChartTableViewController.getItems().add(linearChartMeasurement);
         Collections.sort(linearChartTableViewController.getItems());
     }
+
     private void addRecordToSafeLinearChartTableView(LinearChartMeasurement linearChartMeasurement) {
         BodyMeasurements.linearChartMeasurementsToSafe.add(linearChartMeasurement);
         Collections.sort(BodyMeasurements.linearChartMeasurementsToSafe);
     }
+
     private boolean isTextFieldEmpty(TextField textField) {
         if(textField == null) return true;
         else return textField.getText().equals(EMPTY_FIELD);
     }
+
     private boolean areAddRecordToLinearChartTableViewTextFieldsEmpty() {
         return isTextFieldEmpty(weightTextFieldController) || isTextFieldEmpty(linearChartDatePickerController.getEditor());
     }
+
     private LinearChartMeasurement createLinearChartMeasurement() {
         return new LinearChartMeasurement(( linearChartDatePickerController.getValue()),weightTextFieldController.getText());
     }
+
     private void initializeLinearChartTableView() {
         linearChartTableViewController.getItems().addAll(BodyMeasurements.linearChartMeasurementsToSafe);
     }
+
     private void addRecordToBodyMeasurementsTableView() {
         addBodyMeasurementsButtonController.addEventFilter(MouseEvent.MOUSE_CLICKED, mouseEvent -> {
             if (!areAddRecordToBodyMeasurementsTableViewTextFieldsEmpty()) safeBodyMeasurementsTableViewRecord();
         });
     }
+
     private void safeBodyMeasurementsTableViewRecord() {
         BodyMeasurement bodyMeasurement = createBodyMeasurement();
         addRecordToSafeBodyMeasurementsTableView(bodyMeasurement);
         addRecordToObservableBodyMeasurementsTableView(bodyMeasurement);
     }
+
     private void addRecordToObservableBodyMeasurementsTableView(BodyMeasurement bodyMeasurement) {
         bodyMeasurementsTableViewController.getItems().add(bodyMeasurement);
         Collections.sort(bodyMeasurementsTableViewController.getItems());
     }
+
     private void addRecordToSafeBodyMeasurementsTableView(BodyMeasurement bodyMeasurement) {
         BodyMeasurements.bodyMeasurementsToSafe.add(bodyMeasurement);
         Collections.sort(BodyMeasurements.bodyMeasurementsToSafe);
@@ -291,6 +283,7 @@ public class BodyMeasurementsPaneController {
                 || isTextFieldEmpty(tricepsTextFieldController) || isTextFieldEmpty(waistTextFieldController) ||
                 isTextFieldEmpty(bodyMeasurementsDatePickerController.getEditor());
     }
+
     private BodyMeasurement createBodyMeasurement() {
         return new BodyMeasurement(bodyMeasurementsDatePickerController.getValue(),
                                    hipTextFieldController.getText(),
@@ -301,9 +294,11 @@ public class BodyMeasurementsPaneController {
                                    waistTextFieldController.getText()
         );
     }
+
     private void initializeBodyMeasurementsTableView() {
         bodyMeasurementsTableViewController.getItems().addAll(BodyMeasurements.bodyMeasurementsToSafe);
     }
+
     private void initializeTablesDeleteButtons() {
         addDeleteButtonToBodyMeasurementsTableView(bodyMeasurementsTableViewController);
         addDeleteButtonToLinearTableView(linearChartTableViewController);
@@ -345,6 +340,7 @@ public class BodyMeasurementsPaneController {
         tableView.getColumns().add(colBtn);
 
     }
+
     private void addDeleteButtonToBodyMeasurementsTableView(TableView<BodyMeasurement> tableView) {
         TableColumn<BodyMeasurement, Void> colBtn = new TableColumn("X");
         Callback<TableColumn<BodyMeasurement, Void>, TableCell<BodyMeasurement, Void>> cellFactory = new Callback<>() {
@@ -380,6 +376,7 @@ public class BodyMeasurementsPaneController {
         setAddedTableColumnSetting(colBtn);
         tableView.getColumns().add(colBtn);
     }
+
     private void setAddedTableColumnSetting(TableColumn tableColumn) {
         tableColumn.setMinWidth(30);
         tableColumn.setPrefWidth(30);
@@ -387,6 +384,7 @@ public class BodyMeasurementsPaneController {
         tableColumn.setReorderable(false);
         tableColumn.setEditable(false);
     }
+
     private void setDeleteButton(Button btn) {
         btn.setMinSize(15,15);
         btn.setPrefSize(15,15);
@@ -397,15 +395,18 @@ public class BodyMeasurementsPaneController {
         btn.setGraphic(delete);
         btn.setContentDisplay(ContentDisplay.CENTER);
     }
+
     private void deleteRecordFromTableView(TableView tableView, List list, int index) {
         tableView.getItems().remove(index);
         list.remove(index);
     }
+
     private void initializeLinearChart() {
         lineChartController.getData().clear();
         lineChartController.getData().add(createLinearChartSeries());
 
     }
+
     private XYChart.Series<String,Integer> createLinearChartSeries() {
         XYChart.Series<String,Integer> series = new XYChart.Series<>();
         for (int i = 0; i < BodyMeasurements.linearChartMeasurementsToSafe.size(); i++) {

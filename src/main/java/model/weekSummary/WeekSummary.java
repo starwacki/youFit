@@ -1,66 +1,62 @@
 package model.weekSummary;
 
-import io.ProductTableViewsReader;
-import model.product.Meals;
-
-import java.time.DayOfWeek;
-import java.util.ArrayList;
+import dao.QueryExecutor;
+import model.DateController;
+import model.product.Product;
+import model.user.User;
+import java.time.LocalDate;
 import java.util.List;
 
 public class WeekSummary {
-private List<Meals> mondayProducts;
-private List<Meals> tuesdayProducts;
-private List<Meals> wednesdayProducts;
-private List<Meals> thursdayProducts;
-private List<Meals> fridayProducts;
-private List<Meals> saturdayProducts;
-private List<Meals> sundayProducts;
+private List<List<Product>> mondayProducts;
+private List<List<Product>> tuesdayProducts;
+private List<List<Product>> wednesdayProducts;
+private List<List<Product>> thursdayProducts;
+private List<List<Product>> fridayProducts;
+private List<List<Product>> saturdayProducts;
+private List<List<Product>> sundayProducts;
 
     public WeekSummary() {
-       mondayProducts = addDayMeals(DayOfWeek.MONDAY);
-       tuesdayProducts = addDayMeals(DayOfWeek.TUESDAY);
-       wednesdayProducts = addDayMeals(DayOfWeek.WEDNESDAY);
-       thursdayProducts = addDayMeals(DayOfWeek.THURSDAY);
-       fridayProducts = addDayMeals(DayOfWeek.FRIDAY);
-       saturdayProducts = addDayMeals(DayOfWeek.SATURDAY);
-       sundayProducts = addDayMeals(DayOfWeek.SUNDAY);
+        DateController dateController = new DateController();
+       mondayProducts = addDayMeals(dateController.getMondayDate());
+       tuesdayProducts = addDayMeals(dateController.getTuesdayDate());
+       wednesdayProducts = addDayMeals(dateController.getWednesdayDate());
+       thursdayProducts = addDayMeals(dateController.getThursdayDate());
+       fridayProducts = addDayMeals(dateController.getFridayDate());
+       saturdayProducts = addDayMeals(dateController.getSaturdayDate());
+       sundayProducts = addDayMeals(dateController.getSundayDate());
 
     }
-    private List<Meals> addDayMeals(DayOfWeek days) {
-        List<Meals> list = new ArrayList<>();
-        Meals meals = new Meals(ProductTableViewsReader.getProductListFromMeal(days,"BREAKFAST"),
-                                ProductTableViewsReader.getProductListFromMeal(days,"BRUNCH"),
-                                ProductTableViewsReader.getProductListFromMeal(days,"SUPPER"),
-                                ProductTableViewsReader.getProductListFromMeal(days,"LUNCH"));
-        list.add(meals);
-        return list;
+    private List<List<Product>> addDayMeals(LocalDate localDate) {
+        List<List<Product>> dayProducts = QueryExecutor.allUserDayMeals(User.getUserID(),localDate);
+        return dayProducts;
     }
 
-    public List<Meals> getMondayProducts() {
+    public List<List<Product>> getMondayProducts() {
         return mondayProducts;
     }
 
-    public List<Meals> getTuesdayProducts() {
+    public List<List<Product>> getTuesdayProducts() {
         return tuesdayProducts;
     }
 
-    public List<Meals> getWednesdayProducts() {
+    public List<List<Product>> getWednesdayProducts() {
         return wednesdayProducts;
     }
 
-    public List<Meals> getThursdayProducts() {
+    public List<List<Product>> getThursdayProducts() {
         return thursdayProducts;
     }
 
-    public List<Meals> getFridayProducts() {
+    public List<List<Product>> getFridayProducts() {
         return fridayProducts;
     }
 
-    public List<Meals> getSaturdayProducts() {
+    public List<List<Product>> getSaturdayProducts() {
         return saturdayProducts;
     }
 
-    public List<Meals> getSundayProducts() {
+    public List<List<Product>> getSundayProducts() {
         return sundayProducts;
     }
 }
