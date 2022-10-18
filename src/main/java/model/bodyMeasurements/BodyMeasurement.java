@@ -30,4 +30,32 @@ public class BodyMeasurement implements Serializable,Comparable<BodyMeasurement>
     public int compareTo(BodyMeasurement o) {
         return this.date.compareTo(o.date);
     }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public String getHip() {
+        return hip;
+    }
+
+    public String getChest() {
+        return chest;
+    }
+
+    public String getThigh() {
+        return thigh;
+    }
+
+    public String getBiceps() {
+        return biceps;
+    }
+
+    public String getTriceps() {
+        return triceps;
+    }
+
+    public String getWaist() {
+        return waist;
+    }
 }

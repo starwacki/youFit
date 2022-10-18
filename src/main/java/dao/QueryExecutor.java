@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class QueryExecutor {
@@ -199,6 +200,13 @@ public class QueryExecutor {
 
     private static int getProductIdInProductBaseList (ResultSet resultSet) throws SQLException {
       return   resultSet.getInt(1)-1;
+    }
+
+    public static void changeUserPassword(String newPassword) {
+        updateQuery("""
+                       UPDATE users
+                       SET password = '""" + newPassword + "'\n"
+        +             "WHERE user_id = " + User.getUserID());
     }
 
 

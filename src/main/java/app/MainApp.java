@@ -10,6 +10,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import model.product.ProductBase;
+import model.user.User;
 
 public class MainApp extends Application {
 

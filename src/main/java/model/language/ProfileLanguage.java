@@ -15,6 +15,11 @@ public class ProfileLanguage implements Serializable {
     private  String newPasswordLabelController;
     private  String changePasswordButtonController;
     private String  profileInfoTitleLabelController;
+    private String emptyFieldErrorLabelController;
+    private String incorrectLengthErrorLabelController;
+    private String notTheSamePasswordErrorLabelController;
+
+
 
     ProfileLanguage (LanguageCode languageCode) {
         if (languageCode==LanguageCode.PL) createPolishTranslation();
@@ -30,6 +35,9 @@ public class ProfileLanguage implements Serializable {
         newPasswordLabelController = "Nowe hasło:";
         changePasswordButtonController = "Zmień";
         profileInfoTitleLabelController = "Profil";
+        emptyFieldErrorLabelController = "Pola są puste!";
+        incorrectLengthErrorLabelController = "Hasło musi mieć od 6 do 20 znaków!";
+        notTheSamePasswordErrorLabelController = "Wpisane hasło jest nieprawidłowe!";
     }
     private void createEnglishTranslation() {
         changeProfilePhotoButtonController = "Change photo";
@@ -41,6 +49,9 @@ public class ProfileLanguage implements Serializable {
         newPasswordLabelController = "New password:";
         changePasswordButtonController = "Change";
         profileInfoTitleLabelController = "Profile";
+        emptyFieldErrorLabelController = "Text Fields are empty!";
+        incorrectLengthErrorLabelController = "Password must have between 5 and 20 characters";
+        notTheSamePasswordErrorLabelController = "The entered password is incorrect!";
     }
 
     public String getChangeProfilePhotoButtonController() {
@@ -79,4 +90,15 @@ public class ProfileLanguage implements Serializable {
         return profileInfoTitleLabelController;
     }
 
+    public String getEmptyFieldErrorLabelController() {
+        return emptyFieldErrorLabelController;
+    }
+
+    public String getIncorrectLengthErrorLabelController() {
+        return incorrectLengthErrorLabelController;
+    }
+
+    public String getNotTheSamePasswordErrorLabelController() {
+        return notTheSamePasswordErrorLabelController;
+    }
 }
