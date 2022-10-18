@@ -22,6 +22,12 @@ public class EditPaneLanguage implements Serializable {
     private String fatPer100gInfoLabelController;
     private String addNewProductToYourBase;
     private String changeListViewButtonController;
+    private String emptyTextFieldError;
+    private String incorrectSumOfMicronutrientsCaloriesError;
+    private String incorrectSumOfMicronutrientsPer100gError;
+    private String incorrectMicronutrientsValuesError;
+    private String productSuccessivelyAddedInfo;
+
     EditPaneLanguage(LanguageCode languageCode) {
         if (languageCode==LanguageCode.PL) createPolishTranslation();
         if (languageCode==LanguageCode.EN) createEnglishTranslation();
@@ -43,6 +49,11 @@ public class EditPaneLanguage implements Serializable {
         carbsPer100gInfoLabelController = "Węglo. /100g";
         fatPer100gInfoLabelController = "Tłuszcze /100g";
         addNewProductToYourBase = "Dodaj";
+        emptyTextFieldError = "Uzupełnij wszystkie pola!";
+        incorrectSumOfMicronutrientsPer100gError = "Łączna gramatura wszystkich makroskładników nie może być większa od 100g!";
+        incorrectSumOfMicronutrientsCaloriesError = "Produkt z niepoprawnymi wartościami makroskładników! ";
+        incorrectMicronutrientsValuesError = "Makroskładnik na 100g produktu nie może być większy od 100g!";
+        productSuccessivelyAddedInfo = "Produkt został dodany!";
     }
     private void createEnglishTranslation() {
         percentageOfMacronutrientsLabelController = "percentage of macronutrients:";
@@ -61,6 +72,11 @@ public class EditPaneLanguage implements Serializable {
         carbsPer100gInfoLabelController = "Carbs. /100g";
         fatPer100gInfoLabelController = "Fat /100g";
         addNewProductToYourBase = "Add";
+        emptyTextFieldError = "Text fields are empty!";
+        incorrectSumOfMicronutrientsPer100gError = "Total sum of micronutrients grammages cannot be greater than 100g!";
+        incorrectSumOfMicronutrientsCaloriesError = "Product with incorrect micronutrients values! ";
+        incorrectMicronutrientsValuesError = "Micronutrient per 100g of product cannot be greater than 100g!";
+        productSuccessivelyAddedInfo = "Product added!";
 
     }
 
@@ -126,5 +142,25 @@ public class EditPaneLanguage implements Serializable {
 
     public String getChangeListViewButtonController() {
         return changeListViewButtonController;
+    }
+
+    public String getEmptyTextFieldError() {
+        return emptyTextFieldError;
+    }
+
+    public String getIncorrectSumOfMicronutrientsCaloriesError() {
+        return incorrectSumOfMicronutrientsCaloriesError;
+    }
+
+    public String getIncorrectSumOfMicronutrientsPer100gError() {
+        return incorrectSumOfMicronutrientsPer100gError;
+    }
+
+    public String getIncorrectMicronutrientsValuesError() {
+        return incorrectMicronutrientsValuesError;
+    }
+
+    public String getProductSuccessivelyAddedInfo() {
+        return productSuccessivelyAddedInfo;
     }
 }

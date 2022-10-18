@@ -198,16 +198,23 @@ public class QueryExecutor {
                        WHERE user_id =""" +" " + User.getUserID() + " AND meal_id = " + mealID + " AND date = '" + DateController.getActualClickedDate() + "' AND product_index_in_meal > " + removedIndex);
     }
 
-    private static int getProductIdInProductBaseList (ResultSet resultSet) throws SQLException {
-      return   resultSet.getInt(1)-1;
-    }
-
     public static void changeUserPassword(String newPassword) {
         updateQuery("""
                        UPDATE users
                        SET password = '""" + newPassword + "'\n"
         +             "WHERE user_id = " + User.getUserID());
     }
+
+    public static void putNewProductToBase(String productName, String producerName,double caloriesPer100g,
+                                           double proteinsPer100g,double carbohydratesPer100g, double fatPer100g) {
+        updateQuery("INSERT INTO products VALUES(null,1,'"
+                + productName + "','" +producerName+"',"+caloriesPer100g+"," +proteinsPer100g+","+carbohydratesPer100g+","+fatPer100g+");");
+    }
+
+    private static int getProductIdInProductBaseList (ResultSet resultSet) throws SQLException {
+        return   resultSet.getInt(1)-1;
+    }
+
 
 
     }
