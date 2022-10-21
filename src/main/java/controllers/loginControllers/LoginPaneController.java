@@ -156,6 +156,7 @@ public class LoginPaneController {
         User.setUserID(QueryExecutor.getUserID(usernameTextFieldController.getText()));
         User.setDateOfBirth(QueryExecutor.getUserDateOfBirth(usernameTextFieldController.getText()));
         User.setEmail(QueryExecutor.getUserEmail(usernameTextFieldController.getText()));
+        User.setImage(QueryExecutor.getImage());
     }
 
     private boolean isCorrectPassword() {

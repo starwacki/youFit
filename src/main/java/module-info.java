@@ -3,6 +3,9 @@ module com.example.kalkulatorkalorii {
     requires javafx.graphics;
     requires javafx.controls;
     requires java.sql;
+    requires java.desktop;
+
+
 
     opens app to javafx.graphics;
     opens controllers to javafx.fxml;

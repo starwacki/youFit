@@ -1,5 +1,6 @@
 package model.user;
 
+import javafx.scene.image.Image;
 import java.time.LocalDate;
 
 public class User {
@@ -7,6 +8,7 @@ public class User {
     private static  String nickname;
     private static String email;
     private static LocalDate dateOfBirth;
+    private static Image image;
 
     public static int getUserID() {
         return userID;
@@ -38,5 +40,13 @@ public class User {
 
     public static void setDateOfBirth(LocalDate dateOfBirth) {
         User.dateOfBirth = dateOfBirth;
+    }
+
+    public static Image getImage() {
+        return image;
+    }
+
+    public static void setImage(Image image) {
+        User.image = image;
     }
 }

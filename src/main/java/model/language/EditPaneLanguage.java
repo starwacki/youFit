@@ -21,7 +21,6 @@ public class EditPaneLanguage implements Serializable {
     private String caloriesPer100gInfoLabelController;
     private String fatPer100gInfoLabelController;
     private String addNewProductToYourBase;
-    private String changeListViewButtonController;
     private String emptyTextFieldError;
     private String incorrectSumOfMicronutrientsCaloriesError;
     private String incorrectSumOfMicronutrientsPer100gError;
@@ -39,9 +38,8 @@ public class EditPaneLanguage implements Serializable {
         fatPieCharLabelController = "Tłuszcze:";
         selectProductToAddInfoLabelController = "wybierz produkt do dodania";
         searchLabelController = "Szukaj";
-        changeListViewButtonController = "Twoje produkty";
         weightInfoLabelController = "Waga";
-        addNewProductToYourBaseInfoLabelController = "Dodaj nowy produkt do Twojej bazy (Wszystkie pola muszą byc pełne)";
+        addNewProductToYourBaseInfoLabelController = "Dodaj nowy produkt do bazy (Wszystkie pola muszą byc pełne)";
         productNameInfoLabelController = "Nazwa:";
         producerInfoLabelController = "Producent:";
         caloriesPer100gInfoLabelController = "Kalorie /100g";
@@ -62,9 +60,8 @@ public class EditPaneLanguage implements Serializable {
         fatPieCharLabelController = "Fat:";
         selectProductToAddInfoLabelController = "select products to add:";
         searchLabelController = "Search";
-        changeListViewButtonController = "Personal products";
         weightInfoLabelController = "Weight";
-        addNewProductToYourBaseInfoLabelController = "Add new product to your base (All textfield must be completed)";
+        addNewProductToYourBaseInfoLabelController = "Add new product to base (All textfield must be completed)";
         productNameInfoLabelController = "Product name";
         producerInfoLabelController = "Producer";
         caloriesPer100gInfoLabelController = "Calories /100g";
@@ -138,10 +135,6 @@ public class EditPaneLanguage implements Serializable {
 
     public String getAddNewProductToYourBase() {
         return addNewProductToYourBase;
-    }
-
-    public String getChangeListViewButtonController() {
-        return changeListViewButtonController;
     }
 
     public String getEmptyTextFieldError() {

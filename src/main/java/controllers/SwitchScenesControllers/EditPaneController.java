@@ -24,8 +24,6 @@ public class EditPaneController {
     private static final double POSSIBLE_VALUE_OF_THE_DISCREPANCY_IN_PERCENT = 0.15;
     private static final String ERROR_STYLE = "-fx-text-fill: red";
     private static final String SUCCESSIVELY_ADDED_STYLE = "-fx-text-fill: green";
-    private static final String INCORRECT_MICRONUTRIENT_VALUE_TEXT_STYLE = "-fx-text-fill: red";
-    private static final String CORRECT_MICRONUTRIENT_VALUE_TEXT_STYLE = "-fx-text-fill: black";
     private static  String EMPTY_TEXT_FIELD_ERROR = "empty text field error";
     private static  String INCORRECT_SUM_OF_MICRONUTRIENTS_CALORIES_ERROR = "incorrect sum of micronutrients calories ERROR";
     private static  String INCORRECT_SUM_OF_MICRONUTRIENTS_PER_100G_ERROR = "incorrect sum of micronutrients per 100g ERROR";
@@ -51,8 +49,6 @@ public class EditPaneController {
     private ListView<ProductFromBase> productsBaseListView;
     @FXML
     private TextField searchTextFieldController;
-    @FXML
-    private Button changeListViewButtonController;
     @FXML
     private Button addNewProductToYourBase;
     @FXML
@@ -100,7 +96,6 @@ public class EditPaneController {
         listview =  ProductBase.productBase;
         addProductToListView(listview);
         setTextFieldOnlyNumeric(weightTextFieldController);
-        changeListView();
         searchProduct();
         blockAllTextFieldsIncorrectValues();
         addNewProductToBaseByClickedButton();
@@ -112,7 +107,6 @@ public class EditPaneController {
         fatPieCharLabelController.setText(language.getFatPieCharLabelController());
         selectProductToAddInfoLabelController.setText(language.getSelectProductToAddInfoLabelController());
         searchLabelController.setText(language.getSearchLabelController());
-        changeListViewButtonController.setText(language.getChangeListViewButtonController());
         weightInfoLabelController.setText(language.getWeightInfoLabelController());
         addNewProductToYourBaseInfoLabelController.setText(language.getAddNewProductToYourBaseInfoLabelController());
         productNameInfoLabelController.setText(language.getProductNameInfoLabelController());
@@ -193,14 +187,6 @@ public class EditPaneController {
                    else addProductToListView(listview.stream().filter(s -> s.toString().toLowerCase().contains(searchTextFieldController.getText())).collect(Collectors.toList()));
                }
        );}
-
-    private void changeListView() {
-        changeListViewButtonController.addEventFilter(MouseEvent.MOUSE_CLICKED,mouseEvent -> {
-            if (MainEditPaneController.isMainBase()) setListView(ProductBase.productBase,false);
-            else setListView(ProductBase.productBase,true);
-
-        });
-    }
 
     private void setListView(List<ProductFromBase> listView, boolean isMainBase) {
         this.listview = listView;
@@ -319,7 +305,4 @@ public class EditPaneController {
         addProductToListView(listview);
 
     }
-
-
-
 }

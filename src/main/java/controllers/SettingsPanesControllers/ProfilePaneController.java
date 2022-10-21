@@ -6,12 +6,16 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.FileChooser;
 import model.language.Language;
 import model.language.ProfileLanguage;
 import model.user.User;
+import java.io.*;
+import java.sql.SQLException;
 
 public class ProfilePaneController {
     private static final int MINIMUM_PASSWORD_LENGTH = 5;
@@ -62,6 +66,8 @@ public class ProfilePaneController {
         initializeUserLabels();
         blockAllIncorrectTextFieldsValues();
         changePasswordByClickedButton();
+        chooseUserPhotoByClickedButton();
+        initializeUserImage();
 
 
     }
@@ -147,5 +153,53 @@ public class ProfilePaneController {
         return newPasswordPasswordFieldController.getText().length() >= MINIMUM_PASSWORD_LENGTH &&
                newPasswordPasswordFieldController.getText().length() < MAXIMUM_PASSWORD_LENGTH;
     }
+
+    private void chooseUserPhotoByClickedButton() {
+        changeProfilePhotoButtonController.setOnAction(
+                e -> {
+                    File file = chooseFile();
+                    if (isFileCorrect(file)) {
+                       userPhotoImageViewController.setImage(new Image(file.getAbsolutePath()));
+                       User.setImage(new Image(file.getAbsolutePath()));
+                        try {
+                            QueryExecutor.setImage(file);
+                         } catch (SQLException ignored) {
+                        }
+                    }
+                }
+        );
+    }
+
+    private void addFilterToFileChooser(FileChooser fileChooser) {
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("JPG", "*.jpg"),
+                new FileChooser.ExtensionFilter("PNG", "*.png")
+        );
+    }
+
+    private Image safeImageView(File file) {
+        return new Image(file.getAbsolutePath());
+    }
+
+    private File chooseFile() {
+        FileChooser fileChooser = new FileChooser();
+        addFilterToFileChooser(fileChooser);
+        return fileChooser.showOpenDialog(null);
+    }
+
+    private boolean isFileCorrect(File file) {
+        return file!=null && !safeImageView(file).errorProperty().getValue();
+    }
+
+    private void initializeUserImage() {
+        if (User.getImage() != null) {
+            userPhotoImageViewController.setImage(User.getImage());
+        }
+    }
+
+
+
+
+
 
 }

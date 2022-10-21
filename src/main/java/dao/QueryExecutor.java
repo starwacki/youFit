@@ -1,17 +1,15 @@
 package dao;
 
+import javafx.scene.image.Image;
 import model.DateController;
 import model.product.Product;
 import model.product.ProductBase;
 import model.product.ProductFromBase;
 import model.user.User;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.io.*;
+import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class QueryExecutor {
@@ -32,7 +30,10 @@ public class QueryExecutor {
     private static final int SQL_USER_ID_COLUMN_INDEX = 1;
     private static final int SQL_DATE_OF_BIRTH_COLUMN_INDEX = 1;
     private static final int SQL_WEIGHT_COLUMN_INDEX = 2;
+    private static final int SQL_PHOTO_COLUMN_INDEX = 2;
     private static final int NULL_VALUE = -1;
+    private static final int SQL_PHOTO = 1;
+
     public static ResultSet executeSelect(String selectQuery) {
         try {
             Connection connection = DataBaseConnector.connect();
@@ -68,8 +69,7 @@ public class QueryExecutor {
         try {
             if (resultSet.next()) {
                 return resultSet.getString(SQL_USERNAME_COLUMN_INDEX).equals(username);
-            }
-            else return false;
+            } else return false;
         } catch (SQLException e) {
             return false;
         }
@@ -80,8 +80,7 @@ public class QueryExecutor {
         try {
             if (resultSet.next()) {
                 return resultSet.getString(SQL_EMAIL_COLUMN_INDEX).equals(email);
-            }
-            else return false;
+            } else return false;
         } catch (SQLException e) {
             return false;
         }
@@ -91,17 +90,17 @@ public class QueryExecutor {
         try {
             Connection connection = DataBaseConnector.connect();
             Statement statement = connection.createStatement();
-            statement.execute("INSERT INTO users VALUES (null,'" + username +"','" +password +"','"+email+"','"+date+"');");
+            statement.execute("INSERT INTO users VALUES (null,'" + username + "','" + password + "','" + email + "','" + date + "');");
         } catch (SQLException e) {
             throw new RuntimeException(e.getMessage());
         }
     }
 
-    public static List<ProductFromBase> productBase()  {
+    public static List<ProductFromBase> productBase() {
         List<ProductFromBase> productsBase = new ArrayList<>();
         ResultSet resultSet = QueryExecutor.executeSelect("SELECT * FROM youfit.products");
         try {
-            int i =0;
+            int i = 0;
             while (resultSet.next()) {
                 ProductFromBase product = new ProductFromBase(resultSet.getString(SQL_PRODUCT_NAME_COLUMN_INDEX),
                         resultSet.getString(SQL_PRODUCER_COLUMN_INDEX),
@@ -109,7 +108,7 @@ public class QueryExecutor {
                         resultSet.getDouble(SQL_PROTEINS_PER_100G_COLUMN_INDEX),
                         resultSet.getDouble(SQL_CARBOHYDRATES_PER_100G_COLUMN_INDEX),
                         resultSet.getDouble(SQL_FAT_PER_100G_COLUMN_INDEX),
-                        NO_WEIGHT_VALUE,i++);
+                        NO_WEIGHT_VALUE, i++);
                 productsBase.add(product);
             }
         } catch (SQLException e) {
@@ -119,28 +118,28 @@ public class QueryExecutor {
         return productsBase;
     }
 
-    public static List<Product> getMealProducts(int userID, LocalDate localDate,int mealID) {
+    public static List<Product> getMealProducts(int userID, LocalDate localDate, int mealID) {
         List<Product> mealProducts = new ArrayList<>();
         ResultSet resultSet = QueryExecutor.executeSelect("SELECT product_id, product_weight, product_index_in_meal FROM youfit.youfitbase where user_id = " + userID + " " +
-                "&& date = '" + localDate + "' && meal_id = " + mealID +";");
+                "&& date = '" + localDate + "' && meal_id = " + mealID + ";");
         try {
             while (resultSet.next()) {
                 Product product = ProductBase.productBase.get(getProductIdInProductBaseList(resultSet));
                 product.setWeight(resultSet.getDouble(SQL_WEIGHT_COLUMN_INDEX));
                 mealProducts.add(product);
-             }
+            }
         } catch (SQLException sqlException) {
             return null;
         }
         return mealProducts;
     }
 
-    public static List<List<Product>> allUserDayMeals(int userID,LocalDate localDate) {
+    public static List<List<Product>> allUserDayMeals(int userID, LocalDate localDate) {
         List<List<Product>> listOfDayMeals = new ArrayList<>();
-        listOfDayMeals.add(getMealProducts(userID,localDate,SQL_BREAKFAST_INDEX));
-        listOfDayMeals.add(getMealProducts(userID,localDate,SQL_BRUNCH_INDEX));
-        listOfDayMeals.add(getMealProducts(userID,localDate,SQL_LUNCH_INDEX));
-        listOfDayMeals.add(getMealProducts(userID,localDate,SQL_SUPPER_INDEX));
+        listOfDayMeals.add(getMealProducts(userID, localDate, SQL_BREAKFAST_INDEX));
+        listOfDayMeals.add(getMealProducts(userID, localDate, SQL_BRUNCH_INDEX));
+        listOfDayMeals.add(getMealProducts(userID, localDate, SQL_LUNCH_INDEX));
+        listOfDayMeals.add(getMealProducts(userID, localDate, SQL_SUPPER_INDEX));
         return listOfDayMeals;
     }
 
@@ -177,45 +176,78 @@ public class QueryExecutor {
         }
     }
 
-    public static void addProductToBase(int mealID,int productID, double productWeight, int product_index_in_meal) {
-         updateQuery("INSERT INTO youfitbase VALUES("+ User.getUserID() +"," + mealID +","+productID+","
-                     + "'"+DateController.getActualClickedDate()+"',"+productWeight+","+product_index_in_meal+","
-                     + "null)");
-        }
+    public static void addProductToBase(int mealID, int productID, double productWeight, int product_index_in_meal) {
+        updateQuery("INSERT INTO youfitbase VALUES(" + User.getUserID() + "," + mealID + "," + productID + ","
+                + "'" + DateController.getActualClickedDate() + "'," + productWeight + "," + product_index_in_meal + ","
+                + "null)");
+    }
+
     public static void deleteProductFromBase(int mealID, int product_index_in_meal) {
         updateQuery("DELETE FROM youfitbase WHERE user_id = " + User.getUserID() + " AND meal_id = " + mealID +
-                    " AND date = '"+DateController.getActualClickedDate() +"' AND product_index_in_meal = " + product_index_in_meal + ";");
+                " AND date = '" + DateController.getActualClickedDate() + "' AND product_index_in_meal = " + product_index_in_meal + ";");
     }
 
 
     /* Removing product from sql base is based on USER ID, DATE, MEAL and product index in meal -
      method sets the correct values for product index in meal > removed product index in meal.
      */
-    public static void updateProductIndexInMealFromBase(int mealID,int removedIndex ) {
+    public static void updateProductIndexInMealFromBase(int mealID, int removedIndex) {
         updateQuery("""
-                       UPDATE youfitbase
-                       SET product_index_in_meal = product_index_in_meal - 1
-                       WHERE user_id =""" +" " + User.getUserID() + " AND meal_id = " + mealID + " AND date = '" + DateController.getActualClickedDate() + "' AND product_index_in_meal > " + removedIndex);
+                UPDATE youfitbase
+                SET product_index_in_meal = product_index_in_meal - 1
+                WHERE user_id =""" + " " + User.getUserID() + " AND meal_id = " + mealID + " AND date = '" + DateController.getActualClickedDate() + "' AND product_index_in_meal > " + removedIndex);
     }
 
     public static void changeUserPassword(String newPassword) {
         updateQuery("""
-                       UPDATE users
-                       SET password = '""" + newPassword + "'\n"
-        +             "WHERE user_id = " + User.getUserID());
+                UPDATE users
+                SET password = '""" + newPassword + "'\n"
+                + "WHERE user_id = " + User.getUserID());
     }
 
-    public static void putNewProductToBase(String productName, String producerName,double caloriesPer100g,
-                                           double proteinsPer100g,double carbohydratesPer100g, double fatPer100g) {
+    public static void putNewProductToBase(String productName, String producerName, double caloriesPer100g,
+                                           double proteinsPer100g, double carbohydratesPer100g, double fatPer100g) {
         updateQuery("INSERT INTO products VALUES(null,1,'"
-                + productName + "','" +producerName+"',"+caloriesPer100g+"," +proteinsPer100g+","+carbohydratesPer100g+","+fatPer100g+");");
+                + productName + "','" + producerName + "'," + caloriesPer100g + "," + proteinsPer100g + "," + carbohydratesPer100g + "," + fatPer100g + ");");
     }
 
-    private static int getProductIdInProductBaseList (ResultSet resultSet) throws SQLException {
-        return   resultSet.getInt(1)-1;
+    private static int getProductIdInProductBaseList(ResultSet resultSet) throws SQLException {
+        return resultSet.getInt(1) - 1;
+    }
+
+    public static void setImage(File file) throws SQLException {
+        deleteOldImage();
+        try{
+            Connection con= DataBaseConnector.connect();
+            PreparedStatement ps=con.prepareStatement("INSERT into users_profile_photo values(?,?)");
+            ps.setInt(SQL_USER_ID_COLUMN_INDEX,User.getUserID());
+
+            FileInputStream fin=new FileInputStream(file.getAbsolutePath());
+            ps.setBinaryStream(SQL_PHOTO_COLUMN_INDEX,fin,fin.available());
+            ps.executeUpdate();
+            con.close();
+        }catch (Exception e) {e.printStackTrace();}
+    }
+
+    public static void deleteOldImage() {
+            updateQuery("DELETE FROM users_profile_photo WHERE user_id = " + User.getUserID() + ";");
     }
 
 
+    public static Image getImage() {
+        try {
 
+            ResultSet resultSet = executeSelect("Select photo FROM users_profile_photo WHERE user_id = " + User.getUserID());
+            if (resultSet.next()) {
+               Blob blob = resultSet.getBlob(SQL_PHOTO);
+               InputStream inputStream = blob.getBinaryStream();
+               Image image = new Image(inputStream);
+              return image;
+            }
+        } catch (SQLException ioException) {
+            return null;
+        }
+        return null;
     }
+}
 

@@ -12,7 +12,7 @@
    <children>
       <AnchorPane prefHeight="280.0" prefWidth="282.0" style="-fx-border-color: white;" AnchorPane.bottomAnchor="212.0" AnchorPane.leftAnchor="14.0">
          <children>
-            <ImageView fx:id="userPhotoImageViewController" fitHeight="280.0" fitWidth="282.0" layoutX="1.0" layoutY="22.0" pickOnBounds="true" AnchorPane.leftAnchor="1.0">
+            <ImageView fx:id="userPhotoImageViewController" fitHeight="300.0" fitWidth="300.0" layoutY="-2.0" pickOnBounds="true" AnchorPane.leftAnchor="-1.0">
                <image>
                   <Image url="@../../../img/setting-img/user.png" />
                </image>

@@ -88,6 +88,7 @@ public class MainEditPaneController {
     public void initialize() {
         DaysMeals daysMeals = new DaysMeals();
         this.dateController = new DateController();
+        hideSwitchToEditPaneButton();
         setAll(daysMeals);
         addProductToBase();
         addDeleteButtonToActualTableViewMeal();
@@ -509,6 +510,16 @@ public class MainEditPaneController {
         tableColumn.setReorderable(false);
         tableColumn.setEditable(false);
     }
+
+    private void hideSwitchToEditPaneButton() {
+        switch (getMealId()) {
+            case BREAKFAST_TABLE_VIEW_ID -> breakfastTableViewController.getBreakfastEditButtonController().setVisible(false);
+            case BRUNCH_TABLE_VIEW_ID -> brunchTableViewController.getBrunchEditButtonController().setVisible(false);
+            case LUNCH_TABLE_VIEW_ID -> lunchTableViewController.getLunchEditButtonController().setVisible(false);
+            case SUPPER_TABLE_VIEW_ID -> supperTableViewController.getSupperEditButtonController().setVisible(false);
+        }
+    }
+
 
     }
 
