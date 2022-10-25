@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -10,16 +11,16 @@
 
 <AnchorPane fx:id="profilPaneAnchorPaneController" prefHeight="616.0" prefWidth="860.0" stylesheets="@../../../css/mainview.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SettingsPanesControllers.ProfilePaneController">
    <children>
-      <AnchorPane prefHeight="280.0" prefWidth="282.0" style="-fx-border-color: white;" AnchorPane.bottomAnchor="212.0" AnchorPane.leftAnchor="14.0">
+      <AnchorPane prefHeight="150.0" prefWidth="150.0" style="-fx-border-color: white;" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="80.0">
          <children>
-            <ImageView fx:id="userPhotoImageViewController" fitHeight="300.0" fitWidth="300.0" layoutY="-2.0" pickOnBounds="true" AnchorPane.leftAnchor="-1.0">
+            <ImageView fx:id="userPhotoImageViewController" fitHeight="150.0" fitWidth="150.0" layoutY="-2.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <image>
                   <Image url="@../../../img/setting-img/user.png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
-      <Button fx:id="changeProfilePhotoButtonController" layoutX="53.0" layoutY="354.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="207.0" style="-fx-background-color: linear-gradient(to right,#797979,  #4C4646); -fx-text-fill: white; -fx-font-weight: bold;" text="Change photo" AnchorPane.bottomAnchor="161.0">
+      <Button fx:id="changeProfilePhotoButtonController" layoutX="9.0" layoutY="246.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: linear-gradient(to right,#797979,  #4C4646); -fx-text-fill: white; -fx-font-weight: bold;" text="Change photo" AnchorPane.bottomAnchor="335.0" AnchorPane.leftAnchor="30.0">
          <graphic>
             <ImageView fitHeight="27.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -27,8 +28,8 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Label fx:id="newPasswordLabelController" layoutX="369.0" layoutY="314.0" prefHeight="18.0" prefWidth="98.0" style="-fx-text-fill: white;" text="New password:" AnchorPane.bottomAnchor="218.0" />
-      <Button fx:id="changePasswordButtonController" layoutX="392.0" layoutY="354.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="151.0" style="-fx-background-color: linear-gradient(to right,#797979,  #4C4646); -fx-text-fill: white; -fx-font-weight: bold;" text="Change " AnchorPane.bottomAnchor="161.0">
+      <Label fx:id="newPasswordLabelController" layoutX="555.0" layoutY="163.0" prefHeight="18.0" prefWidth="98.0" style="-fx-text-fill: white;" text="New password:" AnchorPane.bottomAnchor="435.0" />
+      <Button fx:id="changePasswordButtonController" layoutX="588.0" layoutY="197.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="142.0" style="-fx-background-color: linear-gradient(to right,#797979,  #4C4646); -fx-text-fill: white; -fx-font-weight: bold;" text="Change " AnchorPane.bottomAnchor="384.0">
          <graphic>
             <ImageView fitHeight="27.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -36,31 +37,31 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Label fx:id="changePasswordLabelController" alignment="CENTER" layoutX="380.0" layoutY="234.0" prefHeight="17.0" prefWidth="162.0" style="-fx-text-fill: white;" text="Change password" AnchorPane.bottomAnchor="298.0">
+      <Label fx:id="changePasswordLabelController" alignment="CENTER" layoutX="572.0" layoutY="87.0" prefHeight="17.0" prefWidth="162.0" style="-fx-text-fill: white;" text="Change password" AnchorPane.bottomAnchor="511.0">
          <font>
             <Font size="10.0" />
          </font>
       </Label>
-      <Label fx:id="usernameInfoLabelController" layoutX="373.0" layoutY="34.0" prefHeight="18.0" prefWidth="142.0" style="-fx-text-fill: white;" text="Username:" wrapText="true" AnchorPane.bottomAnchor="498.0" />
-      <Label fx:id="usernameLabelController" layoutX="517.0" layoutY="34.0" prefHeight="18.0" prefWidth="183.0" style="-fx-text-fill: white;" text="Username:" AnchorPane.bottomAnchor="498.0" />
-      <Label fx:id="emailInfoLabelController" layoutX="373.0" layoutY="70.0" prefHeight="18.0" prefWidth="142.0" style="-fx-text-fill: white;" text="Email:" wrapText="true" AnchorPane.bottomAnchor="462.0" />
-      <Label fx:id="dateOfBirthInfoLabelController" layoutX="373.0" layoutY="105.0" prefHeight="18.0" prefWidth="125.0" style="-fx-text-fill: white;" text="Date of birth:" wrapText="true" AnchorPane.bottomAnchor="427.0" />
-      <Label fx:id="emailLabelController" layoutX="517.0" layoutY="70.0" prefHeight="18.0" prefWidth="175.0" style="-fx-text-fill: white;" text="Email:" AnchorPane.bottomAnchor="462.0" />
-      <Label fx:id="dateOfBirthLabelController" layoutX="517.0" layoutY="105.0" prefHeight="18.0" prefWidth="183.0" style="-fx-text-fill: white;" text="Date of birth:" AnchorPane.bottomAnchor="427.0" />
-      <Label fx:id="oldPasswordLabelController" layoutX="369.0" layoutY="275.0" prefHeight="18.0" prefWidth="98.0" style="-fx-text-fill: white;" text="Old password:" AnchorPane.bottomAnchor="257.0" />
-      <PasswordField fx:id="oldPasswordPasswordFieldController" layoutX="480.0" layoutY="272.0" prefHeight="25.0" prefWidth="98.0" AnchorPane.bottomAnchor="253.0" />
-      <PasswordField fx:id="newPasswordPasswordFieldController" layoutX="480.0" layoutY="311.0" prefHeight="25.0" prefWidth="98.0" AnchorPane.bottomAnchor="214.0" />
-      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="337.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="491.0">
+      <Label fx:id="usernameInfoLabelController" layoutX="238.0" layoutY="87.0" prefHeight="18.0" prefWidth="142.0" style="-fx-text-fill: white;" text="Username:" wrapText="true" AnchorPane.bottomAnchor="511.0" />
+      <Label fx:id="usernameLabelController" layoutX="343.0" layoutY="87.0" prefHeight="18.0" prefWidth="183.0" style="-fx-text-fill: white;" text="Username:" AnchorPane.bottomAnchor="511.0" />
+      <Label fx:id="emailInfoLabelController" layoutX="238.0" layoutY="128.0" prefHeight="18.0" prefWidth="142.0" style="-fx-text-fill: white;" text="Email:" wrapText="true" AnchorPane.bottomAnchor="470.0" />
+      <Label fx:id="dateOfBirthInfoLabelController" layoutX="238.0" layoutY="163.0" prefHeight="18.0" prefWidth="125.0" style="-fx-text-fill: white;" text="Date of birth:" wrapText="true" AnchorPane.bottomAnchor="435.0" />
+      <Label fx:id="emailLabelController" layoutX="343.0" layoutY="128.0" prefHeight="18.0" prefWidth="175.0" style="-fx-text-fill: white;" text="Email:" AnchorPane.bottomAnchor="470.0" />
+      <Label fx:id="dateOfBirthLabelController" layoutX="343.0" layoutY="163.0" prefHeight="18.0" prefWidth="183.0" style="-fx-text-fill: white;" text="Date of birth:" AnchorPane.bottomAnchor="435.0" />
+      <Label fx:id="oldPasswordLabelController" layoutX="555.0" layoutY="128.0" prefHeight="18.0" prefWidth="98.0" style="-fx-text-fill: white;" text="Old password:" AnchorPane.bottomAnchor="470.0" />
+      <PasswordField fx:id="oldPasswordPasswordFieldController" layoutX="685.0" layoutY="124.0" prefHeight="25.0" prefWidth="98.0" AnchorPane.bottomAnchor="467.0" />
+      <PasswordField fx:id="newPasswordPasswordFieldController" layoutX="685.0" layoutY="159.0" prefHeight="25.0" prefWidth="98.0" AnchorPane.bottomAnchor="432.0" />
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="192.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="504.0">
          <image>
             <Image url="@../../../img/profile-icons/dog-tag.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="32.0" layoutX="341.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="459.0">
+      <ImageView fitHeight="25.0" fitWidth="32.0" layoutX="196.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="467.0">
          <image>
             <Image url="@../../../img/profile-icons/arroba.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="341.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="424.0">
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="196.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="432.0">
          <image>
             <Image url="@../../../img/profile-icons/date-of-birth.png" />
          </image>
@@ -87,5 +88,7 @@
             </ImageView>
          </graphic>
       </Label>
+      <Separator layoutX="6.0" layoutY="307.0" prefHeight="0.0" prefWidth="852.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <Separator layoutX="432.0" layoutY="58.0" orientation="VERTICAL" prefHeight="246.0" prefWidth="0.0" AnchorPane.bottomAnchor="309.0" AnchorPane.topAnchor="60.0" />
    </children>
 </AnchorPane>

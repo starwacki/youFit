@@ -96,7 +96,7 @@ public class DateController {
         wednesdayDate= localDate.minusDays(4L);
         thursdayDate= localDate.minusDays(3L);
         fridayDate = localDate.minusDays(2L);
-        saturdayDate = localDate.plusDays(1L);
+        saturdayDate = localDate.minusDays(1L);
         sundayDate = localDate;
     }
 
